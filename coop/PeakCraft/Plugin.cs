@@ -20,7 +20,7 @@ namespace PeakCraft;
 
 [BepInAutoPlugin]
 [DefaultExecutionOrder(-1000)]
-[BepInPlugin("PeakCraftCoop", "PeakCraft Co-op", "0.3.0")]
+[BepInPlugin("PeakCraftCoop", "PeakCraft Co-op", "0.3.1")]
 public class Plugin : BaseUnityPlugin
 {
 	private ConfigEntry<string> linkName;
@@ -59,7 +59,7 @@ public class Plugin : BaseUnityPlugin
 
 	public const string Name = "PeakCraft Co-op";
 
-	public const string Version = "0.3.0";
+	public const string Version = "0.3.1";
 
 	internal static ManualLogSource Log { get; private set; }
 

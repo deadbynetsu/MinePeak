@@ -18,4 +18,4 @@ $log=Join-Path $c.profile 'minecraft-console.log'
 Start-Process powershell.exe -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$root\Iniciar-Minecraft.ps1`"" -WindowStyle Hidden -RedirectStandardOutput $log -RedirectStandardError ($log+'.err')
 $target=Join-Path $c.profile 'BepInEx\core\BepInEx.Preloader.dll'
 Start-Process -FilePath $c.steam -ArgumentList "-applaunch 3527290 --doorstop-enabled true --doorstop-target-assembly `"$target`" -force-d3d11 -screen-fullscreen 0 -screen-width 1280 -screen-height 720" -WindowStyle Hidden
-Write-Host 'PEAK e Minecraft iniciando. Esc abre o botao Modo Minecraft; F8 alterna.'
+Write-Host 'PEAK e Minecraft iniciando. Esc abre o botao Modo Minecraft; L alterna.'

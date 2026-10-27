@@ -100,6 +100,7 @@ if(-not $Legacy){
         @"
 [Coop]
 Mode = Viewer
+ToggleModeKey = L
 Share = true
 MinecraftJar = $mcJar
 [Dev]

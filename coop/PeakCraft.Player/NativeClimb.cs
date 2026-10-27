@@ -42,7 +42,7 @@ internal sealed class NativeClimb
             !PeakApi.IsDead(c.data) && !c.data.passedOut && !c.data.fullyPassedOut;
         if (!eligible)
         {
-            // F8 can remove the virtual V-held primary action without producing a real
+            // Changing modes can remove the virtual V-held primary action without a real
             // mouse-release edge. Release only a climb started by this helper; a native
             // climb already in progress, or supported by a physical primary action,
             // keeps its normal game controls.

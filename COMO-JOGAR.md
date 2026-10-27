@@ -7,9 +7,11 @@ MinePeak usa a base PeakCraft Local. Os nomes das pastas, do painel e dos arquiv
 1. Feche PEAK caso esteja aberto e mantenha a Steam conectada à sua conta.
 2. Execute **JOGAR.cmd**. O lançador abre PEAK e o Minecraft em segundo plano. Não precisa abrir o SKLauncher nem conectar a um servidor Minecraft.
 3. Para jogar sozinho, escolha **Jogar offline** no PEAK. Para uma sala com amigos, use os lobbies do próprio PEAK com a mesma versão dos mods em cada PC; veja [MULTIPLAYER.md](MULTIPLAYER.md).
-4. Na partida, pressione **Esc** e clique em **ATIVAR modo Minecraft**, ou pressione **F8**. Aguarde o inventário e os corações aparecerem.
+4. Na partida, pressione **Esc** e clique em **ATIVAR modo Minecraft**, ou pressione **L**. Aguarde o inventário e os corações aparecerem.
 
-O modo escolhido fica salvo. Use F8 novamente para voltar ao PEAK nativo. Se esta for a primeira instalação, siga antes a preparação em [README.md](README.md#comece-a-jogar).
+O modo escolhido fica salvo. Use **L** novamente para voltar ao PEAK nativo, com o chat e os menus Minecraft fechados. Se esta for a primeira instalação, siga antes a preparação em [README.md](README.md#comece-a-jogar).
+
+Na versão **0.3.1**, configurações antigas com F8 são migradas automaticamente para **L**. Se você já escolheu outra tecla personalizada, ela é preservada.
 
 ## Seu primeiro bloco
 
@@ -59,11 +61,11 @@ Para definir uma imagem própria, veja a seção [Skin do usuário](README-PT.md
 | --- | --- |
 | PEAK abriu sem painel PeakCraft | Abra pelo JOGAR.cmd, que ativa o perfil externo; a abertura normal pela Steam é separada. |
 | Minecraft ainda não aparece | Espere a primeira instalação concluir. Confira `local-profile/minecraft-console.log`. |
-| Botão/tecla não alterna o modo | Feche o inventário ou menu Minecraft e tente F8 dentro da partida. |
+| Botão/tecla não alterna o modo | Feche o inventário, chat ou menu Minecraft e tente L dentro da partida; confira `ToggleModeKey` se usa uma tecla personalizada. |
 | Mão parece escura | A cor vem da skin local; confira sua imagem antes de alterar o renderizador. |
 | Bloco some atrás de uma pedra | A ocultação pelo cenário é esperada. A montanha continua sendo o cenário PEAK. |
 | PEAK nativo atravessa o bloco construído | A construção só tem colisão na física Minecraft. Volte ao modo Minecraft para pisar nela. |
 | Item PEAK não usa no controle Minecraft | Segure B, selecione 1–4 e use o mouse. |
 | Escalada não agarra | Aproxime-se, mire numa parede válida e confira a stamina. Solte V antes de uma nova tentativa. |
 
-Os jogos e mods podem mudar. Para relatar um erro, inclua as versões, a sequência de ações e um vídeo curto quando possível. Remova nomes, códigos de sala e caminhos pessoais dos logs públicos. Consulte **[VALIDACAO-0.3.0.md](VALIDACAO-0.3.0.md)** para os testes desta revisão e seus limites. Uma sessão completa com dois PCs e uma campanha até o cume ainda não foram validadas.
+Os jogos e mods podem mudar. Para relatar um erro, inclua as versões, a sequência de ações e um vídeo curto quando possível. Remova nomes, códigos de sala e caminhos pessoais dos logs públicos. Consulte **[VALIDACAO-0.3.1.md](VALIDACAO-0.3.1.md)** para a checagem da revisão atual e **[VALIDACAO-0.3.0.md](VALIDACAO-0.3.0.md)** para os testes anteriores de equipamentos, escalada, colisão e rede e seus limites. Uma sessão completa com dois PCs e uma campanha até o cume ainda não foram validadas.

@@ -1,4 +1,9 @@
 {
+  "PROVAS/bind-0.3.1-log.txt": "b5bb9741fe2addd60fdb2576cfb3ec138038efc41d3f2189720c9cc761528164",
+  "PROVAS/bind-L-chat.png": "3ce0b9778370bbffbbf4007fe65b1054680cec5ab35ad991635570a8bd67f3dc",
+  "PROVAS/bind-L-menu.png": "08b1420c2db0199292a9ece180c0862062be4d762b455b463d1ed9a830c8e813",
+  "PROVAS/bind-L-minecraft.png": "b32bdb2c5370f9a4241d8aa27958764f015e5269576bbebd1b78de54d00bcb57",
+  "PROVAS/bind-L-native.png": "76fa2eb3a3e3434c2d44e23e1c5f42c8935d497741f8ccf0abb73f936ca09dd1",
   "PROVAS/collision-box-stop.png": "4dad45ecdbe02537632512a17eb5dfed399f7456a29fc4d2b6ba2bdb108cbbce",
   "PROVAS/collision-gpu-final.png": "1e5f17f5eb4c2c785c837a2f91241eba3ab96130c059e04ef655297e3de351fc",
   "PROVAS/collision-wall-removed.png": "e7841f0ae4b38149cb88766db129f8eea3ec8fbb04552a0070a89deefecc4f85",
@@ -39,7 +44,7 @@
   "PROVAS/vitals-regression-0.3.0.json": "aaf9dc37ef0b84954b5e5cb939607fe7a71f6d88c71fb03b78e9ede329b7342a",
   "PROVAS/vitals-shared-minecraft.png": "7286ab530efefd3e01a2d8bb958a983fd6b1f5b4ceb7c7621f1261ebb1a0b0c3",
   "PROVAS/vitals-shared-native.png": "4414dfaab5dae5386613127487e88eb318345c8888f52c8a8d6875274f5e98da",
-  "binarios/PeakCraftCoop.dll": "66be83425753bcc908e8c9589a21a9829be48c68a7b63dce1a0c0504f79cc710",
+  "binarios/PeakCraftCoop.dll": "c585de49ccf302e2a00efdd9a92992ee8c20d66618dff5350e63f7b74c251b96",
   "binarios/aeironnarmiento.PeakCraft.dll": "1dd520134fad631634a6a11d58845a771bbf2937b36063bd0e99dc467c260aa7",
   "binarios/peakcraft-profile-0.1.0.jar": "3b1623f90756aa9e2028bdc50bc85c078f610c7fbbcc8fe4eb714dc597f1bfac",
   "binarios/peakcraftcoop-fabric.jar": "704fdcd98c2111fcaf09a81688d29c421c1a54b8db32833d1cb09853fe13a4ea",

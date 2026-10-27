@@ -15,7 +15,7 @@ $shortcut=$shell.CreateShortcut($file)
 $shortcut.TargetPath=Join-Path $env:SystemRoot 'System32\WindowsPowerShell\v1.0\powershell.exe'
 $shortcut.Arguments='-NoProfile -ExecutionPolicy Bypass -File "'+(Join-Path $root 'Iniciar-PEAKCraft.ps1')+'"'
 $shortcut.WorkingDirectory=$root
-$shortcut.Description='PEAK da Steam com modo Minecraft opcional (Esc ou F8)'
+$shortcut.Description='PEAK da Steam com modo Minecraft opcional (Esc ou L)'
 $shortcut.IconLocation=(Join-Path $config.peak 'PEAK.exe')+',0'
 $shortcut.WindowStyle=7
 $shortcut.Save()

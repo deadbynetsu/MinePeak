@@ -2,7 +2,7 @@
 
 **Construa o seu caminho até o pico.**
 
-MinePeak leva o inventário, a skin e a construção em blocos do Minecraft para o mundo real do PEAK. Os dois jogos continuam rodando: PEAK desenha e executa sua ilha, enquanto uma instância Minecraft em segundo plano fornece a movimentação e a construção. Um botão dentro da partida permite alternar os controles sem reiniciar.
+MinePeak leva o inventário, a skin e a construção em blocos do Minecraft para o mundo real do PEAK. Os dois jogos continuam rodando: PEAK desenha e executa sua ilha, enquanto uma instância Minecraft em segundo plano fornece a movimentação e a construção. Um botão dentro da partida ou a tecla **L** permite alternar os controles sem reiniciar.
 
 No modo Minecraft, G interage com o mundo PEAK. Segurar B dá acesso temporário às comidas e aos equipamentos nativos, com arremesso carregado por Q; V aciona a escalada do próprio PEAK. Comida e vida são compartilhadas. As regras de stamina continuam pertencendo ao jogo de escalada.
 

@@ -155,6 +155,15 @@ internal sealed class InputBridge
 			bool isPressed = allKey.isPressed;
 			if (!screenOpen)
 			{
+				// Reserve the mode key in gameplay. L is Minecraft's advancements key;
+				// forwarding it before the handoff would open a hidden screen there.
+				// Inside chat/inventory it remains an ordinary Minecraft key.
+				if (Plugin.Instance.CoopMode.IsToggleKey(keyCode))
+				{
+					if (held.Remove(keyCode) && Scancodes.FromKey.TryGetValue(keyCode, out var toggleScan))
+						link.PushInput(Proto.InputType.Key, toggleScan, 0);
+					continue;
+				}
 				if (keyCode == Key.Escape)
 				{
 					continue;

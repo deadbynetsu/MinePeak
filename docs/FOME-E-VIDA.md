@@ -19,7 +19,7 @@ O painel **Vida / Comida** mostra os percentuais compartilhados nos dois modos. 
 
 - No modo Minecraft, use as comidas e curas normalmente pelo inventário Minecraft.
 - No modo PEAK nativo, use os alimentos e equipamentos com os controles originais do PEAK.
-- A troca por F8 ou pelo botão no menu não deve repor as barras por conta própria.
+- A troca por L ou pelo botão no menu não deve repor as barras por conta própria.
 - Apenas o jogo que controla o personagem avança seu relógio natural de fome. O modo Minecraft pausa o aumento natural de fome do PEAK. O modo PEAK nativo pausa o processamento natural de fome e regeneração baseada em comida do Minecraft.
 
 Essa pausa não bloqueia o uso de comida, curas ou efeitos fora desse relógio. Ela evita que dois gastos naturais sejam somados ao mesmo tempo enquanto um dos personagens está oculto.

@@ -8,7 +8,7 @@
 
 [![Testes automatizados](https://github.com/deadbynetsu/MinePeak/actions/workflows/tests.yml/badge.svg)](https://github.com/deadbynetsu/MinePeak/actions/workflows/tests.yml)
 
-[Como jogar](COMO-JOGAR.md) · [Instalação](README-PT.md) · [Multiplayer](MULTIPLAYER.md) · [Testes desta versão](VALIDACAO-0.3.0.md) · [Créditos](referencia-coop/PROVENIENCIA.md)
+[Como jogar](COMO-JOGAR.md) · [Instalação](README-PT.md) · [Multiplayer](MULTIPLAYER.md) · [Testes desta versão](VALIDACAO-0.3.1.md) · [Créditos](referencia-coop/PROVENIENCIA.md)
 
 </div>
 
@@ -23,7 +23,7 @@ Esta é uma adaptação comunitária gratuita e experimental do **PeakCraft Co-o
 ## Construa, explore, alterne
 
 - **Blocos no PEAK:** coloque e quebre blocos Minecraft no cenário original. A montanha do PEAK permanece intacta.
-- **Modo opcional:** ative pelo botão no menu Esc ou por F8. A escolha fica salva.
+- **Modo opcional:** ative pelo botão no menu Esc ou por **L**. A escolha fica salva.
 - **Sua identidade:** nome e skin 64×64 do perfil local do SKLauncher, quando disponíveis, com opção de imagem própria.
 - **Fome e vida compartilhadas:** alimentação, dano e cura atravessam a ponte entre os jogos. A stamina de escalada continua sendo do PEAK.
 - **Equipamento nativo:** segure B para usar os itens do PEAK; escolha com 1–4, use com o mouse e segure/solte Q para arremessar. Comida, bandagens e lançamento de cerca de 23 metros foram conferidos no jogo. Solte B para retornar ao Minecraft.
@@ -46,7 +46,9 @@ Requisitos desta versão: **Windows 11 de 64 bits**, PEAK instalado pela Steam e
    Para uma instalação PEAK não detectada automaticamente, acrescente `-PeakDir 'D:\caminho\PEAK'`.
 
 3. Deixe a Steam aberta e execute **JOGAR.cmd**. Aguarde o Minecraft oculto e o PEAK carregarem.
-4. Entre em uma partida e ative **modo Minecraft** pelo menu Esc ou por **F8**.
+4. Entre em uma partida e ative **modo Minecraft** pelo menu Esc ou por **L**.
+
+Na versão **0.3.1**, a tecla padrão mudou de F8 para **L**. Configurações antigas que ainda usavam F8 são migradas automaticamente; outras teclas personalizadas são preservadas. Feche o chat ou os menus Minecraft antes de alternar.
 
 A primeira abertura pode demorar para baixar bibliotecas oficiais. O guia **[Como jogar](COMO-JOGAR.md)** mostra os controles, o primeiro bloco, alimentação e solução de problemas.
 
@@ -56,7 +58,7 @@ O lançador pode ler a identidade pública e uma skin já armazenada pelo SKLaun
 
 | Ação | Controle |
 | --- | --- |
-| Ativar/desativar modo Minecraft | F8 ou Esc → painel PeakCraft Co-op |
+| Ativar/desativar modo Minecraft | L ou Esc → painel PeakCraft Co-op |
 | Andar / pular / correr / agachar no Minecraft | WASD / Espaço / Ctrl / Shift |
 | Colocar / quebrar bloco colocado | Botão direito / esquerdo |
 | Inventário / terceira pessoa | E / F5 |
@@ -83,7 +85,7 @@ Use os lobbies, convites Steam ou códigos de sala do próprio PEAK. Todos os pa
 | Compartilhamento Co-op | 19 testes de protocolo/histórico de blocos, implementação Photon e loopback local; dois PCs ainda pendentes |
 | Campanha completa e cume | Não percorridos integralmente nesta entrega |
 
-As capturas e registros em **[PROVAS/](PROVAS/)** documentam o que foi executado. **[VALIDACAO-0.3.0.md](VALIDACAO-0.3.0.md)** registra esta revisão; **[VALIDACAO.md](VALIDACAO.md)** preserva os cenários anteriores e distingue o Co-op dos testes históricos da base clássica. Não se declara compatibilidade perfeita com todas as colisões, alimentos, mods ou versões futuras dos jogos.
+As capturas e registros em **[PROVAS/](PROVAS/)** documentam o que foi executado. **[VALIDACAO-0.3.1.md](VALIDACAO-0.3.1.md)** registra a checagem desta revisão; **[VALIDACAO-0.3.0.md](VALIDACAO-0.3.0.md)** preserva a verificação de equipamentos, escalada, colisão e rede, e **[VALIDACAO.md](VALIDACAO.md)** distingue o Co-op dos testes históricos da base clássica. Não se declara compatibilidade perfeita com todas as colisões, alimentos, mods ou versões futuras dos jogos.
 
 Para repetir os **37 casos automatizados** sem abrir os jogos, instale o SDK .NET 10 e execute `./Testar.ps1`. A CI pública executa os mesmos projetos em Windows e Linux; o build completo do plugin usa os assemblies da instalação local do PEAK.
 

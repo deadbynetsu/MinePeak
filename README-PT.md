@@ -1,6 +1,6 @@
 # MinePeak — PEAK com modo Minecraft opcional
 
-MinePeak usa a base **PeakCraft Local**; pastas, painel e arquivos de configuração mantêm os nomes PeakCraft. A revisão **0.3.0** acrescenta equipamentos e escalada nativos temporários, melhora da exportação de colisão e correções de compartilhamento cooperativo. Veja **[VALIDACAO-0.3.0.md](VALIDACAO-0.3.0.md)** para os testes desta revisão. Campanha completa e partida real entre dois PCs/contas permanecem pendentes.
+MinePeak usa a base **PeakCraft Local**; pastas, painel e arquivos de configuração mantêm os nomes PeakCraft. A revisão **0.3.1** muda a tecla padrão de alternância para **L**; sua checagem está em **[VALIDACAO-0.3.1.md](VALIDACAO-0.3.1.md)**. Ela mantém os equipamentos e a escalada nativos temporários, a exportação de colisão e o cooperativo da 0.3.0; os testes anteriores dessas funções estão em **[VALIDACAO-0.3.0.md](VALIDACAO-0.3.0.md)**. Campanha completa e partida real entre dois PCs/contas permanecem pendentes.
 
 **Abra `JOGAR.cmd` nesta pasta.** O PEAK da Steam executa o aeroporto, a ilha e a partida reais. O Minecraft Java roda oculto em segundo plano. Você começa com os controles nativos do PEAK e decide dentro do jogo quando ativar a movimentação, inventário e blocos do Minecraft. O guia rápido está em **[COMO-JOGAR.md](COMO-JOGAR.md)**.
 
@@ -14,9 +14,11 @@ A versão atual usa o **PeakCraft Co-op 0.2.1 de Issac**, remix do PeakCraft de 
 2. Execute **JOGAR.cmd**. Aguarde PEAK e o Minecraft oculto carregarem.
 3. No PEAK, escolha **Jogar offline** para uma partida solo. O modo inicial é **Viewer/PEAK nativo**: você mantém o personagem, controles, escalada, stamina e itens do PEAK.
 4. Dentro da partida, pressione **Esc**. No painel **PeakCraft Co-op**, clique em **ATIVAR modo Minecraft**. Aguarde a transferência de controle e o HUD do Minecraft aparecer.
-5. Para voltar ao PEAK normal, abra Esc e clique em **DESATIVAR modo Minecraft**. **F8** também alterna os modos durante a partida, sem reiniciar os jogos.
+5. Para voltar ao PEAK normal, abra Esc e clique em **DESATIVAR modo Minecraft**. **L** também alterna os modos durante a partida, sem reiniciar os jogos.
 
-A escolha é salva. Uma instalação nova começa em Viewer; se a execução anterior terminou em Minecraft, a configuração pode reabrir nesse modo. Você pode alternar novamente pelo painel ou F8.
+A escolha é salva. Uma instalação nova começa em Viewer; se a execução anterior terminou em Minecraft, a configuração pode reabrir nesse modo. Você pode alternar novamente pelo painel ou **L**, com o chat e os menus Minecraft fechados.
+
+A versão 0.3.1 migra automaticamente a configuração antiga `ToggleModeKey = F8` para `L` em `local-profile/BepInEx/config/PeakCraftCoop.cfg`. Outras teclas personalizadas são preservadas.
 
 Não precisa abrir SKLauncher nem conectar a localhost. O atalho usa a instância Java isolada do projeto e lê a identidade pública do perfil ativo do SKLauncher. Não altera suas contas, seus tokens ou seus mundos. A sessão local não autentica em Realms ou servidores Microsoft; PEAK continua usando a autenticação e os lobbies normais da Steam.
 
@@ -44,7 +46,7 @@ Use `slim` em `skinModel` para braços finos. As alterações de nome/skin entra
 
 | Ação | Controle / modo |
 | --- | --- |
-| Alternar PEAK ↔ Minecraft | Esc → botão do painel PeakCraft Co-op; ou F8 |
+| Alternar PEAK ↔ Minecraft | Esc → botão do painel PeakCraft Co-op; ou L |
 | Controles nativos do PEAK | Modo Viewer/PEAK nativo |
 | Usar itens PEAK sem desativar a opção Minecraft | Segure B; 1–4 selecionam e os botões do mouse usam |
 | Arremessar o item PEAK equipado | Com B segurado, segure Q para carregar e solte Q |
@@ -63,7 +65,7 @@ Com a sincronização de fome e vida habilitada, o Minecraft começa em **Sobrev
 
 Para embarcar em modo nativo, use os controles normais do PEAK. Em modo Minecraft, olhe para o terminal e segure **G**, depois confirme a viagem no cartão de embarque.
 
-O caminho de **B** transfere temporariamente o controle ao PEAK para usar sua comida e seus equipamentos, incluindo a carga nativa de arremesso por Q. **V** faz o mesmo para a escalada real, com o consumo de stamina e as restrições normais do jogo. Ao soltar, a ponte devolve o controle à posição Minecraft. Durante esses dois caminhos, o corpo e os braços são os do PEAK; sua aparência Minecraft retorna em seguida. Consumo de marshmallow, carga de arremesso e escalada com gasto de stamina passaram em cenários reais desta revisão. Isso não certifica todos os equipamentos ou a sequência final de campanha; os resultados exatos estão em [VALIDACAO-0.3.0.md](VALIDACAO-0.3.0.md).
+O caminho de **B** transfere temporariamente o controle ao PEAK para usar sua comida e seus equipamentos, incluindo a carga nativa de arremesso por Q. **V** faz o mesmo para a escalada real, com o consumo de stamina e as restrições normais do jogo. Ao soltar, a ponte devolve o controle à posição Minecraft. Durante esses dois caminhos, o corpo e os braços são os do PEAK; sua aparência Minecraft retorna em seguida. Consumo de marshmallow, carga de arremesso e escalada com gasto de stamina passaram nos cenários reais da versão 0.3.0. Isso não certifica todos os equipamentos ou a sequência final de campanha; os resultados exatos estão em [VALIDACAO-0.3.0.md](VALIDACAO-0.3.0.md).
 
 ## Fome e vida compartilhadas
 
@@ -87,7 +89,7 @@ O modo Viewer mantém o jogador sob controle nativo do PEAK e pode desenhar elem
 
 ## Estado de validação
 
-Na versão Co-op atual foram confirmados em execução: plugin e ponte carregados, nome/skin do SKLauncher no aeroporto e na praia, ativação pelo botão Esc, retorno nativo por F8 sem trocar o processo Java, reativação com novo handshake, embarque e chegada à ilha `Level_83`, colocação/remoção de blocos e recuperação de uma queda artificial no vazio sem morte. O teste de compartilhamento foi **loopback no mesmo PC**, com três mensagens enviadas e recebidas e blocos remotos aplicados; ele não equivale a dois jogadores reais.
+Na validação histórica da base Co-op foram confirmados em execução: plugin e ponte carregados, nome/skin do SKLauncher no aeroporto e na praia, ativação pelo botão Esc, retorno nativo pela então tecla F8 sem trocar o processo Java, reativação com novo handshake, embarque e chegada à ilha `Level_83`, colocação/remoção de blocos e recuperação de uma queda artificial no vazio sem morte. O teste de compartilhamento foi **loopback no mesmo PC**, com três mensagens enviadas e recebidas e blocos remotos aplicados; ele não equivale a dois jogadores reais. O atalho atual é **L**.
 
 Veja **VALIDACAO.md** e **PROVAS/** para os detalhes. O relatório clássico anterior está preservado em **VALIDACAO-CLASSIC.md**; seus 21 testes de colisão/raycast pertencem à base clássica, não são 21 novos testes do Co-op.
 

@@ -13,6 +13,7 @@ internal sealed class CoopMode
     private float lastToggleAt = -1f;
     public bool IsViewer { get; private set; }
     public string PropValue => IsViewer ? "viewer" : "mc";
+    public bool IsToggleKey(Key candidate) => Enum.TryParse(config.CoopToggleKey.Value.ToString(), true, out Key key) && key != Key.None && key == candidate;
     public static string RuntimeDir => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "PeakCraftCoop");
 
     public CoopMode(CoopConfig config)

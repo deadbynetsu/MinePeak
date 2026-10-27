@@ -1,0 +1,19 @@
+[Info   :PeakCraft Co-op] local mode: PEAK native
+[Info   :PeakCraft Co-op] dev: bind-0.3.1-baseline
+[Info   :PeakCraft Co-op] dev: state PeakOwns; PEAK feet (-9.652, 0.883, 50.662) = mc (-9,652, -511,117, -50,662); Minecraft feet (-2,973, -511,445, -74,060) yaw 180,0 pitch 0,0 flags 0x1; look yaw 180,0 pitch 0,0; camera (-9.655, 2.503, 50.444); kinematic False; stamina 1,00
+[Info   :PeakCraft Co-op] dev: bind-0.3.1-after-F8
+[Info   :PeakCraft Co-op] dev: state PeakOwns; PEAK feet (-9.650, 0.881, 50.668) = mc (-9,650, -511,119, -50,668); Minecraft feet (-2,973, -511,445, -74,060) yaw 180,0 pitch 0,0 flags 0x1; look yaw 180,0 pitch 0,0; camera (-9.647, 2.510, 50.466); kinematic False; stamina 1,00
+[Info   :PeakCraft Co-op] local mode: Minecraft ON; safe handoff pending
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 207172)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] dev: bind-0.3.1-after-L-on
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-9.644, 0.877, 50.672) = mc (-9,644, -511,123, -50,672); Minecraft feet (-9,644, -511,123, -50,672) yaw 180,0 pitch 0,0 flags 0x5; look yaw 180,0 pitch 0,0; camera (-9.644, 2.497, 50.672); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-9.644, 0.877, 50.672) = mc (-9,644, -511,123, -50,672); Minecraft feet (-9,644, -511,123, -50,672) yaw 180,0 pitch 0,0 flags 0x7; look yaw 180,0 pitch 0,0; camera (-9.644, 2.497, 50.672); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] dev: bind-0.3.1-L-chat
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-9.644, 0.877, 50.672) = mc (-9,644, -511,123, -50,672); Minecraft feet (-9,644, -511,123, -50,672) yaw 180,0 pitch 0,0 flags 0x7; look yaw 180,0 pitch 0,0; camera (-9.644, 2.497, 50.672); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-9.644, 0.877, 50.672) = mc (-9,644, -511,123, -50,672); Minecraft feet (-9,644, -511,123, -50,672) yaw 180,0 pitch 0,0 flags 0x5; look yaw 180,0 pitch 0,0; camera (-9.644, 2.497, 50.672); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] local mode: PEAK native restored
+[Info   :PeakCraft Co-op] dev: bind-0.3.1-after-L-off
+[Info   :PeakCraft Co-op] dev: state PeakOwns; PEAK feet (-9.612, 0.869, 50.769) = mc (-9,612, -511,131, -50,769); Minecraft feet (-9,644, -511,123, -50,672) yaw 180,0 pitch 0,0 flags 0x1; look yaw 180,0 pitch 0,0; camera (-9.624, 2.429, 50.433); kinematic False; stamina 1,00
+[Info   :PeakCraft Co-op] dev: bind-0.3.1-menu

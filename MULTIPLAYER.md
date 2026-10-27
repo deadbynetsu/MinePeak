@@ -19,7 +19,7 @@ Não é necessário abrir portas de um servidor Minecraft, conectar a `localhost
 
 1. Um participante hospeda uma sala pelo menu normal do PEAK.
 2. Os demais entram por convite Steam ou pelo mecanismo de entrada/código que o PEAK mostrar para essa sala. Confirme primeiro que todos aparecem no aeroporto nativo.
-3. Cada um ativa seu **modo Minecraft** no botão do menu Esc ou em **F8**. A escolha é individual: um jogador pode usar Minecraft enquanto outro mantém PEAK nativo.
+3. Cada um ativa seu **modo Minecraft** no botão do menu Esc ou em **L**. A escolha é individual: um jogador pode usar Minecraft enquanto outro mantém PEAK nativo.
 4. Em modo Minecraft, construa e quebre blocos normalmente. Os participantes com esta mesma versão recebem as edições. O personagem Minecraft remoto usa a skin transmitida pelo próprio perfil.
 5. Para comida/equipamentos PEAK, segure **B**; para arremessar, segure e solte **Q** enquanto segura B. Para escalada nativa temporária, segure **V** perto de uma parede. Durante essas ações, o corpo nativo do PEAK aparece; ao retornar, a skin Minecraft volta. Os controles completos estão em [COMO-JOGAR.md](COMO-JOGAR.md).
 
