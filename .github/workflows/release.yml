@@ -1,0 +1,59 @@
+name: Publicar Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/release.json'
+      - '.github/workflows/release.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: minepeak-release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Testar, empacotar e publicar
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - name: Obter fontes
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Instalar SDK .NET 10
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          dotnet-version: '10.0.x'
+      - name: Executar os 37 testes de regressao
+        shell: pwsh
+        run: ./Testar.ps1
+      - name: Criar ZIP e verificar CRC, privacidade e checksums
+        run: python3 tools/package_release.py --ref "$GITHUB_SHA" --output-dir dist
+      - name: Publicar pacote experimental sem substituir uma Release existente
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          version=$(python3 -c 'import json; print(json.load(open(".github/release.json"))["version"])')
+          tag=$(python3 -c 'import json; print(json.load(open(".github/release.json"))["tag"])')
+          title=$(python3 -c 'import json; print(json.load(open(".github/release.json"))["title"])')
+          notes=$(python3 -c 'import json; print(json.load(open(".github/release.json"))["notes"])')
+          prerelease=$(python3 -c 'import json; print(str(json.load(open(".github/release.json"))["prerelease"]).lower())')
+          if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release $tag ja existe; nenhum arquivo foi substituido." >&2
+            exit 1
+          fi
+          flags=()
+          if [ "$prerelease" = true ]; then flags+=(--prerelease); fi
+          gh release create "$tag" "dist/MinePeak-$version.zip" "dist/MinePeak-$version.zip.sha256" \
+            --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --title "$title" \
+            --notes-file "$notes" "${flags[@]}"
+          echo "Release publicada: https://github.com/$GITHUB_REPOSITORY/releases/tag/$tag" >> "$GITHUB_STEP_SUMMARY"

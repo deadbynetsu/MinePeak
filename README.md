@@ -8,7 +8,7 @@
 
 [![Testes automatizados](https://github.com/deadbynetsu/MinePeak/actions/workflows/tests.yml/badge.svg)](https://github.com/deadbynetsu/MinePeak/actions/workflows/tests.yml)
 
-[Como jogar](COMO-JOGAR.md) · [Instalação](README-PT.md) · [Multiplayer](MULTIPLAYER.md) · [Testes desta versão](VALIDACAO-0.3.1.md) · [Créditos](referencia-coop/PROVENIENCIA.md)
+[Baixar Release 0.3.1](https://github.com/deadbynetsu/MinePeak/releases/tag/v0.3.1) · [Como jogar](COMO-JOGAR.md) · [Instalação](README-PT.md) · [Multiplayer](MULTIPLAYER.md) · [Testes desta versão](VALIDACAO-0.3.1.md) · [Créditos](referencia-coop/PROVENIENCIA.md)
 
 </div>
 
@@ -36,7 +36,7 @@ Durante B ou V, o corpo e os controles usados são temporariamente os nativos do
 
 Requisitos desta versão: **Windows 11 de 64 bits**, PEAK instalado pela Steam e acesso aos arquivos necessários do Minecraft Java. A combinação exercitada localmente foi **PEAK 3.0.1 + Minecraft Java 26.3**. A preparação instala Java 25 e BepInEx em pastas locais do projeto.
 
-1. Baixe o projeto e extraia para uma pasta própria.
+1. Baixe **MinePeak-0.3.1.zip** na [Release experimental](https://github.com/deadbynetsu/MinePeak/releases/tag/v0.3.1) e extraia para uma pasta própria. O ZIP inclui fontes e mods compilados; o arquivo `.sha256` ao lado permite conferir a integridade.
 2. Leia a [EULA do Minecraft](https://www.minecraft.net/eula). Se concordar, abra PowerShell nessa pasta e prepare a instalação:
 
    ```powershell
