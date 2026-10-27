@@ -1,0 +1,8 @@
+{
+  "required":true,
+  "package":"dev.skycraft.client.mixin",
+  "compatibilityLevel":"JAVA_25",
+  "mixins":["FoodDataVitalsMixin"],
+  "client":["LocalSteveMixin"],
+  "injectors":{"defaultRequire":1}
+}

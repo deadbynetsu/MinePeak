@@ -1,0 +1,13 @@
+[Info   : PeakCraft] protocol layout self-check: PASS
+[Info   : PeakCraft] ring self-test: PASS
+[Info   : PeakCraft] patch ok   CharacterInputPatch
+[Info   : PeakCraft] patch ok   CharacterMovementPatch
+[Info   : PeakCraft] patch ok   MainCameraMovementPatch
+[Info   : PeakCraft] patch ok   CharacterAfflictionsPatch
+[Info   : PeakCraft] patch ok   CharacterPatch
+[Info   : PeakCraft] link up: Minecraft (pid 1300) is on the other end
+[Info   : PeakCraft] link up: Minecraft (pid 1300) is on the other end
+[Info   : PeakCraft] avatar: first model received (1 batches, 216 vertices)
+[Info   : PeakCraft] mirror body: first model received (6 batches, 216 vertices)
+[Info   : PeakCraft] collision: cleared, epoch 6 (scene Airport)
+[Info   : PeakCraft] ownership: Handoff -> MinecraftOwns

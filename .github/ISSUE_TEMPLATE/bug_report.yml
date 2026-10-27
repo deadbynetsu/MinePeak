@@ -1,0 +1,38 @@
+name: Relatar um problema
+description: Descreva um erro reproduzível no MinePeak.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Inclua apenas logs revisados. Remova tokens, códigos de sala, endereços e caminhos pessoais. Não envie arquivos dos jogos ou da conta do launcher."
+  - type: input
+    id: versions
+    attributes:
+      label: Versões
+      description: Windows, PEAK e versão/commit do MinePeak.
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Modo ativo quando ocorreu
+      options:
+        - Minecraft
+        - Minecraft com B (equipamentos PEAK)
+        - Minecraft com V (escalada PEAK)
+        - PEAK nativo / Viewer
+        - Preparação ou inicialização
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Como reproduzir
+      description: Passos desde a abertura, resultado esperado e o que aconteceu.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Trecho de log ou vídeo
+      description: Opcional. Em multiplayer, informe quantos PCs/contas, quem hospedou e se alguém entrou depois.

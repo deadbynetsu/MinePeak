@@ -1,0 +1,8 @@
+<!-- Copy to Config.Local.props and set paths for your own installed games/tools. -->
+<!-- Do not distribute the proprietary assemblies referenced here. -->
+<Project>
+  <PropertyGroup>
+    <GameManaged>C:/CAMINHO/Steam/steamapps/common/PEAK/PEAK_Data/Managed</GameManaged>
+    <BepCore>../local-profile/BepInEx/core</BepCore>
+  </PropertyGroup>
+</Project>

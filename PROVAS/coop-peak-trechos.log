@@ -1,0 +1,180 @@
+
+=== Co-op antes da revisao ===
+[Info   :PeakCraft Co-op] Plugin PeakCraft Co-op 0.2.1 is loaded!
+[Info   :PeakCraft Co-op] local mode: PEAK native
+[Info   :PeakCraft Co-op] protocol layout self-check: PASS
+[Info   :PeakCraft Co-op] ring self-test: PASS
+[Info   :PeakCraft Co-op] patch ok   CharacterInputPatch
+[Info   :PeakCraft Co-op] patch ok   CharacterMovementPatch
+[Info   :PeakCraft Co-op] patch ok   MainCameraMovementPatch
+[Info   :PeakCraft Co-op] patch ok   CharacterAfflictionsPatch
+[Info   :PeakCraft Co-op] patch ok   CharacterPatch
+[Info   :PeakCraft Co-op] collision: cleared, epoch 2 (scene Pretitle)
+[Info   :PeakCraft Co-op] link up: Minecraft (pid 2708) is on the other end
+[Info   :PeakCraft Co-op] link up: Minecraft (pid 2708) is on the other end
+[Info   :PeakCraft Co-op] collision: cleared, epoch 5 (scene Title)
+[Info   :PeakCraft Co-op] coop: local skin 64x64 (classic), shared as 1181 bytes
+[Info   :PeakCraft Co-op] avatar: first model received (1 batches, 216 vertices)
+[Info   :PeakCraft Co-op] mirror body: first model received (6 batches, 216 vertices)
+[Info   :PeakCraft Co-op] dev: starting an offline session from the title screen
+[Info   :PeakCraft Co-op] collision: cleared, epoch 6 (scene Airport)
+[Info   :PeakCraft Co-op] local mode: Minecraft ON; safe handoff pending
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 426436)
+[Info   :PeakCraft Co-op] ownership: Handoff -> PeakMenu
+[Info   :PeakCraft Co-op] follower: took PEAK's character (321 renderers hidden, ragdoll kinematic, 1 root bodypart(s))
+[Info   :PeakCraft Co-op] dev: state PeakMenu; PEAK feet (-9.588, 0.863, 50.489) = mc (-9,588, -511,137, -50,489); Minecraft feet (-9,588, -511,123, -50,489) yaw 180,0 pitch 35,0 flags 0x5; look yaw 180,0 pitch 35,0; camera (-9.588, 2.497, 50.489); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] dev: state PeakMenu; PEAK feet (-9.588, 0.863, 50.489) = mc (-9,588, -511,137, -50,489); Minecraft feet (-9,588, -511,123, -50,489) yaw 180,0 pitch 35,0 flags 0x5; look yaw 180,0 pitch 35,0; camera (-9.588, 2.497, 50.489); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] ownership: PeakMenu -> MinecraftOwns
+[Info   :PeakCraft Co-op] coop: local block minecraft:stone_bricks (state 9488) at (-10, -511, -53)
+[Info   :PeakCraft Co-op] coop: local block minecraft:stone_bricks (state 9488) at (-10, -511, -52)
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-9.588, 0.877, 50.489) = mc (-9,588, -511,123, -50,489); Minecraft feet (-9,588, -511,123, -50,489) yaw 180,0 pitch 35,0 flags 0x5; look yaw 180,0 pitch 35,0; camera (-9.588, 2.497, 50.489); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] follower: released PEAK's character
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] local mode: PEAK native restored
+[Info   :PeakCraft Co-op] dev: state PeakOwns; PEAK feet (-9.647, 0.775, 50.538) = mc (-9,647, -511,225, -50,538); Minecraft feet (-9,588, -511,123, -50,489) yaw 180,0 pitch 35,0 flags 0x1; look yaw 180,0 pitch 35,0; camera (-9.715, 2.420, 50.265); kinematic False; stamina 1,00
+[Info   :PeakCraft Co-op] local mode: Minecraft ON; safe handoff pending
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 426438)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] follower: took PEAK's character (321 renderers hidden, ragdoll kinematic, 1 root bodypart(s))
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-9.653, 0.877, 50.576) = mc (-9,653, -511,123, -50,576); Minecraft feet (-9,653, -511,123, -50,576) yaw 0,0 pitch 0,0 flags 0x5; look yaw 0,0 pitch 0,0; camera (-9.653, 2.497, 48.769); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> Cutscene (warp)
+[Info   :PeakCraft Co-op] follower: released PEAK's character
+[Info   :PeakCraft Co-op] ownership: Cutscene -> Handoff (teleport 426440)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] follower: took PEAK's character (321 renderers hidden, ragdoll kinematic, 1 root bodypart(s))
+[Info   :PeakCraft Co-op] interact: PEAK target 'AirportGateKiosk' (embarcar no voo)
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-0.599, 0.555, 99.740) = mc (-0,599, -511,445, -99,740); Minecraft feet (-0,599, -511,445, -99,740) yaw 180,0 pitch 20,0 flags 0x5; look yaw 180,0 pitch 20,0; camera (-0.599, 2.175, 99.740); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakMenu
+[Info   :PeakCraft Co-op] ownership: PeakMenu -> Cutscene (loading)
+[Info   :PeakCraft Co-op] follower: released PEAK's character
+[Info   :PeakCraft Co-op] collision: cleared, epoch 9 (scene Level_83)
+[Info   :PeakCraft Co-op] ownership: Cutscene -> Handoff (teleport 426441)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] follower: took PEAK's character (321 renderers hidden, ragdoll kinematic, 1 root bodypart(s))
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (15.823, 2.163, -372.753) = mc (15,823, -509,837, 372,753); Minecraft feet (15,823, -509,837, 372,753) yaw 180,0 pitch 35,0 flags 0x5; look yaw 180,0 pitch 35,0; camera (15.823, 3.783, -372.753); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] coop: local block minecraft:stone (state 1) at (15, -510, 371)
+[Info   :PeakCraft Co-op] coop: local block minecraft:stone (state 1) at (15, -509, 371)
+[Info   :PeakCraft Co-op] coop: local block minecraft:air (state 0) at (15, -509, 371)
+[Info   :PeakCraft Co-op] coop: local block minecraft:air (state 0) at (15, -510, 371)
+
+=== Co-op F8, loopback e vazio ===
+[Info   :PeakCraft Co-op] Plugin PeakCraft Co-op 0.2.1 is loaded!
+[Info   :PeakCraft Co-op] local mode: Minecraft
+[Info   :PeakCraft Co-op] protocol layout self-check: PASS
+[Info   :PeakCraft Co-op] ring self-test: PASS
+[Info   :PeakCraft Co-op] patch ok   CharacterInputPatch
+[Info   :PeakCraft Co-op] patch ok   CharacterMovementPatch
+[Info   :PeakCraft Co-op] patch ok   MainCameraMovementPatch
+[Info   :PeakCraft Co-op] patch ok   CharacterAfflictionsPatch
+[Info   :PeakCraft Co-op] patch ok   CharacterPatch
+[Info   :PeakCraft Co-op] collision: cleared, epoch 2 (scene Pretitle)
+[Info   :PeakCraft Co-op] link up: Minecraft (pid 18828) is on the other end
+[Info   :PeakCraft Co-op] collision: cleared, epoch 4 (scene Title)
+[Info   :PeakCraft Co-op] link up: Minecraft (pid 18828) is on the other end
+[Info   :PeakCraft Co-op] dev: starting an offline session from the title screen
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Cutscene (loading)
+[Info   :PeakCraft Co-op] coop: local skin 64x64 (classic), shared as 1181 bytes
+[Info   :PeakCraft Co-op] avatar: first model received (2 batches, 252 vertices)
+[Info   :PeakCraft Co-op] mirror body: first model received (6 batches, 216 vertices)
+[Info   :PeakCraft Co-op] collision: cleared, epoch 6 (scene Airport)
+[Info   :PeakCraft Co-op] ownership: Cutscene -> Handoff (teleport 460291)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] follower: took PEAK's character (321 renderers hidden, ragdoll kinematic, 1 root bodypart(s))
+[Info   :PeakCraft Co-op] dev: loopback True; blocks sent 0, received 0; viewer 0
+[Info   :PeakCraft Co-op] follower: released PEAK's character
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] local mode: PEAK native restored
+[Info   :PeakCraft Co-op] dev: state PeakOwns; PEAK feet (-9.673, 0.901, 50.631) = mc (-9,673, -511,099, -50,631); Minecraft feet (-9,628, -511,123, -50,507) yaw 180,0 pitch 35,0 flags 0x1; look yaw 180,0 pitch 35,0; camera (-9.678, 2.531, 50.493); kinematic False; stamina 1,00
+[Info   :PeakCraft Co-op] coop: local block minecraft:stone (state 1) at (-10, -510, -52)
+[Info   :PeakCraft Co-op] coop: remote block minecraft:stone from actor -1 at (-7, -510, -52) -> viewer (2 blocks)
+[Info   :PeakCraft Co-op] local mode: Minecraft ON; safe handoff pending
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 460293)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] follower: took PEAK's character (321 renderers hidden, ragdoll kinematic, 1 root bodypart(s))
+[Info   :PeakCraft Co-op] coop: local block minecraft:stone (state 1) at (-11, -511, -51)
+[Info   :PeakCraft Co-op] coop: remote block minecraft:stone from actor -1 at (-8, -511, -51) -> Minecraft
+[Info   :PeakCraft Co-op] coop: local block minecraft:stone (state 1) at (-11, -510, -51)
+[Info   :PeakCraft Co-op] coop: remote block minecraft:stone from actor -1 at (-8, -510, -51) -> Minecraft
+[Info   :PeakCraft Co-op] dev: loopback True; blocks sent 3, received 3; viewer 6
+[Info   :PeakCraft Co-op] dev: loopback True; blocks sent 3, received 3; viewer 6
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-9.678, 0.877, 50.630) = mc (-9,678, -511,123, -50,630); Minecraft feet (-9,678, -511,123, -50,630) yaw 90,0 pitch 55,0 flags 0x5; look yaw 90,0 pitch 55,0; camera (-9.678, 2.497, 50.630); kinematic True; stamina 1,00
+
+=== Co-op verificacao final ===
+[Info   :PeakCraft Co-op] Plugin PeakCraft Co-op 0.2.1 is loaded!
+[Info   :PeakCraft Co-op] local mode: PEAK native
+[Info   :PeakCraft Co-op] protocol layout self-check: PASS
+[Info   :PeakCraft Co-op] ring self-test: PASS
+[Info   :PeakCraft Co-op] patch ok   CharacterInputPatch
+[Info   :PeakCraft Co-op] patch ok   CharacterMovementPatch
+[Info   :PeakCraft Co-op] patch ok   MainCameraMovementPatch
+[Info   :PeakCraft Co-op] patch ok   CharacterAfflictionsPatch
+[Info   :PeakCraft Co-op] patch ok   CharacterPatch
+[Info   :PeakCraft Co-op] collision: cleared, epoch 2 (scene Pretitle)
+[Info   :PeakCraft Co-op] collision: cleared, epoch 3 (scene Title)
+[Info   :PeakCraft Co-op] dev: starting an offline session from the title screen
+[Info   :PeakCraft Co-op] collision: cleared, epoch 4 (scene Airport)
+[Info   :PeakCraft Co-op] link up: Minecraft (pid 19120) is on the other end
+[Info   :PeakCraft Co-op] coop: local skin 64x64 (classic), shared as 1181 bytes
+[Info   :PeakCraft Co-op] avatar: first model received (2 batches, 252 vertices)
+[Info   :PeakCraft Co-op] mirror body: first model received (6 batches, 216 vertices)
+[Info   :PeakCraft Co-op] local mode: Minecraft ON; safe handoff pending
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 476612)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] follower: took PEAK's character (321 renderers hidden, ragdoll kinematic, 1 root bodypart(s))
+[Info   :PeakCraft Co-op] dev: loopback True; blocks sent 0, received 0; viewer 0
+[Info   :PeakCraft Co-op] dev: loopback True; blocks sent 0, received 0; viewer 0
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-9.600, -6.653, 46.500) = mc (-9,600, -518,653, -46,500); Minecraft feet (-9,600, -518,653, -46,500) yaw 180,0 pitch 10,0 flags 0x5; look yaw 180,0 pitch 10,0; camera (-9.600, -5.033, 46.500); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] follower: released PEAK's character
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] local mode: PEAK native restored
+[Info   :PeakCraft Co-op] dev: loopback False; blocks sent 0, received 0; viewer 0
+[Info   :PeakCraft Co-op] local mode: Minecraft ON; safe handoff pending
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 476614)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] follower: took PEAK's character (321 renderers hidden, ragdoll kinematic, 1 root bodypart(s))
+[Info   :PeakCraft Co-op] dev: loopback False; blocks sent 0, received 0; viewer 0
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-0.490, 0.896, 99.923) = mc (-0,490, -511,104, -99,923); Minecraft feet (-0,679, -511,445, -99,831) yaw 0,0 pitch 15,0 flags 0x5; look yaw 0,0 pitch 15,0; camera (-0.679, 2.175, 99.831); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] follower: released PEAK's character
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] local mode: PEAK native restored
+[Info   :PeakCraft Co-op] dev: loopback True; blocks sent 0, received 0; viewer 0
+[Info   :PeakCraft Co-op] dev: state PeakOwns; PEAK feet (-0.711, 0.453, 99.837) = mc (-0,711, -511,547, -99,837); Minecraft feet (-0,679, -511,445, -99,831) yaw 0,0 pitch 15,0 flags 0x1; look yaw 0,0 pitch 15,0; camera (-0.675, 2.090, 99.888); kinematic False; stamina 1,00
+[Info   :PeakCraft Co-op] dev: loopback True; blocks sent 0, received 0; viewer 0
+[Info   :PeakCraft Co-op] dev: state PeakOwns; PEAK feet (-0.704, 0.414, 99.698) = mc (-0,704, -511,586, -99,698); Minecraft feet (-0,679, -511,445, -99,831) yaw 0,0 pitch 15,0 flags 0x1; look yaw 0,0 pitch 15,0; camera (-0.701, 2.074, 99.754); kinematic False; stamina 1,00
+[Info   :PeakCraft Co-op] local mode: Minecraft ON; safe handoff pending
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 476616)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] follower: took PEAK's character (321 renderers hidden, ragdoll kinematic, 1 root bodypart(s))
+[Info   :PeakCraft Co-op] follower: released PEAK's character
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] local mode: PEAK native restored
+[Info   :PeakCraft Co-op] dev: loopback True; blocks sent 0, received 0; viewer 0
+[Info   :PeakCraft Co-op] coop: local block minecraft:stone (state 1) at (-3, -511, -98)
+[Info   :PeakCraft Co-op] coop: remote block minecraft:stone from actor -1 at (0, -511, -98) -> Minecraft
+[Info   :PeakCraft Co-op] dev: loopback True; blocks sent 1, received 1; viewer 2
+
+=== Abertura normal sem Harness ===
+[Info   :PeakCraft Co-op] Plugin PeakCraft Co-op 0.2.1 is loaded!
+[Info   :PeakCraft Co-op] local mode: PEAK native
+[Info   :PeakCraft Co-op] protocol layout self-check: PASS
+[Info   :PeakCraft Co-op] ring self-test: PASS
+[Info   :PeakCraft Co-op] patch ok   CharacterInputPatch
+[Info   :PeakCraft Co-op] patch ok   CharacterMovementPatch
+[Info   :PeakCraft Co-op] patch ok   MainCameraMovementPatch
+[Info   :PeakCraft Co-op] patch ok   CharacterAfflictionsPatch
+[Info   :PeakCraft Co-op] patch ok   CharacterPatch
+[Info   :PeakCraft Co-op] collision: cleared, epoch 2 (scene Pretitle)
+[Info   :PeakCraft Co-op] collision: cleared, epoch 3 (scene Title)
+[Info   :PeakCraft Co-op] link up: Minecraft (pid 9796) is on the other end
+[Info   :PeakCraft Co-op] link up: Minecraft (pid 9796) is on the other end
+[Info   :PeakCraft Co-op] coop: local skin 64x64 (classic), shared as 1181 bytes
+[Info   :PeakCraft Co-op] avatar: first model received (1 batches, 216 vertices)
+[Info   :PeakCraft Co-op] mirror body: first model received (6 batches, 216 vertices)
+[Info   :PeakCraft Co-op] collision: cleared, epoch 6 (scene Airport)
+[Info   :PeakCraft Co-op] local mode: Minecraft ON; safe handoff pending
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 496132)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] follower: took PEAK's character (321 renderers hidden, ragdoll kinematic, 1 root bodypart(s))
+[Info   :PeakCraft Co-op] follower: released PEAK's character
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] local mode: PEAK native restored

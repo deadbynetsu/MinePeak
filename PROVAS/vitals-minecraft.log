@@ -1,0 +1,57 @@
+[11:04:00] [Render thread/INFO] (peakcraft-vitals) PeakCraft: shared hunger and health extension ready (protocol VIT1)
+[11:04:11] [Server thread/INFO] (peakcraft-vitals) PeakCraft: vitals session linked; player epoch 1
+[11:04:11] [Server thread/INFO] (peakcraft-vitals) PeakCraft: applied vitals command 1 kind=1 health20=20.0 food20=20.0 alive=true
+[11:04:11] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=20.0 saturation=14.799999 ack=1 epoch=1 minecraftOwns=false
+[11:04:31] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=20.0 saturation=14.799999 ack=1 epoch=1 minecraftOwns=false
+[11:04:51] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=20.0 saturation=14.799999 ack=1 epoch=1 minecraftOwns=false
+[11:05:11] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=20.0 saturation=14.799999 ack=1 epoch=1 minecraftOwns=false
+[11:05:25] [Server thread/INFO] (peakcraft-vitals) PeakCraft: applied vitals command 2 kind=2 health20=20.0 food20=10.0 alive=true
+[11:05:26] [Server thread/INFO] (peakcraft-vitals) PeakCraft: applied vitals command 3 kind=2 health20=20.0 food20=14.0 alive=true
+[11:05:28] [Server thread/INFO] (peakcraft-vitals) PeakCraft: applied vitals command 4 kind=2 health20=16.0 food20=14.0 alive=true
+[11:05:31] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=16.0 food20=14.0 saturation=14.0 ack=4 epoch=1 minecraftOwns=false
+[11:05:32] [Server thread/INFO] (peakcraft-vitals) PeakCraft: applied vitals command 5 kind=2 health20=18.0 food20=14.0 alive=true
+[11:05:34] [Server thread/INFO] (peakcraft-vitals) PeakCraft: applied vitals command 6 kind=2 health20=20.0 food20=10.0 alive=true
+[11:05:40] [Server thread/INFO] (Minecraft) System chat: [NeTsU_: Você causou 4.0 de dano a NeTsU_]
+[11:05:40] [Render thread/INFO] (Minecraft) [System] [CHAT] Você causou 4.0 de dano a NeTsU_
+[11:05:43] [Server thread/INFO] (Minecraft) System chat: [NeTsU_: Você aplicou o efeito Vida Instantânea a NeTsU_]
+[11:05:43] [Render thread/INFO] (Minecraft) [System] [CHAT] Você aplicou o efeito Vida Instantânea a NeTsU_
+[11:05:51] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=10.0 saturation=10.0 ack=6 epoch=1 minecraftOwns=true
+[11:06:11] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=10.0 saturation=10.0 ack=6 epoch=1 minecraftOwns=true
+[11:06:31] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=20.0 saturation=20.0 ack=6 epoch=1 minecraftOwns=true
+[11:06:35] [Server thread/INFO] (peakcraft-vitals) PeakCraft: applied vitals command 7 kind=2 health20=20.0 food20=10.0 alive=true
+[11:06:36] [Server thread/INFO] (peakcraft-vitals) PeakCraft: applied vitals command 8 kind=2 health20=20.0 food20=14.0 alive=true
+[11:06:38] [Server thread/INFO] (peakcraft-vitals) PeakCraft: applied vitals command 9 kind=2 health20=16.0 food20=14.0 alive=true
+[11:06:42] [Server thread/INFO] (peakcraft-vitals) PeakCraft: applied vitals command 10 kind=2 health20=18.0 food20=14.0 alive=true
+[11:06:44] [Server thread/INFO] (peakcraft-vitals) PeakCraft: applied vitals command 11 kind=2 health20=20.0 food20=10.0 alive=true
+[11:06:49] [Server thread/INFO] (Minecraft) System chat: [NeTsU_: Você causou 4.0 de dano a NeTsU_]
+[11:06:49] [Render thread/INFO] (Minecraft) [System] [CHAT] Você causou 4.0 de dano a NeTsU_
+[11:06:51] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=16.0 food20=10.0 saturation=10.0 ack=11 epoch=1 minecraftOwns=true
+[11:06:53] [Server thread/INFO] (Minecraft) System chat: [NeTsU_: Você aplicou o efeito Vida Instantânea a NeTsU_]
+[11:06:53] [Render thread/INFO] (Minecraft) [System] [CHAT] Você aplicou o efeito Vida Instantânea a NeTsU_
+[11:06:57] [Server thread/INFO] (Minecraft) System chat: [NeTsU_: Você substituiu 1 espaço(s) em NeTsU_ com [Filé]]
+[11:06:57] [Render thread/INFO] (Minecraft) [System] [CHAT] Você substituiu 1 espaço(s) em NeTsU_ com [Filé]
+[11:07:11] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=18.0 saturation=18.0 ack=11 epoch=1 minecraftOwns=false
+[11:07:31] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=18.0 saturation=18.0 ack=11 epoch=1 minecraftOwns=false
+[11:07:51] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=18.0 saturation=18.0 ack=11 epoch=1 minecraftOwns=false
+[11:08:09] [Server thread/INFO] (skycraft) SkyCraft: player died (genericKill); telling Skyrim
+[11:08:09] [Server thread/INFO] (Minecraft) System chat: NeTsU_ morreu
+[11:08:09] [Render thread/INFO] (Minecraft) [System] [CHAT] NeTsU_ morreu
+[11:08:09] [Server thread/INFO] (peakcraft-vitals) PeakCraft: vitals session linked; player epoch 2
+[11:08:09] [Server thread/INFO] (peakcraft-vitals) PeakCraft: applied vitals command 1 kind=1 health20=20.0 food20=20.0 alive=true
+[11:08:11] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=20.0 saturation=5.0 ack=1 epoch=2 minecraftOwns=true
+[11:08:31] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=20.0 saturation=5.0 ack=1 epoch=2 minecraftOwns=true
+[11:08:51] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=20.0 saturation=5.0 ack=1 epoch=2 minecraftOwns=true
+[11:09:11] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=20.0 saturation=5.0 ack=1 epoch=2 minecraftOwns=true
+[11:09:30] [Server thread/INFO] (peakcraft-vitals) PeakCraft: applied vitals command 2 kind=2 health20=16.0 food20=20.0 alive=true
+[11:09:31] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=16.0 food20=20.0 saturation=5.0 ack=2 epoch=2 minecraftOwns=false
+[11:09:52] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=16.0 food20=20.0 saturation=5.0 ack=2 epoch=2 minecraftOwns=false
+[11:10:12] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=16.0 food20=20.0 saturation=5.0 ack=2 epoch=2 minecraftOwns=false
+[11:10:32] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=16.0 food20=20.0 saturation=5.0 ack=2 epoch=2 minecraftOwns=false
+[11:10:52] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=19.0 saturation=0.0 ack=2 epoch=2 minecraftOwns=true
+[11:11:12] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=19.0 saturation=0.0 ack=2 epoch=2 minecraftOwns=true
+[11:11:32] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=19.0 saturation=0.0 ack=2 epoch=2 minecraftOwns=true
+[11:11:52] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=19.0 saturation=0.0 ack=2 epoch=2 minecraftOwns=true
+[11:12:12] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=19.0 saturation=0.0 ack=2 epoch=2 minecraftOwns=true
+[11:12:32] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=19.0 saturation=0.0 ack=2 epoch=2 minecraftOwns=true
+[11:12:52] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=20.0 saturation=12.8 ack=2 epoch=2 minecraftOwns=true
+[11:13:12] [Server thread/INFO] (peakcraft-vitals) PeakCraft: shared vitals health20=20.0 food20=20.0 saturation=12.8 ack=2 epoch=2 minecraftOwns=true

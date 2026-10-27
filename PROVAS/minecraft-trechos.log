@@ -1,0 +1,13 @@
+[20:14:17] [Render thread/INFO] (skycraft) SkyCraft: sent texture minecraft:textures/entity/player/wide/steve.png to Skyrim (id 1)
+[20:14:17] [Render thread/INFO] (skycraft) SkyCraft: teleported to -9.679367065429688 -511.12278187274933 -50.481483459472656
+[20:15:03] [Render thread/INFO] (skycraft) SkyCraft: click 3 -> BLOCK (-9.679367065429688, -511.18833162960135, -51.45438558232527) (grabbed true, screen null)
+[20:15:03] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section -1 -32 -4: 36 vertices (1 sections in Skyrim)
+[20:15:11] [Render thread/INFO] (skycraft) SkyCraft: click 1 -> BLOCK (-9.679367065429688, -510.4014289082956, -51.0) (grabbed true, screen null)
+[20:15:11] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section -1 -32 -4: 0 vertices (0 sections in Skyrim)
+[20:16:29] [Render thread/INFO] (skycraft) SkyCraft: teleported to -0.3615379333496094 -511.0843515396118 -99.99175262451172
+[20:17:15] [Render thread/INFO] (skycraft) SkyCraft: teleported to 15.782308578491211 -510.6765921115875 372.5624084472656
+[20:18:13] [Render thread/INFO] (skycraft) SkyCraft: click 3 -> BLOCK (14.88526974700477, -509.72303848285, 372.5624084472656) (grabbed true, screen null)
+[20:18:13] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section 0 -32 23: 36 vertices (1 sections in Skyrim)
+[20:18:14] [Render thread/INFO] (skycraft) SkyCraft: click 1 -> BLOCK (15.0, -509.5243491938192, 372.5624084472656) (grabbed true, screen null)
+[20:18:14] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section 0 -32 23: 0 vertices (0 sections in Skyrim)
+[20:19:54] [Render thread/INFO] (skycraft) SkyCraft: Skyrim (pid 17724) has closed; saving and quitting

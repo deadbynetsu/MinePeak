@@ -1,0 +1,39 @@
+MINEPEAK - PEAK COM MODO MINECRAFT
+Base: PeakCraft Local / PeakCraft Co-op.
+
+1. Deixe a Steam aberta e feche o PEAK, se estiver aberto.
+2. Abra o atalho PEAK com Minecraft na area de trabalho ou JOGAR.cmd nesta pasta.
+   Aguarde os dois jogos carregarem.
+3. Escolha Jogar offline no PEAK para testar sozinho.
+4. Na partida, aperte Esc e clique em ATIVAR modo Minecraft, ou use F8.
+5. O Minecraft inicia em Sobrevivencia com fome e vida compartilhadas.
+   Use E para abrir o inventario, botao direito para colocar/usar e esquerdo para quebrar.
+6. Use F5 para ver sua skin. O perfil ativo do SKLauncher e lido automaticamente.
+   O kit inicial veste armadura: retire-a no inventario do personagem (E) para ver a skin inteira.
+7. No modo Minecraft, segure B para usar os equipamentos PEAK temporariamente.
+   Selecione com 1-4, use com o mouse, segure Q para carregar e solte Q para arremessar.
+   Solte B para retornar aos blocos. O corpo nativo aparece durante o uso.
+8. Perto de uma parede valida, segure V para usar a escalada real do PEAK.
+   WASD move, Espaco solta; solte V para voltar ao Minecraft. A stamina e nativa.
+9. Para voltar ao modo PEAK normal, use Esc > DESATIVAR modo Minecraft ou F8.
+
+Para viajar do aeroporto: mire no terminal e segure G no modo Minecraft.
+No modo normal, use os controles originais do PEAK.
+
+Comer no Minecraft ou no PEAK repoe a comida dos dois. Dano e cura tambem
+sao compartilhados: os coracoes correspondem aos ferimentos do PEAK.
+A stamina de escalada, frio, veneno e outros estados continuam nativos.
+Comida comum nao cura instantaneamente: precisa haver cura ou regeneracao real.
+O painel Vida/Comida mostra os percentuais compartilhados.
+
+Para construir livremente, use /gamemode creative no chat do Minecraft (T).
+Creative mantem sua imunidade e regras de comida; volte com /gamemode survival
+para jogar com fome e dano normais. Mais detalhes: docs/FOME-E-VIDA.md.
+
+Os blocos sao os colocados pelo Minecraft. A montanha original nao e escavavel.
+Use o modo Minecraft para andar e subir sobre suas construcoes: nao ha colisao
+dos blocos Minecraft com o personagem nativo do PEAK nesta versao.
+
+Guia com exemplos: COMO-JOGAR.md. Configuracao e limites: README-PT.md.
+Testes desta revisao: VALIDACAO-0.3.0.md. Multiplayer entre dois PCs ainda exige validacao.
+Em uma pasta nova extraida do ZIP, prepare primeiro seguindo README-PT.md.

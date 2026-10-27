@@ -1,0 +1,103 @@
+{
+  "scope": "Production BlockRelay/BlockJournal/PosePacket with simulated Photon, Unity and shared-memory transport; not a two-Steam-account playtest",
+  "passed": true,
+  "total": 19,
+  "failed": 0,
+  "results": [
+    {
+      "test": "packet roundtrip preserves coordinates, state, scene and Lamport stamp",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "malformed, legacy and oversized block packets are rejected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "duplicate and stale edits cannot resurrect an old block",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "simultaneous conflicting edits converge in opposite delivery orders",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "receiving a remote revision advances the next local revision",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "journal bounds new coordinates but allows edits and tombstones at capacity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "pose packets reject NaN, Infinity, wrong numeric types and unknown flags",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "real relay sends live edits between two simulated endpoints",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "late join receives blocks created while host was alone and removed air states",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "three endpoints converge after conflicting writes delivered in reverse order",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "large snapshots are chunked, deduplicated and drain through bounded input batches",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "viewer-only peer replays remote block states when Minecraft links later",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "scene isolation rejects delayed airport edits on the island",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "snapshot remains available after the original host leaves",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "a claimed live edit from a different actor is rejected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "a malformed snapshot chunk is rejected atomically and oversized chunks are refused",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "an old snapshot arriving after a newer live edit cannot undo that edit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "the production relay emits at most sixteen remote MMF inputs per frame",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "a new Photon session clears the prior session journal and viewer",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+
+=== Co-op antes da revisao ===
+[20:55:54] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 26.3
+[20:55:57] [Server thread/INFO] (Minecraft) NeTsU_[local:E:ecfc8175] logged in with entity id 1 at (8.5, -1024.0, 8.5)
+[20:55:57] [Render thread/INFO] (skycraft) PeakCraft: local user skin loaded (64x64, WIDE)
+[20:58:29] [Render thread/INFO] (skycraft) SkyCraft: teleported to -9.588294982910156 -511.14822804927826 -50.48889923095703
+[20:58:53] [Server thread/INFO] (Minecraft) System chat: [NeTsU_: Gave 64 [Stone] to NeTsU_]
+[20:58:53] [Render thread/INFO] (Minecraft) [System] [CHAT] Gave 64 [Stone] to NeTsU_
+[20:59:08] [Server thread/INFO] (Minecraft) System chat: [NeTsU_: Gave 64 [Stone] to NeTsU_]
+[20:59:08] [Render thread/INFO] (Minecraft) [System] [CHAT] Gave 64 [Stone] to NeTsU_
+[20:59:17] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section -1 -32 -4: 36 vertices (1 sections in Skyrim)
+[20:59:17] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section -1 -32 -4: 60 vertices (1 sections in Skyrim)
+[21:00:44] [Render thread/INFO] (skycraft) SkyCraft: teleported to -9.653387069702148 -511.2307207584381 -50.575599670410156
+[21:01:41] [Render thread/INFO] (skycraft) SkyCraft: teleported to -0.43311595916748047 -511.27407348155975 -99.89537048339844
+[21:02:38] [Render thread/INFO] (skycraft) SkyCraft: teleported to 15.823143005371094 -510.6927447319031 372.75335693359375
+[21:02:56] [Server thread/INFO] (Minecraft) System chat: [NeTsU_: Gave 64 [Stone] to NeTsU_]
+[21:02:56] [Render thread/INFO] (Minecraft) [System] [CHAT] Gave 64 [Stone] to NeTsU_
+[21:03:04] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section 0 -32 23: 36 vertices (2 sections in Skyrim)
+[21:03:05] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section 0 -32 23: 60 vertices (2 sections in Skyrim)
+[21:03:17] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section 0 -32 23: 36 vertices (2 sections in Skyrim)
+[21:03:17] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section 0 -32 23: 0 vertices (1 sections in Skyrim)
+
+=== Co-op F8, loopback e vazio ===
+[21:04:47] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 26.3
+[21:04:49] [Server thread/INFO] (Minecraft) NeTsU_[local:E:1842ec24] logged in with entity id 1 at (15.823143005371094, -509.8371754418827, 372.75335693359375)
+[21:04:49] [Render thread/INFO] (skycraft) PeakCraft: local user skin loaded (64x64, WIDE)
+[21:05:02] [Render thread/INFO] (skycraft) SkyCraft: teleported to -9.627691268920898 -511.103364109993 -50.50709915161133
+[21:05:03] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section -1 -32 -4: 60 vertices (1 sections in Skyrim)
+[21:06:49] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section -1 -32 -4: 84 vertices (1 sections in Skyrim)
+[21:06:49] [Render thread/INFO] (skycraft) SkyCraft: teleported to -9.678230285644531 -511.1534333229065 -50.6302604675293
+[21:06:57] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section -1 -32 -4: 120 vertices (1 sections in Skyrim)
+[21:06:57] [Server thread/INFO] (skycraft) SkyCraft: coop: applied remote block minecraft:stone at -8 -511 -51
+[21:06:57] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section -1 -32 -4: 156 vertices (1 sections in Skyrim)
+[21:06:57] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section -1 -32 -4: 180 vertices (1 sections in Skyrim)
+[21:06:57] [Server thread/INFO] (skycraft) SkyCraft: coop: applied remote block minecraft:stone at -8 -510 -51
+[21:06:57] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section -1 -32 -4: 204 vertices (1 sections in Skyrim)
+[21:07:07] [Server thread/INFO] (skycraft) SkyCraft: void guard: NeTsU_ fell below the world; put back at (-9.678230285644531, -511.12341910996474, -50.6302604675293)
+
+=== Co-op verificacao final ===
+[21:09:37] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 26.3
+[21:09:39] [Server thread/INFO] (Minecraft) NeTsU_[local:E:bf3aa4cd] logged in with entity id 1 at (-9.678230285644531, -511.12341910996474, -50.6302604675293)
+[21:09:39] [Render thread/INFO] (skycraft) PeakCraft: local user skin loaded (64x64, WIDE)
+[21:09:40] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section -1 -32 -4: 204 vertices (1 sections in Skyrim)
+[21:10:12] [Render thread/INFO] (skycraft) SkyCraft: teleported to -9.608654975891113 -511.12443351745605 -50.35177993774414
+[21:11:29] [Render thread/INFO] (skycraft) SkyCraft: teleported to -0.490325927734375 -511.0937548875809 -99.92631530761719
+[21:11:37] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section -1 -32 -7: 36 vertices (2 sections in Skyrim)
+[21:11:53] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section -1 -32 -7: 60 vertices (2 sections in Skyrim)
+[21:12:26] [Render thread/INFO] (skycraft) SkyCraft: teleported to -0.7006540298461914 -511.5912826061249 -99.67193603515625
+[21:12:28] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section -1 -32 -7: 84 vertices (2 sections in Skyrim)
+[21:12:28] [Server thread/INFO] (skycraft) SkyCraft: coop: applied remote block minecraft:stone at 0 -511 -98
+[21:12:28] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section -1 -32 -7: 84 vertices (2 sections in Skyrim)
+[21:12:28] [Render thread/INFO] (skycraft) SkyCraft: block mesh for section 0 -32 -7: 36 vertices (3 sections in Skyrim)
+
+=== Abertura normal sem Harness ===
+[21:14:12] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 26.3
+[21:14:15] [Server thread/INFO] (Minecraft) NeTsU_[local:E:15beb45f] logged in with entity id 1 at (8.5, -1024.0, 8.5)
+[21:14:15] [Render thread/INFO] (skycraft) PeakCraft: local user skin loaded (64x64, WIDE)
+[21:15:30] [Render thread/INFO] (skycraft) SkyCraft: teleported to -9.655437469482422 -511.1328046321869 -50.41044998168945

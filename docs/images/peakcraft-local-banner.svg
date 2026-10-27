@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="460" viewBox="0 0 1440 460" role="img" aria-labelledby="title desc">
+  <title id="title">MinePeak — construa o seu caminho até o pico</title>
+  <desc id="desc">Arte vetorial original com montanhas, caminhos e blocos geométricos, sobre um fundo verde escuro.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0b252b"/><stop offset="1" stop-color="#123c3a"/></linearGradient>
+    <linearGradient id="mountain" x2="0" y2="1"><stop stop-color="#65988b"/><stop offset="1" stop-color="#254c47"/></linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#8cbca6" stroke-opacity=".05"/></pattern>
+  </defs>
+  <rect width="1440" height="460" rx="24" fill="url(#bg)"/>
+  <rect width="1440" height="460" rx="24" fill="url(#grid)"/>
+  <circle cx="1140" cy="116" r="68" fill="#e9c78a" opacity=".92"/>
+  <path d="M670 460 865 224 953 320 1102 102 1360 460Z" fill="url(#mountain)"/>
+  <path d="m1102 102-149 218 114-75 35-143 61 205Z" fill="#a4b4a1" opacity=".38"/>
+  <path d="m1102 102-57 84 47-14 21 18 23-13Z" fill="#e9ecda" opacity=".8"/>
+  <path d="M744 460c68-27 91-68 156-82s104-12 115-68 57-49 71-90" fill="none" stroke="#e5c484" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 12" opacity=".75"/>
+  <g stroke="#0b252b" stroke-width="3" stroke-linejoin="round">
+    <path d="m1260 329 57-32 57 32-57 33Z" fill="#a5c885"/><path d="m1260 329 57 33v65l-57-33Z" fill="#577b62"/><path d="m1317 362 57-33v65l-57 33Z" fill="#36574b"/>
+    <path d="m1202 362 57-32 57 32-57 33Z" fill="#d3b480"/><path d="m1202 362 57 33v65l-57-33Z" fill="#8c7353"/><path d="m1259 395 57-33v65l-57 33Z" fill="#65513f"/>
+    <path d="m1260 231 57-32 57 32-57 33Z" fill="#bbd99a"/><path d="m1260 231 57 33v65l-57-33Z" fill="#6f9670"/><path d="m1317 264 57-33v65l-57 33Z" fill="#476e57"/>
+  </g>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="76" y="88" fill="#b6d3c5" font-size="18" font-weight="600" letter-spacing="5">UM MOD COMUNITÁRIO PARA WINDOWS</text>
+    <text x="72" y="193" fill="#f4f1de" font-size="82" font-weight="750" letter-spacing="-3">MinePeak</text>
+    <text x="76" y="239" fill="#e7c88e" font-size="20" font-weight="650" letter-spacing="5">BASE PEAKCRAFT LOCAL</text>
+    <text x="76" y="314" fill="#f4f1de" font-size="31" font-weight="600">Construa o seu caminho até o pico.</text>
+    <text x="76" y="359" fill="#b6d3c5" font-size="22">O mundo do PEAK. Os seus blocos do Minecraft.</text>
+    <rect x="76" y="391" width="227" height="31" rx="15" fill="#a5c885" fill-opacity=".12"/>
+    <text x="93" y="412" fill="#cadfc6" font-size="15">Código aberto · Experimental</text>
+  </g>
+</svg>

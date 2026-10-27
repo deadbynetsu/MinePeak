@@ -1,0 +1,103 @@
+[Info   :PeakCraft Co-op] patch ok   NativeHungerPatch
+[Info   :PeakCraft Co-op] vitals: new shared player; health 20,00/20, food 20,00/20
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 14,80; ack 1/1; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 14,80; ack 1/1; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 14,80; ack 1/1; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 14,80; ack 1/1; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 14,80; ack 1/1; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 14,80; ack 1/1; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 14,80; ack 1/1; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 10,00; MC health 20,00 food 10,00 saturation 10,00; ack 2/2; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals test: real PEAK action eatpeak 0.2
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 14,00; MC health 20,00 food 14,00 saturation 14,00; ack 3/3; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 14,00; MC health 20,00 food 14,00 saturation 14,00; ack 3/3; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 14,00; MC health 16,00 food 14,00 saturation 14,00; ack 4/4; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 14,00; MC health 16,00 food 14,00 saturation 14,00; ack 4/4; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals test: real PEAK action healpeak 0.1
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 18,00 food 14,00; MC health 18,00 food 14,00 saturation 14,00; ack 5/5; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 10,00; MC health 20,00 food 10,00 saturation 10,00; ack 6/6; epoch 1; alive True
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 105988)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 10,00; MC health 20,00 food 10,00 saturation 10,00; ack 6/6; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 10,00; MC health 16,00 food 10,00 saturation 10,00; ack 6/6; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 10,00; MC health 20,00 food 10,00 saturation 10,00; ack 6/6; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 10,00; MC health 20,00 food 10,00 saturation 10,00; ack 6/6; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 10,00; MC health 20,00 food 10,00 saturation 10,00; ack 6/6; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 10,00; MC health 20,00 food 10,00 saturation 10,00; ack 6/6; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 20,00; ack 6/6; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 20,00; ack 6/6; epoch 1; alive True
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 10,00; MC health 20,00 food 10,00 saturation 10,00; ack 7/7; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals test: real PEAK action eatpeak 0.2
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 14,00; MC health 20,00 food 14,00 saturation 14,00; ack 8/8; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 14,00; MC health 20,00 food 14,00 saturation 14,00; ack 8/8; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 14,00; MC health 16,00 food 14,00 saturation 14,00; ack 9/9; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 14,00; MC health 16,00 food 14,00 saturation 14,00; ack 9/9; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals test: real PEAK action healpeak 0.1
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 18,00 food 14,00; MC health 18,00 food 14,00 saturation 14,00; ack 10/10; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 10,00; MC health 20,00 food 10,00 saturation 10,00; ack 11/11; epoch 1; alive True
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 105990)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 10,00; MC health 20,00 food 10,00 saturation 10,00; ack 11/11; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 10,00; MC health 16,00 food 10,00 saturation 10,00; ack 11/11; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 10,00; MC health 20,00 food 10,00 saturation 10,00; ack 11/11; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 10,00; MC health 20,00 food 10,00 saturation 10,00; ack 11/11; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 18,00; MC health 20,00 food 18,00 saturation 18,00; ack 11/11; epoch 1; alive True
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 18,00; MC health 20,00 food 18,00 saturation 18,00; ack 11/11; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 18,00; MC health 20,00 food 18,00 saturation 18,00; ack 11/11; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 18,00; MC health 20,00 food 18,00 saturation 18,00; ack 11/11; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 18,00; MC health 20,00 food 18,00 saturation 18,00; ack 11/11; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 18,00; MC health 20,00 food 18,00 saturation 18,00; ack 11/11; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 18,00; MC health 20,00 food 18,00 saturation 18,00; ack 11/11; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 18,00; MC health 20,00 food 18,00 saturation 18,00; ack 11/11; epoch 1; alive True
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 105992)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 18,00; MC health 20,00 food 18,00 saturation 18,00; ack 11/11; epoch 1; alive True
+[Info   :PeakCraft Co-op] death: Minecraft player died in the airport; PEAK has no death there, Minecraft just respawns
+[Info   :PeakCraft Co-op] vitals: new shared player; health 20,00/20, food 20,00/20
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> Handoff (teleport 105992)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 5,00; ack 1/1; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 5,00; ack 1/1; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 5,00; ack 1/1; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 5,00; ack 1/1; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 5,00; ack 1/1; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 5,00; ack 1/1; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 5,00; ack 1/1; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 5,00; ack 1/1; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 5,00; ack 1/1; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 5,00; ack 1/1; epoch 2; alive True
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 20,00; MC health 16,00 food 20,00 saturation 5,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 20,00; MC health 16,00 food 20,00 saturation 5,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 20,00; MC health 16,00 food 20,00 saturation 5,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 20,00; MC health 16,00 food 20,00 saturation 5,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 20,00; MC health 16,00 food 20,00 saturation 5,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 20,00; MC health 16,00 food 20,00 saturation 5,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 20,00; MC health 16,00 food 20,00 saturation 5,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 105994)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 19,50 food 20,00; MC health 19,50 food 20,00 saturation 0,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 19,00; MC health 20,00 food 19,00 saturation 0,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 19,00; MC health 20,00 food 19,00 saturation 0,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 19,00; MC health 20,00 food 19,00 saturation 0,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 19,00; MC health 20,00 food 19,00 saturation 0,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 19,00; MC health 20,00 food 19,00 saturation 0,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 19,00; MC health 20,00 food 19,00 saturation 0,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 105996)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 19,00; MC health 20,00 food 19,00 saturation 0,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 19,00; MC health 20,00 food 19,00 saturation 0,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 19,00; MC health 20,00 food 19,00 saturation 0,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 19,00; MC health 20,00 food 19,00 saturation 0,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 19,00; MC health 20,00 food 19,00 saturation 0,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 19,00; MC health 20,00 food 19,00 saturation 0,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 19,00; MC health 20,00 food 19,00 saturation 0,00; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 12,80; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 12,80; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 12,80; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 12,80; ack 2/2; epoch 2; alive True
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 12,80; ack 2/2; epoch 2; alive True

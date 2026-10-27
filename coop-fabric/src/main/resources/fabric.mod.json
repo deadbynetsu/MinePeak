@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "peakcraft_profile",
+  "version": "0.1.0",
+  "name": "PeakCraft Local Profile",
+  "description": "Local SKLauncher skin and shared Minecraft/PEAK hunger and health.",
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {"client":["dev.skycraft.client.vitals.VitalsBridge"]},
+  "mixins": [{"config":"peakcraft-profile.mixins.json","environment":"client"}],
+  "depends": {"skycraft":"*","minecraft":"~26.3","java":">=25","fabricloader":">=0.19.5"}
+}

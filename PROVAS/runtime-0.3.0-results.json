@@ -1,0 +1,54 @@
+{
+  "version": "0.3.0",
+  "date": "2026-10-27",
+  "scope": "Actual PEAK 3.0.1 and Minecraft Java 26.3 on one Windows 11 PC; opt-in development harness; loopback is not a second Steam account",
+  "passed": true,
+  "checks": [
+    {
+      "test": "PEAK food consumed; both food values 8 to 11",
+      "passed": true
+    },
+    {
+      "test": "PEAK bandages consumed; both health values 14 to 20",
+      "passed": true
+    },
+    {
+      "test": "Native climb grabbed real airport wall with stamina consumption",
+      "passed": true
+    },
+    {
+      "test": "Climb returned to Minecraft with fresh acknowledgement",
+      "passed": true
+    },
+    {
+      "test": "Synthetic 0.08m BoxCollider stops Minecraft at 0.3m from face",
+      "passed": true
+    },
+    {
+      "test": "Synthetic unreadable GPU mesh stops Minecraft at 0.3m from face",
+      "passed": true
+    },
+    {
+      "test": "Removing synthetic wall allows advancing beyond wall plane",
+      "passed": true
+    },
+    {
+      "test": "Charged native throw uses game physics and travels over 22m",
+      "passed": true
+    },
+    {
+      "test": "Live v2 loopback includes survival placement and removal",
+      "passed": true
+    },
+    {
+      "test": "Minecraft steak consumed; both food values 10 to 18",
+      "passed": true
+    },
+    {
+      "test": "New plugin version loaded",
+      "passed": true
+    }
+  ],
+  "multiplayer_two_real_accounts_tested": false,
+  "full_campaign_tested": false
+}

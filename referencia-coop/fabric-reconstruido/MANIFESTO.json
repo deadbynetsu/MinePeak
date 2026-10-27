@@ -1,0 +1,309 @@
+{
+  "input": "binarios/peakcraftcoop-fabric.jar",
+  "input_sha256": "704fdcd98c2111fcaf09a81688d29c421c1a54b8db32833d1cb09853fe13a4ea",
+  "tool": "Vineflower 1.12.0",
+  "tool_sha256": "1dfcfe974395734fa467ce620661c7623d05ba83670de0529b1fbd63ff548b9d",
+  "class_file_count": 105,
+  "outer_class_count": 74,
+  "java_file_count": 74,
+  "missing_outer_classes": [],
+  "compiled": false,
+  "files": [
+    {
+      "path": "dev/skycraft/client/DestructionToggle.java",
+      "sha256": "caed33df622bf99ff496e019fa9b104109c4dae5a1ca10214fe7f42b446d15b3"
+    },
+    {
+      "path": "dev/skycraft/client/DiscordPresence.java",
+      "sha256": "9e3eea5635ea7ead380068db9f35a2fb02e4714636134b2a38493f2e9b97d3a7"
+    },
+    {
+      "path": "dev/skycraft/client/FrameExporter.java",
+      "sha256": "81420017f6b9040c3280150567751ab094a5f3f3d1bea46ff311e09692eaf627"
+    },
+    {
+      "path": "dev/skycraft/client/InputBridge.java",
+      "sha256": "7f1e6f7790ea169526b6bac1cd8a739569b62c91bcdf2a8a2cfd6fd41e954125"
+    },
+    {
+      "path": "dev/skycraft/client/MirrorWorld.java",
+      "sha256": "3e1f9475a3e4ac1c7d666a6f194769ccef03151a787a0df77b48b5fcab85aa1b"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/CameraZoomMixin.java",
+      "sha256": "47c55958cd2acdaa21d806ef712400a257ea5bb78664378e43dfe626c63d804f"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/ChatComponentMixin.java",
+      "sha256": "ae4540794e0b7db8208a54ca1c818acd456aff0f54c2646c3924179ccec50c11"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/ClientLevelAccessor.java",
+      "sha256": "061199f3737cb5dc6aaac5a0225deb63b9410b60067402a0ff20ea4575b0b958"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/ClientLevelDigMixin.java",
+      "sha256": "e6280969f019eeaa633e36075e9517ee4019a7b4dd1f6e0eb3e303d9c7bacd1b"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/EntityCollideMixin.java",
+      "sha256": "6dcc1d10965e2fde19e60f8a8a43b0f24ed4c39ab7a3db3000013a04a2adad2e"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/FramerateLimitTrackerMixin.java",
+      "sha256": "f81240efbcac9e9c2c79256ae575c45085115b6696291724b6fab7a1e4b992db"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/InputConstantsMixin.java",
+      "sha256": "0433d5246a860380114ac2b0351aa9a872baa872cbc5e06135c09d66c63b718c"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/IntegratedServerMixin.java",
+      "sha256": "03363544fc1fe5f7a03d7b4180906ee333ebd61ceb85313eb393cdcd2933f394"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/LevelExtractorMixin.java",
+      "sha256": "5cfd708df1e6febaaf7545e71521f5478b76aa41f8b8c5d609861bdba73f6039"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/LevelRendererMixin.java",
+      "sha256": "96ff2b1527045ba0afa5c9a9fe5dcfdf6be2f4441f5540fda00e919ac0837a62"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/MinecraftDigMixin.java",
+      "sha256": "9b5e5860c9be7f250dcc6ed5481d35f586dd6896f6c3de77f06d5a8ac4068aa2"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/MinecraftMixin.java",
+      "sha256": "b8f937996b0f86a3f4f30ec7ac292aee0a045fc5648f50180fec8a945ae5a039"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/RenderSetupAccessor.java",
+      "sha256": "2e66a5c28ecd4c87b19f3721a62214e8fbe3add0fc27adf156bd186419f5840b"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/RenderTypeAccessor.java",
+      "sha256": "23add011ef0f6ffe65ed4441e66367dec1f1b0c108e082bb9182a4d5ce0fb6ef"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/ScreenMixin.java",
+      "sha256": "176d684ea911e26a24fb9b601f20bd7287ad60a8706aa6bc0ded50e75268aedc"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/SpriteContentsAccessor.java",
+      "sha256": "154b1f48f2c3a91ab26169bd05a0ec185af1a8b53277cf9478d11a71cd8efbab"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/TextureAtlasAccessor.java",
+      "sha256": "d66697916376a6072f4e5b33d178c354eef4ee96fc13cd1b72375e0a14309daf"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/TextureBindingAccessor.java",
+      "sha256": "dfaa93f4c0182050c02e2dc3ca34b28ba28b08cfb6361edfcca706c8bdfee86f"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/TextureManagerAccessor.java",
+      "sha256": "eeed035417342f1d346f55b6adb8487aa2d0b3656bd8d82cc52074de58eb959b"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/WaitingForPlayerChunkMixin.java",
+      "sha256": "5257a59b182d7c94d4e1ecfffd0800b5ea8d7cb5c5550a1182f095a08435dd92"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/WindowMixin.java",
+      "sha256": "6d0d9f33274c61232bd1463d0201257b3e8e97549bfcd1e9458ba1e53d4bdf90"
+    },
+    {
+      "path": "dev/skycraft/client/mixin/WorldOpenFlowsMixin.java",
+      "sha256": "aeb658c257f5352f0fc3d7b712ace9430623942fb12e78eac19c1b4a2039fac7"
+    },
+    {
+      "path": "dev/skycraft/client/ProxySync.java",
+      "sha256": "3b0ed4d2d95a7b560493186fa0cf5532f2abb7fe1c44513c128c7b1735e0b3e4"
+    },
+    {
+      "path": "dev/skycraft/client/render/AvatarExporter.java",
+      "sha256": "0a6bfd50ff056a39c5544d1fd0fe0699e534acdd254710169f378d63c1e09845"
+    },
+    {
+      "path": "dev/skycraft/client/render/BlockLightColors.java",
+      "sha256": "d177875fafe53110a22c7d948e22a6edc5282d15b9014bd92a5a8ac87ae17ccc"
+    },
+    {
+      "path": "dev/skycraft/client/render/DigWalls.java",
+      "sha256": "9c5c726b4d2ac3005289e5fef2270842905a8e265ea26b75cf8934fb3d045344"
+    },
+    {
+      "path": "dev/skycraft/client/render/SkyAtlas.java",
+      "sha256": "ae213ae877263376d4b1d1af4af5b795c0422e9061422c09a6341b74f00740f2"
+    },
+    {
+      "path": "dev/skycraft/client/render/WorldExporter.java",
+      "sha256": "711b878011a953065fb92abcb0557e4f0cbe75bcd5775616b5d733f0b62b4039"
+    },
+    {
+      "path": "dev/skycraft/client/SkyClient.java",
+      "sha256": "08823a78854062e5839f8850bc55dde05fe821a6aca80ffbf2b713832267dc61"
+    },
+    {
+      "path": "dev/skycraft/client/SkyCollider.java",
+      "sha256": "bc069d8381b7f395995d4979c4f56ec86fa8a12a018cd770567b96456abb21b0"
+    },
+    {
+      "path": "dev/skycraft/client/SkyCraftClient.java",
+      "sha256": "fe48218537e1b4c190640e5d8d7658221083ed5950ce126e1e68d4eecbca7485"
+    },
+    {
+      "path": "dev/skycraft/client/SkyDigClient.java",
+      "sha256": "a6eccbbc25e1329cf16a3d324b052a8ef021a87eb8941f3cda1923be2c90e601"
+    },
+    {
+      "path": "dev/skycraft/combat/SkyCombat.java",
+      "sha256": "f78c367f2c80c69aa0e781ad230428f8e3afb751deb77eb2c0d69e1b3f82144a"
+    },
+    {
+      "path": "dev/skycraft/combat/SkyrimActorEntity.java",
+      "sha256": "bd18350eac4c1fb0cbad6d200104c23f1c1e388ed50246a3cee326a69c45720c"
+    },
+    {
+      "path": "dev/skycraft/coop/CoopBlocks.java",
+      "sha256": "13458f9c8e03349d5e18e4e2e32a81b2fde239bc521ef0a745e1b5ac897754e4"
+    },
+    {
+      "path": "dev/skycraft/coop/CoopHeld.java",
+      "sha256": "8059e038cf7d746a7429fab7cc84ab3e8b014ba0d14fbe511a21e047e8f565c2"
+    },
+    {
+      "path": "dev/skycraft/coop/CoopMode.java",
+      "sha256": "d695e8ff7b5c380fc9918c295de5681b0a7919fa57a925fbc7beb59ad39bf41f"
+    },
+    {
+      "path": "dev/skycraft/coop/CoopProto.java",
+      "sha256": "f2a8fd30940f01c17ff44ee0490b447581de86a83369533ac443465103a5d797"
+    },
+    {
+      "path": "dev/skycraft/link/Proto.java",
+      "sha256": "1b8b5eb6b8c3d886c404c89660e619da14e3cd55e4ece1f22850487c9a0c3115"
+    },
+    {
+      "path": "dev/skycraft/link/SkyLink.java",
+      "sha256": "cfb1de81135cb2c9c8cd2a57d71d51f29ec26d5681175b3d52f70a6ba0f12c31"
+    },
+    {
+      "path": "dev/skycraft/mixin/AbstractArrowMixin.java",
+      "sha256": "765a94b1f131bf369c503dd42658c2ff17056b6965b7fc3d87e430f7a1511861"
+    },
+    {
+      "path": "dev/skycraft/mixin/BlockCollisionsMixin.java",
+      "sha256": "203e01506e7f17d8c23fab89c763623b0e6e44e0fda6ab3121760f8411d77e76"
+    },
+    {
+      "path": "dev/skycraft/mixin/BlockStateBaseMixin.java",
+      "sha256": "b3536d514eb9cda82877902f2fb26dfccc3e0742e1b0aeff2a058637bd7ad3ef"
+    },
+    {
+      "path": "dev/skycraft/mixin/CoopBlockMixin.java",
+      "sha256": "1a5e6fa202dc16d8249d70228292d70788b107317077f125cca8cc2a0425d890"
+    },
+    {
+      "path": "dev/skycraft/mixin/EntityFluidInteractionMixin.java",
+      "sha256": "c5761a1199cc46104aa59c75847658aaaf48e1d79d3f8265a9e797077bf85d0b"
+    },
+    {
+      "path": "dev/skycraft/mixin/EntityPickMixin.java",
+      "sha256": "e1d3a255c8290e7d6e158ce2f22c47167767aa3a3b96fa0c527b9bb490ee352a"
+    },
+    {
+      "path": "dev/skycraft/mixin/EntitySwimMixin.java",
+      "sha256": "8604d5861ef13b205180d847fe58bccaf3856e89dbc6b25d434c8091c7f84f98"
+    },
+    {
+      "path": "dev/skycraft/mixin/FallingBlockMixin.java",
+      "sha256": "67bb90ae7cc8f938f3036d713577650ddbb55b809e26e6e6885860254e93a6dc"
+    },
+    {
+      "path": "dev/skycraft/mixin/FlowingFluidMixin.java",
+      "sha256": "92b0ba2f67108457214efa997270944384d01f1ab2082b67b8088617e44658fc"
+    },
+    {
+      "path": "dev/skycraft/mixin/ItemMixin.java",
+      "sha256": "9a89e002edd8f7fc6479a3ae67186f6610db3d03f46192f185149742b88308be"
+    },
+    {
+      "path": "dev/skycraft/mixin/MinecraftServerFlightMixin.java",
+      "sha256": "4373b077437fdd955f34785e35389613bc8e2d2d3942ab0b7e483d2eb4033438"
+    },
+    {
+      "path": "dev/skycraft/mixin/PlayerEdgeMixin.java",
+      "sha256": "10734ed4cf506d0f765a2cc7806226e1861f449484803a44abac7de8c28aa719"
+    },
+    {
+      "path": "dev/skycraft/mixin/PressurePlateMixin.java",
+      "sha256": "f4865b844313168e6ccc86c1d9edaf95d5e58178ca9024988afed6e446ed1817"
+    },
+    {
+      "path": "dev/skycraft/mixin/ProjectileMixin.java",
+      "sha256": "a1985509a4495ed1219146fb3b68948b062125e252e7b35f0852c924329f53ec"
+    },
+    {
+      "path": "dev/skycraft/mixin/ProjectileUtilMixin.java",
+      "sha256": "c75f76381881ca7aa0d5a431100ef140e34e41aa248064d88216f3dad4fac315"
+    },
+    {
+      "path": "dev/skycraft/mixin/ServerExplosionMixin.java",
+      "sha256": "157c0899e04dbcfd92c974a625a38a8d8c77bc5d4eaff094acd30a5f73d4551a"
+    },
+    {
+      "path": "dev/skycraft/mixin/ServerPlayerMixin.java",
+      "sha256": "123e71b2a7420dbab9e697eec4307a9f735977dd980add39e26edcd38f6d6aa7"
+    },
+    {
+      "path": "dev/skycraft/mixin/SmithingMixin.java",
+      "sha256": "96232dd4318338aa135fc055f878c460c81837f0e1fe2c0d7b8c0dba2e9a8f56"
+    },
+    {
+      "path": "dev/skycraft/mixin/VoidGuardMixin.java",
+      "sha256": "7f62a437b34559b3a7c0570ac2673ac89fb7ee1b2f661c6bed685bffb7cfb507"
+    },
+    {
+      "path": "dev/skycraft/net/SkyNet.java",
+      "sha256": "62682be38bcceb004d02c9ebc6ccbe711d5b23b47bb3d343fb02289b0776c7fe"
+    },
+    {
+      "path": "dev/skycraft/SkyCraft.java",
+      "sha256": "144f334fa369378356e8298afe242b924fdc323498f2f77c21c58f7fa6c473c7"
+    },
+    {
+      "path": "dev/skycraft/world/SkyClip.java",
+      "sha256": "dcc5f3b56e47aa82688cea897677deefeeecd1861b9cbde3c0bd7a8138144fda"
+    },
+    {
+      "path": "dev/skycraft/world/SkyCollision.java",
+      "sha256": "4df205d7c90d5ff8e36b84463db0b059bbe5ee2ccbf187c9642a896ee4dddd63"
+    },
+    {
+      "path": "dev/skycraft/world/SkyDig.java",
+      "sha256": "ce148361a020202e860b089cdbb540e91925d2a95f93fcb4bae4de5904a31d2b"
+    },
+    {
+      "path": "dev/skycraft/world/SkyDigBlast.java",
+      "sha256": "fe8409c077ff546d28bd4d69316b7b24745a44f0fabac6526942e989b036277e"
+    },
+    {
+      "path": "dev/skycraft/world/SkyRay.java",
+      "sha256": "95ca84ad659100a848bb903b67851b07f45d1a99994d9c405d7f1db5ef3aec56"
+    },
+    {
+      "path": "dev/skycraft/world/SkyTri.java",
+      "sha256": "d0ba74365b6e3ba69787a32ccfad4b50babb5f77cf01132c7ac88900d1c2e125"
+    },
+    {
+      "path": "dev/skycraft/world/SkyWater.java",
+      "sha256": "ca949ebcc86dfca8ef04e9040a191a2a858175beb4ffd8b3ea424276bc64399d"
+    },
+    {
+      "path": "dev/skycraft/world/TriCollider.java",
+      "sha256": "f44e9a4b1f3adff96fc80ea1b7d64f3f5cc16af7aa195299602550d83c6fbbc3"
+    }
+  ]
+}

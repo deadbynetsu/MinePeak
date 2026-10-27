@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>CS0649</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../coop/PeakCraft.Coop/CoopProto.cs" Link="CoopProto.cs" />
+    <Compile Include="../../coop/PeakCraft.Coop/BlockJournal.cs" Link="BlockJournal.cs" />
+    <Compile Include="../../coop/PeakCraft.Coop/BlockRelay.cs" Link="BlockRelay.cs" />
+    <Compile Include="../../coop/PeakCraft.Coop/PosePacket.cs" Link="PosePacket.cs" />
+  </ItemGroup>
+</Project>

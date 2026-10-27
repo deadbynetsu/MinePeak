@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>PeakCraftCoop</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <Nullable>enable</Nullable>
+    <NoWarn>CS8600;CS8601;CS8602;CS8603;CS8604;CS8618;CS8625;CS0649</NoWarn>
+    <RestoreAdditionalProjectSources>https://nuget.bepinex.dev/v3/index.json</RestoreAdditionalProjectSources>
+  </PropertyGroup>
+  <Import Project="Config.Local.props" />
+  <ItemGroup>
+    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.3" PrivateAssets="all" />
+    <Reference Include="$(GameManaged)/*.dll" Exclude="$(GameManaged)/Assembly-CSharp.dll;$(GameManaged)/System*.dll;$(GameManaged)/mscorlib.dll;$(GameManaged)/netstandard.dll;$(GameManaged)/Mono*.dll"><Private>false</Private></Reference>
+    <Reference Include="$(GameManaged)/Assembly-CSharp.dll" Private="false" Publicize="true" />
+    <Reference Include="$(BepCore)/*.dll" Exclude="$(BepCore)/0Harmony20.dll"><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,74 @@
+[
+  {
+    "test": "PEAK deficit to Minecraft",
+    "peak_health": 20.0,
+    "peak_food": 10.0,
+    "minecraft_health": 20.0,
+    "minecraft_food": 10.0,
+    "pass": true
+  },
+  {
+    "test": "Real PEAK food action to both games",
+    "peak_health": 20.0,
+    "peak_food": 14.0,
+    "minecraft_health": 20.0,
+    "minecraft_food": 14.0,
+    "pass": true
+  },
+  {
+    "test": "PEAK injury to Minecraft",
+    "peak_health": 16.0,
+    "peak_food": 14.0,
+    "minecraft_health": 16.0,
+    "minecraft_food": 14.0,
+    "pass": true
+  },
+  {
+    "test": "Real PEAK heal action to both games",
+    "peak_health": 18.0,
+    "peak_food": 14.0,
+    "minecraft_health": 18.0,
+    "minecraft_food": 14.0,
+    "pass": true
+  },
+  {
+    "test": "Prepare Minecraft damage",
+    "peak_health": 20.0,
+    "peak_food": 10.0,
+    "minecraft_health": 20.0,
+    "minecraft_food": 10.0,
+    "pass": true
+  },
+  {
+    "test": "Minecraft damage to PEAK",
+    "peak_health": 16.0,
+    "peak_food": 10.0,
+    "minecraft_health": 16.0,
+    "minecraft_food": 10.0,
+    "pass": true
+  },
+  {
+    "test": "Minecraft healing effect to PEAK",
+    "peak_health": 20.0,
+    "peak_food": 10.0,
+    "minecraft_health": 20.0,
+    "minecraft_food": 10.0,
+    "pass": true
+  },
+  {
+    "test": "Actual Minecraft steak consumption to both games; selected hotbar 1 after harness refused occupied hotbar 4",
+    "peak_health": 20,
+    "peak_food": 18,
+    "minecraft_health": 20,
+    "minecraft_food": 18,
+    "pass": true
+  },
+  {
+    "test": "Vitals preserved on return to native PEAK; checked read-only VIT1 channel and native status",
+    "peak_health": 20,
+    "peak_food": 18,
+    "minecraft_health": 20,
+    "minecraft_food": 18,
+    "pass": true
+  }
+]

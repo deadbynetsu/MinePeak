@@ -1,0 +1,143 @@
+--- phase1 ---
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Cutscene (loading)
+[Info   :PeakCraft Co-op] ownership: Cutscene -> Handoff (teleport 30467)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 5,00; ack 1/1; epoch 1; alive True
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-9.578, 0.877, 50.590) = mc (-9,578, -511,123, -50,590); Minecraft feet (-9,578, -511,123, -50,590) yaw 180,0 pitch 0,0 flags 0x5; look yaw 180,0 pitch 0,0; camera (-9.578, 2.497, 50.590); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> NativeControl
+[Info   :PeakCraft Co-op] native: state NativeControl; item Marshmallow(Clone); progress 0,000; throw 0,000; climbing False; stamina 0,200; feet (-9.588, 0.886, 50.570)
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 8,00; MC health 16,00 food 8,00 saturation 5,00; ack 2/2; epoch 1; alive True
+[Info   :PeakCraft Co-op] native: state NativeControl; item Marshmallow(Clone); progress 0,205; throw 0,000; climbing False; stamina 0,200; feet (-9.588, 0.882, 50.540)
+[Info   :PeakCraft Co-op] ownership: NativeControl -> Handoff (teleport 30468)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] native: state MinecraftOwns; item none; progress 0,000; throw 0,000; climbing False; stamina 0,350; feet (-9.635, 0.877, 50.648)
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 11,00; MC health 16,00 food 11,00 saturation 8,00; ack 3/3; epoch 1; alive True
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> NativeControl
+[Info   :PeakCraft Co-op] native: state NativeControl; item Marshmallow(Clone); progress 0,000; throw 0,629; climbing False; stamina 0,350; feet (-9.596, 0.885, 50.561)
+[Info   :PeakCraft Co-op] ownership: NativeControl -> Handoff (teleport 30469)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 11,00; MC health 16,00 food 11,00 saturation 8,00; ack 3/3; epoch 1; alive True
+[Info   :PeakCraft Co-op] native: state MinecraftOwns; item none; progress 0,000; throw 0,000; climbing False; stamina 0,350; feet (-9.616, 0.877, 50.651)
+[Info   :PeakCraft Co-op] native: state MinecraftOwns; item none; progress 0,000; throw 0,000; climbing False; stamina 0,350; feet (-9.616, 0.877, 50.651)
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 11,00; MC health 16,00 food 11,00 saturation 8,00; ack 3/3; epoch 1; alive True
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> Cutscene (warp)
+[Info   :PeakCraft Co-op] ownership: Cutscene -> Handoff (teleport 30470)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] collision probe: 'Climbing wall' layer Map type MeshCollider, hit (6.975, 2.175, 63.114), distance 2,896, mesh readable False; cache 35 ready/0 unavailable
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (6.975, 0.555, 60.218) = mc (6,975, -511,445, -60,218); Minecraft feet (6,975, -511,445, -60,218) yaw 180,0 pitch 0,0 flags 0x5; look yaw 180,0 pitch 0,0; camera (6.975, 2.175, 60.218); kinematic True; stamina 0,35
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 11,00; MC health 16,00 food 11,00 saturation 8,00; ack 3/3; epoch 1; alive True
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (6.975, 1.141, 61.477) = mc (6,975, -510,859, -61,477); Minecraft feet (6,975, -510,859, -61,477) yaw 180,0 pitch 0,0 flags 0x5; look yaw 180,0 pitch 0,0; camera (6.975, 2.761, 61.477); kinematic True; stamina 0,35
+[Info   :PeakCraft Co-op] collision probe: 'Climbing wall' layer Map type MeshCollider, hit (6.975, 2.761, 63.104), distance 1,626, mesh readable False; cache 35 ready/0 unavailable
+[Info   :PeakCraft Co-op] climb: PEAK control requested; hold V, use WASD and Space
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> NativeControl
+[Info   :PeakCraft Co-op] climb: native grab accepted; stamina 0,487; feet (6.965, 1.168, 61.952)
+[Info   :PeakCraft Co-op] climb: returning to Minecraft after native climb ended
+[Info   :PeakCraft Co-op] native: state NativeControl; item none; progress 0,000; throw 0,000; climbing False; stamina 0,282; feet (6.822, 3.421, 63.003)
+[Info   :PeakCraft Co-op] ownership: NativeControl -> Handoff (teleport 30471)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 17,00; ack 4/4; epoch 1; alive True
+[Info   :PeakCraft Co-op] native: state MinecraftOwns; item none; progress 0,000; throw 0,000; climbing False; stamina 0,811; feet (6.822, 5.141, 63.003)
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (6.822, 5.141, 63.003) = mc (6,822, -506,859, -63,003); Minecraft feet (6,822, -506,859, -63,003) yaw 180,0 pitch 0,0 flags 0x5; look yaw 180,0 pitch 0,0; camera (6.822, 6.761, 63.003); kinematic True; stamina 0,85
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 17,00; ack 4/4; epoch 1; alive True
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> Cutscene (warp)
+[Info   :PeakCraft Co-op] ownership: Cutscene -> Handoff (teleport 30472)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] native test: box wall center (-8.066, 3.193, 82.635); normal (0.000, 0.000, 1.000); thickness 0.08m
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 17,00; ack 4/4; epoch 1; alive True
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-8.066, 1.693, 82.295) = mc (-8,066, -510,307, -82,295); Minecraft feet (-8,066, -510,307, -82,295) yaw 180,0 pitch 0,0 flags 0x5; look yaw 180,0 pitch 0,0; camera (-8.066, 3.313, 82.295); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] collision probe: 'PeakCraft synthetic thin wall' layer Map type BoxCollider, hit (-8.066, 3.313, 82.595), distance 0,300, mesh readable False; cache 44 ready/0 unavailable
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 17,00; ack 4/4; epoch 1; alive True
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> Cutscene (warp)
+[Info   :PeakCraft Co-op] ownership: Cutscene -> Handoff (teleport 30473)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] native test: GPU mesh wall center (-7.692, 2.973, 83.039); normal (0.000, 0.000, 1.000); thickness 0.08m
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 17,00; ack 4/4; epoch 1; alive True
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-7.630, 0.995, 82.360) = mc (-7,630, -511,005, -82,360); Minecraft feet (-7,630, -511,005, -82,365) yaw 180,0 pitch 0,0 flags 0x5; look yaw 180,0 pitch 0,0; camera (-7.630, 2.615, 82.367); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] collision probe: 'PeakCraft synthetic thin wall' layer Map type MeshCollider, hit (-7.630, 2.615, 82.999), distance 0,645, mesh readable False; cache 42 ready/0 unavailable
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 17,00; ack 4/4; epoch 1; alive True
+--- phase2 ---
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 52227)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 17,00; ack 1/1; epoch 1; alive True
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> Cutscene (warp)
+[Info   :PeakCraft Co-op] ownership: Cutscene -> Handoff (teleport 52228)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] native test: GPU mesh wall center (-2.987, 2.055, 77.045); normal (0.000, 0.000, 1.000); thickness 0.08m
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 17,00; ack 1/1; epoch 1; alive True
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-2.987, 0.555, 76.705) = mc (-2,987, -511,445, -76,705); Minecraft feet (-2,987, -511,445, -76,705) yaw 180,0 pitch 0,0 flags 0x5; look yaw 180,0 pitch 0,0; camera (-2.987, 2.175, 76.705); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] collision probe: 'PeakCraft synthetic thin wall' layer Map type MeshCollider, hit (-2.987, 2.175, 77.005), distance 0,300, mesh readable False; cache 44 ready/0 unavailable
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 17,00; ack 1/1; epoch 1; alive True
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-2.626, 0.555, 84.546) = mc (-2,626, -511,445, -84,546); Minecraft feet (-2,626, -511,445, -84,546) yaw 180,0 pitch 0,0 flags 0x5; look yaw 180,0 pitch 0,0; camera (-2.626, 2.175, 84.546); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> NativeControl
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 17,00; ack 1/1; epoch 1; alive True
+[Info   :PeakCraft Co-op] native: state NativeControl; item Marshmallow(Clone); progress 0,000; throw 0,539; climbing False; stamina 1,000; feet (-2.521, 0.575, 84.429)
+[Info   :PeakCraft Co-op] native: world item Marshmallow(Clone) at (-2.579, 2.291, 100.417) velocity (-0.013, -8.116, 19.909) distance 16,10
+[Info   :PeakCraft Co-op] ownership: NativeControl -> Handoff (teleport 52229)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] native: world item Marshmallow(Clone) at (-2.813, 0.607, 107.259) velocity (0.002, 0.001, 0.010) distance 22,93
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 17,00; ack 1/1; epoch 1; alive True
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> NativeControl
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 14,00; MC health 20,00 food 14,00 saturation 14,00; ack 3/3; epoch 1; alive True
+[Info   :PeakCraft Co-op] native: state NativeControl; item none; progress 0,000; throw 0,000; climbing False; stamina 0,513; feet (-2.439, 0.565, 84.249)
+[Info   :PeakCraft Co-op] ownership: NativeControl -> Handoff (teleport 52230)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 14,00; MC health 20,00 food 14,00 saturation 14,00; ack 3/3; epoch 1; alive True
+[Info   :PeakCraft Co-op] dev: loopback True; blocks sent 0, received 0; viewer 0; journal 0; pending 0; snapshots sent 0, received 0
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 14,00; MC health 20,00 food 14,00 saturation 14,00; ack 3/3; epoch 1; alive True
+[Info   :PeakCraft Co-op] dev: loopback True; blocks sent 0, received 0; viewer 0; journal 0; pending 0; snapshots sent 0, received 0
+[Info   :PeakCraft Co-op] dev: loopback False; blocks sent 0, received 0; viewer 0; journal 0; pending 0; snapshots sent 0, received 0
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 14,00; MC health 20,00 food 14,00 saturation 14,00; ack 3/3; epoch 1; alive True
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 10,00; MC health 20,00 food 10,00 saturation 10,00; ack 4/4; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 14,00; MC health 20,00 food 14,00 saturation 14,00; ack 5/5; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 14,00; MC health 16,00 food 14,00 saturation 14,00; ack 6/6; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 18,00 food 14,00; MC health 18,00 food 14,00 saturation 14,00; ack 7/7; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 10,00; MC health 20,00 food 10,00 saturation 10,00; ack 8/8; epoch 1; alive True
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 52232)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 16,00 food 10,00; MC health 16,00 food 10,00 saturation 10,00; ack 8/8; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 10,00; MC health 20,00 food 10,00 saturation 10,00; ack 8/8; epoch 1; alive True
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-2.317, 0.555, 84.144) = mc (-2,317, -511,445, -84,144); Minecraft feet (-2,317, -511,445, -84,144) yaw 180,0 pitch 65,0 flags 0x5; look yaw 180,0 pitch 65,0; camera (-2.317, 2.175, 84.144); kinematic True; stamina 0,50
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 10,00; MC health 20,00 food 10,00 saturation 10,00; ack 8/8; epoch 1; alive True
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 18,00; MC health 20,00 food 18,00 saturation 18,00; ack 8/8; epoch 1; alive True
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 18,00; MC health 20,00 food 18,00 saturation 18,00; ack 8/8; epoch 1; alive True
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 52234)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> Cutscene (warp)
+[Info   :PeakCraft Co-op] dev: loopback True; blocks sent 0, received 0; viewer 0; journal 0; pending 0; snapshots sent 0, received 0
+[Info   :PeakCraft Co-op] ownership: Cutscene -> Handoff (teleport 52235)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] dev: loopback True; blocks sent 0, received 0; viewer 0; journal 0; pending 0; snapshots sent 0, received 0
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 18,00; MC health 20,00 food 18,00 saturation 18,00; ack 8/8; epoch 1; alive True
+[Info   :PeakCraft Co-op] dev: loopback True; blocks sent 0, received 0; viewer 0; journal 0; pending 0; snapshots sent 0, received 0
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 18,00; MC health 20,00 food 18,00 saturation 18,00; ack 8/8; epoch 1; alive True
+[Info   :PeakCraft Co-op] coop: local block minecraft:stone (state 1) at (-3, -512, -77), revision 1
+[Info   :PeakCraft Co-op] coop: remote block minecraft:stone from actor 1 at (0, -512, -77), revision 1
+[Info   :PeakCraft Co-op] coop: local block minecraft:stone (state 1) at (-3, -512, -76), revision 2
+[Info   :PeakCraft Co-op] coop: remote block minecraft:stone from actor 1 at (0, -512, -76), revision 2
+[Info   :PeakCraft Co-op] coop: local block minecraft:stone (state 1) at (-3, -511, -76), revision 3
+[Info   :PeakCraft Co-op] coop: remote block minecraft:stone from actor 1 at (0, -511, -76), revision 3
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 18,00; MC health 20,00 food 18,00 saturation 18,00; ack 8/8; epoch 1; alive True
+[Info   :PeakCraft Co-op] dev: loopback True; blocks sent 3, received 3; viewer 6; journal 6; pending 0; snapshots sent 0, received 0
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 18,00; MC health 20,00 food 18,00 saturation 18,00; ack 8/8; epoch 1; alive True
+[Info   :PeakCraft Co-op] coop: local block minecraft:stone (state 1) at (-3, -512, -72), revision 4
+[Info   :PeakCraft Co-op] coop: remote block minecraft:stone from actor 1 at (0, -512, -72), revision 4
+[Info   :PeakCraft Co-op] coop: local block minecraft:stone (state 1) at (-3, -512, -73), revision 5
+[Info   :PeakCraft Co-op] coop: remote block minecraft:stone from actor 1 at (0, -512, -73), revision 5
+[Info   :PeakCraft Co-op] dev: loopback True; blocks sent 5, received 5; viewer 10; journal 10; pending 0; snapshots sent 0, received 0
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 18,00; MC health 20,00 food 18,00 saturation 18,00; ack 8/8; epoch 1; alive True
+[Info   :PeakCraft Co-op] coop: local block minecraft:air (state 0) at (-3, -512, -73), revision 6
+[Info   :PeakCraft Co-op] coop: remote block minecraft:air from actor 1 at (0, -512, -73), revision 6
+[Info   :PeakCraft Co-op] coop: local block minecraft:air (state 0) at (-3, -512, -72), revision 7
+[Info   :PeakCraft Co-op] coop: remote block minecraft:air from actor 1 at (0, -512, -72), revision 7
+[Info   :PeakCraft Co-op] dev: loopback False; blocks sent 7, received 7; viewer 6; journal 10; pending 0; snapshots sent 0, received 0
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 18,00; MC health 20,00 food 18,00 saturation 18,00; ack 8/8; epoch 1; alive True
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> NativeControl
+[Info   :PeakCraft Co-op] ownership: NativeControl -> Handoff (teleport 52236)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] native: state MinecraftOwns; item none; progress 0,000; throw 0,000; climbing False; stamina 0,900; feet (-2.973, 0.555, 74.060)
+[Info   :PeakCraft Co-op] native: world item Marshmallow(Clone) at (-4.103, 0.607, 84.014) velocity (0.039, 0.011, -0.036) distance 10,07
+[Info   :PeakCraft Co-op] native: world item Marshmallow(Clone) at (-2.815, 0.608, 107.250) velocity (0.000, 0.000, 0.000) distance 33,21
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 20,00; ack 9/9; epoch 1; alive True
