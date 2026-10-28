@@ -76,6 +76,9 @@ internal sealed class CollisionExporter
 
 	private readonly Stopwatch watch = new Stopwatch();
 
+	private RaycastHit[] worldHits = new RaycastHit[32];
+	private Collider[] worldOverlaps = new Collider[32];
+
 	private List<Proto.ColTri>[] tris = Array.Empty<List<Proto.ColTri>>();
 
 	private ulong[][] occupancy = Array.Empty<ulong[]>();
@@ -335,7 +338,7 @@ internal sealed class CollisionExporter
 			}
 			Physics.queriesHitBackfaces = false;
 			statRays++;
-			if (!Physics.Raycast(new Vector3(ux, num2, uz), Vector3.down, out var hitInfo, num2 - yBottom, mask, QueryTriggerInteraction.Ignore))
+			if (!RaycastWorld(new Vector3(ux, num2, uz), Vector3.down, out var hitInfo, num2 - yBottom))
 			{
 				break;
 			}
@@ -383,9 +386,9 @@ internal sealed class CollisionExporter
 		Vector3 origin = new Vector3(ux, lowY + 0.02f, uz);
 		statRays += 2;
 		Physics.queriesHitBackfaces = false;
-		bool flag = Physics.Raycast(origin, Vector3.up, out var hitInfo, num, mask, QueryTriggerInteraction.Ignore);
+		bool flag = RaycastWorld(origin, Vector3.up, out var hitInfo, num);
 		Physics.queriesHitBackfaces = true;
-		bool flag2 = Physics.Raycast(origin, Vector3.up, out var hitInfo2, num + 0.03f, mask, QueryTriggerInteraction.Ignore);
+		bool flag2 = RaycastWorld(origin, Vector3.up, out var hitInfo2, num + 0.03f);
 		if (flag && (!flag2 || hitInfo.distance <= hitInfo2.distance + 0.01f))
 		{
 			ceiling = hitInfo.point.y;
@@ -398,13 +401,55 @@ internal sealed class CollisionExporter
 	{
 		statRays += 2;
 		Physics.queriesHitBackfaces = false;
-		bool flag = Physics.Raycast(point, Vector3.up, out var hitInfo, 400f, mask, QueryTriggerInteraction.Ignore);
+		bool flag = RaycastWorld(point, Vector3.up, out var hitInfo, 400f);
 		Physics.queriesHitBackfaces = true;
-		if (Physics.Raycast(point, Vector3.up, out var hitInfo2, 400f, mask, QueryTriggerInteraction.Ignore) && (!flag || hitInfo2.distance < hitInfo.distance - 0.01f))
+		if (RaycastWorld(point, Vector3.up, out var hitInfo2, 400f) && (!flag || hitInfo2.distance < hitInfo.distance - 0.01f))
 		{
 			return true;
 		}
-		return Physics.CheckSphere(point, 0.05f, mask, QueryTriggerInteraction.Ignore);
+		return OverlapsWorld(point, 0.05f);
+	}
+
+	// Minecraft already owns block collisions in Java. Export only PEAK's original terrain;
+	// exporting the generated native block colliders back would leave ghost blocks after mining.
+	private bool RaycastWorld(Vector3 origin, Vector3 direction, out RaycastHit nearest, float distance)
+	{
+		int count;
+		while (true)
+		{
+			count = Physics.RaycastNonAlloc(origin, direction, worldHits, distance, mask, QueryTriggerInteraction.Ignore);
+			if (count < worldHits.Length) break;
+			if (worldHits.Length >= 65536)
+			{ worldHits = Physics.RaycastAll(origin, direction, distance, mask, QueryTriggerInteraction.Ignore); count = worldHits.Length; break; }
+			worldHits = new RaycastHit[worldHits.Length * 2];
+		}
+		nearest = default;
+		float best = float.PositiveInfinity;
+		for (int i = 0; i < count; i++)
+		{
+			var hit = worldHits[i];
+			if (hit.collider != null && !BlockCollisionSections.Owns(hit.collider) && hit.distance < best)
+			{ best = hit.distance; nearest = hit; }
+		}
+		return best < float.PositiveInfinity;
+	}
+
+	private bool OverlapsWorld(Vector3 point, float radius)
+	{
+		int count;
+		while (true)
+		{
+			count = Physics.OverlapSphereNonAlloc(point, radius, worldOverlaps, mask, QueryTriggerInteraction.Ignore);
+			if (count < worldOverlaps.Length) break;
+			if (worldOverlaps.Length >= 65536)
+			{ worldOverlaps = Physics.OverlapSphere(point, radius, mask, QueryTriggerInteraction.Ignore); count = worldOverlaps.Length; break; }
+			worldOverlaps = new Collider[worldOverlaps.Length * 2];
+		}
+		bool found = false;
+		for (int i = 0; i < count; i++)
+			if (worldOverlaps[i] != null && !BlockCollisionSections.Owns(worldOverlaps[i])) { found = true; break; }
+		Array.Clear(worldOverlaps, 0, count);
+		return found;
 	}
 
 	private unsafe void Triangulate(int rx, int rz, int i, int j, int ryMin, int ryMax)

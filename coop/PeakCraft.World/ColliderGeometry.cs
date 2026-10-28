@@ -125,6 +125,7 @@ internal sealed class ColliderGeometry
     private static bool SolidWorldCollider(Collider collider)
     {
         if (collider == null || !collider.enabled || collider.isTrigger || !collider.gameObject.activeInHierarchy) return false;
+        if (BlockCollisionSections.Owns(collider)) return false;
         if (collider.GetComponentInParent<Character>() != null) return false;
         if (collider.GetComponentInParent<Bodypart>() != null) return false;
         Rigidbody body = collider.attachedRigidbody;

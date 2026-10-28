@@ -1,0 +1,141 @@
+{
+  "version": "0.3.2",
+  "date": "2026-10-28",
+  "scope": "Actual PEAK3.0.1 and Minecraft Java26.3 on one Windows11 PC; opt-in harness inputs and vanilla chat commands, not a second account or Unity fixture",
+  "detailed_runtime_dll_sha256": "1013b1f636b4abf623126d338ee77cf723c2e90bb6acf76a54b6e127bd6135a3",
+  "passed": true,
+  "checks": [
+    {
+      "test": "native PEAK climbs Minecraft wall with ordinary sampled primary/movement",
+      "passed": true,
+      "evidence": {
+        "owner": "PeakOwns",
+        "climbing": true,
+        "stamina": 0.767,
+        "feet": [
+          -11.663,
+          9.12,
+          72.594
+        ]
+      }
+    },
+    {
+      "test": "Minecraft preference uses V native climbing on Minecraft wall",
+      "passed": true,
+      "evidence": {
+        "owner": "NativeControl",
+        "climbing": true,
+        "stamina": 0.786,
+        "feet": [
+          -11.475,
+          8.314,
+          72.589
+        ]
+      }
+    },
+    {
+      "test": "Minecraft lands on half slab at Unity Y6.5",
+      "passed": true,
+      "evidence": [
+        -8.5,
+        6.5,
+        70.5
+      ]
+    },
+    {
+      "test": "native PEAK lands on half slab rather than full cube",
+      "passed": true,
+      "evidence": [
+        -8.569,
+        6.529,
+        70.536
+      ]
+    },
+    {
+      "test": "native body lands on Minecraft platform after drop from Y8",
+      "passed": true,
+      "evidence": [
+        -11.569,
+        6.029,
+        71.548
+      ]
+    },
+    {
+      "test": "survival left-click mining removes one physical block",
+      "passed": true,
+      "evidence": "86 boxes before mining, 85 after; native Minecraft air edit at (-12,-505,-74)"
+    },
+    {
+      "test": "removing test structures removes native physical support",
+      "passed": true,
+      "evidence": [
+        -11.501,
+        0.583,
+        71.516
+      ]
+    },
+    {
+      "test": "native PEAK walks through the former wall plane Z73",
+      "passed": true,
+      "evidence": [
+        -11.53,
+        0.581,
+        74.687
+      ]
+    },
+    {
+      "test": "Minecraft crosses removed wall after region refresh and new collision epoch",
+      "passed": true,
+      "evidence": [
+        -11.543,
+        0.734,
+        77.635
+      ]
+    },
+    {
+      "test": "real Fabric loads profile0.1.1 and sends exact collision sections",
+      "passed": true,
+      "evidence": "Actual Minecraft26.3 Fabric runtime, additive profile0.1.1"
+    },
+    {
+      "test": "49 production-helper regressions pass",
+      "passed": true,
+      "evidence": {
+        "vitals": 12,
+        "collision": 18,
+        "multiplayer": 19,
+        "total": 49
+      }
+    }
+  ],
+  "multiplayer_two_real_accounts_tested": false,
+  "full_campaign_tested": false,
+  "detailed_runtime_profile_jar_sha256": "4c2b24afbe156fca8d0022438a24d7d18729cf2ae93ce0093d6539eedfdc46f0",
+  "distribution_verification": {
+    "dll_sha256": "890d25cf061ce4381ce6cb9c7169aa9a96c1602e7027b1ceda86d2fcb6bdb4fb",
+    "profile_jar_sha256": "040d0f149bc93df45043208a6c7dc25eb5e6d00b0a26b344b6191cf3fa5ba2f7",
+    "fresh_launch_native_climb": {
+      "owner": "PeakOwns",
+      "stamina": 0.8,
+      "feet": [
+        -11.462,
+        8.649,
+        72.569
+      ]
+    },
+    "fresh_launch_minecraft_climb": {
+      "owner": "NativeControl",
+      "stamina": 0.806,
+      "feet": [
+        -11.473,
+        8.068,
+        72.572
+      ]
+    },
+    "immediate_section_update": true,
+    "update_timing_resolution_seconds": 1,
+    "removed_test_blocks": true,
+    "original_physical_box_count": 11,
+    "note": "Final binaries repeated both actual climb paths and removal after prioritizing real shape updates over empty chunk probes. Detailed earlier checks above exercised the same collider protocol and geometry."
+  }
+}

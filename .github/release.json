@@ -1,7 +1,7 @@
 {
-  "version": "0.3.1",
-  "tag": "v0.3.1",
-  "title": "MinePeak 0.3.1 — experimental",
-  "notes": "docs/releases/0.3.1.md",
+  "version": "0.3.2",
+  "tag": "v0.3.2",
+  "title": "MinePeak 0.3.2 — colisão das construções (experimental)",
+  "notes": "docs/releases/0.3.2.md",
   "prerelease": true
 }

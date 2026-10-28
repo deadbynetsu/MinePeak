@@ -24,6 +24,8 @@ internal sealed class DevHarness
 
 	private bool startedOffline;
 
+	private readonly DevNativeInput nativeInput = new DevNativeInput();
+
 	public DevHarness()
 	{
 		Directory.CreateDirectory(shotDir);
@@ -41,6 +43,7 @@ internal sealed class DevHarness
 		});
 		Register("quit", (string[] _) =>
 		{
+			nativeInput.Reset();
 			Application.Quit();
 		});
 		Plugin.Log.LogInfo((object)("dev harness on: commands from " + commandFile));
@@ -50,6 +53,11 @@ internal sealed class DevHarness
 	{
 		commands[name] = action;
 	}
+
+	public void SetNativeInput(Plugin plugin, float seconds, float forward, bool primary, float strafe = 0f)
+		=> nativeInput.Set(plugin, seconds, forward, primary, strafe);
+	public void ApplyNativeInput(Plugin plugin, CharacterInput input) => nativeInput.Apply(plugin, input);
+	public void ResetNativeInput() => nativeInput.Reset();
 
 	public static float F(string s)
 	{

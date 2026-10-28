@@ -43,5 +43,6 @@ internal static class CharacterInputPatch
 			instance.Equipment.ApplyInput(__instance);
 			instance.Climb.ApplyInput(__instance);
 		}
+		instance.Dev?.ApplyNativeInput(instance, __instance);
 	}
 }

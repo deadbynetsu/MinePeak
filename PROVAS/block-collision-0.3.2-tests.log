@@ -1,0 +1,50 @@
+PASS: initial PEAK state wins over old Minecraft save
+PASS: Minecraft damage and hunger reflect without echo
+PASS: PEAK healing and meal produce additive command
+PASS: retransmission retains ID and payload
+PASS: concurrent Minecraft hit and food do not get overwritten
+PASS: PEAK changes queue while earlier command is unacknowledged
+PASS: PEAK changes survive initial acknowledgement
+PASS: PEAK rounded applied statuses cannot create feedback
+PASS: late acknowledgement snapshot cannot roll back accepted state
+PASS: bounds clamp and idle does not send commands
+PASS: remote healing combines with local healing before acknowledgement
+PASS: invalid floats never poison canonical state
+PASS: tall vertical wall spans all regions
+PASS: negative Minecraft heights floor correctly
+PASS: flat face on boundary reaches both sides
+PASS: window clips the range
+PASS: out of window is absent, not clamped
+PASS: invalid mesh vertex is rejected
+PASS: exact little endian block box and negative section coordinates
+PASS: empty section decodes as a support-clear packet
+PASS: slab keeps half height instead of a full cube
+PASS: fence can extend above the section
+PASS: old scene packet cannot create ghost support
+PASS: old collision epoch cannot restore cleared support
+PASS: truncated box packet is rejected
+PASS: unbounded box count is rejected before allocation
+PASS: nonfinite shape is rejected
+PASS: inverted box cannot build a collider
+PASS: zero volume box is rejected
+PASS: out of section arbitrary geometry is rejected
+PASS packet roundtrip preserves coordinates, state, scene and Lamport stamp
+PASS malformed, legacy and oversized block packets are rejected
+PASS duplicate and stale edits cannot resurrect an old block
+PASS simultaneous conflicting edits converge in opposite delivery orders
+PASS receiving a remote revision advances the next local revision
+PASS journal bounds new coordinates but allows edits and tombstones at capacity
+PASS pose packets reject NaN, Infinity, wrong numeric types and unknown flags
+PASS real relay sends live edits between two simulated endpoints
+PASS late join receives blocks created while host was alone and removed air states
+PASS three endpoints converge after conflicting writes delivered in reverse order
+PASS large snapshots are chunked, deduplicated and drain through bounded input batches
+PASS viewer-only peer replays remote block states when Minecraft links later
+PASS scene isolation rejects delayed airport edits on the island
+PASS snapshot remains available after the original host leaves
+PASS a claimed live edit from a different actor is rejected
+PASS a malformed snapshot chunk is rejected atomically and oversized chunks are refused
+PASS an old snapshot arriving after a newer live edit cannot undo that edit
+PASS the production relay emits at most sixteen remote MMF inputs per frame
+PASS a new Photon session clears the prior session journal and viewer
+PASS: 49/49

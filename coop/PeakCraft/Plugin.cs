@@ -20,7 +20,7 @@ namespace PeakCraft;
 
 [BepInAutoPlugin]
 [DefaultExecutionOrder(-1000)]
-[BepInPlugin("PeakCraftCoop", "PeakCraft Co-op", "0.3.1")]
+[BepInPlugin("PeakCraftCoop", "PeakCraft Co-op", "0.3.2")]
 public class Plugin : BaseUnityPlugin
 {
 	private ConfigEntry<string> linkName;
@@ -59,7 +59,7 @@ public class Plugin : BaseUnityPlugin
 
 	public const string Name = "PeakCraft Co-op";
 
-	public const string Version = "0.3.1";
+	public const string Version = "0.3.2";
 
 	internal static ManualLogSource Log { get; private set; }
 
@@ -238,6 +238,7 @@ public class Plugin : BaseUnityPlugin
 
 	private void OnDestroy()
 	{
+		Dev?.ResetNativeInput();
 		SceneManager.sceneLoaded -= OnSceneLoaded;
 		Quietly(() =>
 		{
@@ -254,6 +255,10 @@ public class Plugin : BaseUnityPlugin
 		Quietly(() =>
 		{
 			ViewerBlocks?.Dispose();
+		});
+		Quietly(() =>
+		{
+			Blocks?.Dispose();
 		});
 		Quietly(() =>
 		{
@@ -296,7 +301,9 @@ public class Plugin : BaseUnityPlugin
 
 	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
+		Dev?.ResetNativeInput();
 		Collision?.Reset("scene " + scene.name);
+		Blocks?.ClearPhysics();
 		BlockRelay?.ResetScene();
 		Vitals?.Reset();
 		Equipment?.Reset();

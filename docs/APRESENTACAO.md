@@ -20,6 +20,6 @@ A arte vetorial [peakcraft-local-banner.svg](images/peakcraft-local-banner.svg) 
 
 ## Limites da apresentação
 
-Não anunciar “100% funcional”, “campanha certificada” ou “multiplayer validado com quatro jogadores” sem uma execução real que comprove essas afirmações. Loopback local e testes puros devem ser identificados como tais. O mapa original do PEAK não se torna escavável, e blocos Minecraft não recebem colisão PEAK no modo nativo.
+Não anunciar “100% funcional”, “campanha certificada” ou “multiplayer validado com quatro jogadores” sem uma execução real que comprove essas afirmações. Loopback local e testes puros devem ser identificados como tais. O mapa original do PEAK não se torna escavável. A versão 0.3.2 acrescenta colisão das construções ao PEAK; só apresente apoio e escalada como testados nos cenários comprovados em [VALIDACAO-0.3.2.md](../VALIDACAO-0.3.2.md).
 
 Guia de instalação e controles: [README.md](../README.md). Procedência, licenças e créditos: [referencia-coop/PROVENIENCIA.md](../referencia-coop/PROVENIENCIA.md).

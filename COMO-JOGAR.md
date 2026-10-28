@@ -25,7 +25,7 @@ O modo inicial de sobrevivência permite fome, dano e cura. Para receber um mate
 
 Selecione o bloco na barra inferior e mire em uma superfície próxima. **Botão direito coloca; esquerdo quebra o bloco colocado.** A rocha e os objetos originais do PEAK não são escaváveis. Para um teste de construção livre, use `/gamemode creative`; para voltar à sobrevivência, `/gamemode survival`.
 
-Para pisar nas suas construções, permaneça no modo Minecraft. No modo PEAK nativo, os blocos Minecraft continuam desenhados, mas não possuem colisores PEAK.
+A partir da **0.3.2**, as construções enviam também suas formas físicas ao PEAK. Você pode usá-las como apoio nos dois modos. Para escalar uma parede de blocos, use a escalada normal do PEAK ou, com a opção Minecraft ativa, **segure V** e use WASD. A ponte precisa estar conectada ao Minecraft; aguarde as seções carregarem. Veja o [estado da validação](VALIDACAO-0.3.2.md).
 
 ## Interagir, comer e arremessar
 
@@ -64,8 +64,8 @@ Para definir uma imagem própria, veja a seção [Skin do usuário](README-PT.md
 | Botão/tecla não alterna o modo | Feche o inventário, chat ou menu Minecraft e tente L dentro da partida; confira `ToggleModeKey` se usa uma tecla personalizada. |
 | Mão parece escura | A cor vem da skin local; confira sua imagem antes de alterar o renderizador. |
 | Bloco some atrás de uma pedra | A ocultação pelo cenário é esperada. A montanha continua sendo o cenário PEAK. |
-| PEAK nativo atravessa o bloco construído | A construção só tem colisão na física Minecraft. Volte ao modo Minecraft para pisar nela. |
+| PEAK nativo atravessa o bloco construído | Confira se ambos os mods são da 0.3.2, se o Minecraft oculto está conectado e se a seção já carregou. Reinicie pelo JOGAR.cmd após atualizar os arquivos. |
 | Item PEAK não usa no controle Minecraft | Segure B, selecione 1–4 e use o mouse. |
 | Escalada não agarra | Aproxime-se, mire numa parede válida e confira a stamina. Solte V antes de uma nova tentativa. |
 
-Os jogos e mods podem mudar. Para relatar um erro, inclua as versões, a sequência de ações e um vídeo curto quando possível. Remova nomes, códigos de sala e caminhos pessoais dos logs públicos. Consulte **[VALIDACAO-0.3.1.md](VALIDACAO-0.3.1.md)** para a checagem da revisão atual e **[VALIDACAO-0.3.0.md](VALIDACAO-0.3.0.md)** para os testes anteriores de equipamentos, escalada, colisão e rede e seus limites. Uma sessão completa com dois PCs e uma campanha até o cume ainda não foram validadas.
+Os jogos e mods podem mudar. Para relatar um erro, inclua as versões, a sequência de ações e um vídeo curto quando possível. Remova nomes, códigos de sala e caminhos pessoais dos logs públicos. Consulte **[VALIDACAO-0.3.2.md](VALIDACAO-0.3.2.md)** para a colisão das construções, **[VALIDACAO-0.3.1.md](VALIDACAO-0.3.1.md)** para a tecla L e **[VALIDACAO-0.3.0.md](VALIDACAO-0.3.0.md)** para os testes anteriores de equipamentos, escalada, colisão e rede e seus limites. Uma sessão completa com dois PCs e uma campanha até o cume ainda não foram validadas.

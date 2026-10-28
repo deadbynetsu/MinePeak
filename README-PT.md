@@ -1,6 +1,6 @@
 # MinePeak — PEAK com modo Minecraft opcional
 
-MinePeak usa a base **PeakCraft Local**; pastas, painel e arquivos de configuração mantêm os nomes PeakCraft. A revisão **0.3.1** muda a tecla padrão de alternância para **L**; sua checagem está em **[VALIDACAO-0.3.1.md](VALIDACAO-0.3.1.md)**. Ela mantém os equipamentos e a escalada nativos temporários, a exportação de colisão e o cooperativo da 0.3.0; os testes anteriores dessas funções estão em **[VALIDACAO-0.3.0.md](VALIDACAO-0.3.0.md)**. Campanha completa e partida real entre dois PCs/contas permanecem pendentes.
+MinePeak usa a base **PeakCraft Local**; pastas, painel e arquivos de configuração mantêm os nomes PeakCraft. A revisão **0.3.2** acrescenta as formas físicas das construções Minecraft ao PEAK; sua checagem está em **[VALIDACAO-0.3.2.md](VALIDACAO-0.3.2.md)**. A tecla de alternância continua **L**, introduzida na **[0.3.1](VALIDACAO-0.3.1.md)**. Ela mantém os equipamentos e a escalada nativos temporários, a exportação de colisão e o cooperativo da 0.3.0; os testes anteriores dessas funções estão em **[VALIDACAO-0.3.0.md](VALIDACAO-0.3.0.md)**. Campanha completa e partida real entre dois PCs/contas permanecem pendentes.
 
 **Abra `JOGAR.cmd` nesta pasta.** O PEAK da Steam executa o aeroporto, a ilha e a partida reais. O Minecraft Java roda oculto em segundo plano. Você começa com os controles nativos do PEAK e decide dentro do jogo quando ativar a movimentação, inventário e blocos do Minecraft. O guia rápido está em **[COMO-JOGAR.md](COMO-JOGAR.md)**.
 
@@ -61,7 +61,7 @@ Use `slim` em `skinModel` para braços finos. As alterações de nome/skin entra
 | Configurar controles e sensibilidade Minecraft | Esc → Minecraft Settings, quando disponível no modo Minecraft |
 | Survival / Creative Minecraft | `/gamemode survival` / `/gamemode creative` |
 
-Com a sincronização de fome e vida habilitada, o Minecraft começa em **Sobrevivência**, para que comida, dano e cura tenham efeito normal. Para um teste rápido de construção, use `/give @s minecraft:stone 64`, escolha o bloco e mire no chão. Você pode selecionar `/gamemode creative` para construir livremente; nesse modo, a imunidade e as regras de comida do Creative continuam valendo. Somente os blocos Minecraft colocados são quebráveis; a montanha nativa não é escavável. **Para subir ou apoiar-se nas suas construções, use o modo Minecraft:** no modo nativo, esses blocos não têm colisores do PEAK.
+Com a sincronização de fome e vida habilitada, o Minecraft começa em **Sobrevivência**, para que comida, dano e cura tenham efeito normal. Para um teste rápido de construção, use `/give @s minecraft:stone 64`, escolha o bloco e mire no chão. Você pode selecionar `/gamemode creative` para construir livremente; nesse modo, a imunidade e as regras de comida do Creative continuam valendo. Somente os blocos Minecraft colocados são quebráveis; a montanha nativa não é escavável. A **0.3.2** envia as formas de colisão dos blocos ao PEAK para apoio e escalada nos dois modos. Use os controles de escalada do PEAK no modo nativo ou segure **V** no modo Minecraft. A stamina continua nativa; aguarde a conexão Java e o carregamento da seção. O [relatório 0.3.2](VALIDACAO-0.3.2.md) registra o que foi validado.
 
 Para embarcar em modo nativo, use os controles normais do PEAK. Em modo Minecraft, olhe para o terminal e segure **G**, depois confirme a viagem no cartão de embarque.
 
@@ -114,7 +114,7 @@ Se necessário, acrescente `-PeakDir 'D:\caminho\PEAK'`. A preparação baixa Ja
 ## Fontes e diagnóstico
 
 - `coop/`: reconstrução C# da DLL MIT Co-op, com as alterações locais de alternância reversível.
-- `coop-fabric/`: extensão Java compilável do perfil/skin, fome e vida compartilhadas e configuração do Minecraft Co-op.
+- `coop-fabric/`: extensão Java compilável do perfil/skin, fome/vida compartilhadas e formas físicas dos blocos para o PEAK.
 - `tests/VitalsLedger.Tests/`: 12 testes puros de reconciliação de fome/vida, sem abrir os jogos.
 - `referencia-coop/`: avisos, licença e procedência do pacote de referência.
 - `referencia-coop/fabric-reconstruido/`: 74 arquivos Java reconstruídos por Vineflower 1.12.0 para auditoria; não formam um projeto compilável.
@@ -123,6 +123,6 @@ Se necessário, acrescente `-PeakDir 'D:\caminho\PEAK'`. A preparação baixa Ja
 
 Para compilar C#, copie `coop/Config.Local.props.template` para `coop/Config.Local.props`, ajuste os caminhos e use SDK.NET10: `dotnet build coop/CoopLocal.csproj -c Release`. Para Java, use JDK25, entre em `coop-fabric` e execute `..\fabric\gradlew.bat build`. Preserve os avisos MIT e não publique os assemblies locais do PEAK usados como referências.
 
-Para executar os testes de fome/vida com SDK.NET10: `dotnet run --project tests/VitalsLedger.Tests -c Release`. O build C# desta extensão terminou com zero erros e quatro avisos já existentes na reconstrução; o build Java também passou. Isso não substitui os testes dentro dos jogos.
+Para executar os 49 testes com SDK.NET10: `./Testar.ps1`. O build C# desta extensão terminou com zero erros e quatro avisos já existentes na reconstrução; o build Java também passou. O [relatório 0.3.2](VALIDACAO-0.3.2.md) registra separadamente o apoio e a escalada das construções nos jogos reais.
 
 Logs: `local-profile/minecraft-console.log`, `coop-fabric/run/logs/latest.log`, `local-profile/BepInEx/LogOutput.log`. Alguns nomes internos ainda dizem Skyrim por herança do SkyCraft; o host é PEAK. Avisos Realms na sessão local não significam por si só que a ponte falhou. O atalho normal deixa o DevHarness desativado.

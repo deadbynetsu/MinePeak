@@ -1,4 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework></PropertyGroup>
   <ItemGroup><Compile Include="../../coop/PeakCraft.World/CollisionRegionSpan.cs" Link="CollisionRegionSpan.cs" /></ItemGroup>
+  <ItemGroup><Compile Include="../../coop/PeakCraft.World/BlockCollisionPacket.cs" Link="BlockCollisionPacket.cs" /></ItemGroup>
 </Project>

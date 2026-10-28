@@ -4,6 +4,7 @@ using PeakCraft.Link;
 using PeakCraft.World;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 namespace PeakCraft.Render;
 
@@ -16,6 +17,8 @@ internal sealed class RenderRing
 	private readonly Atlas atlas;
 
 	private readonly BlockSections sections;
+
+	private readonly BlockCollisionSections blockPhysics = new BlockCollisionSections();
 
 	private readonly CapturedModel avatar;
 
@@ -83,10 +86,15 @@ internal sealed class RenderRing
 	public void Reset()
 	{
 		sections.Clear();
+		blockPhysics.Clear();
 		avatar.Hide();
 		body.Hide();
 		scene.Hide();
 	}
+
+	public void ClearPhysics() => blockPhysics.Clear();
+	public void DescribePhysics() => blockPhysics.Describe();
+	public void Dispose() { Reset(); blockPhysics.Dispose(); }
 
 	private void DrawInMirrors(Vector3 feet, float mcYaw, bool firstPerson)
 	{
@@ -124,6 +132,7 @@ internal sealed class RenderRing
 		{
 		case 3u:
 			sections.Clear();
+			blockPhysics.Clear();
 			avatar.Hide();
 			scene.Hide();
 			break;
@@ -202,6 +211,11 @@ internal sealed class RenderRing
 		case 8u:
 		case 10u:
 		case 11u:
+			break;
+		case BlockCollisionPacket.MessageType:
+			if (bytes <= BlockCollisionPacket.HeaderBytes + BlockCollisionPacket.MaxBoxes * BlockCollisionPacket.BoxBytes)
+				blockPhysics.Set(new System.ReadOnlySpan<byte>(payload, (int)bytes),
+					(uint)(SceneManager.GetActiveScene().buildIndex + 1), Plugin.Instance.Collision.Epoch);
 			break;
 			IL_020e:
 			num2 = (ulong)(sizeof(Proto.RenAvatarHdr) + ((Proto.RenAvatarHdr*)payload)->batchCount * sizeof(Proto.RenBatch) + ((Proto.RenAvatarHdr*)payload)->vertexCount * sizeof(Proto.RenVertex));

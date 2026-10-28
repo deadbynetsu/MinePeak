@@ -31,7 +31,7 @@ jobs:
         uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
         with:
           dotnet-version: '10.0.x'
-      - name: Executar os 37 testes de regressao
+      - name: Executar testes de regressao
         shell: pwsh
         run: ./Testar.ps1
       - name: Criar ZIP e verificar CRC, privacidade e checksums

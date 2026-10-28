@@ -1,0 +1,130 @@
+[Info   :PeakCraft Co-op] Plugin PeakCraft Local 0.3.2 is loaded!
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 100804)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] native: state PeakOwns; item none; progress 0,000; throw 0,000; climbing False; stamina 1,000; feet (-11.589, 6.046, 72.528)
+[Info   :PeakCraft Co-op] block physics: 3 sections / 86 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: ahead 'MinePeak block collider -1 -32 -5', minecraft True, layer Terrain, point (-11.621, 7.116, 73.000), normal (0.000, 0.000, -1.000), bounds Center: (-8.00, 6.00, 72.50), Extents: (6.00, 6.00, 4.50)
+[Info   :PeakCraft Co-op] block physics: support 'MinePeak block collider -1 -32 -5', minecraft True, point (-11.621, 6.000, 72.503), distance 0,227
+[Info   :PeakCraft Co-op] nativeinput: scheduled 4,00s forward 1,00 strafe 0,00 primary True; stamina 1,000; feet (-11.611, 6.028, 72.512)
+[Info   :PeakCraft Co-op] nativeinput: native grab accepted; surface MinePeak block collider -1 -32 -5; stamina 1,000; feet (-11.609, 6.029, 72.516)
+[Info   :PeakCraft Co-op] dev: collision-0.3.2-final-PEAK-climbing
+[Info   :PeakCraft Co-op] dev: PEAK ground under the feet at unity y 6,000 = mc y -506,000 (MinePeak block collider -1 -32 -5); camera mode 0 distance 0,00
+[Info   :PeakCraft Co-op] dev: state PeakOwns; PEAK feet (-11.607, 8.871, 72.581) = mc (-11,607, -503,129, -72,581); Minecraft feet (-11,500, -506,000, -72,600) yaw 180,0 pitch 0,0 flags 0x1; look yaw 180,0 pitch 0,0; camera (-11.461, 10.379, 72.386); kinematic False; stamina 0,79
+[Info   :PeakCraft Co-op] native: state PeakOwns; item none; progress 0,000; throw 0,000; climbing True; stamina 0,767; feet (-11.663, 9.120, 72.594)
+[Info   :PeakCraft Co-op] native: climb surface MinePeak block collider -1 -32 -5; point (-11.641, 10.340, 73.000); normal (0.000, 0.000, -1.000)
+[Info   :PeakCraft Co-op] block physics: 3 sections / 86 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: ahead 'MinePeak block collider -1 -32 -5', minecraft True, layer Terrain, point (-11.678, 10.459, 73.000), normal (0.000, 0.000, -1.000), bounds Center: (-8.00, 6.00, 72.50), Extents: (6.00, 6.00, 4.50)
+[Info   :PeakCraft Co-op] block physics: support 'MinePeak block collider -1 -32 -5', minecraft True, point (-11.678, 6.000, 72.579), distance 3,570
+[Info   :PeakCraft Co-op] nativeinput: native climb detached; surface MinePeak block collider -1 -32 -5; stamina 0,620; feet (-11.631, 10.798, 72.606)
+[Info   :PeakCraft Co-op] nativeinput: releasing (timeout); climbing False; stamina 0,620; feet (-11.607, 11.286, 72.868)
+[Info   :PeakCraft Co-op] nativeinput: scheduled 0,00s forward 0,00 strafe 0,00 primary False; stamina 1,000; feet (-11.534, 6.028, 72.200)
+[Info   :PeakCraft Co-op] nativeinput: releasing (timeout); climbing False; stamina 1,000; feet (-11.534, 6.028, 72.200)
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 100806)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] climb: PEAK control requested; hold V, use WASD and Space
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> NativeControl
+[Info   :PeakCraft Co-op] climb: native grab accepted; stamina 1,000; feet (-11.500, 6.000, 72.600)
+[Info   :PeakCraft Co-op] dev: collision-0.3.2-final-Minecraft-climbing
+[Info   :PeakCraft Co-op] dev: PEAK ground under the feet at unity y 6,000 = mc y -506,000 (MinePeak block collider -1 -32 -5); camera mode 0 distance 0,00
+[Info   :PeakCraft Co-op] dev: state NativeControl; PEAK feet (-11.473, 8.075, 72.573) = mc (-11,473, -503,925, -72,573); Minecraft feet (-11,500, -506,000, -72,600) yaw 180,0 pitch 0,0 flags 0x1; look yaw 180,0 pitch 0,0; camera (-11.378, 9.594, 72.390); kinematic False; stamina 0,81
+[Info   :PeakCraft Co-op] native: state NativeControl; item none; progress 0,000; throw 0,000; climbing True; stamina 0,786; feet (-11.475, 8.314, 72.589)
+[Info   :PeakCraft Co-op] native: climb surface MinePeak block collider -1 -32 -5; point (-11.500, 9.545, 73.000); normal (0.000, 0.000, -1.000)
+[Info   :PeakCraft Co-op] block physics: 3 sections / 86 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: ahead 'MinePeak block collider -1 -32 -5', minecraft True, layer Terrain, point (-11.528, 9.639, 73.000), normal (0.000, 0.000, -1.000), bounds Center: (-8.00, 6.00, 72.50), Extents: (6.00, 6.00, 4.50)
+[Info   :PeakCraft Co-op] block physics: support 'MinePeak block collider -1 -32 -5', minecraft True, point (-11.528, 6.000, 72.589), distance 2,750
+[Info   :PeakCraft Co-op] climb: returning to Minecraft after key released
+[Info   :PeakCraft Co-op] ownership: NativeControl -> Handoff (teleport 100807)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] dev: collision-0.3.2-final-slab-Minecraft
+[Info   :PeakCraft Co-op] dev: PEAK ground under the feet at unity y 6,500 = mc y -505,500 (MinePeak block collider -1 -32 -5); camera mode 0 distance 0,00
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-8.500, 6.500, 70.500) = mc (-8,500, -505,500, -70,500); Minecraft feet (-8,500, -505,500, -70,500) yaw 180,0 pitch 0,0 flags 0x5; look yaw 180,0 pitch 0,0; camera (-8.500, 8.120, 70.500); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] block physics: 3 sections / 86 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: support 'MinePeak block collider -1 -32 -5', minecraft True, point (-8.500, 6.500, 70.500), distance 0,200
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] dev: collision-0.3.2-final-slab-PEAK
+[Info   :PeakCraft Co-op] dev: PEAK ground under the feet at unity y 6,500 = mc y -505,500 (MinePeak block collider -1 -32 -5); camera mode 0 distance 0,00
+[Info   :PeakCraft Co-op] dev: state PeakOwns; PEAK feet (-8.569, 6.529, 70.536) = mc (-8,569, -505,471, -70,536); Minecraft feet (-8,500, -505,500, -70,500) yaw 180,0 pitch 0,0 flags 0x1; look yaw 180,0 pitch 0,0; camera (-8.600, 8.186, 70.456); kinematic False; stamina 1,00
+[Info   :PeakCraft Co-op] block physics: 3 sections / 86 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: support 'MinePeak block collider -1 -32 -5', minecraft True, point (-8.570, 6.500, 70.535), distance 0,229
+[Info   :PeakCraft Co-op] dev: collision-0.3.2-final-native-drop
+[Info   :PeakCraft Co-op] dev: PEAK ground under the feet at unity y 6,000 = mc y -506,000 (MinePeak block collider -1 -32 -5); camera mode 0 distance 0,00
+[Info   :PeakCraft Co-op] dev: state PeakOwns; PEAK feet (-11.569, 6.029, 71.548) = mc (-11,569, -505,971, -71,548); Minecraft feet (-8,500, -505,500, -70,500) yaw 180,0 pitch 0,0 flags 0x1; look yaw 180,0 pitch 0,0; camera (-11.599, 7.688, 71.435); kinematic False; stamina 1,00
+[Info   :PeakCraft Co-op] block physics: 3 sections / 86 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: ahead 'MinePeak block collider -1 -32 -5', minecraft True, layer Terrain, point (-11.565, 7.118, 73.000), normal (0.000, 0.000, -1.000), bounds Center: (-8.00, 6.00, 72.50), Extents: (6.00, 6.00, 4.50)
+[Info   :PeakCraft Co-op] block physics: support 'MinePeak block collider -1 -32 -5', minecraft True, point (-11.565, 6.000, 71.555), distance 0,229
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 100809)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] coop: local block minecraft:air (state 0) at (-12, -505, -74), revision 1
+[Info   :PeakCraft Co-op] dev: collision-0.3.2-final-mined-block
+[Info   :PeakCraft Co-op] dev: PEAK ground under the feet at unity y 6,000 = mc y -506,000 (MinePeak block collider -1 -32 -5); camera mode 0 distance 0,00
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-11.500, 6.000, 71.500) = mc (-11,500, -506,000, -71,500); Minecraft feet (-11,500, -506,000, -71,500) yaw 180,0 pitch 0,0 flags 0x5; look yaw 180,0 pitch 0,0; camera (-11.500, 7.620, 71.500); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] block physics: 3 sections / 85 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: support 'MinePeak block collider -1 -32 -5', minecraft True, point (-11.500, 6.000, 71.500), distance 0,200
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] dev: collision-0.3.2-final-removed-native
+[Info   :PeakCraft Co-op] dev: PEAK ground under the feet at unity y 0,555 = mc y -511,445 (Airport); camera mode 0 distance 0,00
+[Info   :PeakCraft Co-op] dev: state PeakOwns; PEAK feet (-11.501, 0.583, 71.516) = mc (-11,501, -511,417, -71,516); Minecraft feet (-11,500, -511,445, -71,500) yaw 180,0 pitch 0,0 flags 0x1; look yaw 180,0 pitch 0,0; camera (-11.542, 2.235, 71.396); kinematic False; stamina 0,90
+[Info   :PeakCraft Co-op] block physics: 3 sections / 11 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: support 'Airport', minecraft False, point (-11.501, 0.555, 71.518), distance 0,229
+[Info   :PeakCraft Co-op] nativeinput: scheduled 1,20s forward 1,00 strafe 0,00 primary False; stamina 0,900; feet (-11.500, 0.583, 71.517)
+[Info   :PeakCraft Co-op] nativeinput: releasing (timeout); climbing False; stamina 0,900; feet (-11.509, 0.560, 74.397)
+[Info   :PeakCraft Co-op] dev: collision-0.3.2-final-PEAK-crosses-removed-wall
+[Info   :PeakCraft Co-op] dev: PEAK ground under the feet at unity y 0,555 = mc y -511,445 (Airport); camera mode 0 distance 0,00
+[Info   :PeakCraft Co-op] dev: state PeakOwns; PEAK feet (-11.530, 0.581, 74.687) = mc (-11,530, -511,419, -74,687); Minecraft feet (-11,500, -511,445, -71,500) yaw 180,0 pitch 0,0 flags 0x1; look yaw 180,0 pitch 0,0; camera (-11.550, 2.233, 74.563); kinematic False; stamina 0,90
+[Info   :PeakCraft Co-op] block physics: 3 sections / 11 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: support 'Airport', minecraft False, point (-11.538, 0.555, 74.674), distance 0,228
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 100811)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] dev: collision-0.3.2-final-Minecraft-no-ghost-after-refresh
+[Info   :PeakCraft Co-op] dev: PEAK ground under the feet at unity y 0,717 = mc y -511,283 (conveyor); camera mode 0 distance 0,00
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-11.543, 0.734, 77.635) = mc (-11,543, -511,266, -77,635); Minecraft feet (-11,543, -511,266, -77,635) yaw 180,0 pitch 0,0 flags 0x5; look yaw 180,0 pitch 0,0; camera (-11.543, 2.354, 77.635); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] block physics: 3 sections / 11 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: support 'Airport', minecraft False, point (-11.543, 0.555, 77.635), distance 0,379
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] dev: collision-0.3.2-restored-test-region
+[Info   :PeakCraft Co-op] block physics: 3 sections / 11 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: support 'Airport', minecraft False, point (-9.456, 0.805, 50.471), distance 0,294
+
+# FINAL DISTRIBUTION: repeated real climbs/removal after fresh launch
+[Info   :PeakCraft Co-op] Plugin PeakCraft Local 0.3.2 is loaded!
+[Info   :PeakCraft Co-op] dev: collision-0.3.2-distribution-fresh-shapes
+[Info   :PeakCraft Co-op] block physics: 3 sections / 85 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: ahead 'MinePeak block collider -1 -32 -5', minecraft True, layer Terrain, point (-11.500, 7.089, 73.000), normal (0.000, 0.000, -1.000), bounds Center: (-8.00, 6.00, 72.50), Extents: (6.00, 6.00, 4.50)
+[Info   :PeakCraft Co-op] block physics: support 'MinePeak block collider -1 -32 -5', minecraft True, point (-11.500, 6.000, 72.600), distance 0,200
+[Info   :PeakCraft Co-op] nativeinput: scheduled 2,80s forward 1,00 strafe 0,00 primary True; stamina 1,000; feet (-11.543, 5.909, 72.559)
+[Info   :PeakCraft Co-op] nativeinput: native grab accepted; surface MinePeak block collider -1 -32 -5; stamina 1,000; feet (-11.563, 5.903, 72.571)
+[Info   :PeakCraft Co-op] dev: collision-0.3.2-distribution-native-PASS
+[Info   :PeakCraft Co-op] dev: PEAK ground under the feet at unity y 6,000 = mc y -506,000 (MinePeak block collider -1 -32 -5); camera mode 0 distance 0,00
+[Info   :PeakCraft Co-op] dev: state PeakOwns; PEAK feet (-11.493, 8.395, 72.588) = mc (-11,493, -503,605, -72,588); Minecraft feet (-11,500, -506,000, -72,600) yaw 180,0 pitch 0,0 flags 0x1; look yaw 180,0 pitch 0,0; camera (-11.540, 9.937, 72.397); kinematic False; stamina 0,82
+[Info   :PeakCraft Co-op] native: state PeakOwns; item none; progress 0,000; throw 0,000; climbing True; stamina 0,800; feet (-11.462, 8.649, 72.569)
+[Info   :PeakCraft Co-op] native: climb surface MinePeak block collider -1 -32 -5; point (-11.500, 9.880, 73.000); normal (0.000, 0.000, -1.000)
+[Info   :PeakCraft Co-op] block physics: 3 sections / 85 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: ahead 'MinePeak block collider -1 -32 -5', minecraft True, layer Terrain, point (-11.491, 9.966, 73.000), normal (0.000, 0.000, -1.000), bounds Center: (-8.00, 6.00, 72.50), Extents: (6.00, 6.00, 4.50)
+[Info   :PeakCraft Co-op] block physics: support 'MinePeak block collider -1 -32 -5', minecraft True, point (-11.491, 6.000, 72.601), distance 3,077
+[Info   :PeakCraft Co-op] nativeinput: releasing (timeout); climbing True; stamina 0,722; feet (-11.494, 9.527, 72.588)
+[Info   :PeakCraft Co-op] nativeinput: native climb detached; surface MinePeak block collider -1 -32 -5; stamina 0,722; feet (-11.493, 9.540, 72.589)
+[Info   :PeakCraft Co-op] climb: PEAK control requested; hold V, use WASD and Space
+[Info   :PeakCraft Co-op] climb: native grab accepted; stamina 1,000; feet (-11.500, 6.000, 72.600)
+[Info   :PeakCraft Co-op] dev: collision-0.3.2-distribution-Minecraft-PASS
+[Info   :PeakCraft Co-op] dev: PEAK ground under the feet at unity y 6,000 = mc y -506,000 (MinePeak block collider -1 -32 -5); camera mode 0 distance 0,00
+[Info   :PeakCraft Co-op] dev: state NativeControl; PEAK feet (-11.500, 7.826, 72.587) = mc (-11,500, -504,174, -72,587); Minecraft feet (-11,500, -506,000, -72,600) yaw 180,0 pitch 0,0 flags 0x1; look yaw 180,0 pitch 0,0; camera (-11.600, 9.371, 72.395); kinematic False; stamina 0,83
+[Info   :PeakCraft Co-op] native: state NativeControl; item none; progress 0,000; throw 0,000; climbing True; stamina 0,806; feet (-11.473, 8.068, 72.572)
+[Info   :PeakCraft Co-op] native: climb surface MinePeak block collider -1 -32 -5; point (-11.500, 9.298, 73.000); normal (0.000, 0.000, -1.000)
+[Info   :PeakCraft Co-op] block physics: 3 sections / 85 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: ahead 'MinePeak block collider -1 -32 -5', minecraft True, layer Terrain, point (-11.474, 9.398, 73.000), normal (0.000, 0.000, -1.000), bounds Center: (-8.00, 6.00, 72.50), Extents: (6.00, 6.00, 4.50)
+[Info   :PeakCraft Co-op] block physics: support 'MinePeak block collider -1 -32 -5', minecraft True, point (-11.474, 6.000, 72.588), distance 2,509
+[Info   :PeakCraft Co-op] climb: returning to Minecraft after key released
+[Info   :PeakCraft Co-op] dev: collision-0.3.2-distribution-removal-PASS
+[Info   :PeakCraft Co-op] dev: PEAK ground under the feet at unity y 0,555 = mc y -511,445 (Airport); camera mode 0 distance 0,00
+[Info   :PeakCraft Co-op] dev: state PeakOwns; PEAK feet (-11.468, 0.411, 72.684) = mc (-11,468, -511,589, -72,684); Minecraft feet (-11,489, -511,445, -72,588) yaw 180,0 pitch 0,0 flags 0x1; look yaw 180,0 pitch 0,0; camera (-11.469, 2.070, 72.629); kinematic False; stamina 0,90
+[Info   :PeakCraft Co-op] block physics: 3 sections / 11 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: support 'Airport', minecraft False, point (-11.467, 0.555, 72.683), distance 0,058
+[Info   :PeakCraft Co-op] dev: collision-0.3.2-distribution-removal-confirmed
+[Info   :PeakCraft Co-op] dev: PEAK ground under the feet at unity y 0,555 = mc y -511,445 (Airport); camera mode 0 distance 0,00
+[Info   :PeakCraft Co-op] dev: state PeakOwns; PEAK feet (-11.470, 0.410, 72.676) = mc (-11,470, -511,590, -72,676); Minecraft feet (-11,489, -511,445, -72,588) yaw 180,0 pitch 0,0 flags 0x1; look yaw 180,0 pitch 0,0; camera (-11.471, 2.072, 72.621); kinematic False; stamina 0,90
+[Info   :PeakCraft Co-op] block physics: 3 sections / 11 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: support 'Airport', minecraft False, point (-11.470, 0.555, 72.676), distance 0,049
+[Info   :PeakCraft Co-op] dev: collision-0.3.2-distribution-cleaned
+[Info   :PeakCraft Co-op] block physics: 3 sections / 11 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: support 'Airport', minecraft False, point (-9.448, 0.805, 50.487), distance 0,082

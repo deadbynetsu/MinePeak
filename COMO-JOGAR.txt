@@ -35,11 +35,12 @@ Creative mantem sua imunidade e regras de comida; volte com /gamemode survival
 para jogar com fome e dano normais. Mais detalhes: docs/FOME-E-VIDA.md.
 
 Os blocos sao os colocados pelo Minecraft. A montanha original nao e escavavel.
-Use o modo Minecraft para andar e subir sobre suas construcoes: nao ha colisao
-dos blocos Minecraft com o personagem nativo do PEAK nesta versao.
+A versao 0.3.2 envia as formas fisicas dos blocos ao PEAK para apoio nos dois modos.
+Na parede de blocos, use a escalada normal PEAK ou segure V no modo Minecraft.
+Aguarde a ponte Java conectar e a secao carregar. Confira VALIDACAO-0.3.2.md.
 
 Guia com exemplos: COMO-JOGAR.md. Configuracao e limites: README-PT.md.
-Checagem da revisao atual: VALIDACAO-0.3.1.md.
+Checagem da revisao atual: VALIDACAO-0.3.2.md. Tecla L: VALIDACAO-0.3.1.md.
 Testes anteriores de equipamentos, escalada, colisao e rede: VALIDACAO-0.3.0.md.
 Multiplayer entre dois PCs ainda exige validacao.
 Em uma pasta nova extraida do ZIP, prepare primeiro seguindo README-PT.md.

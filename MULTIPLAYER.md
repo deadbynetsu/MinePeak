@@ -45,7 +45,7 @@ O protocolo desta edição é **v2**. Todos devem atualizar juntos; a edição C
 - O diário registra até **65.536 coordenadas diferentes por cena/sessão**. Ao atingir esse limite, novas coordenadas deixam de ser anunciadas e o log informa o motivo; alterações nas coordenadas já conhecidas continuam possíveis.
 - O diário existe em memória durante a sessão. Não é um sistema de salvamento compartilhado nem um servidor Minecraft persistente. Uma construção antiga do mundo Java local que antecede a sessão não é automaticamente descoberta/exportada para outro jogador.
 - A sincronização cobre colocar/quebrar blocos pelo jogador e o identificador de seu estado. Não replica conteúdo/NBT de baús, inventários Minecraft, entidades, redstone nem todas as mudanças automáticas de fluidos e blocos.
-- O jogador nativo do PEAK vê as construções, mas os blocos Minecraft ainda não fornecem colisores para o corpo nativo. **Use o modo Minecraft para ficar em cima das construções.**
+- A partir da 0.3.2, os blocos aplicados ao Minecraft local exportam também suas formas físicas ao PEAK. Isso inclui as edições recebidas pelo cooperativo após serem aplicadas ao mundo Java. Os dois PCs precisam da mesma versão e da ponte Java ativa. O teste real de apoio/escalada entre dois participantes continua pendente.
 - Sem Java ativo, a visualização de blocos remotos usa cubos simplificados. Com Java ativo, a ponte pode mostrar as seções reais do Minecraft.
 - Compatibilidade com clientes sem este mod, a campanha inteira em grupo e o comportamento sob latência/perda de rede real continuam sem certificação.
 
@@ -79,6 +79,7 @@ Este roteiro ainda precisa ser executado; a tabela não indica aprovação prév
 | Entrada tardia | A constrói e remove blocos antes de B entrar; após a sincronização, B recebe as posições finais, incluindo o ar. |
 | Conflito simultâneo | Ambos colocam blocos diferentes na mesma coordenada; ao estabilizar, os dois veem o mesmo bloco. |
 | B e V | Usar comida PEAK, arremessar e escalar restaura o corpo/pose corretos no outro PC. |
+| Colisão compartilhada | A coloca uma plataforma e uma parede; B fica sobre ela e escala nos modos PEAK e Minecraft. Depois de A quebrar os blocos, o apoio desaparece também para B, inclusive após a atualização da região. |
 | Vida/fome | Comer e receber dano sincroniza os dois jogos locais, preservando os valores do outro participante. |
 | Viagem | Os dois embarcam e chegam à mesma ilha, sem blocos do aeroporto surgindo na ilha. |
 | Saída/troca do host | O PEAK mantém a sala quando aplicável; uma nova entrada recebe o diário dos participantes que ficaram. |

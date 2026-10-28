@@ -12,12 +12,16 @@ internal static class DevCommands
 	{
 		PeakLink link = plugin.Link;
 		dev.Register("collisionprobe", _ => plugin.Collision.ProbeAhead());
+		dev.Register("blockphysics", _ => plugin.Blocks.DescribePhysics());
+		dev.Register("nativeinput", a => dev.SetNativeInput(plugin, DevHarness.F(a[0]), DevHarness.F(a[1]), a[2] == "1",
+			a.Length > 3 ? DevHarness.F(a[3]) : 0f));
 		dev.Register("native", a => {
 			var c = Character.localCharacter;
 			if (a.Length == 0 || a[0] == "status") {
 				if (c == null) { Plugin.Log.LogInfo("native: no character"); return; }
 				var item = c.data.currentItem;
 				Plugin.Log.LogInfo($"native: state {plugin.Ownership.State}; item {(item != null ? item.name : "none")}; progress {(item != null ? item.progress : 0):F3}; throw {c.refs.items.throwChargeLevel:F3}; climbing {c.data.isClimbingAnything}; stamina {c.data.currentStamina:F3}; feet {Follower.PeakFeet(c):F3}");
+				if (c.data.isClimbingAnything) Plugin.Log.LogInfo($"native: climb surface {(c.data.climbHit.collider != null ? c.data.climbHit.collider.name : "none")}; point {c.data.climbPos:F3}; normal {c.data.climbNormal:F3}");
 				foreach (var view in c.refs.items.droppedItems) if (view != null) {
 					var dropped = view.GetComponent<Item>();
 					if (dropped != null && dropped.rig != null) Plugin.Log.LogInfo($"native: dropped {dropped.name} at {dropped.transform.position:F3} velocity {dropped.rig.linearVelocity:F3}");

@@ -8,7 +8,7 @@
 
 [![Testes automatizados](https://github.com/deadbynetsu/MinePeak/actions/workflows/tests.yml/badge.svg)](https://github.com/deadbynetsu/MinePeak/actions/workflows/tests.yml)
 
-[Baixar Release 0.3.1](https://github.com/deadbynetsu/MinePeak/releases/tag/v0.3.1) · [Como jogar](COMO-JOGAR.md) · [Instalação](README-PT.md) · [Multiplayer](MULTIPLAYER.md) · [Testes desta versão](VALIDACAO-0.3.1.md) · [Créditos](referencia-coop/PROVENIENCIA.md)
+[Baixar Release 0.3.2](https://github.com/deadbynetsu/MinePeak/releases/tag/v0.3.2) · [Como jogar](COMO-JOGAR.md) · [Instalação](README-PT.md) · [Multiplayer](MULTIPLAYER.md) · [Testes desta versão](VALIDACAO-0.3.2.md) · [Créditos](referencia-coop/PROVENIENCIA.md)
 
 </div>
 
@@ -36,7 +36,7 @@ Durante B ou V, o corpo e os controles usados são temporariamente os nativos do
 
 Requisitos desta versão: **Windows 11 de 64 bits**, PEAK instalado pela Steam e acesso aos arquivos necessários do Minecraft Java. A combinação exercitada localmente foi **PEAK 3.0.1 + Minecraft Java 26.3**. A preparação instala Java 25 e BepInEx em pastas locais do projeto.
 
-1. Baixe **MinePeak-0.3.1.zip** na [Release experimental](https://github.com/deadbynetsu/MinePeak/releases/tag/v0.3.1) e extraia para uma pasta própria. O ZIP inclui fontes e mods compilados; o arquivo `.sha256` ao lado permite conferir a integridade.
+1. Baixe **MinePeak-0.3.2.zip** na [Release experimental](https://github.com/deadbynetsu/MinePeak/releases/tag/v0.3.2) e extraia para uma pasta própria. O ZIP inclui fontes e mods compilados; o arquivo `.sha256` ao lado permite conferir a integridade.
 2. Leia a [EULA do Minecraft](https://www.minecraft.net/eula). Se concordar, abra PowerShell nessa pasta e prepare a instalação:
 
    ```powershell
@@ -68,7 +68,7 @@ O lançador pode ler a identidade pública e uma skin já armazenada pelo SKLaun
 | Escalar com a física e stamina do PEAK | Segure V perto da parede; WASD move, Espaço solta |
 | Menu PEAK / menu Minecraft | Esc / O |
 
-No modo nativo, os comandos normais do PEAK continuam valendo. **Blocos Minecraft são apoios físicos apenas no modo Minecraft**; no modo nativo eles permanecem visíveis, mas não ganham colisores PEAK.
+A versão **0.3.2** acrescenta colisão das construções Minecraft ao PEAK: a ponte envia as formas físicas dos blocos para permitir apoio e escalada nativa. No modo PEAK, use os controles normais de escalada; com a opção Minecraft ativa, segure **V** junto à parede de blocos. Ambos usam a stamina e as regras de alcance do PEAK. O [relatório desta revisão](VALIDACAO-0.3.2.md) distingue os testes automatizados da validação dentro do jogo.
 
 ## Cooperativo e estado dos testes
 
@@ -81,20 +81,20 @@ Use os lobbies, convites Steam ou códigos de sala do próprio PEAK. Todos os pa
 | PEAK e Minecraft reais conectados | Aeroporto, embarque, praia, alternância de modos e construção locais |
 | Fome e vida | 12 testes puros e cenários reais nos dois jogos em [VALIDACAO-FOME-VIDA.md](VALIDACAO-FOME-VIDA.md) |
 | Equipamentos e escalada | Marshmallow PEAK consumido com comida sincronizada, carga de arremesso e subida real com gasto de stamina |
-| Colisão | 6 testes de regiões, leitura de malhas GPU e teste em jogo de parede fina artificial; não cobre todo o mapa |
+| Colisão | 18 testes de regiões/mensagens; no jogo real, apoio em plataforma/laje e escalada de blocos nos dois modos, mineração e remoção sem apoio invisível |
 | Compartilhamento Co-op | 19 testes de protocolo/histórico de blocos, implementação Photon e loopback local; dois PCs ainda pendentes |
 | Campanha completa e cume | Não percorridos integralmente nesta entrega |
 
-As capturas e registros em **[PROVAS/](PROVAS/)** documentam o que foi executado. **[VALIDACAO-0.3.1.md](VALIDACAO-0.3.1.md)** registra a checagem desta revisão; **[VALIDACAO-0.3.0.md](VALIDACAO-0.3.0.md)** preserva a verificação de equipamentos, escalada, colisão e rede, e **[VALIDACAO.md](VALIDACAO.md)** distingue o Co-op dos testes históricos da base clássica. Não se declara compatibilidade perfeita com todas as colisões, alimentos, mods ou versões futuras dos jogos.
+As capturas e registros em **[PROVAS/](PROVAS/)** documentam o que foi executado. **[VALIDACAO-0.3.2.md](VALIDACAO-0.3.2.md)** registra a colisão das construções; **[VALIDACAO-0.3.1.md](VALIDACAO-0.3.1.md)** registra a tecla L; **[VALIDACAO-0.3.0.md](VALIDACAO-0.3.0.md)** preserva a verificação de equipamentos, escalada, colisão e rede, e **[VALIDACAO.md](VALIDACAO.md)** distingue o Co-op dos testes históricos da base clássica. Não se declara compatibilidade perfeita com todas as colisões, alimentos, mods ou versões futuras dos jogos.
 
-Para repetir os **37 casos automatizados** sem abrir os jogos, instale o SDK .NET 10 e execute `./Testar.ps1`. A CI pública executa os mesmos projetos em Windows e Linux; o build completo do plugin usa os assemblies da instalação local do PEAK.
+Para repetir os **49 casos automatizados** sem abrir os jogos, instale o SDK .NET 10 e execute `./Testar.ps1`. A CI pública executa os mesmos projetos em Windows e Linux; o build completo do plugin usa os assemblies da instalação local do PEAK.
 
 ## Fontes e contribuições
 
 | Pasta | Conteúdo |
 | --- | --- |
 | `coop/` | Plugin PEAK Co-op reconstruído do pacote MIT e adaptado; C# compilável |
-| `coop-fabric/` | Extensão Java compilável de identidade, skin e fome/vida |
+| `coop-fabric/` | Extensão Java compilável de identidade, skin, fome/vida e colisão dos blocos no PEAK |
 | `tests/` | Testes independentes dos jogos |
 | `referencia-coop/` | Licenças, avisos e procedência do pacote de referência |
 | `referencia-coop/fabric-reconstruido/` | Java reconstruído para auditoria; não é um projeto compilável |
