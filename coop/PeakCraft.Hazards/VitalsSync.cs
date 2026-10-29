@@ -25,6 +25,9 @@ internal sealed class VitalsSync
     // Engaged also covers the brief initial negotiation, so the old bridge cannot erase statuses.
     public bool Engaged { get; private set; }
     public bool Connected { get; private set; }
+    public bool HudVisible => showHud.Value && Engaged && Connected && ledger.Initialized;
+    public int HealthPercent => Mathf.RoundToInt(ledger.TargetHealth * 5);
+    public int FoodPercent => Mathf.RoundToInt(ledger.TargetFood * 5);
 
     public VitalsSync(PeakLink link, ConfigFile config)
     {
@@ -170,7 +173,7 @@ internal sealed class VitalsSync
             Magic = VitalsWire.Magic, Session = session,
             Flags = (active ? 1u : 0u) | (minecraftClock ? 2u : 0u) | (dead ? 4u : 0u) | (survivalDefault.Value ? 8u : 0u),
             CommandId = command.Id, CommandKind = command.Kind, Health = command.Health, Food = command.Food,
-            WorldId = (uint)(SceneManager.GetActiveScene().buildIndex + 1), Heartbeat = PeakLink.TickCount
+            WorldId = PeakApi.CurrentWorldId, Heartbeat = PeakLink.TickCount
         };
         link.WriteVitals(in state);
     }
@@ -181,9 +184,4 @@ internal sealed class VitalsSync
         Plugin.Log.LogInfo($"vitals: linked {Connected}, ready {ledger.Initialized}; PEAK health {(c != null ? Health(c) : -1):F2} food {(c != null ? Food(c) : -1):F2}; MC health {guest.Health:F2} food {guest.Food:F2} saturation {guest.Saturation:F2}; ack {guest.Ack}/{command.Id}; epoch {guest.PlayerEpoch}; alive {(guest.Flags & 2) != 0}");
     }
 
-    public void Draw()
-    {
-        if (!showHud.Value || !Engaged || !Connected || !ledger.Initialized || Ownership.PeakMenuOpen() || Event.current.type != EventType.Repaint) return;
-        GUI.Box(new Rect(16, 16, 270, 32), $"Vida: {Mathf.RoundToInt(ledger.TargetHealth * 5)}%     Comida: {Mathf.RoundToInt(ledger.TargetFood * 5)}%");
-    }
 }

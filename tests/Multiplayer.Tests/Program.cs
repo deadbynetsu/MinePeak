@@ -112,6 +112,22 @@ Test("the production relay emits at most sixteen remote MMF inputs per frame", (
     Check(b.Link.Inputs == 0 && b.Relay.PendingInputs == 65); b.Frame();
     Check(b.Link.Inputs == 16 && b.Relay.PendingInputs == 49); bus.Frames(5); Check(b.Link.Inputs == 65);
 });
+Test("a full Minecraft input ring retains the newest queued removal until accepted", () => {
+    var bus = new Bus(); bus.Add(1); var b = bus.Add(2); b.Activate(); b.Link.InputBudget = 0;
+    b.Net.Receive(CoopProto.PhotonBlockSet, 1, E(1, 1).Packet()); b.Frame();
+    Check(b.Relay.PendingInputs == 1 && b.Link.Inputs == 0 && b.Link.Blocks.Count == 0);
+    b.Net.Receive(CoopProto.PhotonBlockSet, 1, E(1, 2, 0, "minecraft:air").Packet());
+    b.Frame(); Check(b.Relay.PendingInputs == 1 && b.Link.Inputs == 0);
+    b.Link.InputBudget = 1; b.Frame();
+    Check(b.Relay.PendingInputs == 0 && b.Link.Inputs == 1 && b.Link.Blocks[(1, -511, 3)] == 0);
+});
+Test("partially accepted snapshots retry the remaining local inputs without duplicates", () => {
+    var bus = new Bus(); bus.Add(1); var b = bus.Add(2); b.Activate(); b.Link.InputBudget = 1;
+    for (int i = 0; i < 3; i++) b.Net.Receive(CoopProto.PhotonBlockSet, 1, E(1, i + 1, x: i).Packet());
+    b.Frame(); Check(b.Link.Inputs == 1 && b.Relay.PendingInputs == 2);
+    b.Link.InputBudget = 2; b.Frame();
+    Check(b.Link.Inputs == 3 && b.Relay.PendingInputs == 0 && b.Link.Blocks.Count == 3);
+});
 Test("a new Photon session clears the prior session journal and viewer", () => {
     var bus = new Bus(); var a = bus.Add(1); a.Write(1, -511, 3, 1, "minecraft:stone");
     Check(a.Relay.JournalCount == 1); a.Net.SessionGeneration++; a.Frame();

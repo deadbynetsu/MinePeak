@@ -21,8 +21,15 @@ namespace PeakCraft.Link
     {
         public readonly Dictionary<(int, int, int), int> Blocks = new();
         public int Inputs;
+        public int InputBudget = int.MaxValue;
         public void PushInput(Proto.InputType type, ushort code = 0, int a = 0, int b = 0, int c = 0)
-        { if ((ushort)type != 9) throw new Exception("Unexpected input type"); Blocks[(a, b, c)] = code; Inputs++; }
+        { TryPushInput(type, code, a, b, c); }
+        public bool TryPushInput(Proto.InputType type, ushort code = 0, int a = 0, int b = 0, int c = 0)
+        {
+            if ((ushort)type != 9) throw new Exception("Unexpected input type");
+            if (InputBudget <= 0) return false;
+            InputBudget--; Blocks[(a, b, c)] = code; Inputs++; return true;
+        }
     }
 }
 namespace PeakCraft.Coop

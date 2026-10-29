@@ -1,0 +1,149 @@
+# Interface e foco
+[Info   :PeakCraft Co-op] local mode: Minecraft
+[Info   :PeakCraft Co-op] protocol layout self-check: PASS
+[Info   :PeakCraft Co-op] ring self-test: PASS
+[Info   :PeakCraft Co-op] collision: cleared, epoch 2 (scene Pretitle)
+[Info   :PeakCraft Co-op] collision: cleared, epoch 3 (scene Title)
+[Info   :PeakCraft Co-op] collision: cleared, epoch 4 (scene Airport)
+[Info   :PeakCraft Co-op] collision: cleared, epoch 5 (Minecraft linked)
+[Info   :PeakCraft Co-op] collision: cleared, epoch 6 (Minecraft linked)
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 22595)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] input: keyboard and mouse go to Minecraft
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakMenu
+[Info   :PeakCraft Co-op] input: released (release-all sent)
+[Info   :PeakCraft Co-op] dev: screenshot -> <workspace>\local-profile\BepInEx\peakcraft-shots\polish-040-final-pause.png
+[Info   :PeakCraft Co-op] settings: opening Minecraft options from PEAK pause menu
+[Info   :PeakCraft Co-op] ownership: PeakMenu -> MinecraftOwns
+[Info   :PeakCraft Co-op] input: keyboard and mouse go to Minecraft
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-9.673, 0.877, 50.599) = mc (-9,673, -511,123, -50,599); Minecraft feet (-9,673, -511,123, -50,599) yaw 180,0 pitch 0,0 flags 0x7; look yaw 180,0 pitch 0,0; camera (-9.673, 2.497, 50.599); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] dev: screenshot -> <workspace>\local-profile\BepInEx\peakcraft-shots\polish-040-final-options.png
+[Info   :PeakCraft Co-op] input: released (release-all sent)
+[Info   :PeakCraft Co-op] input: keyboard and mouse go to Minecraft
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-9.673, 0.877, 50.599) = mc (-9,673, -511,123, -50,599); Minecraft feet (-9,673, -511,123, -50,599) yaw 180,0 pitch 0,0 flags 0x7; look yaw 180,0 pitch 0,0; camera (-9.673, 2.497, 50.599); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] dev: screenshot -> <workspace>\local-profile\BepInEx\peakcraft-shots\polish-040-final-chat-focus.png
+[Info   :PeakCraft Co-op] dev: screenshot -> <workspace>\local-profile\BepInEx\peakcraft-shots\polish-040-final-kiosk.png
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakMenu
+[Info   :PeakCraft Co-op] input: released (release-all sent)
+[Info   :PeakCraft Co-op] ownership: PeakMenu -> Cutscene (loading)
+[Info   :PeakCraft Co-op] collision: cleared, epoch 7 (scene Level_85)
+[Info   :PeakCraft Co-op] ownership: Cutscene -> Handoff (teleport 22596)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] input: keyboard and mouse go to Minecraft
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (15.762, 2.213, -372.563) = mc (15,762, -509,787, 372,563); Minecraft feet (15,762, -509,787, 372,563) yaw 180,0 pitch 0,0 flags 0x5; look yaw 180,0 pitch 0,0; camera (15.762, 3.833, -372.563); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] block physics: 0 sections / 0 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: ahead 'Colliders', minecraft False, layer Map, point (15.762, 3.302, -367.635), normal (-0.012, -0.218, -0.976), bounds Center: (16.69, 3.12, -366.83), Extents: (1.27, 0.63, 0.83)
+[Info   :PeakCraft Co-op] block physics: support 'Ground', minecraft False, point (15.762, 2.177, -372.563), distance 0,236
+[Info   :PeakCraft Co-op] dev: screenshot -> <workspace>\local-profile\BepInEx\peakcraft-shots\polish-040-final-island.png
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> Cutscene (loading)
+[Info   :PeakCraft Co-op] input: released (release-all sent)
+[Info   :PeakCraft Co-op] collision: cleared, epoch 8 (scene Airport)
+[Info   :PeakCraft Co-op] ownership: Cutscene -> Handoff (teleport 22597)
+[Info   :PeakCraft Co-op] ownership: Handoff -> PeakOwns
+[Info   :PeakCraft Co-op] collision: cleared, epoch 9 (Minecraft linked)
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 22598)
+[Info   :PeakCraft Co-op] ownership: Handoff -> PeakOwns
+[Info   :PeakCraft Co-op] collision: cleared, epoch 10 (Minecraft linked)
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 22599)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] input: keyboard and mouse go to Minecraft
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-9.616, 0.877, 50.481) = mc (-9,616, -511,123, -50,481); Minecraft feet (-9,616, -511,123, -50,481) yaw 180,0 pitch 0,0 flags 0x5; look yaw 180,0 pitch 0,0; camera (-9.616, 2.497, 50.481); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] block physics: 4 sections / 13 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: support 'Airport', minecraft False, point (-9.616, 0.805, 50.481), distance 0,271
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-9.616, 0.877, 50.481) = mc (-9,616, -511,123, -50,481); Minecraft feet (-9,616, -511,123, -50,481) yaw 180,0 pitch 0,0 flags 0x7; look yaw 180,0 pitch 0,0; camera (-9.616, 2.497, 50.481); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] dev: screenshot -> <workspace>\local-profile\BepInEx\peakcraft-shots\polish-040-final-inventory.png
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> NativeControl
+[Info   :PeakCraft Co-op] input: released (release-all sent)
+[Info   :PeakCraft Co-op] dev: screenshot -> <workspace>\local-profile\BepInEx\peakcraft-shots\polish-040-final-equipment.png
+[Info   :PeakCraft Co-op] ownership: NativeControl -> Handoff (teleport 22600)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] input: keyboard and mouse go to Minecraft
+[Info   :PeakCraft Co-op] climb: PEAK control requested; hold V, use WASD and Space
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> NativeControl
+[Info   :PeakCraft Co-op] input: released (release-all sent)
+[Info   :PeakCraft Co-op] dev: screenshot -> <workspace>\local-profile\BepInEx\peakcraft-shots\polish-040-final-climb-hint.png
+[Info   :PeakCraft Co-op] climb: returning to Minecraft after key released
+[Info   :PeakCraft Co-op] ownership: NativeControl -> Handoff (teleport 22601)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] input: keyboard and mouse go to Minecraft
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-9.735, 0.877, 50.616) = mc (-9,735, -511,123, -50,616); Minecraft feet (-9,735, -511,123, -50,616) yaw 180,0 pitch 0,0 flags 0x5; look yaw 180,0 pitch 0,0; camera (-9.735, 2.497, 50.616); kinematic True; stamina 1,00
+# Distribuicao final, revisita e fisica
+[Info   :PeakCraft Co-op] local mode: Minecraft
+[Info   :PeakCraft Co-op] protocol layout self-check: PASS
+[Info   :PeakCraft Co-op] ring self-test: PASS
+[Info   :PeakCraft Co-op] collision: cleared, epoch 2 (scene Pretitle)
+[Info   :PeakCraft Co-op] collision: cleared, epoch 3 (scene Title)
+[Info   :PeakCraft Co-op] collision: cleared, epoch 4 (Minecraft linked)
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Cutscene (loading)
+[Info   :PeakCraft Co-op] collision: cleared, epoch 5 (scene Airport)
+[Info   :PeakCraft Co-op] ownership: Cutscene -> PeakOwns
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 113923)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] input: keyboard and mouse go to Minecraft
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakMenu
+[Info   :PeakCraft Co-op] input: released (release-all sent)
+[Info   :PeakCraft Co-op] ownership: PeakMenu -> Cutscene (loading)
+[Info   :PeakCraft Co-op] collision: cleared, epoch 6 (scene Level_85)
+[Info   :PeakCraft Co-op] ownership: Cutscene -> Handoff (teleport 113924)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] input: keyboard and mouse go to Minecraft
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (15.428, 2.194, -372.817) = mc (15,428, -509,806, 372,817); Minecraft feet (15,428, -509,806, 372,817) yaw 180,0 pitch 0,0 flags 0x5; look yaw 180,0 pitch 0,0; camera (15.428, 3.814, -372.817); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] block physics: 0 sections / 0 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: ahead 'Ground', minecraft False, layer Terrain, point (15.428, 3.283, -367.818), normal (0.111, 0.970, -0.218), bounds Center: (-6.97, -42.35, -107.31), Extents: (228.45, 84.99, 366.77)
+[Info   :PeakCraft Co-op] block physics: support 'Ground', minecraft False, point (15.428, 2.158, -372.817), distance 0,236
+[Info   :PeakCraft Co-op] dev: screenshot -> <workspace>\local-profile\BepInEx\peakcraft-shots\polish-040-final-island-revisited.png
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> Cutscene (loading)
+[Info   :PeakCraft Co-op] input: released (release-all sent)
+[Info   :PeakCraft Co-op] collision: cleared, epoch 7 (scene Airport)
+[Info   :PeakCraft Co-op] ownership: Cutscene -> Handoff (teleport 113925)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] input: keyboard and mouse go to Minecraft
+[Info   :PeakCraft Co-op] block physics: 5 sections / 59 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: ahead 'MinePeak block collider 1 -31 -5', minecraft True, layer Terrain, point (24.500, 21.089, 71.000), normal (0.000, 0.000, -1.000), bounds Center: (24.50, 23.00, 69.50), Extents: (2.50, 4.00, 2.50)
+[Info   :PeakCraft Co-op] block physics: support 'MinePeak block collider 1 -31 -5', minecraft True, point (24.500, 20.000, 70.586), distance 0,200
+[Info   :PeakCraft Co-op] climb: PEAK control requested; hold V, use WASD and Space
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> NativeControl
+[Info   :PeakCraft Co-op] climb: native grab accepted; stamina 1,000; feet (24.500, 20.000, 70.586)
+[Info   :PeakCraft Co-op] input: released (release-all sent)
+[Info   :PeakCraft Co-op] native: state NativeControl; item none; progress 0,000; throw 0,000; climbing True; stamina 0,874; feet (24.490, 21.307, 70.601)
+[Info   :PeakCraft Co-op] native: climb surface MinePeak block collider 1 -31 -5; point (24.500, 22.517, 71.000); normal (0.000, 0.000, -1.000)
+[Info   :PeakCraft Co-op] dev: screenshot -> <workspace>\local-profile\BepInEx\peakcraft-shots\polish-040-final-block-climb.png
+[Info   :PeakCraft Co-op] climb: returning to Minecraft after key released
+[Info   :PeakCraft Co-op] ownership: NativeControl -> Handoff (teleport 113926)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] input: keyboard and mouse go to Minecraft
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] local mode: PEAK native restored
+[Info   :PeakCraft Co-op] input: released (release-all sent)
+[Info   :PeakCraft Co-op] nativeinput: scheduled 2,00s forward 1,00 strafe 0,00 primary True; stamina 1,000; feet (24.500, 20.079, 70.584)
+[Info   :PeakCraft Co-op] nativeinput: native grab accepted; surface MinePeak block collider 1 -31 -5; stamina 1,000; feet (24.499, 20.066, 70.588)
+[Info   :PeakCraft Co-op] native: state PeakOwns; item none; progress 0,000; throw 0,000; climbing True; stamina 0,878; feet (24.515, 21.801, 70.601)
+[Info   :PeakCraft Co-op] native: climb surface MinePeak block collider 1 -31 -5; point (24.505, 23.021, 71.000); normal (0.000, 0.000, -1.000)
+[Info   :PeakCraft Co-op] dev: screenshot -> <workspace>\local-profile\BepInEx\peakcraft-shots\polish-040-final-native-block-climb.png
+[Info   :PeakCraft Co-op] nativeinput: releasing (timeout); climbing True; stamina 0,801; feet (24.532, 22.671, 70.572)
+[Info   :PeakCraft Co-op] nativeinput: native climb detached; surface MinePeak block collider 1 -31 -5; stamina 0,801; feet (24.534, 22.687, 70.573)
+[Info   :PeakCraft Co-op] collision: cleared, epoch 8 (live mode enabled)
+[Info   :PeakCraft Co-op] local mode: Minecraft ON; safe handoff pending
+[Info   :PeakCraft Co-op] ownership: PeakOwns -> Handoff (teleport 113928)
+[Info   :PeakCraft Co-op] ownership: Handoff -> MinecraftOwns
+[Info   :PeakCraft Co-op] input: keyboard and mouse go to Minecraft
+[Info   :PeakCraft Co-op] coop: local block minecraft:air (state 0) at (24, -491, -72), revision 1
+[Info   :PeakCraft Co-op] block physics: 5 sections / 58 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: support 'MinePeak block collider 1 -31 -5', minecraft True, point (24.500, 20.000, 70.580), distance 0,200
+[Info   :PeakCraft Co-op] dev: screenshot -> <workspace>\local-profile\BepInEx\peakcraft-shots\polish-040-final-mined.png
+[Info   :PeakCraft Co-op] coop: local block minecraft:stone (state 1) at (24, -491, -72), revision 2
+[Info   :PeakCraft Co-op] block physics: 5 sections / 59 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: ahead 'MinePeak block collider 1 -31 -5', minecraft True, layer Terrain, point (24.227, 21.089, 71.000), normal (0.000, 0.000, -1.000), bounds Center: (24.50, 23.00, 69.50), Extents: (2.50, 4.00, 2.50)
+[Info   :PeakCraft Co-op] block physics: support 'MinePeak block collider 1 -31 -5', minecraft True, point (24.500, 20.000, 70.580), distance 0,200
+[Info   :PeakCraft Co-op] block physics: 3 sections / 11 exact Minecraft boxes; independent of rendering/mode
+[Info   :PeakCraft Co-op] block physics: support 'Airport', minecraft False, point (-9.500, 0.805, 50.500), distance 0,271
+[Info   :PeakCraft Co-op] dev: state MinecraftOwns; PEAK feet (-9.500, 0.877, 50.500) = mc (-9,500, -511,123, -50,500); Minecraft feet (-9,500, -511,123, -50,500) yaw 180,0 pitch 0,0 flags 0x5; look yaw 180,0 pitch 0,0; camera (-9.500, 2.497, 50.500); kinematic True; stamina 1,00
+[Info   :PeakCraft Co-op] dev: screenshot -> <workspace>\local-profile\BepInEx\peakcraft-shots\polish-040-release-gameplay.png
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakMenu
+[Info   :PeakCraft Co-op] input: released (release-all sent)
+[Info   :PeakCraft Co-op] dev: screenshot -> <workspace>\local-profile\BepInEx\peakcraft-shots\polish-040-release-pause.png
+[Info   :PeakCraft Co-op] ownership: PeakMenu -> MinecraftOwns
+[Info   :PeakCraft Co-op] input: keyboard and mouse go to Minecraft
+[Info   :PeakCraft Co-op] ownership: MinecraftOwns -> PeakOwns
+[Info   :PeakCraft Co-op] local mode: PEAK native restored
+[Info   :PeakCraft Co-op] input: released (release-all sent)

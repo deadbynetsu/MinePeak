@@ -67,14 +67,6 @@ internal sealed class CoopMode
             Event.current.Use();
         }
         if (Character.localCharacter == null || GUIManager.instance == null || !GUIManager.InPauseMenu) return;
-        int depth = GUI.depth;
-        GUI.depth = -1000;
-        float x = Mathf.Max(12, Screen.width - 345);
-        GUI.Box(new Rect(x, 28, 325, 146), "PeakCraft Co-op");
-        if (GUI.Button(new Rect(x + 12, 60, 301, 36), IsViewer ? "ATIVAR modo Minecraft" : "DESATIVAR modo Minecraft"))
-            SetMinecraft(IsViewer);
-        GUI.Label(new Rect(x + 12, 102, 301, 25), config.CoopToggleKey.Value + " alterna sem reiniciar");
-        GUI.Label(new Rect(x + 12, 130, 301, 30), IsViewer ? "PEAK normal: itens e escalada" : "Minecraft: inventario e blocos");
-        GUI.depth = depth;
+        PeakCraft.UI.MinePeakUi.DrawPause(Plugin.Instance, IsViewer, config.CoopToggleKey.Value.ToString(), SetMinecraft);
     }
 }

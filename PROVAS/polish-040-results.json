@@ -1,0 +1,111 @@
+{
+  "version": "0.4.0",
+  "checked_at_utc": "2026-10-29T13:24:09.009843+00:00",
+  "platform": "Windows 11",
+  "games": {
+    "PEAK": "3.0.1",
+    "Minecraft": "26.3"
+  },
+  "automated": {
+    "vitals": 12,
+    "collision": 18,
+    "multiplayer_simulated": 21,
+    "input_safety": 8,
+    "scene_fence_and_identity": 18,
+    "scene_store_and_backup": 24,
+    "installer": 9,
+    "windows_launcher": 9,
+    "total_windows": 119,
+    "linux_expected": 110
+  },
+  "runtime": {
+    "pause_card": true,
+    "minecraft_options_button": true,
+    "chat_focus_return_and_literal_L": true,
+    "inventory_hides_hud_and_blocks_native_hold": true,
+    "scene": "Level_85",
+    "world_id_unsigned": 2271922941,
+    "airport_emerald_and_chest_absent_on_island": true,
+    "airport_emerald_and_chest_7_diamonds_restored": true,
+    "outbound_player_fields_equal": {
+      "XpLevel": true,
+      "abilities": true,
+      "XpP": true,
+      "SelectedItemSlot": true,
+      "XpTotal": true,
+      "EnderItems": true,
+      "Inventory": true
+    },
+    "return_player_fields_equal": {
+      "XpLevel": true,
+      "equipment": true,
+      "abilities": true,
+      "XpP": true,
+      "SelectedItemSlot": true,
+      "XpTotal": true,
+      "EnderItems": true,
+      "Inventory": true
+    },
+    "inventory_occupied_slots": 32,
+    "tagged_paper": 13,
+    "xp_levels": 17,
+    "ender_chest_test_items": 5,
+    "native_world_backup": {
+      "bytes": 1743483,
+      "crc_all_entries": "PASS",
+      "official_api": true
+    },
+    "block_climbing": {
+      "minecraft_option": {
+        "native_surface": "MinePeak block collider",
+        "feet_y_start": 20.0,
+        "feet_y_sample": 21.307,
+        "stamina_start": 1.0,
+        "stamina_sample": 0.874
+      },
+      "peak_mode": {
+        "feet_y_start": 20.066,
+        "feet_y_sample": 21.801,
+        "stamina_sample": 0.878
+      }
+    },
+    "mining": {
+      "mouse_left_removed": [
+        24,
+        -491,
+        -72
+      ],
+      "exact_boxes_before": 59,
+      "exact_boxes_after": 58,
+      "mouse_right_replaced_same_cell": true
+    },
+    "test_objects_removed": true,
+    "original_player_fields_restored_after_tests": {
+      "XpLevel": true,
+      "equipment": true,
+      "abilities": true,
+      "XpP": true,
+      "SelectedItemSlot": true,
+      "XpTotal": true,
+      "EnderItems": true,
+      "Inventory": true
+    },
+    "minecraft_saved_and_closed": true,
+    "peak_exit_fault_also_without_mod": "0xC0000005"
+  },
+  "binary_sha256": {
+    "binarios/PeakCraftCoop.dll": "c65cac07b1bc502cfbc43843c57ce6512b724b83e8e88d925fa54ce83bb92453",
+    "binarios/peakcraft-profile-0.1.2.jar": "4f705583065ea9a318c4123a55c8861c95415576072bb8b3f9e9ee96bc897d0b"
+  },
+  "limits": [
+    "Campaign to summit not fully traversed",
+    "Two-PC/two-Steam-account multiplayer not validated",
+    "No guarantee against every crash or power loss"
+  ],
+  "final_config": {
+    "mode": "Viewer",
+    "toggle_key": "L",
+    "dev_harness": false,
+    "coop_loopback": false
+  }
+}

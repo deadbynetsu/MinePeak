@@ -28,6 +28,8 @@ internal sealed class RenderRing
 
 	private readonly WorldEntities entities;
 
+	private readonly SceneRenderFence sceneFence = new SceneRenderFence();
+
 	private readonly List<Mirror> mirrors = new List<Mirror>();
 
 	private Vector3 sceneOrigin;
@@ -46,6 +48,8 @@ internal sealed class RenderRing
 
 	private int messages;
 
+	public bool SceneReady => sceneFence.Ready;
+
 	public unsafe RenderRing(PeakLink link, ConfigFile config)
 	{
 		this.link = link;
@@ -56,6 +60,7 @@ internal sealed class RenderRing
 		scene = new CapturedModel(atlas, "scene");
 		entities = new WorldEntities(link, atlas);
 		handler = Handle;
+		sceneFence.RequireScene();
 	}
 
 	public void Update(bool visible, Vector3 feet, float mcYaw, bool firstPerson, bool blocksOnly = false)
@@ -64,7 +69,7 @@ internal sealed class RenderRing
 		// Keep the actual Minecraft section meshes when native PEAK owns the body.
 		// Avatar, first-person items, selection and Minecraft HUD stay under ownership control.
 		sections.SetVisible(visible || blocksOnly);
-		if (visible)
+		if (visible && sceneFence.Ready)
 		{
 			if (!firstPerson)
 			{
@@ -84,6 +89,14 @@ internal sealed class RenderRing
 	}
 
 	public void Reset()
+	{
+		sceneFence.RequireScene();
+		ClearSceneModels();
+		mirrors.Clear();
+		mirrorsFoundAt = -10f;
+	}
+
+	private void ClearSceneModels()
 	{
 		sections.Clear();
 		blockPhysics.Clear();
@@ -127,14 +140,21 @@ internal sealed class RenderRing
 	private unsafe void Handle(uint type, byte* payload, uint bytes)
 	{
 		messages++;
+		// A ready marker is written by the new Java level before any of its geometry.
+		// Queued packets from the previous level cannot reopen this scene fence.
+		if (type == 13u)
+		{
+			if (bytes == 8 && sceneFence.AcceptReady(*(uint*)payload, *(uint*)(payload + 4),
+				PeakApi.CurrentWorldId, Plugin.Instance.Collision.Epoch))
+				ClearSceneModels();
+			return;
+		}
+		if (!sceneFence.Allow(type)) return;
 		ulong num2;
 		switch (type)
 		{
 		case 3u:
-			sections.Clear();
-			blockPhysics.Clear();
-			avatar.Hide();
-			scene.Hide();
+			ClearSceneModels();
 			break;
 		case 1u:
 			if (bytes >= sizeof(Proto.RenAtlasHdr))
@@ -215,7 +235,7 @@ internal sealed class RenderRing
 		case BlockCollisionPacket.MessageType:
 			if (bytes <= BlockCollisionPacket.HeaderBytes + BlockCollisionPacket.MaxBoxes * BlockCollisionPacket.BoxBytes)
 				blockPhysics.Set(new System.ReadOnlySpan<byte>(payload, (int)bytes),
-					(uint)(SceneManager.GetActiveScene().buildIndex + 1), Plugin.Instance.Collision.Epoch);
+					PeakApi.CurrentWorldId, Plugin.Instance.Collision.Epoch);
 			break;
 			IL_020e:
 			num2 = (ulong)(sizeof(Proto.RenAvatarHdr) + ((Proto.RenAvatarHdr*)payload)->batchCount * sizeof(Proto.RenBatch) + ((Proto.RenAvatarHdr*)payload)->vertexCount * sizeof(Proto.RenVertex));

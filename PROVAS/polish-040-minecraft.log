@@ -1,0 +1,97 @@
+# Primeira verificacao de viagem
+[09:47:51] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact block collision extension ready (render 12, world/epoch guarded)
+[09:47:51] [Render thread/INFO] (minepeak-scenes) MinePeak: isolated scene saves and transactional player transfer ready
+[09:48:25] [Server thread/INFO] (minepeak-scenes) MinePeak: scene 4 ready; player transfer committed with verified backup
+[09:48:25] [Render thread/INFO] (minepeak-scenes) MinePeak: ordered render fence ready for scene 4 epoch 6
+[09:48:25] [Render thread/INFO] (peakcraft-collision) PeakCraft: collision rescan for world 4 epoch 6
+[09:48:25] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section -2 -32 -5: 2 boxes (1 live)
+[09:48:25] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section 0 -32 -5: 3 boxes (2 live)
+[09:48:25] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section -1 -32 -5: 3 boxes (3 live)
+[09:48:25] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section 0 -32 -8: 5 boxes (4 live)
+[09:48:25] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section 0 -32 -8: 5 boxes (4 live)
+[09:48:25] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section -2 -32 -5: 2 boxes (4 live)
+[09:48:25] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section -1 -32 -5: 3 boxes (4 live)
+[09:48:25] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section 0 -32 -5: 3 boxes (4 live)
+[09:48:25] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section -1 -32 -5: 3 boxes (4 live)
+[09:50:26] [Server thread/INFO] (Minecraft) System chat: [Jogador: Você encontrou 13 item(ns) correspondente(s) no inventário de Jogador]
+[09:50:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Você encontrou 13 item(ns) correspondente(s) no inventário de Jogador
+[09:50:52] [Server thread/INFO] (Minecraft) Stopping server
+[09:50:52] [Server thread/INFO] (Minecraft) Saving players
+[09:50:52] [Server thread/INFO] (Minecraft) Saving worlds
+[09:50:55] [Server thread/INFO] (minepeak-scenes) MinePeak: verified player snapshot supplied for scene -2023044355
+[09:50:55] [Server thread/INFO] (minepeak-scenes) MinePeak: verified player snapshot supplied for scene -2023044355
+[09:50:56] [Server thread/INFO] (minepeak-scenes) MinePeak: scene -2023044355 ready; player transfer committed with verified backup
+[09:50:56] [Render thread/INFO] (minepeak-scenes) MinePeak: ordered render fence ready for scene -2023044355 epoch 7
+[09:50:56] [Render thread/INFO] (peakcraft-collision) PeakCraft: collision rescan for world -2023044355 epoch 7
+[09:51:37] [Server thread/INFO] (Minecraft) [Not Secure] [Jogador] MINEPEAK_ISLAND_EMERALD_ABSENT
+[09:51:37] [Render thread/INFO] (Minecraft) [System] [CHAT] [Jogador] MINEPEAK_ISLAND_EMERALD_ABSENT
+[09:51:39] [Server thread/INFO] (Minecraft) [Not Secure] [Jogador] MINEPEAK_ISLAND_CHEST_ABSENT
+[09:51:39] [Render thread/INFO] (Minecraft) [System] [CHAT] [Jogador] MINEPEAK_ISLAND_CHEST_ABSENT
+[09:51:41] [Server thread/INFO] (Minecraft) System chat: [Jogador: Você encontrou 13 item(ns) correspondente(s) no inventário de Jogador]
+[09:51:41] [Render thread/INFO] (Minecraft) [System] [CHAT] Você encontrou 13 item(ns) correspondente(s) no inventário de Jogador
+[09:52:46] [Server thread/INFO] (Minecraft) Stopping server
+[09:52:46] [Server thread/INFO] (Minecraft) Saving players
+[09:52:46] [Server thread/INFO] (Minecraft) Saving worlds
+[09:52:57] [Server thread/INFO] (minepeak-scenes) MinePeak: verified player snapshot supplied for scene 4
+[09:52:58] [Server thread/INFO] (minepeak-scenes) MinePeak: verified player snapshot supplied for scene 4
+[09:52:58] [Server thread/INFO] (minepeak-scenes) MinePeak: scene 4 ready; player transfer committed with verified backup
+[09:52:58] [Render thread/INFO] (minepeak-scenes) MinePeak: ordered render fence ready for scene 4 epoch 10
+[09:52:58] [Render thread/INFO] (peakcraft-collision) PeakCraft: collision rescan for world 4 epoch 10
+[09:52:58] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section -2 -32 -5: 2 boxes (1 live)
+[09:53:19] [Server thread/INFO] (Minecraft) [Not Secure] [Jogador] MINEPEAK_AIRPORT_EMERALD_RESTORED
+[09:53:19] [Render thread/INFO] (Minecraft) [System] [CHAT] [Jogador] MINEPEAK_AIRPORT_EMERALD_RESTORED
+[09:53:21] [Render thread/INFO] (Minecraft) [System] [CHAT] -21, -500, -80 tem os seguintes dados de bloco: [{count: 7, Slot: 0b, id: "minecraft:diamond"}]
+[09:53:23] [Server thread/INFO] (Minecraft) System chat: [Jogador: Você encontrou 13 item(ns) correspondente(s) no inventário de Jogador]
+[09:53:23] [Render thread/INFO] (Minecraft) [System] [CHAT] Você encontrou 13 item(ns) correspondente(s) no inventário de Jogador
+[09:58:04] [Render thread/INFO] (Minecraft) Stopping!
+[09:58:04] [Server thread/INFO] (Minecraft) Stopping server
+[09:58:04] [Server thread/INFO] (Minecraft) Saving players
+[09:58:04] [Server thread/INFO] (Minecraft) Saving worlds
+# JAR final, revisita e restauracao
+[10:10:31] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact block collision extension ready (render 12, world/epoch guarded)
+[10:10:31] [Render thread/INFO] (minepeak-scenes) MinePeak: isolated scene saves and transactional player transfer ready
+[10:10:40] [Server thread/INFO] (minepeak-scenes) MinePeak: verified player snapshot supplied for scene 4
+[10:10:41] [Server thread/INFO] (minepeak-scenes) MinePeak: verified player snapshot supplied for scene 4
+[10:10:41] [Server thread/INFO] (minepeak-scenes) MinePeak: scene 4 ready; player transfer committed with verified backup
+[10:10:41] [Render thread/INFO] (minepeak-scenes) MinePeak: ordered render fence ready for scene 4 epoch 5
+[10:10:42] [Render thread/INFO] (peakcraft-collision) PeakCraft: collision rescan for world 4 epoch 5
+[10:10:42] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section -2 -32 -5: 2 boxes (1 live)
+[10:10:42] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section -1 -32 -5: 3 boxes (2 live)
+[10:10:42] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section 0 -32 -5: 3 boxes (3 live)
+[10:10:42] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section -1 -32 -5: 3 boxes (3 live)
+[10:10:42] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section 0 -32 -8: 5 boxes (4 live)
+[10:10:42] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section 0 -32 -5: 3 boxes (4 live)
+[10:10:42] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section 0 -32 -8: 5 boxes (4 live)
+[10:10:42] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section 0 -32 -8: 5 boxes (4 live)
+[10:11:57] [Server thread/INFO] (Minecraft) Stopping server
+[10:11:57] [Server thread/INFO] (Minecraft) Saving players
+[10:11:57] [Server thread/INFO] (Minecraft) Saving worlds
+[10:12:00] [Render thread/INFO] (minepeak-scenes) MinePeak: experimental scene SkyCraft-scene-2271922941 backup verified (2026-10-29_10-11-59_SkyCraft-scene-2271922941.zip); continuing world load
+[10:12:01] [Server thread/INFO] (minepeak-scenes) MinePeak: verified player snapshot supplied for scene -2023044355
+[10:12:01] [Server thread/INFO] (minepeak-scenes) MinePeak: verified player snapshot supplied for scene -2023044355
+[10:12:01] [Server thread/INFO] (minepeak-scenes) MinePeak: scene -2023044355 ready; player transfer committed with verified backup
+[10:12:01] [Render thread/INFO] (minepeak-scenes) MinePeak: ordered render fence ready for scene -2023044355 epoch 6
+[10:12:01] [Render thread/INFO] (peakcraft-collision) PeakCraft: collision rescan for world -2023044355 epoch 6
+[10:13:15] [Server thread/INFO] (Minecraft) [Not Secure] [Jogador] MINEPEAK_FINAL_ISLAND_EMERALD_ABSENT
+[10:13:15] [Render thread/INFO] (Minecraft) [System] [CHAT] [Jogador] MINEPEAK_FINAL_ISLAND_EMERALD_ABSENT
+[10:13:17] [Server thread/INFO] (Minecraft) [Not Secure] [Jogador] MINEPEAK_FINAL_ISLAND_CHEST_ABSENT
+[10:13:17] [Render thread/INFO] (Minecraft) [System] [CHAT] [Jogador] MINEPEAK_FINAL_ISLAND_CHEST_ABSENT
+[10:13:26] [Server thread/INFO] (Minecraft) Stopping server
+[10:13:26] [Server thread/INFO] (Minecraft) Saving players
+[10:13:26] [Server thread/INFO] (Minecraft) Saving worlds
+[10:13:28] [Server thread/INFO] (minepeak-scenes) MinePeak: verified player snapshot supplied for scene 4
+[10:13:28] [Server thread/INFO] (minepeak-scenes) MinePeak: verified player snapshot supplied for scene 4
+[10:13:29] [Server thread/INFO] (minepeak-scenes) MinePeak: scene 4 ready; player transfer committed with verified backup
+[10:13:29] [Render thread/INFO] (minepeak-scenes) MinePeak: ordered render fence ready for scene 4 epoch 7
+[10:13:29] [Render thread/INFO] (peakcraft-collision) PeakCraft: collision rescan for world 4 epoch 7
+[10:13:29] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section -2 -32 -5: 2 boxes (1 live)
+[10:13:29] [Render thread/INFO] (peakcraft-collision) PeakCraft: exact collision section -1 -32 -5: 3 boxes (2 live)
+[10:17:24] [Render thread/INFO] (minepeak-scenes) MinePeak: ordered render fence ready for scene 4 epoch 8
+[10:17:24] [Render thread/INFO] (peakcraft-collision) PeakCraft: collision rescan for world 4 epoch 8
+[10:20:04] [Server thread/INFO] (Minecraft) [Not Secure] [Jogador] MINEPEAK_FINAL_AIRPORT_EMERALD_RESTORED
+[10:20:04] [Render thread/INFO] (Minecraft) [System] [CHAT] [Jogador] MINEPEAK_FINAL_AIRPORT_EMERALD_RESTORED
+[10:20:06] [Render thread/INFO] (Minecraft) [System] [CHAT] -21, -500, -80 tem os seguintes dados de bloco: [{count: 7, Slot: 0b, id: "minecraft:diamond"}]
+[10:22:37] [Render thread/INFO] (Minecraft) Stopping!
+[10:22:37] [Server thread/INFO] (Minecraft) Stopping server
+[10:22:37] [Server thread/INFO] (Minecraft) Saving players
+[10:22:37] [Server thread/INFO] (Minecraft) Saving worlds

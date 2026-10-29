@@ -1,4 +1,4 @@
-param([string]$PeakDir, [string]$LoaderDir, [string]$JavaHome, [string]$GradleHome, [switch]$Legacy)
+param([string]$PeakDir, [string]$LoaderDir, [string]$JavaHome, [string]$GradleHome, [switch]$Legacy, [switch]$UsarBuildLocal)
 $ErrorActionPreference='Stop'
 $root=$PSScriptRoot
 if(Get-Process -Name PEAK -ErrorAction SilentlyContinue){throw 'Feche PEAK antes de instalar ou atualizar os arquivos.'}
@@ -12,14 +12,17 @@ if(-not (Test-Path (Join-Path $LoaderDir 'BepInEx\core\BepInEx.Preloader.dll')))
 
 # Only a binary of the same flavor can be used: each flavor has its own mapping name.
 if($Legacy){
-    $dll=Join-Path $root 'peak\artifacts\bin\PeakCraft\release\aeironnarmiento.PeakCraft.dll'
-    if(-not(Test-Path $dll)){$dll=Join-Path $root 'binarios\aeironnarmiento.PeakCraft.dll'}
-    $jar=Join-Path $root 'fabric\build\libs\skycraft-0.1.2.jar'
-    if(-not(Test-Path $jar)){$jar=Join-Path $root 'binarios\skycraft-0.1.2.jar'}
+    $dll=Join-Path $root 'binarios\aeironnarmiento.PeakCraft.dll'
+    $jar=Join-Path $root 'binarios\skycraft-0.1.2.jar'
+    if($UsarBuildLocal){
+        $dll=Join-Path $root 'peak\artifacts\bin\PeakCraft\release\aeironnarmiento.PeakCraft.dll'
+        $jar=Join-Path $root 'fabric\build\libs\skycraft-0.1.2.jar'
+    }
     $flavor='classic'
 }else{
-    $dll=Join-Path $root 'coop\bin\Release\netstandard2.1\PeakCraftCoop.dll'
-    if(-not(Test-Path $dll)){$dll=Join-Path $root 'binarios\PeakCraftCoop.dll'}
+    # A stale compiler output must never silently replace a newer Release DLL.
+    $dll=Join-Path $root 'binarios\PeakCraftCoop.dll'
+    if($UsarBuildLocal){$dll=Join-Path $root 'coop\bin\Release\netstandard2.1\PeakCraftCoop.dll'}
     $jar=Join-Path $root 'binarios\peakcraftcoop-fabric.jar'
     $flavor='coop'
 }
@@ -91,7 +94,7 @@ $workspace=Split-Path (Split-Path $root -Parent) -Parent
 if(-not $JavaHome){$JavaHome=Join-Path $workspace 'work\jdk25\zulu25.38.107-ca-jdk25.0.5-win_x64'}
 if(-not $GradleHome){$GradleHome=Join-Path $workspace 'work\gradle-peakcraft'}
 $config=@{peak=$PeakDir;profile=$profile;java=$JavaHome;gradle=$GradleHome;steam=(Join-Path $steam 'steam.exe');flavor=$flavor}
-if($previous){foreach($key in @('username','skinFile','skinModel')){if($previous.$key){$config[$key]=$previous.$key}}}
+if($previous){foreach($key in @('username','skinFile','skinModel')){if($previous.PSObject.Properties[$key] -and $previous.$key){$config[$key]=$previous.$key}}}
 $config | ConvertTo-Json | Set-Content $record -Encoding utf8
 if(-not $Legacy){
     $cfg=Join-Path $profile 'BepInEx\config\PeakCraftCoop.cfg'

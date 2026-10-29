@@ -241,8 +241,14 @@ internal sealed class PeakLink
 		return Created && Rings.SeqlockRead(@base + VitalsWire.GuestOffset, out state);
 	}
 
-	public unsafe void PushInput(Proto.InputType type, ushort code = 0, int a = 0, int b = 0, int c = 0)
+	public void PushInput(Proto.InputType type, ushort code = 0, int a = 0, int b = 0, int c = 0)
 	{
+		TryPushInput(type, code, a, b, c);
+	}
+
+	public unsafe bool TryPushInput(Proto.InputType type, ushort code = 0, int a = 0, int b = 0, int c = 0)
+	{
+		if (@base == null) return false;
 		byte* ring = @base + 4096;
 		Proto.InputEvent entry = new Proto.InputEvent
 		{
@@ -252,7 +258,7 @@ internal sealed class PeakLink
 			b = b,
 			c = c
 		};
-		Rings.EntryPush(ring, 4096, in entry);
+		return Rings.EntryPush(ring, 4096, in entry);
 	}
 
 	public unsafe bool PopEvent(out Proto.GuestEvent e)

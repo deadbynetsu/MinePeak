@@ -1,6 +1,6 @@
 # MinePeak — PEAK com modo Minecraft opcional
 
-MinePeak usa a base **PeakCraft Local**; pastas, painel e arquivos de configuração mantêm os nomes PeakCraft. A revisão **0.3.2** acrescenta as formas físicas das construções Minecraft ao PEAK; sua checagem está em **[VALIDACAO-0.3.2.md](VALIDACAO-0.3.2.md)**. A tecla de alternância continua **L**, introduzida na **[0.3.1](VALIDACAO-0.3.1.md)**. Ela mantém os equipamentos e a escalada nativos temporários, a exportação de colisão e o cooperativo da 0.3.0; os testes anteriores dessas funções estão em **[VALIDACAO-0.3.0.md](VALIDACAO-0.3.0.md)**. Campanha completa e partida real entre dois PCs/contas permanecem pendentes.
+MinePeak usa a base **PeakCraft Local**; pastas e arquivos de configuração ainda mantêm nomes PeakCraft. A revisão **0.4.0** renova a interface, separa as construções por mapa preservando o inventário e corrige problemas de entrada, entrega de blocos, instalação e inicialização; a checagem está em **[VALIDACAO-0.4.0.md](VALIDACAO-0.4.0.md)**. A tecla de alternância continua **L**. A colisão das construções, equipamentos e escalada nativos e o cooperativo das revisões anteriores continuam documentados separadamente. Campanha completa e partida real entre dois PCs/contas permanecem pendentes.
 
 **Abra `JOGAR.cmd` nesta pasta.** O PEAK da Steam executa o aeroporto, a ilha e a partida reais. O Minecraft Java roda oculto em segundo plano. Você começa com os controles nativos do PEAK e decide dentro do jogo quando ativar a movimentação, inventário e blocos do Minecraft. O guia rápido está em **[COMO-JOGAR.md](COMO-JOGAR.md)**.
 
@@ -13,14 +13,28 @@ A versão atual usa o **PeakCraft Co-op 0.2.1 de Issac**, remix do PeakCraft de 
 1. Deixe a Steam aberta com sua sessão normal e feche PEAK se ele já estiver aberto.
 2. Execute **JOGAR.cmd**. Aguarde PEAK e o Minecraft oculto carregarem.
 3. No PEAK, escolha **Jogar offline** para uma partida solo. O modo inicial é **Viewer/PEAK nativo**: você mantém o personagem, controles, escalada, stamina e itens do PEAK.
-4. Dentro da partida, pressione **Esc**. No painel **PeakCraft Co-op**, clique em **ATIVAR modo Minecraft**. Aguarde a transferência de controle e o HUD do Minecraft aparecer.
-5. Para voltar ao PEAK normal, abra Esc e clique em **DESATIVAR modo Minecraft**. **L** também alterna os modos durante a partida, sem reiniciar os jogos.
+4. Dentro da partida, pressione **L** ou abra **Esc → MinePeak** e selecione **Minecraft**. Aguarde a transferência de controle e o HUD do Minecraft aparecer.
+5. Para voltar ao PEAK normal, pressione **L** ou abra **Esc → MinePeak** e selecione **PEAK**. A alternância não reinicia os jogos.
 
 A escolha é salva. Uma instalação nova começa em Viewer; se a execução anterior terminou em Minecraft, a configuração pode reabrir nesse modo. Você pode alternar novamente pelo painel ou **L**, com o chat e os menus Minecraft fechados.
 
 A versão 0.3.1 migra automaticamente a configuração antiga `ToggleModeKey = F8` para `L` em `local-profile/BepInEx/config/PeakCraftCoop.cfg`. Outras teclas personalizadas são preservadas.
 
 Não precisa abrir SKLauncher nem conectar a localhost. O atalho usa a instância Java isolada do projeto e lê a identidade pública do perfil ativo do SKLauncher. Não altera suas contas, seus tokens ou seus mundos. A sessão local não autentica em Realms ou servidores Microsoft; PEAK continua usando a autenticação e os lobbies normais da Steam.
+
+## Interface e controles na tela
+
+Durante a partida, um indicador compacto no canto superior direito mostra o modo atual e, quando disponíveis, os percentuais compartilhados de vida e comida. As dicas de equipamento e escalada aparecem enquanto você segura **B** ou **V**. O indicador é ocultado ao abrir chat, inventário, pausa ou carregamento.
+
+O menu **Esc** reúne a seleção **PEAK / Minecraft**, o estado da ponte e uma lista curta dos controles no cartão **MinePeak**. O botão **Opções do Minecraft** fica disponível com o modo Minecraft ativo e conectado; ele fecha a pausa PEAK e abre as opções do Minecraft. A interface usa transparência discreta e bordas suaves, sem desfoque da imagem do jogo.
+
+## Mapas e viagens
+
+As construções e os contêineres locais do aeroporto e de cada cena da ilha ficam em saves separados. Ao embarcar ou retornar, a ponte leva os dados do jogador para o destino; os itens e a experiência comparados foram preservados nos testes descritos em [VALIDACAO-0.4.0.md](VALIDACAO-0.4.0.md). Isso não compartilha inventários entre amigos: cada jogador continua com seus dados locais.
+
+Ao reabrir um mundo gerenciado que o Minecraft marca como experimental, a ponte solicita o backup oficial e verifica o arquivo antes de continuar. Aguarde essa etapa; se o backup ou a verificação falhar, a abertura é interrompida para preservar os dados. O tratamento fica limitado aos saves do projeto, sem alterar seus mundos externos ou os do SKLauncher.
+
+A extensão usa o caminho atual `players/data/` do Minecraft 26.3 e prioriza os dados atuais do jogador, evitando restaurar um inventário legado. Atualize a DLL e a extensão Java juntas e feche ambos os jogos antes de instalar.
 
 ## Skin do usuário
 
@@ -46,7 +60,7 @@ Use `slim` em `skinModel` para braços finos. As alterações de nome/skin entra
 
 | Ação | Controle / modo |
 | --- | --- |
-| Alternar PEAK ↔ Minecraft | Esc → botão do painel PeakCraft Co-op; ou L |
+| Alternar PEAK ↔ Minecraft | L ou Esc → MinePeak → PEAK / Minecraft |
 | Controles nativos do PEAK | Modo Viewer/PEAK nativo |
 | Usar itens PEAK sem desativar a opção Minecraft | Segure B; 1–4 selecionam e os botões do mouse usam |
 | Arremessar o item PEAK equipado | Com B segurado, segure Q para carregar e solte Q |
@@ -58,10 +72,10 @@ Use `slim` em `skinModel` para braços finos. As alterações de nome/skin entra
 | Câmera Minecraft em terceira pessoa | F5 |
 | Interagir com PEAK no modo Minecraft | G; segure para ações como embarque |
 | Menu PEAK / menu Minecraft | Esc / O |
-| Configurar controles e sensibilidade Minecraft | Esc → Minecraft Settings, quando disponível no modo Minecraft |
+| Configurar controles e sensibilidade Minecraft | Esc → MinePeak → Opções do Minecraft, com o modo Minecraft conectado |
 | Survival / Creative Minecraft | `/gamemode survival` / `/gamemode creative` |
 
-Com a sincronização de fome e vida habilitada, o Minecraft começa em **Sobrevivência**, para que comida, dano e cura tenham efeito normal. Para um teste rápido de construção, use `/give @s minecraft:stone 64`, escolha o bloco e mire no chão. Você pode selecionar `/gamemode creative` para construir livremente; nesse modo, a imunidade e as regras de comida do Creative continuam valendo. Somente os blocos Minecraft colocados são quebráveis; a montanha nativa não é escavável. A **0.3.2** envia as formas de colisão dos blocos ao PEAK para apoio e escalada nos dois modos. Use os controles de escalada do PEAK no modo nativo ou segure **V** no modo Minecraft. A stamina continua nativa; aguarde a conexão Java e o carregamento da seção. O [relatório 0.3.2](VALIDACAO-0.3.2.md) registra o que foi validado.
+Com a sincronização de fome e vida habilitada, o Minecraft começa em **Sobrevivência**, para que comida, dano e cura tenham efeito normal. Para um teste rápido de construção, use `/give @s minecraft:stone 64`, escolha o bloco e mire no chão. Você pode selecionar `/gamemode creative` para construir livremente; nesse modo, a imunidade e as regras de comida do Creative continuam valendo. Somente os blocos Minecraft colocados são quebráveis; a montanha nativa não é escavável. A **0.3.2** envia as formas de colisão dos blocos ao PEAK para apoio e escalada nos dois modos. Use os controles de escalada do PEAK no modo nativo ou segure **V** no modo Minecraft. A stamina continua nativa; aguarde a conexão Java e o carregamento da seção. A [checagem 0.4.0](VALIDACAO-0.4.0.md) repetiu a escalada real de blocos nos dois modos, a quebra com picareta, a recolocação e a remoção dos apoios; a prova anterior de laje permanece na [0.3.2](VALIDACAO-0.3.2.md).
 
 Para embarcar em modo nativo, use os controles normais do PEAK. Em modo Minecraft, olhe para o terminal e segure **G**, depois confirme a viagem no cartão de embarque.
 
@@ -79,7 +93,7 @@ As opções ficam em `local-profile/BepInEx/config/PeakCraftCoop.cfg`, seção `
 
 ## Jogar com amigos
 
-Consulte **[MULTIPLAYER.md](MULTIPLAYER.md)** para o passo a passo em cada PC, o protocolo v2, a entrada tardia e seus limites. A lógica compartilhada passou em 19 testes automatizados; o roteiro entre dois PCs reais continua pendente.
+Consulte **[MULTIPLAYER.md](MULTIPLAYER.md)** para o passo a passo em cada PC, o protocolo v2, a entrada tardia e seus limites. A lógica compartilhada passou em 21 testes automatizados, incluindo repetição de entrega quando a ponte está cheia; o roteiro entre dois PCs reais continua pendente.
 
 A base Co-op contém compartilhamento de blocos, skins e poses pelos lobbies Photon do próprio PEAK, com até quatro jogadores. Use **Hospedar jogo**, convites Steam ou o código normal da sala. **Cada PC precisa dos mesmos mods/versões e de sua própria instalação e conta dos jogos.** Não compartilhe uma única conta Steam entre dois clientes.
 
@@ -101,7 +115,7 @@ Limites importantes da base: sem vínculo com Java, a visualização Viewer de b
 
 A pasta local está preparada com perfil externo BepInEx em `local-profile/`. O lançador ativa o loader somente por seus argumentos de abertura. `doorstop_config.ini` na pasta do jogo mantém `enabled=false`, portanto abrir PEAK normalmente pela biblioteca Steam continua sem esta integração. Não foram substituídos PEAK.exe, Steamworks ou os assemblies proprietários.
 
-O instalador usa a versão Co-op por padrão e desativa a DLL clássica antiga para não carregar as duas pontes simultaneamente. Para parar de usar, feche os jogos e inicie PEAK normalmente pela Steam. Minecraft encerra junto com PEAK. Não abra duas cópias da integração no mesmo PC: elas usariam o mesmo canal local.
+O instalador usa a versão Co-op e os arquivos de `binarios/` por padrão, mesmo que exista uma DLL antiga na pasta de compilação. Ele desativa a DLL clássica antiga para não carregar as duas pontes simultaneamente. Para parar de usar, feche os jogos e inicie PEAK normalmente pela Steam. Minecraft encerra junto com PEAK. Não abra duas cópias da integração no mesmo PC: elas usariam o mesmo canal local.
 
 Em uma cópia nova extraída do ZIP, após ler/aceitar a [EULA do Minecraft](https://www.minecraft.net/eula), execute:
 
@@ -114,15 +128,15 @@ Se necessário, acrescente `-PeakDir 'D:\caminho\PEAK'`. A preparação baixa Ja
 ## Fontes e diagnóstico
 
 - `coop/`: reconstrução C# da DLL MIT Co-op, com as alterações locais de alternância reversível.
-- `coop-fabric/`: extensão Java compilável do perfil/skin, fome/vida compartilhadas e formas físicas dos blocos para o PEAK.
+- `coop-fabric/`: extensão Java compilável do perfil/skin, fome/vida compartilhadas, formas físicas dos blocos e saves separados por cena.
 - `tests/VitalsLedger.Tests/`: 12 testes puros de reconciliação de fome/vida, sem abrir os jogos.
 - `referencia-coop/`: avisos, licença e procedência do pacote de referência.
 - `referencia-coop/fabric-reconstruido/`: 74 arquivos Java reconstruídos por Vineflower 1.12.0 para auditoria; não formam um projeto compilável.
 - `peak/`, `fabric/`, `protocol/`: fontes clássicas preservadas.
 - `binarios/`: somente os mods compilados, sem assemblies ou texturas dos jogos.
 
-Para compilar C#, copie `coop/Config.Local.props.template` para `coop/Config.Local.props`, ajuste os caminhos e use SDK.NET10: `dotnet build coop/CoopLocal.csproj -c Release`. Para Java, use JDK25, entre em `coop-fabric` e execute `..\fabric\gradlew.bat build`. Preserve os avisos MIT e não publique os assemblies locais do PEAK usados como referências.
+Para compilar C#, copie `coop/Config.Local.props.template` para `coop/Config.Local.props`, ajuste os caminhos e use SDK .NET 10: `dotnet build coop/CoopLocal.csproj -c Release`. Para Java, use JDK 25, entre em `coop-fabric` e execute `..\fabric\gradlew.bat build`. Para instalar a DLL que você compilou, acrescente `-UsarBuildLocal` aos parâmetros de `Instalar-Local.ps1`; sem essa opção, o instalador mantém a DLL distribuída em `binarios/`. Preserve os avisos MIT e não publique os assemblies locais do PEAK usados como referências.
 
-Para executar os 49 testes com SDK.NET10: `./Testar.ps1`. O build C# desta extensão terminou com zero erros e quatro avisos já existentes na reconstrução; o build Java também passou. O [relatório 0.3.2](VALIDACAO-0.3.2.md) registra separadamente o apoio e a escalada das construções nos jogos reais.
+**119 testes passaram na execução local Windows.** Para executar os testes sem abrir os jogos, use SDK .NET 10 e JDK 17 ou superior e execute `./Testar.ps1`. O JDK 25 preparado pelo projeto atende ao requisito. O script procura Java em `JAVA_HOME` e no PATH; se necessário, informe `-JavaHome 'D:\caminho\jdk'`. A suíte cobre fome/vida, colisão, rede, segurança de entrada, separação de mensagens entre cenas, diário de saves e instalação. Os casos do inicializador Windows são executados nesse sistema; a CI também executa os testes portáveis em Linux. O [relatório 0.4.0](VALIDACAO-0.4.0.md) registra os resultados atuais. O [relatório 0.3.2](VALIDACAO-0.3.2.md) preserva a checagem de apoio e escalada das construções nos jogos reais.
 
 Logs: `local-profile/minecraft-console.log`, `coop-fabric/run/logs/latest.log`, `local-profile/BepInEx/LogOutput.log`. Alguns nomes internos ainda dizem Skyrim por herança do SkyCraft; o host é PEAK. Avisos Realms na sessão local não significam por si só que a ponte falhou. O atalho normal deixa o DevHarness desativado.

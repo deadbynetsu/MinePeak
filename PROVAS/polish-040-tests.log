@@ -1,0 +1,256 @@
+Executando testes: VitalsLedger.Tests
+PASS: initial PEAK state wins over old Minecraft save
+PASS: Minecraft damage and hunger reflect without echo
+PASS: PEAK healing and meal produce additive command
+PASS: retransmission retains ID and payload
+PASS: concurrent Minecraft hit and food do not get overwritten
+PASS: PEAK changes queue while earlier command is unacknowledged
+PASS: PEAK changes survive initial acknowledgement
+PASS: PEAK rounded applied statuses cannot create feedback
+PASS: late acknowledgement snapshot cannot roll back accepted state
+PASS: bounds clamp and idle does not send commands
+PASS: remote healing combines with local healing before acknowledgement
+PASS: invalid floats never poison canonical state
+PASS: 12 vitals ledger tests
+Executando testes: CollisionRegion.Tests
+PASS: tall vertical wall spans all regions
+PASS: negative Minecraft heights floor correctly
+PASS: flat face on boundary reaches both sides
+PASS: window clips the range
+PASS: out of window is absent, not clamped
+PASS: invalid mesh vertex is rejected
+PASS: exact little endian block box and negative section coordinates
+PASS: empty section decodes as a support-clear packet
+PASS: slab keeps half height instead of a full cube
+PASS: fence can extend above the section
+PASS: old scene packet cannot create ghost support
+PASS: old collision epoch cannot restore cleared support
+PASS: truncated box packet is rejected
+PASS: unbounded box count is rejected before allocation
+PASS: nonfinite shape is rejected
+PASS: inverted box cannot build a collider
+PASS: zero volume box is rejected
+PASS: out of section arbitrary geometry is rejected
+PASS: six collision region and twelve native block packet regression cases
+Executando testes: Multiplayer.Tests
+PASS packet roundtrip preserves coordinates, state, scene and Lamport stamp
+PASS malformed, legacy and oversized block packets are rejected
+PASS duplicate and stale edits cannot resurrect an old block
+PASS simultaneous conflicting edits converge in opposite delivery orders
+PASS receiving a remote revision advances the next local revision
+PASS journal bounds new coordinates but allows edits and tombstones at capacity
+PASS pose packets reject NaN, Infinity, wrong numeric types and unknown flags
+PASS real relay sends live edits between two simulated endpoints
+PASS late join receives blocks created while host was alone and removed air states
+PASS three endpoints converge after conflicting writes delivered in reverse order
+PASS large snapshots are chunked, deduplicated and drain through bounded input batches
+PASS viewer-only peer replays remote block states when Minecraft links later
+PASS scene isolation rejects delayed airport edits on the island
+PASS snapshot remains available after the original host leaves
+PASS a claimed live edit from a different actor is rejected
+PASS a malformed snapshot chunk is rejected atomically and oversized chunks are refused
+PASS an old snapshot arriving after a newer live edit cannot undo that edit
+PASS the production relay emits at most sixteen remote MMF inputs per frame
+PASS a full Minecraft input ring retains the newest queued removal until accepted
+PASS partially accepted snapshots retry the remaining local inputs without duplicates
+PASS a new Photon session clears the prior session journal and viewer
+{
+  "scope": "Production BlockRelay/BlockJournal/PosePacket with simulated Photon, Unity and shared-memory transport; not a two-Steam-account playtest",
+  "passed": true,
+  "total": 21,
+  "failed": 0,
+  "results": [
+    {
+      "test": "packet roundtrip preserves coordinates, state, scene and Lamport stamp",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "malformed, legacy and oversized block packets are rejected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "duplicate and stale edits cannot resurrect an old block",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "simultaneous conflicting edits converge in opposite delivery orders",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "receiving a remote revision advances the next local revision",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "journal bounds new coordinates but allows edits and tombstones at capacity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "pose packets reject NaN, Infinity, wrong numeric types and unknown flags",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "real relay sends live edits between two simulated endpoints",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "late join receives blocks created while host was alone and removed air states",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "three endpoints converge after conflicting writes delivered in reverse order",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "large snapshots are chunked, deduplicated and drain through bounded input batches",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "viewer-only peer replays remote block states when Minecraft links later",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "scene isolation rejects delayed airport edits on the island",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "snapshot remains available after the original host leaves",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "a claimed live edit from a different actor is rejected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "a malformed snapshot chunk is rejected atomically and oversized chunks are refused",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "an old snapshot arriving after a newer live edit cannot undo that edit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "the production relay emits at most sixteen remote MMF inputs per frame",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "a full Minecraft input ring retains the newest queued removal until accepted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "partially accepted snapshots retry the remaining local inputs without duplicates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "test": "a new Photon session clears the prior session journal and viewer",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}
+Executando testes: InputSafety.Tests
+PASS: live Minecraft chat remains protected when focus stops routing
+PASS: ordinary Minecraft gameplay allows the mode shortcut
+PASS: stale chat after Java disconnect cannot lock the fallback shortcut
+PASS: hidden Minecraft screen cannot block the native PEAK preference
+PASS: startup Minecraft title screen does not block the mode shortcut
+PASS: safety release survives repeated full-ring failures
+PASS: multiple focus or mode changes coalesce into one delivered release
+PASS: failed release transport keeps the safety barrier armed
+PASS: 8 input safety tests
+Executando testes: SceneRenderFence.Tests
+PASS: startup discards scene geometry until the Java level is ready
+PASS: atlas resources can load while the scene is blocked
+PASS: matching ordered readiness marker releases geometry without an optional clear packet
+PASS: a stale airport marker cannot release the island scene
+PASS: a marker from the previous collision generation stays blocked
+PASS: a scene clear before readiness cannot open the gate
+PASS: scene switch rejects queued geometry until a new boundary
+PASS: duplicate marker does not ask the receiver to erase a ready scene
+PASS: new collision epoch requires one fresh receiver reset
+PASS: late invalid marker does not close an already ready scene
+PASS: zero world is never accepted as a live scene
+PASS: readiness packets are never treated as unvalidated geometry
+PASS: built-in airport retains its existing world and save identity
+PASS: built-in index zero remains a live nonzero world
+PASS: different Addressables maps never share the missing-build-index zero ID
+PASS: Addressables world IDs are stable FNV-1a UTF-8 values across runs
+PASS: non-ASCII scene names use UTF-8 rather than platform encoding
+PASS: scene identity preserves Unity's exact scene-name casing
+PASS: 18 scene render fence and identity tests
+Instalado (coop). Backups verificados em <workspace-D>\work\MinePeak-installer-dd81ef932dcb49aaa592a09c8a6fb185\project\local-backup\AF2B0628CC46F01F. Abertura normal pela Steam continua sem o plugin.
+PASS: packaged DLL wins over stale local compiler output
+Instalado (coop). Backups verificados em <workspace-D>\work\MinePeak-installer-dd81ef932dcb49aaa592a09c8a6fb185\project\local-backup\AF2B0628CC46F01F. Abertura normal pela Steam continua sem o plugin.
+PASS: local compiler output requires an explicit developer switch
+Instalado (coop). Backups verificados em <workspace-D>\work\MinePeak-installer-dd81ef932dcb49aaa592a09c8a6fb185\project\local-backup\AF2B0628CC46F01F. Abertura normal pela Steam continua sem o plugin.
+PASS: normal reinstall restores the packaged DLL
+Instalado (coop). Backups verificados em <workspace-D>\work\MinePeak-installer-dd81ef932dcb49aaa592a09c8a6fb185\project\local-backup\AF2B0628CC46F01F. Abertura normal pela Steam continua sem o plugin.
+PASS: reinstall reuses existing verified original-file backups
+Instalado (classic). Backups verificados em <workspace-D>\work\MinePeak-installer-dd81ef932dcb49aaa592a09c8a6fb185\project\local-backup\AF2B0628CC46F01F. Abertura normal pela Steam continua sem o plugin.
+PASS: legacy installation disables the Co-op DLL
+Instalado (coop). Backups verificados em <workspace-D>\work\MinePeak-installer-dd81ef932dcb49aaa592a09c8a6fb185\project\local-backup\AF2B0628CC46F01F. Abertura normal pela Steam continua sem o plugin.
+PASS: Co-op installation disables the legacy DLL
+PASS: missing packaged DLL never silently falls back to stale local output
+PASS: unrelated game loader is refused and preserved
+PASS: active Doorstop setup is refused and preserved
+PASS: 9 installer regression cases; only fixture files were changed
+PASS: missing installation refuses to start either game
+PASS: invalid configuration refuses to launch
+PASS: incomplete configuration has a useful preparation error
+PASS: missing Java cannot leave a standalone PEAK launch
+PASS: running PEAK refuses a second integration
+Aguardando o Minecraft anterior salvar e encerrar...
+PEAK e Minecraft iniciando. Esc abre o botao Modo Minecraft; L alterna.
+PASS: prior Minecraft wrapper must finish before another launch
+PEAK e Minecraft iniciando. Esc abre o botao Modo Minecraft; L alterna.
+PASS: unrelated Java processes do not block the project
+PEAK e Minecraft iniciando. Esc abre o botao Modo Minecraft; L alterna.
+PASS: normal launch disables diagnostics and keeps temporary files in its profile
+PEAK e Minecraft iniciando. Esc abre o botao Modo Minecraft; L alterna.
+PASS: opted-in test mode never enables multiplayer loopback implicitly
+PASS: 9 launcher regression cases; no game or Steam executable was started
+PASS: legacy airport is the default without modifying the world
+PASS: scene names support the full unsigned world ID and reject zero
+PASS: prepared transfer resumes with the same verified immutable snapshot
+PASS: caller mutation cannot change a persisted snapshot
+PASS: commit writes the target before clearing pending and preserves its previous player data
+PASS: invalid player bytes cannot overwrite an existing target or its journal
+PASS: a newer vanilla save takes precedence over an older committed snapshot
+PASS: a verified snapshot remains recoverable if the player file is missing
+PASS: corrupt snapshot fails closed and preserves the journal
+PASS: mismatched scene IDs in a journal cannot silently select another world
+PASS: unsupported journal version is refused without creating a new inventory
+PASS: a pending transfer without a player snapshot cannot resume as an empty inventory
+PASS: world paths and transfer mappings cannot escape managed scene names
+PASS: different offline player UUIDs keep separate journals and player files
+PASS: retargeting a prepared transfer preserves the immutable player payload
+PASS: a new installation can durably initialize directly on an island
+PASS: player writes use Minecraft 26.3's canonical players/data directory
+PASS: current vanilla player data outranks stale legacy playerdata without modifying it
+PASS: a newly completed native backup with level.dat and player data is verified
+PASS: backup verification reads every file and rejects a corrupted player entry CRC
+PASS: a ZIP without level.dat cannot stand in for a completed world backup
+PASS: an existing archive cannot be mistaken for a newly completed backup
+PASS: two new archives are refused instead of guessing which world was backed up
+PASS: old backup archives stay untouched while only the new backup is verified
+PASS: 24 scene save store and backup tests
+Os projetos de testes e o instalador passaram. Este resultado nao substitui uma partida em dois PCs reais.

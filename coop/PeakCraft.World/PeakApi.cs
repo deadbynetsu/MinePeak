@@ -6,6 +6,15 @@ namespace PeakCraft.World;
 
 internal static class PeakApi
 {
+	public static uint CurrentWorldId
+	{
+		get
+		{
+			var scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+			return SceneWorldIdentity.For(scene.buildIndex, scene.name);
+		}
+	}
+
 	private const BindingFlags Any = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
 
 	private static Func<object?, bool>? dead;

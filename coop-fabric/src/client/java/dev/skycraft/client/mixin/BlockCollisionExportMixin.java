@@ -2,6 +2,7 @@ package dev.skycraft.client.mixin;
 
 import dev.skycraft.client.collision.BlockCollisionExporter;
 import dev.skycraft.client.render.WorldExporter;
+import dev.skycraft.client.scene.SceneWorlds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.SectionPos;
@@ -14,6 +15,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 /** Add physics export while preserving all existing Co-op renderer and block-event hooks. */
 @Mixin(value = WorldExporter.class, remap = false)
 public abstract class BlockCollisionExportMixin {
+    @Inject(method = "frame", at = @At("HEAD"), cancellable = true)
+    private static void peakcraft$ready(Minecraft minecraft, float partialTick, CallbackInfo ci) {
+        if (!SceneWorlds.exportReady(minecraft)) ci.cancel();
+    }
+
     @Inject(method = "markDirty", at = @At("TAIL"))
     private static void peakcraft$dirty(int sx, int sy, int sz, CallbackInfo ci) {
         BlockCollisionExporter.markDirty(sx, sy, sz, false);

@@ -1,6 +1,7 @@
 package dev.skycraft.client.collision;
 
 import dev.skycraft.link.SkyLink;
+import dev.skycraft.client.scene.SceneWorlds;
 import it.unimi.dsi.fastutil.longs.LongLinkedOpenHashSet;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import java.nio.ByteBuffer;
@@ -66,6 +67,7 @@ public final class BlockCollisionExporter implements ClientModInitializer {
 
     /** Called after the original WorldExporter frame, on the render thread. */
     public static void frame(Minecraft minecraft) {
+        if (!SceneWorlds.exportReady(minecraft)) return;
         ClientLevel level = minecraft.level;
         if (level == null || minecraft.player == null || !SkyLink.active() || !SkyLink.readSkyState(HOST) || !HOST.inGame()) return;
         int currentGeneration = SkyLink.generation();

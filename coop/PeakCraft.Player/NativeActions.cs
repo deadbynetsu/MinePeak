@@ -16,6 +16,7 @@ internal sealed class NativeActions
     private Character? bound;
     public bool WantsNative => requested || releasePending;
     public string KeyName => key.Value.ToString();
+    public string ThrowKeyName => throwKey.Value.ToString();
 
     public NativeActions(ConfigFile config)
     {
@@ -119,9 +120,6 @@ internal sealed class NativeActions
 
     public void Draw()
     {
-        if (Plugin.Instance.CoopMode.IsViewer || Character.localCharacter == null || Ownership.PeakMenuOpen()) return;
-        string text = Plugin.Instance.Climb.WantsNative ? "Escalada PEAK: WASD | Espaco solta | solte V para voltar aos blocos" : WantsNative ? "Itens PEAK: 1-4 | mouse usa | segure Q e solte para arremessar" :
-            "Segure " + KeyName + ": itens PEAK   |   segure " + Plugin.Instance.Climb.KeyName + ": escalar";
-        GUI.Label(new Rect(16, 54, 650, 26), text);
+        PeakCraft.UI.MinePeakUi.DrawGameplay(Plugin.Instance);
     }
 }

@@ -109,8 +109,13 @@ internal sealed class BlockRelay
         {
             for (int i = 0; i < 16 && pending.Count > 0; i++)
             {
-                var key = pending.Dequeue(); pendingSet.Remove(key);
-                if (journal.TryGet(key, out var edit)) link.PushInput((Proto.InputType)CoopProto.LinkInSetBlock, (ushort)edit.State, edit.X, edit.Y, edit.Z);
+                var key = pending.Peek();
+                // A busy local Minecraft can fill its input ring during a snapshot.
+                // Keep this coordinate queued until it accepted the latest journal state;
+                // otherwise a dropped removal can leave a permanent remote ghost block.
+                if (journal.TryGet(key, out var edit) &&
+                    !link.TryPushInput((Proto.InputType)CoopProto.LinkInSetBlock, (ushort)edit.State, edit.X, edit.Y, edit.Z)) break;
+                pending.Dequeue(); pendingSet.Remove(key);
             }
         }
         if (!net.Online || !net.Share) return;

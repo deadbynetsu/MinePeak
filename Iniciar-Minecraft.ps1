@@ -2,6 +2,9 @@ $ErrorActionPreference='Stop'
 $c=Get-Content (Join-Path $PSScriptRoot 'local-config.json') -Raw | ConvertFrom-Json
 $env:JAVA_HOME=$c.java
 $env:GRADLE_USER_HOME=$c.gradle
+$env:TEMP=Join-Path $c.profile 'cache\tmp'
+$env:TMP=$env:TEMP
+New-Item -ItemType Directory -Force -Path $env:TEMP | Out-Null
 $env:JAVA_TOOL_OPTIONS='-Dskycraft.startHidden=true'
 # Read only the active profile's public identity and its own cached skin; never print account data.
 $name='Jogador'
@@ -21,16 +24,19 @@ if(Test-Path $accounts){
         }
     }catch{Write-Warning 'Perfil local indisponivel; usando nome de jogador padrao.'}
 }
-if($c.username -match '^[A-Za-z0-9_]{3,16}$'){$name=$c.username}
-if($c.skinFile -and (Test-Path -LiteralPath $c.skinFile)){$skin=(Resolve-Path -LiteralPath $c.skinFile).Path}
+if($c.PSObject.Properties['username'] -and $c.username -match '^[A-Za-z0-9_]{3,16}$'){$name=$c.username}
+if($c.PSObject.Properties['skinFile'] -and $c.skinFile -and (Test-Path -LiteralPath $c.skinFile)){$skin=(Resolve-Path -LiteralPath $c.skinFile).Path}
 $env:SKYCRAFT_USERNAME=$name
 $env:SKYCRAFT_UUID=if($uuid){$uuid.ToString()}else{''}
 $env:PEAKCRAFT_SKIN_FILE=$skin
-$env:PEAKCRAFT_SKIN_MODEL=if($c.skinModel -eq 'slim'){'slim'}else{'wide'}
+$env:PEAKCRAFT_SKIN_MODEL=if($c.PSObject.Properties['skinModel'] -and $c.skinModel -eq 'slim'){'slim'}else{'wide'}
 Write-Host "Perfil local: $name. Skin local encontrada: $([bool]$skin)"
 if($c.flavor -eq 'coop'){
     $project=Join-Path $PSScriptRoot 'coop-fabric'
 }else{$project=Join-Path $PSScriptRoot 'fabric'}
 Push-Location $project
-try{ & (Join-Path $PSScriptRoot 'fabric\gradlew.bat') runClient --no-configuration-cache --no-daemon }
+try{
+    & (Join-Path $PSScriptRoot 'fabric\gradlew.bat') runClient --no-configuration-cache --no-daemon
+    if($LASTEXITCODE -ne 0){throw ('Minecraft encerrou com erro '+$LASTEXITCODE+'. Consulte minecraft-console.log e minecraft-console.log.err no perfil local.')}
+}
 finally{Pop-Location}

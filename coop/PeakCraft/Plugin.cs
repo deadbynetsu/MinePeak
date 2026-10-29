@@ -20,7 +20,7 @@ namespace PeakCraft;
 
 [BepInAutoPlugin]
 [DefaultExecutionOrder(-1000)]
-[BepInPlugin("PeakCraftCoop", "PeakCraft Co-op", "0.3.2")]
+[BepInPlugin("PeakCraftCoop", "PeakCraft Co-op", "0.4.0")]
 public class Plugin : BaseUnityPlugin
 {
 	private ConfigEntry<string> linkName;
@@ -45,8 +45,6 @@ public class Plugin : BaseUnityPlugin
 
 	private bool hudHidden;
 
-	private GUIStyle? promptStyle;
-
 	private string? lastHeld;
 
 	private float lastFrameError = -100f;
@@ -59,7 +57,7 @@ public class Plugin : BaseUnityPlugin
 
 	public const string Name = "PeakCraft Co-op";
 
-	public const string Version = "0.3.2";
+	public const string Version = "0.4.0";
 
 	internal static ManualLogSource Log { get; private set; }
 
@@ -176,7 +174,7 @@ public class Plugin : BaseUnityPlugin
 		CoopNet = new CoopNet(CoopConfig);
 		CoopTextures = new McTextures(CoopConfig);
 		ViewerBlocks = new ViewerBlocks(CoopTextures);
-		BlockRelay = new BlockRelay(CoopNet, ViewerBlocks, Link, () => linked);
+		BlockRelay = new BlockRelay(CoopNet, ViewerBlocks, Link, () => linked && Blocks.SceneReady);
 		BlockRelay.HeldChanged += (string held) =>
 		{
 			if (!(held == lastHeld))
@@ -239,6 +237,7 @@ public class Plugin : BaseUnityPlugin
 	private void OnDestroy()
 	{
 		Dev?.ResetNativeInput();
+		Quietly(() => PeakCraft.UI.MinePeakUi.Dispose());
 		SceneManager.sceneLoaded -= OnSceneLoaded;
 		Quietly(() =>
 		{
@@ -274,6 +273,10 @@ public class Plugin : BaseUnityPlugin
 		});
 		Quietly(() =>
 		{
+			InputBridge?.Dispose();
+		});
+		Quietly(() =>
+		{
 			Link?.Close();
 		});
 	}
@@ -303,7 +306,7 @@ public class Plugin : BaseUnityPlugin
 	{
 		Dev?.ResetNativeInput();
 		Collision?.Reset("scene " + scene.name);
-		Blocks?.ClearPhysics();
+		Blocks?.Reset();
 		BlockRelay?.ResetScene();
 		Vitals?.Reset();
 		Equipment?.Reset();
@@ -404,7 +407,11 @@ public class Plugin : BaseUnityPlugin
 			}
 			else if (e.type == 6 || e.type == 7)
 			{
-				BlockRelay.OnMinecraftEvent(in e);
+				// The event lane has no world ID. Old queued edits cannot be attributed
+				// to the newly loaded PEAK scene while Java is still changing worlds.
+				// Held-item strings (id 1) are independent of a construction's scene.
+				if (Blocks.SceneReady || (e.type == 6 && (e.formId >> 16) == 1))
+					BlockRelay.OnMinecraftEvent(in e);
 			}
 		}
 	}
@@ -497,7 +504,7 @@ public class Plugin : BaseUnityPlugin
 			gameHour = 12f,
 			yaw = Camera.Yaw,
 			pitch = Camera.Pitch,
-			worldId = (uint)(SceneManager.GetActiveScene().buildIndex + 1)
+			worldId = PeakApi.CurrentWorldId
 		};
 		Owner state2 = Ownership.State;
 		bool num = CoopMode.IsViewer || character == null || LoadingScreenHandler.loading || state2 == Owner.Cutscene || state2 == Owner.NativeControl;
@@ -523,26 +530,8 @@ public class Plugin : BaseUnityPlugin
 		{
 			IInteractible bestInteractable = Interaction.instance.bestInteractable;
 			bool flag = bestInteractable is IInteractibleConstant interactibleConstant && interactibleConstant.IsConstantlyInteractable(Character.localCharacter);
-			string text = "[" + (flag ? "Hold " : "") + InputBridge.InteractKeyName + "] " + bestInteractable.GetInteractionText();
-			if (flag && Interaction.instance.currentHeldInteractible == bestInteractable)
-			{
-				int num = Mathf.RoundToInt(Mathf.Clamp01(Interaction.instance.constantInteractableProgress) * 100f);
-				text += $"  {num}%";
-			}
-			if (promptStyle == null)
-			{
-				promptStyle = new GUIStyle(GUI.skin.label)
-				{
-					alignment = TextAnchor.MiddleCenter,
-					fontStyle = FontStyle.Bold
-				};
-			}
-			promptStyle.fontSize = Mathf.Max(16, Screen.height / 45);
-			Rect position = new Rect(0f, (float)Screen.height * 0.56f, Screen.width, (float)promptStyle.fontSize * 2f);
-			promptStyle.normal.textColor = Color.black;
-			GUI.Label(new Rect(position.x + 2f, position.y + 2f, position.width, position.height), text, promptStyle);
-			promptStyle.normal.textColor = Color.white;
-			GUI.Label(position, text, promptStyle);
+			float progress = flag && Interaction.instance.currentHeldInteractible == bestInteractable ? Interaction.instance.constantInteractableProgress : 0f;
+			PeakCraft.UI.MinePeakUi.DrawInteraction(InputBridge.InteractKeyName, bestInteractable.GetInteractionText(), flag, progress);
 		}
 	}
 
@@ -561,13 +550,11 @@ public class Plugin : BaseUnityPlugin
 	private void DrawGui()
 	{
 		CoopMode?.OnGUI();
-		Vitals?.Draw();
-		Equipment?.Draw();
-		MinecraftSettings.Draw(this);
 		if (Ownership.OverlayAndBlocks && !PeakCraft.Player.Ownership.PeakMenuOpen())
 		{
 			Overlay.Draw(InputBridge.ScreenOpen, InputBridge.Cursor);
 			DrawInteractPrompt();
 		}
+		Equipment?.Draw();
 	}
 }

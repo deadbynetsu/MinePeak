@@ -1,17 +1,23 @@
 # Como jogar MinePeak
 
-MinePeak usa a base PeakCraft Local. Os nomes das pastas, do painel e dos arquivos de configuração continuam como PeakCraft para preservar a instalação.
+MinePeak usa a base PeakCraft Local. Alguns nomes de pastas e arquivos de configuração continuam como PeakCraft para preservar a instalação; o painel dentro do jogo se chama **MinePeak**.
 
 ## Abrir a partida
 
 1. Feche PEAK caso esteja aberto e mantenha a Steam conectada à sua conta.
 2. Execute **JOGAR.cmd**. O lançador abre PEAK e o Minecraft em segundo plano. Não precisa abrir o SKLauncher nem conectar a um servidor Minecraft.
 3. Para jogar sozinho, escolha **Jogar offline** no PEAK. Para uma sala com amigos, use os lobbies do próprio PEAK com a mesma versão dos mods em cada PC; veja [MULTIPLAYER.md](MULTIPLAYER.md).
-4. Na partida, pressione **Esc** e clique em **ATIVAR modo Minecraft**, ou pressione **L**. Aguarde o inventário e os corações aparecerem.
+4. Na partida, pressione **L** ou abra **Esc → MinePeak** e selecione **Minecraft**. Aguarde o inventário e os corações aparecerem.
 
-O modo escolhido fica salvo. Use **L** novamente para voltar ao PEAK nativo, com o chat e os menus Minecraft fechados. Se esta for a primeira instalação, siga antes a preparação em [README.md](README.md#comece-a-jogar).
+O modo escolhido fica salvo. Use **L** novamente ou selecione **PEAK** no painel do menu Esc para voltar aos controles nativos. Feche chat e menus Minecraft antes de usar o atalho. Se esta for a primeira instalação, siga antes a preparação em [README.md](README.md#comece-a-jogar).
 
 Na versão **0.3.1**, configurações antigas com F8 são migradas automaticamente para **L**. Se você já escolheu outra tecla personalizada, ela é preservada.
+
+## A nova interface
+
+A versão **0.4.0** deixa na partida apenas um pequeno indicador de modo, vida e comida. Dicas extras aparecem ao segurar **B** para itens ou **V** para escalar. O indicador é ocultado quando chat, inventário, pausa ou carregamento estão abertos.
+
+Abra **Esc** para ver a lista dos controles no cartão **MinePeak** e escolher **PEAK / Minecraft**. Para ajustar sensibilidade ou controles Minecraft, selecione **Opções do Minecraft** nesse cartão, com o modo Minecraft ativo e conectado. **O** continua abrindo o menu Minecraft durante a partida.
 
 ## Seu primeiro bloco
 
@@ -59,13 +65,14 @@ Para definir uma imagem própria, veja a seção [Skin do usuário](README-PT.md
 
 | O que aconteceu | O que verificar |
 | --- | --- |
-| PEAK abriu sem painel PeakCraft | Abra pelo JOGAR.cmd, que ativa o perfil externo; a abertura normal pela Steam é separada. |
-| Minecraft ainda não aparece | Espere a primeira instalação concluir. Confira `local-profile/minecraft-console.log`. |
+| PEAK abriu sem painel MinePeak no menu Esc | Abra pelo JOGAR.cmd, que ativa o perfil externo; a abertura normal pela Steam é separada. |
+| Minecraft ainda não aparece / painel mostra Preparando | Espere a primeira instalação concluir. Confira `local-profile/minecraft-console.log`. |
+| Opções do Minecraft está desativado | Selecione Minecraft e aguarde a ponte conectar; o botão precisa do jogo Java pronto. |
 | Botão/tecla não alterna o modo | Feche o inventário, chat ou menu Minecraft e tente L dentro da partida; confira `ToggleModeKey` se usa uma tecla personalizada. |
 | Mão parece escura | A cor vem da skin local; confira sua imagem antes de alterar o renderizador. |
 | Bloco some atrás de uma pedra | A ocultação pelo cenário é esperada. A montanha continua sendo o cenário PEAK. |
-| PEAK nativo atravessa o bloco construído | Confira se ambos os mods são da 0.3.2, se o Minecraft oculto está conectado e se a seção já carregou. Reinicie pelo JOGAR.cmd após atualizar os arquivos. |
+| PEAK nativo atravessa o bloco construído | Confira se ambos os mods são da mesma Release 0.4.0, se o Minecraft oculto está conectado e se a seção já carregou. Reinicie pelo JOGAR.cmd após atualizar os arquivos. |
 | Item PEAK não usa no controle Minecraft | Segure B, selecione 1–4 e use o mouse. |
 | Escalada não agarra | Aproxime-se, mire numa parede válida e confira a stamina. Solte V antes de uma nova tentativa. |
 
-Os jogos e mods podem mudar. Para relatar um erro, inclua as versões, a sequência de ações e um vídeo curto quando possível. Remova nomes, códigos de sala e caminhos pessoais dos logs públicos. Consulte **[VALIDACAO-0.3.2.md](VALIDACAO-0.3.2.md)** para a colisão das construções, **[VALIDACAO-0.3.1.md](VALIDACAO-0.3.1.md)** para a tecla L e **[VALIDACAO-0.3.0.md](VALIDACAO-0.3.0.md)** para os testes anteriores de equipamentos, escalada, colisão e rede e seus limites. Uma sessão completa com dois PCs e uma campanha até o cume ainda não foram validadas.
+Os jogos e mods podem mudar. Para relatar um erro, inclua as versões, a sequência de ações e um vídeo curto quando possível. Remova nomes, códigos de sala e caminhos pessoais dos logs públicos. Consulte **[VALIDACAO-0.4.0.md](VALIDACAO-0.4.0.md)** para a revisão atual de interface e bugs, **[VALIDACAO-0.3.2.md](VALIDACAO-0.3.2.md)** para a colisão das construções, **[VALIDACAO-0.3.1.md](VALIDACAO-0.3.1.md)** para a tecla L e **[VALIDACAO-0.3.0.md](VALIDACAO-0.3.0.md)** para os testes anteriores de equipamentos, escalada, colisão e rede e seus limites. Uma sessão completa com dois PCs e uma campanha até o cume ainda não foram validadas.

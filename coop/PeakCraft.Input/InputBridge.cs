@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using BepInEx.Configuration;
 using PeakCraft.Link;
@@ -8,9 +9,12 @@ using UnityEngine.InputSystem.Controls;
 
 namespace PeakCraft.Input;
 
-internal sealed class InputBridge
+internal sealed class InputBridge : IDisposable
 {
 	private readonly PeakLink link;
+
+	private readonly InputReleaseBarrier releaseBarrier = new InputReleaseBarrier();
+	private readonly Func<bool> writeRelease;
 
 	private readonly CameraDriver camera;
 
@@ -49,11 +53,11 @@ internal sealed class InputBridge
 	{
 		get
 		{
-			if (routing)
-			{
-				return screenOpen;
-			}
-			return false;
+			// Losing focus or granting B/V temporarily stops routing; it does not close
+			// the Minecraft chat/inventory. The latest live guest snapshot owns this flag.
+			var plugin = Plugin.Instance;
+			return plugin != null && plugin.CoopMode != null &&
+				InputRoutingSafety.MinecraftScreenOpen(!plugin.CoopMode.IsViewer, link.GuestAlive, plugin.Guest.flags);
 		}
 	}
 
@@ -64,6 +68,7 @@ internal sealed class InputBridge
 	public InputBridge(PeakLink link, CameraDriver camera, Interact interact, ConfigFile config)
 	{
 		this.link = link;
+		writeRelease = () => link.TryPushInput(Proto.InputType.ReleaseAll, 0);
 		this.camera = camera;
 		this.interact = interact;
 		interactKey = config.Bind<Key>("Keys", "PeakInteract", Key.G, "Triggers PEAK's interact on whatever PEAK targets (kiosk, campfire, luggage). Hold it where PEAK wants a hold.");
@@ -82,6 +87,15 @@ internal sealed class InputBridge
 			if (flag) waitForMouseRelease = true;
 			Plugin.Log.LogInfo((object)(flag ? "input: keyboard and mouse go to Minecraft" : "input: released (release-all sent)"));
 		}
+		if (releaseBarrier.Pending)
+		{
+			ResetLocalInput();
+			if (!releaseBarrier.Flush(writeRelease))
+			{
+				interact.Update(false);
+				return;
+			}
+		}
 		if (!flag)
 		{
 			interact.Update(ownership.State == Owner.NativeControl && Application.isFocused && current != null && current[interactKey.Value].isPressed);
@@ -97,7 +111,7 @@ internal sealed class InputBridge
 		{
 			cursorX = (float)Screen.width * 0.5f;
 			cursorY = (float)Screen.height * 0.5f;
-			link.PushInput(Proto.InputType.Cursor, 0, (int)cursorX, (int)cursorY);
+			SendInput(Proto.InputType.Cursor, 0, (int)cursorX, (int)cursorY);
 		}
 		screenOpen = flag2;
 		Vector2 vector = current2.delta.ReadValue();
@@ -107,11 +121,11 @@ internal sealed class InputBridge
 			{
 				cursorX = Mathf.Clamp(cursorX + vector.x, 0f, Screen.width - 1);
 				cursorY = Mathf.Clamp(cursorY - vector.y, 0f, Screen.height - 1);
-				link.PushInput(Proto.InputType.Cursor, 0, (int)cursorX, (int)cursorY);
+				SendInput(Proto.InputType.Cursor, 0, (int)cursorX, (int)cursorY);
 			}
 			while (text.Count > 0)
 			{
-				link.PushInput(Proto.InputType.Text, 0, text.Dequeue());
+				SendInput(Proto.InputType.Text, 0, text.Dequeue());
 			}
 		}
 		else
@@ -138,7 +152,7 @@ internal sealed class InputBridge
 		float y = current2.scroll.ReadValue().y;
 		if (y != 0f)
 		{
-			link.PushInput(Proto.InputType.Scroll, 0, (y > 0f) ? 120 : (-120));
+			SendInput(Proto.InputType.Scroll, 0, (y > 0f) ? 120 : (-120));
 		}
 	}
 
@@ -161,7 +175,7 @@ internal sealed class InputBridge
 				if (Plugin.Instance.CoopMode.IsToggleKey(keyCode))
 				{
 					if (held.Remove(keyCode) && Scancodes.FromKey.TryGetValue(keyCode, out var toggleScan))
-						link.PushInput(Proto.InputType.Key, toggleScan, 0);
+						SendInput(Proto.InputType.Key, toggleScan, 0);
 					continue;
 				}
 				if (keyCode == Key.Escape)
@@ -179,7 +193,7 @@ internal sealed class InputBridge
 					{
 						ReleaseKeys();
 						held.Add(keyCode);
-						link.PushInput(Proto.InputType.OpenMenu, 0);
+						SendInput(Proto.InputType.OpenMenu, 0);
 					}
 					else if (!isPressed)
 					{
@@ -194,13 +208,13 @@ internal sealed class InputBridge
 			}
 			if (isPressed && held.Add(keyCode))
 			{
-				link.PushInput(Proto.InputType.Key, value, 1);
+				SendInput(Proto.InputType.Key, value, 1);
 				repeatKey = keyCode;
 				repeatAt = Time.unscaledTime + 0.4f;
 			}
 			else if (!isPressed && held.Remove(keyCode))
 			{
-				link.PushInput(Proto.InputType.Key, value);
+				SendInput(Proto.InputType.Key, value);
 				if (repeatKey == keyCode)
 				{
 					repeatKey = Key.None;
@@ -210,7 +224,7 @@ internal sealed class InputBridge
 		if (screenOpen && repeatKey != Key.None && Time.unscaledTime >= repeatAt && Scancodes.FromKey.TryGetValue(repeatKey, out var value2))
 		{
 			repeatAt = Time.unscaledTime + 0.04f;
-			link.PushInput(Proto.InputType.Key, value2, 1);
+			SendInput(Proto.InputType.Key, value2, 1);
 		}
 		interact.Update(keyDown);
 	}
@@ -221,7 +235,7 @@ internal sealed class InputBridge
 		if (flag != buttons[sdlButton])
 		{
 			buttons[sdlButton] = flag;
-			link.PushInput(Proto.InputType.MouseButton, (ushort)sdlButton, flag ? 1 : 0);
+			SendInput(Proto.InputType.MouseButton, (ushort)sdlButton, flag ? 1 : 0);
 		}
 	}
 
@@ -254,7 +268,7 @@ internal sealed class InputBridge
 		{
 			if (Scancodes.FromKey.TryGetValue(item, out var value))
 			{
-				link.PushInput(Proto.InputType.Key, value);
+				SendInput(Proto.InputType.Key, value);
 			}
 		}
 		held.Clear();
@@ -262,6 +276,13 @@ internal sealed class InputBridge
 	}
 
 	public void ReleaseAll()
+	{
+		ResetLocalInput();
+		releaseBarrier.Request();
+		releaseBarrier.Flush(writeRelease);
+	}
+
+	private void ResetLocalInput()
 	{
 		held.Clear();
 		for (int i = 0; i < buttons.Length; i++)
@@ -271,6 +292,27 @@ internal sealed class InputBridge
 		text.Clear();
 		repeatKey = Key.None;
 		screenOpen = false;
-		link.PushInput(Proto.InputType.ReleaseAll, 0);
+		waitForMouseRelease = true;
+	}
+
+	private void SendInput(Proto.InputType type, ushort code = 0, int a = 0, int b = 0, int c = 0)
+	{
+		if (releaseBarrier.Pending) return;
+		if (link.TryPushInput(type, code, a, b, c)) return;
+		// A dropped key-up would otherwise remain held in Minecraft indefinitely.
+		// Stop sending this frame and clear all remote keys before routing can resume.
+		releaseBarrier.Request();
+		ResetLocalInput();
+	}
+
+	public void Dispose()
+	{
+		routing = false;
+		if (textSource != null)
+		{
+			textSource.onTextInput -= OnText;
+			textSource = null;
+		}
+		ReleaseAll();
 	}
 }
