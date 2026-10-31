@@ -6,7 +6,7 @@ if (-not (Get-Command $Dotnet -ErrorAction SilentlyContinue)) {
     throw 'SDK .NET 10 nao encontrado. Instale-o ou informe -Dotnet com o caminho do dotnet.exe.'
 }
 $env:DOTNET_CLI_TELEMETRY_OPTOUT = '1'
-$projects = @('VitalsLedger.Tests', 'CollisionRegion.Tests', 'Multiplayer.Tests', 'InputSafety.Tests', 'SceneRenderFence.Tests')
+$projects = @('VitalsLedger.Tests', 'CollisionRegion.Tests', 'Multiplayer.Tests', 'InputSafety.Tests', 'SceneRenderFence.Tests', 'CameraYaw.Tests', 'ClimbReturn.Tests', 'ContactLock.Tests', 'HazardImpulse.Tests')
 foreach ($project in $projects) {
     $path = Join-Path $PSScriptRoot ('tests/' + $project + '/' + $project + '.csproj')
     Write-Host ('Executando testes: ' + $project)
@@ -19,4 +19,6 @@ if ($LASTEXITCODE -ne 0) { throw 'Falha nos testes do instalador.' }
 if ($LASTEXITCODE -ne 0) { throw 'Falha nos testes do inicializador.' }
 & (Join-Path $PSScriptRoot 'tests/SceneSaveStore.Tests.ps1') -WorkDirectory $WorkDirectory -JavaHome $JavaHome
 if ($LASTEXITCODE -ne 0) { throw 'Falha nos testes do diario de saves.' }
+& (Join-Path $PSScriptRoot 'tests/WallPlaneAnchor.Tests.ps1') -WorkDirectory $WorkDirectory -JavaHome $JavaHome
+if ($LASTEXITCODE -ne 0) { throw 'Falha nos testes de paredes inclinadas.' }
 Write-Host 'Os projetos de testes e o instalador passaram. Este resultado nao substitui uma partida em dois PCs reais.'

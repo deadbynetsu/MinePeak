@@ -15,7 +15,7 @@ Na versão **0.3.1**, configurações antigas com F8 são migradas automaticamen
 
 ## A nova interface
 
-A versão **0.4.0** deixa na partida apenas um pequeno indicador de modo, vida e comida. Dicas extras aparecem ao segurar **B** para itens ou **V** para escalar. O indicador é ocultado quando chat, inventário, pausa ou carregamento estão abertos.
+A versão **0.4.1** mantém um pequeno indicador de modo, vida e comida. Efeitos nativos ativos, como veneno, aparecem abaixo no modo Minecraft. Dicas extras acompanham **B** para itens e **V** para escalar. O indicador é ocultado quando chat, inventário, pausa ou carregamento estão abertos.
 
 Abra **Esc** para ver a lista dos controles no cartão **MinePeak** e escolher **PEAK / Minecraft**. Para ajustar sensibilidade ou controles Minecraft, selecione **Opções do Minecraft** nesse cartão, com o modo Minecraft ativo e conectado. **O** continua abrindo o menu Minecraft durante a partida.
 
@@ -37,21 +37,23 @@ A partir da **0.3.2**, as construções enviam também suas formas físicas ao P
 
 **G** interage com o mundo do PEAK no modo Minecraft. Segure quando a ação exigir tempo. No aeroporto, mire no terminal, segure G e confirme a viagem no cartão de embarque.
 
+Para abrir uma mochila no chão, **mire nela e segure G**. Mova o mouse para a opção do menu radial e **solte G para confirmar**. Continue segurando a tecla enquanto escolhe.
+
 Para usar comida ou equipamento PEAK mantendo a opção Minecraft ativa:
 
 1. **Segure B** para assumir temporariamente os controles nativos.
 2. Escolha o espaço PEAK com **1, 2, 3 ou 4**.
 3. Use o **botão do mouse** correspondente à ação do item; mantenha pressionado se ele exigir tempo para consumir.
 4. Para arremessar o item equipado, **segure Q para carregar a força e solte Q**.
-5. Solte B para retornar ao inventário e à movimentação Minecraft.
+5. Solte B para retornar ao inventário e à movimentação Minecraft. Se um impulso nativo estiver em andamento, o PEAK mantém a física até o pouso se firmar.
 
-Comidas Minecraft usam o fluxo normal do Minecraft: selecione o alimento e segure o botão direito. Comida e vida são compartilhadas; o outro jogo deve acompanhar a alteração. Comer não cura instantaneamente quando o alimento ou o jogo não têm esse efeito. Os ferimentos do PEAK correspondem aos corações; a stamina de escalada permanece separada.
+Comidas Minecraft usam o fluxo normal do Minecraft: selecione o alimento e segure o botão direito. Comida e vida são compartilhadas; o outro jogo deve acompanhar a alteração. Comer não cura instantaneamente quando o alimento ou o jogo não têm esse efeito. Os ferimentos do PEAK correspondem aos corações; a stamina de escalada permanece separada. Veneno, frio e outros efeitos nativos também permanecem ativos: acompanhe o resumo no painel, mesmo com os corações cheios.
 
-Durante o controle temporário B, o corpo e os braços são os do PEAK. Sua aparência Minecraft retorna ao soltar. Cada item mantém suas regras nativas de uso, carga e consumo.
+Durante o controle temporário B, o corpo e os braços são os do PEAK. Sua aparência Minecraft retorna ao encerrar a ação. Cada item mantém suas regras nativas de uso, carga e consumo. O indicador **Impulso PEAK** sinaliza quando a física nativa ainda está concluindo um movimento e seu pouso.
 
 ## Escalar
 
-Aproxime-se de uma parede que o PEAK permita escalar, olhe para ela e **segure V**. Use WASD para movimentar-se e acompanhe a stamina nativa. Espaço solta a parede. Solte V para devolver o controle ao Minecraft.
+Aproxime-se de uma parede que o PEAK permita escalar, olhe para ela e **segure V**. Use WASD para movimentar-se e acompanhe a stamina nativa. **Mantenha V ao alcançar a borda**: o PEAK termina a subida e firma os pés antes do retorno automático ao Minecraft. Espaço solta a parede; soltar V cancela a assistência e devolve o controle.
 
 Esse caminho usa a escalada do próprio PEAK, com suas restrições de alcance, parede e energia. Durante a escalada, aparece o corpo nativo. Ao terminar ou esgotar a energia, será necessário soltar V antes de tentar agarrar novamente.
 
@@ -71,8 +73,8 @@ Para definir uma imagem própria, veja a seção [Skin do usuário](README-PT.md
 | Botão/tecla não alterna o modo | Feche o inventário, chat ou menu Minecraft e tente L dentro da partida; confira `ToggleModeKey` se usa uma tecla personalizada. |
 | Mão parece escura | A cor vem da skin local; confira sua imagem antes de alterar o renderizador. |
 | Bloco some atrás de uma pedra | A ocultação pelo cenário é esperada. A montanha continua sendo o cenário PEAK. |
-| PEAK nativo atravessa o bloco construído | Confira se ambos os mods são da mesma Release 0.4.0, se o Minecraft oculto está conectado e se a seção já carregou. Reinicie pelo JOGAR.cmd após atualizar os arquivos. |
+| PEAK nativo atravessa o bloco construído | Confira se ambos os mods são da mesma Release 0.4.1, se o Minecraft oculto está conectado e se a seção já carregou. Reinicie pelo JOGAR.cmd após atualizar os arquivos. |
 | Item PEAK não usa no controle Minecraft | Segure B, selecione 1–4 e use o mouse. |
 | Escalada não agarra | Aproxime-se, mire numa parede válida e confira a stamina. Solte V antes de uma nova tentativa. |
 
-Os jogos e mods podem mudar. Para relatar um erro, inclua as versões, a sequência de ações e um vídeo curto quando possível. Remova nomes, códigos de sala e caminhos pessoais dos logs públicos. Consulte **[VALIDACAO-0.4.0.md](VALIDACAO-0.4.0.md)** para a revisão atual de interface e bugs, **[VALIDACAO-0.3.2.md](VALIDACAO-0.3.2.md)** para a colisão das construções, **[VALIDACAO-0.3.1.md](VALIDACAO-0.3.1.md)** para a tecla L e **[VALIDACAO-0.3.0.md](VALIDACAO-0.3.0.md)** para os testes anteriores de equipamentos, escalada, colisão e rede e seus limites. Uma sessão completa com dois PCs e uma campanha até o cume ainda não foram validadas.
+Os jogos e mods podem mudar. Para relatar um erro, inclua as versões, a sequência de ações e um vídeo curto quando possível. Remova nomes, códigos de sala e caminhos pessoais dos logs públicos. Consulte **[VALIDACAO-0.4.1.md](VALIDACAO-0.4.1.md)** para a revisão atual; os relatórios **[0.4.0](VALIDACAO-0.4.0.md)**, **[0.3.2](VALIDACAO-0.3.2.md)**, **[0.3.1](VALIDACAO-0.3.1.md)** e **[0.3.0](VALIDACAO-0.3.0.md)** preservam suas provas históricas. O teste de uma campanha inteira até o cume e o encerramento, assim como uma sessão completa com dois PCs/contas, ainda está pendente. O mundo e o conteúdo original continuam sendo executados pelo PEAK.

@@ -7,6 +7,11 @@ internal static class InputRoutingSafety
 {
     public static bool MinecraftScreenOpen(bool minecraftPreference, bool guestAlive, uint flags)
         => minecraftPreference && guestAlive && (flags & 3u) == 3u;
+
+    // BackpackWheel remains open only while the interaction action is held.
+    // Opening that wheel changes ownership to PeakMenu on the very next frame.
+    public static bool RoutePeakInteract(bool nativeControl, bool backpackWheel, bool minecraftScreen, bool focused)
+        => focused && !minecraftScreen && (nativeControl || backpackWheel);
 }
 
 /// <summary>A safety release is never forgotten when the shared input ring is full.</summary>

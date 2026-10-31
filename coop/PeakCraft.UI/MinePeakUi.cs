@@ -24,6 +24,9 @@ internal static class MinePeakUi
     private static string toggleKeyText = "L";
     private static readonly GUIContent MeasureContent = new GUIContent();
     private static readonly GUIContent KeyContent = new GUIContent();
+    private static float statusRefreshAt;
+    private static string? nativeStatus;
+    private static readonly string[] NativeStatusNames = { "Lesão", "Fome", "Frio", "Veneno", "Caranguejo", "Maldição", "Sono", "Peso", "Calor", "Espinhos", "Esporos", "Teia", "Flechas", "Petrificação", "Planta carnívora" };
 
     // Logical pixels keep the same layout on 720p, 1080p and ultrawide displays.
     private static float Scale => Mathf.Clamp(Mathf.Min(Screen.width / 1280f, Screen.height / 720f), .65f, 2.4f);
@@ -112,7 +115,8 @@ internal static class MinePeakUi
         {
             bool stats = plugin.Vitals.HudVisible;
             bool linked = plugin.Link.GuestAlive && (plugin.Guest.flags & 1) != 0;
-            string mode = plugin.Climb.WantsNative ? "Escalada PEAK" : plugin.Equipment.WantsNative ? "Itens PEAK" :
+            string mode = plugin.Jump.RetainingFlight ? "Impulso PEAK" : plugin.Jump.WantsNative ? "Salto PEAK" :
+                plugin.Climb.WantsNative ? "Escalada PEAK" : plugin.Equipment.WantsNative ? "Itens PEAK" :
                 plugin.CoopMode.IsViewer ? "PEAK" : !linked ? "PEAK · aguardando" : plugin.Ownership.State == Owner.Handoff ? "Conectando…" : "Minecraft";
             var toggle = plugin.CoopConfig.CoopToggleKey.Value;
             if (toggle != lastToggleKey) { lastToggleKey = toggle; toggleKeyText = FriendlyKey(toggle.ToString()); }
@@ -133,15 +137,42 @@ internal static class MinePeakUi
                 Stat(new Rect(x + 13, y + 46, statWidth, 26), "Vida", healthText, plugin.Vitals.HealthPercent, Rose);
                 Stat(new Rect(x + 25f + statWidth, y + 46, statWidth, 26), "Comida", foodText, plugin.Vitals.FoodPercent, Amber);
             }
+            float nextTop = y + (stats ? 91f : 48f);
+            if (plugin.Ownership.State == Owner.MinecraftOwns && NativeStatus(c) is string status)
+            {
+                Surface(new Rect(x, nextTop, w, 30f), false);
+                Text(new Rect(x + 12, nextTop + 5, w - 24, 20), status, small!);
+                nextTop += 38f;
+            }
             string? context = plugin.Climb.WantsNative ? "WASD · mover    Espaço · soltar" :
                 plugin.Equipment.WantsNative ? "1–4 · item    " + FriendlyKey(plugin.Equipment.ThrowKeyName) + " · segure / solte" : null;
             if (context != null)
             {
-                float top = y + (stats ? 91f : 48f);
+                float top = nextTop;
                 Surface(new Rect(x, top, w, 30f), false);
                 Text(new Rect(x + 12, top + 5, w - 24, 20), context, small!);
             }
         }
+    }
+
+    private static string? NativeStatus(Character character)
+    {
+        if (Time.unscaledTime < statusRefreshAt) return nativeStatus;
+        statusRefreshAt = Time.unscaledTime + .25f;
+        var values = character.refs.afflictions.currentStatuses;
+        int strongest = -1, count = 0;
+        // Injury and hunger already have the shared heart/food display. Other
+        // native effects still limit PEAK stamina even when Minecraft has full hearts.
+        for (int i = 2; i < values.Length; i++)
+            if (values[i] > .0001f)
+            {
+                count++;
+                if (strongest < 0 || values[i] > values[strongest]) strongest = i;
+            }
+        nativeStatus = strongest < 0 ? null :
+            (strongest < NativeStatusNames.Length ? NativeStatusNames[strongest] : "Efeito PEAK") + " " +
+            Mathf.RoundToInt(values[strongest] * 100f) + "%" + (count > 1 ? " · +" + (count - 1) + " efeito(s)" : "");
+        return nativeStatus;
     }
 
     public static void DrawInteraction(string key, string text, bool hold, float progress)

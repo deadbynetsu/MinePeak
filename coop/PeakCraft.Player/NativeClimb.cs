@@ -15,6 +15,9 @@ internal sealed class NativeClimb
     private bool physicalHeld;
     private bool inputHeld;
     private bool attached;
+    private bool settling;
+    private bool jumpRelease;
+    private readonly NativeLandingGate returnGate = new();
     private bool preexistingClimb;
     private bool blockedUntilRelease;
     private bool releasePending;
@@ -70,6 +73,8 @@ internal sealed class NativeClimb
             Requested = true;
             releasePending = false;
             Active = attached = false;
+            settling = jumpRelease = false;
+            returnGate.Reset();
             preexistingClimb = c.data.isClimbingAnything || c.data.currentClimbHandle != null;
             nextAttempt = 0;
             Plugin.Log.LogInfo("climb: PEAK control requested; hold " + KeyName + ", use WASD and Space");
@@ -91,18 +96,35 @@ internal sealed class NativeClimb
     {
         if (!Requested || c == null || Plugin.Instance.Ownership.State != Owner.NativeControl) return;
         Active = true;
+        if (jumpRelease)
+        {
+            // CharacterClimbing has already received the normal Space input.
+            // Keep its release behavior rather than treating it as a ledge.
+            BeginReturn(c, false, "Space released the climb");
+            return;
+        }
         if (c.data.isClimbingAnything || c.data.currentClimbHandle != null)
         {
             if (!attached)
                 Plugin.Log.LogInfo($"climb: native grab accepted; stamina {c.data.currentStamina:F3}; feet {Follower.PeakFeet(c):F3}");
             attached = true;
+            settling = false;
+            returnGate.Observe(Time.fixedTime, true, false, 0f);
             return;
         }
         if (attached)
         {
-            // No automatic re-grab after a jump, exhaustion, slip or completed mantle.
-            // Repeated forced grabs could otherwise reset native exhaustion behavior.
-            BeginReturn(c, false, "native climb ended");
+            // PEAK clears its climb flag at a walkable top before its ordinary
+            // gravity/standing physics have finished carrying the body over it.
+            // Keep PEAK ownership until landing; a fall also remains native while
+            // V is held. Explicit release/menu cancellation still returns below.
+            if (!settling)
+            {
+                settling = true;
+                Plugin.Log.LogInfo("climb: grab ended; waiting for a settled native landing");
+            }
+            if (returnGate.Observe(Time.fixedTime, false, c.data.isGrounded, c.data.avarageVelocity.y))
+                BeginReturn(c, false, "native landing settled");
             return;
         }
         if (Time.unscaledTime < nextAttempt) return;
@@ -113,6 +135,7 @@ internal sealed class NativeClimb
         if (c.data.isClimbingAnything || c.data.currentClimbHandle != null)
         {
             attached = true;
+            returnGate.Observe(Time.fixedTime, true, false, 0f);
             Plugin.Log.LogInfo($"climb: native grab accepted; stamina {c.data.currentStamina:F3}; feet {Follower.PeakFeet(c):F3}");
         }
     }
@@ -121,6 +144,7 @@ internal sealed class NativeClimb
     public void ApplyInput(CharacterInput input)
     {
         if (!WantsNative) { inputHeld = false; return; }
+        if (Requested && attached && input.jumpWasPressed) jumpRelease = true;
         // EquipSlot(None) can take a short coroutine to pocket/drop a bulky item.
         // The virtual climb click must not fire that item's primary action meanwhile.
         bool hold = Requested && (bound == null || bound.data.currentItem == null);
@@ -139,6 +163,8 @@ internal sealed class NativeClimb
             Plugin.Instance.Ownership.State == Owner.NativeControl)
             c.refs.climbing.StopAnyClimbing();
         Requested = false;
+        jumpRelease = false;
+        returnGate.Reset();
         releasePending = Active;
         releaseFixedTime = Time.fixedTime;
         blockedUntilRelease = physicalHeld;
@@ -163,6 +189,8 @@ internal sealed class NativeClimb
     public void Reset()
     {
         Requested = Active = physicalHeld = inputHeld = attached = preexistingClimb = blockedUntilRelease = releasePending = returnTeleport = false;
+        settling = jumpRelease = false;
+        returnGate.Reset();
         bound = null;
         nextAttempt = 0;
         devUntil = -1f;

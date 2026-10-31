@@ -11,8 +11,19 @@ internal static class DevCommands
 	public static void Register(Plugin plugin, DevHarness dev)
 	{
 		PeakLink link = plugin.Link;
+		dev.Register("mapoffset", a => {
+			if (!Photon.Pun.PhotonNetwork.OfflineMode) throw new System.InvalidOperationException("Map diagnostics require an offline test session.");
+			NextLevelService.debugLevelIndexOffset = Mathf.Clamp(int.Parse(a[0]), -5, 5);
+			var service = GameHandler.GetService<NextLevelService>();
+			string level = SingletonAsset<MapBaker>.Instance.GetLevel(service.NextLevelIndexOrFallback + NextLevelService.debugLevelIndexOffset);
+			Plugin.Log.LogInfo("dev: next native island offset " + NextLevelService.debugLevelIndexOffset + "; map " + level);
+		});
 		dev.Register("collisionprobe", _ => plugin.Collision.ProbeAhead());
 		dev.Register("blockphysics", _ => plugin.Blocks.DescribePhysics());
+		dev.Register("nativejump", _ => plugin.Jump.DevJump());
+		dev.Register("movementstatus", _ => NativeMovementDiagnostics.Describe(Character.localCharacter));
+		dev.Register("hazardcontacts", a => PeakCraft.Hazards.HazardContacts.Describe(a.Length > 0 ? DevHarness.F(a[0]) : 6f));
+		dev.Register("hazardtest", a => HazardTestScene.Change(a.Length > 0 ? a[0] : "clear"));
 		dev.Register("nativeinput", a => dev.SetNativeInput(plugin, DevHarness.F(a[0]), DevHarness.F(a[1]), a[2] == "1",
 			a.Length > 3 ? DevHarness.F(a[3]) : 0f));
 		dev.Register("native", a => {
@@ -40,6 +51,11 @@ internal static class DevCommands
 			}
 			else if (a[0] == "slot") plugin.Equipment.DevSelect(int.Parse(a[1]));
 			else if (a[0] == "use") plugin.Equipment.DevUse(DevHarness.F(a[1]), a.Length > 2 && a[2] == "secondary");
+			else if (a[0] == "jump" && c != null) {
+				if (plugin.Ownership.State != Owner.NativeControl && plugin.Ownership.State != Owner.PeakOwns)
+					throw new System.InvalidOperationException("Native jump test requires native control.");
+				c.refs.movement.TryToJump();
+			}
 			else if (a[0] == "throw") plugin.Equipment.DevThrow(DevHarness.F(a[1]));
 			else if (a[0] == "climb") plugin.Climb.DevHold(DevHarness.F(a[1]), a.Length > 2 ? DevHarness.F(a[2]) : 0);
 			else if (a[0] == "listitems") {

@@ -1,0 +1,20 @@
+MinePeak 0.4.1 — selected own-extension messages from the real-game bug retest.
+Repeated identical snapshots omitted. Numeric world/epoch values identify game scenes, not accounts.
+No player names, login records, paths, chat, inventories or world save files are included.
+
+peakcraft-collision: PeakCraft: exact block collision extension ready (render 12, world/epoch guarded)
+peakcraft-vitals: PeakCraft: vitals session linked; player epoch 1
+peakcraft-vitals: PeakCraft: applied vitals command 1 kind=1 health20=20.0 food20=20.0 alive=true
+peakcraft-vitals: PeakCraft: shared vitals health20=20.0 food20=20.0 saturation=0.0 ack=1 epoch=1 minecraftOwns=false
+peakcraft-collision: PeakCraft: collision rescan for world 4 epoch 7
+peakcraft-collision: PeakCraft: exact collision section 1 -31 -5: 85 boxes (1 live)
+peakcraft-collision: PeakCraft: exact collision section 0 -32 -8: 5 boxes (2 live)
+peakcraft-collision: PeakCraft: exact collision section 1 -31 -5: 85 boxes (2 live)
+peakcraft-vitals: PeakCraft: shared vitals health20=20.0 food20=20.0 saturation=0.0 ack=1 epoch=1 minecraftOwns=true
+peakcraft-vitals: PeakCraft: vitals session linked; player epoch 2
+peakcraft-vitals: PeakCraft: shared vitals health20=20.0 food20=20.0 saturation=0.0 ack=1 epoch=2 minecraftOwns=false
+peakcraft-collision: PeakCraft: collision rescan for world -2023044355 epoch 9
+peakcraft-vitals: PeakCraft: shared vitals health20=20.0 food20=20.0 saturation=0.0 ack=1 epoch=2 minecraftOwns=true
+peakcraft-collision: PeakCraft: exact collision section -1 -30 3: 9 boxes (1 live)
+peakcraft-collision: PeakCraft: exact collision section -2 -30 2: 4 boxes (2 live)
+peakcraft-collision: PeakCraft: exact collision section -1 -29 3: 2 boxes (3 live)

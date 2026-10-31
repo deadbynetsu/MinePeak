@@ -8,7 +8,15 @@ internal sealed class CameraDriver
 {
 	private float lastCompare;
 
-	public float Yaw;
+	private readonly ContinuousYaw heading = new ContinuousYaw();
+
+	public float Yaw
+	{
+		get => heading.Value;
+		set => heading.Follow(value);
+	}
+
+	public void TurnYaw(float degrees) => heading.Turn(degrees);
 
 	public float Pitch;
 

@@ -17,6 +17,14 @@ static class Program
             Check(!InputRoutingSafety.MinecraftScreenOpen(false, true, 7)));
         Test("startup Minecraft title screen does not block the mode shortcut", () =>
             Check(!InputRoutingSafety.MinecraftScreenOpen(true, true, 2)));
+        Test("backpack wheel retains the held G action after native menu takeover", () =>
+            Check(InputRoutingSafety.RoutePeakInteract(false, true, false, true)));
+        Test("pause menu cannot acquire the backpack interaction action", () =>
+            Check(!InputRoutingSafety.RoutePeakInteract(false, false, false, true)));
+        Test("Minecraft chat blocks G even with a stale native wheel", () =>
+            Check(!InputRoutingSafety.RoutePeakInteract(true, true, true, true)));
+        Test("losing focus releases native backpack interaction", () =>
+            Check(!InputRoutingSafety.RoutePeakInteract(false, true, false, false)));
         Test("safety release survives repeated full-ring failures", () =>
         {
             var barrier = new InputReleaseBarrier(); barrier.Request();

@@ -1,0 +1,218 @@
+MinePeak 0.4.1 — selected own-plugin messages from the real-game bug retest.
+These are excerpts, not the full game log or a claim that every game path passed.
+A later section records the final native-flight, backpack and hazard-impulse runtime checks.
+No account, authentication, room, chat or filesystem records are included.
+
+ownership: PeakOwns -> Handoff (teleport 35332)
+ownership: Handoff -> MinecraftOwns
+vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 0,00; ack 1/1; epoch 1; alive True
+dev: state MinecraftOwns; PEAK feet (-9.418, 0.632, 55.033) = mc (-9,418, -511,368, -55,033); Minecraft feet (-9,418, -511,368, -55,033) yaw 181,0 pitch 0,0 flags 0x205; look yaw 181,0 pitch 0,0; camera (-9.418, 2.252, 55.033); kinematic True; stamina 1,00
+dev: state MinecraftOwns; PEAK feet (-9.418, 0.632, 55.033) = mc (-9,418, -511,368, -55,033); Minecraft feet (-9,418, -511,368, -55,033) yaw 179,0 pitch 0,0 flags 0x205; look yaw 179,0 pitch 0,0; camera (-9.418, 2.252, 55.033); kinematic True; stamina 1,00
+dev: state MinecraftOwns; PEAK feet (-9.418, 0.632, 55.033) = mc (-9,418, -511,368, -55,033); Minecraft feet (-9,418, -511,368, -55,033) yaw 901,0 pitch 0,0 flags 0x205; look yaw 901,0 pitch 0,0; camera (-9.418, 2.252, 55.033); kinematic True; stamina 1,00
+ownership: MinecraftOwns -> PeakMenu
+ownership: PeakMenu -> Cutscene (loading)
+ownership: Cutscene -> PeakOwns
+ownership: PeakOwns -> Handoff (teleport 35333)
+vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 0,00; ack 1/1; epoch 2; alive True
+dev: state MinecraftOwns; PEAK feet (-3.500, 50.000, -56.500) = mc (-3,500, -462,000, 56,500); Minecraft feet (-3,500, -462,000, 56,500) yaw 900,0 pitch 15,0 flags 0x205; look yaw 900,0 pitch 15,0; camera (-3.500, 51.620, -56.500); kinematic True; stamina 1,00
+dev: state MinecraftOwns; PEAK feet (-4.756, 48.546, -56.234) = mc (-4,756, -463,454, 56,234); Minecraft feet (-4,754, -463,442, 56,227) yaw 904,7 pitch 51,1 flags 0x205; look yaw 904,7 pitch 51,1; camera (-4.756, 50.166, -56.234); kinematic True; stamina 1,00
+dev: state MinecraftOwns; PEAK feet (-5.075, 47.774, -56.966) = mc (-5,075, -464,226, 56,966); Minecraft feet (-5,075, -464,226, 56,966) yaw 900,0 pitch 15,0 flags 0x205; look yaw 900,0 pitch 15,0; camera (-5.075, 49.394, -56.966); kinematic True; stamina 1,00
+dev: state MinecraftOwns; PEAK feet (-4.830, 48.648, -56.132) = mc (-4,830, -463,352, 56,132); Minecraft feet (-4,827, -463,341, 56,125) yaw 900,0 pitch 15,0 flags 0x205; look yaw 900,0 pitch 15,0; camera (-4.830, 50.268, -56.132); kinematic True; stamina 1,00
+climb: PEAK control requested; hold V, use WASD and Space
+ownership: MinecraftOwns -> NativeControl
+climb: native grab accepted; stamina 1,000; feet (-5.111, 47.997, -56.779)
+climb: grab ended; waiting for a settled native landing
+climb: returning to Minecraft after native landing settled
+ownership: NativeControl -> Handoff (teleport 35334)
+dev: state MinecraftOwns; PEAK feet (-4.494, 50.027, -48.223) = mc (-4,494, -461,973, 48,223); Minecraft feet (-4,494, -461,973, 48,223) yaw 900,0 pitch 15,0 flags 0x205; look yaw 900,0 pitch 15,0; camera (-4.494, 51.647, -48.223); kinematic True; stamina 1,00
+native: state MinecraftOwns; item none; progress 0,000; throw 0,000; climbing False; stamina 1,000; feet (-4.494, 50.027, -48.223)
+hazardcontacts: owner MinecraftOwns; feet (-4.494, 50.027, -48.223); native body colliders 14; kinematic True; dynamic bodies 18; frozen bodies 18; radius 3,00
+hazardcontacts: native filters airport False; statuses locked False; invincible False; skeleton False; zombie False; scoutmaster False; local True; mine True
+hazardcontacts: 0 nearby hazard collider(s)
+hazardcontacts: owner MinecraftOwns; feet (-4.497, 47.942, -42.025); native body colliders 14; kinematic True; dynamic bodies 18; frozen bodies 18; radius 4,00
+hazardcontacts: status Poison 0,1000
+hazardcontacts: collider 'Collider' layer Map trigger False dynamic False center gap 0,000 body overlaps 1 depth 0,057
+hazardcontacts: modifier 'Collider' same object True active True effects True damage 0,1000 type Poison cooldown 1,000 knockback 20,000 petrify False additional 0 callbacks 0
+hazardcontacts: 1 nearby hazard collider(s)
+hazardcontacts: owner MinecraftOwns; feet (-4.419, 49.009, -43.902); native body colliders 14; kinematic True; dynamic bodies 18; frozen bodies 18; radius 4,00
+hazardcontacts: status Poison 0,2000
+hazardcontacts: collider 'Collider' layer Map trigger False dynamic False center gap 0,000 body overlaps 0 depth 0,000
+dev: state MinecraftOwns; PEAK feet (15.880, 1.984, -373.520) = mc (15,880, -510,016, 373,520); Minecraft feet (15,880, -510,016, 373,520) yaw 900,0 pitch 0,0 flags 0x207; look yaw 900,0 pitch 0,0; camera (15.880, 3.604, -373.520); kinematic True; stamina 1,00
+settings: opening Minecraft options from PEAK pause menu
+ownership: PeakMenu -> MinecraftOwns
+dev: state MinecraftOwns; PEAK feet (15.880, 1.984, -373.520) = mc (15,880, -510,016, 373,520); Minecraft feet (15,880, -510,016, 373,520) yaw 900,0 pitch 0,0 flags 0x205; look yaw 900,0 pitch 0,0; camera (15.880, 3.604, -373.520); kinematic True; stamina 1,00
+
+FINAL NATIVE RUNTIME RETEST — PEAK 2.0.1 title / MinePeak 0.4.1
+Ordinary jump, two original amulet uses, backpack Wear and real purple-thorn forces.
+Numbers and native-item prefab names below are game diagnostics, not user/account records.
+
+hazards: native impulse bridge wired in Collide (2 call site(s))
+hazards: native impulse bridge wired in MoveNext (1 call site(s))
+movementstatus: pocket 1 Passport
+movementstatus: pocket 2 empty
+movementstatus: pocket 3 empty
+movementstatus: pocket 4 empty
+movementstatus: owner PeakOwns; helper False; grounded True; groundedFor 4,132; sinceGrounded 0,000; charging False; jumping False; sinceJump 4,448; velocity (0.004, 0.057, -0.022)
+movementstatus: extra available 0; passive total 0; ordinary jumps 1; petrify 0; stamina 0,490; item Passport(Clone)
+movementstatus: native jumpImpulse 400,000; gravity 15,000; maxGravity -500,000; balloonJumpMultiplier 1,000; balloonFloatMultiplier 1,000
+movementstatus: pocket 1 Passport
+movementstatus: pocket 2 empty
+movementstatus: pocket 3 empty
+movementstatus: pocket 4 empty
+movementstatus: owner PeakOwns; helper False; grounded True; groundedFor 17,443; sinceGrounded 0,000; charging False; jumping False; sinceJump 17,760; velocity (0.000, 0.015, 0.046)
+movementstatus: extra available 0; passive total 0; ordinary jumps 1; petrify 0; stamina 1,000; item Passport(Clone)
+movementstatus: native jumpImpulse 400,000; gravity 15,000; maxGravity -500,000; balloonJumpMultiplier 1,000; balloonFloatMultiplier 1,000
+ownership: PeakOwns -> Handoff (teleport 175747)
+ownership: Handoff -> MinecraftOwns
+vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 0,00; ack 1/1; epoch 1; alive True
+equipment: PEAK control requested; hold B, 1-4 select, mouse uses, Q throws
+ownership: MinecraftOwns -> NativeControl
+equipment: selected PEAK slot 1
+jump: retaining original native impulse through landing
+equipment: returning to Minecraft
+movementstatus: pocket 1 Passport
+movementstatus: pocket 2 empty
+movementstatus: pocket 3 empty
+movementstatus: pocket 4 empty
+movementstatus: owner NativeControl; helper True; grounded False; groundedFor 0,000; sinceGrounded 0,350; charging False; jumping True; sinceJump 0,350; velocity (-0.023, -0.253, 0.471)
+movementstatus: extra available 0; passive total 0; ordinary jumps 0; petrify 0; stamina 0,950; item Passport(Clone)
+movementstatus: native jumpImpulse 400,000; gravity 15,000; maxGravity -500,000; balloonJumpMultiplier 1,000; balloonFloatMultiplier 1,000
+dev: state NativeControl; PEAK feet (-9.481, 1.274, 50.571) = mc (-9,481, -510,726, -50,571); Minecraft feet (-9,483, -511,123, -50,523) yaw 175,3 pitch -2,0 flags 0x201; look yaw 175,3 pitch -2,0; camera (-9.489, 3.060, 50.633); kinematic False; stamina 0,95
+jump: native landing settled; returning to Minecraft
+ownership: NativeControl -> Handoff (teleport 175748)
+ownership: Handoff -> MinecraftOwns
+vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 0,00; ack 1/1; epoch 1; alive True
+ownership: MinecraftOwns -> PeakMenu
+ownership: PeakMenu -> Cutscene (loading)
+ownership: Cutscene -> PeakOwns
+ownership: PeakOwns -> Cutscene (crash landing)
+ownership: Cutscene -> Handoff (teleport 175749)
+ownership: Handoff -> MinecraftOwns
+vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 0,00; ack 1/1; epoch 2; alive True
+equipment: PEAK control requested; hold B, 1-4 select, mouse uses, Q throws
+ownership: MinecraftOwns -> NativeControl
+equipment: selected PEAK slot 1
+movementstatus: pocket 1 Amulet_SuperJump
+movementstatus: pocket 2 empty
+movementstatus: pocket 3 empty
+movementstatus: pocket 4 empty
+movementstatus: owner NativeControl; helper False; grounded True; groundedFor 26,057; sinceGrounded 0,000; charging False; jumping False; sinceJump 26,373; velocity (0.031, -0.117, -0.004)
+movementstatus: extra available 0; passive total 0; ordinary jumps 1; petrify 0; stamina 0,975; item Amulet_SuperJump(Clone)
+movementstatus: native jumpImpulse 400,000; gravity 15,000; maxGravity -500,000; balloonJumpMultiplier 1,000; balloonFloatMultiplier 1,000
+jump: retaining original native impulse through landing
+equipment: returning to Minecraft
+jump: native landing settled; returning to Minecraft
+ownership: NativeControl -> Handoff (teleport 175750)
+ownership: Handoff -> MinecraftOwns
+vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 0,00; ack 1/1; epoch 2; alive True
+native: state MinecraftOwns; item none; progress 0,000; throw 0,000; climbing False; stamina 0,975; feet (16.091, 1.979, -373.435)
+movementstatus: pocket 1 Amulet_SuperJump
+movementstatus: pocket 2 empty
+movementstatus: pocket 3 empty
+movementstatus: pocket 4 empty
+movementstatus: owner MinecraftOwns; helper False; grounded True; groundedFor 1,116; sinceGrounded 0,000; charging False; jumping False; sinceJump 31,755; velocity (0.068, 0.349, 0.167)
+movementstatus: extra available 0; passive total 0; ordinary jumps 1; petrify 7; stamina 0,975; item none
+movementstatus: native jumpImpulse 400,000; gravity 15,000; maxGravity -500,000; balloonJumpMultiplier 1,000; balloonFloatMultiplier 1,000
+vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 0,00; ack 1/1; epoch 2; alive True
+equipment: PEAK control requested; hold B, 1-4 select, mouse uses, Q throws
+ownership: MinecraftOwns -> NativeControl
+equipment: selected PEAK slot 1
+movementstatus: pocket 1 Amulet_SuperJump
+movementstatus: pocket 2 empty
+movementstatus: pocket 3 empty
+movementstatus: pocket 4 empty
+movementstatus: owner NativeControl; helper False; grounded True; groundedFor 11,495; sinceGrounded 0,000; charging False; jumping False; sinceJump 42,133; velocity (0.002, 0.087, 0.064)
+movementstatus: extra available 0; passive total 0; ordinary jumps 1; petrify 7; stamina 0,975; item Amulet_SuperJump(Clone)
+movementstatus: native jumpImpulse 400,000; gravity 15,000; maxGravity -500,000; balloonJumpMultiplier 1,000; balloonFloatMultiplier 1,000
+equipment: returning to Minecraft
+ownership: NativeControl -> Handoff (teleport 175751)
+ownership: Handoff -> MinecraftOwns
+vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 0,00; ack 1/1; epoch 2; alive True
+equipment: PEAK control requested; hold B, 1-4 select, mouse uses, Q throws
+ownership: MinecraftOwns -> NativeControl
+equipment: selected PEAK slot 1
+jump: retaining original native impulse through landing
+equipment: returning to Minecraft
+movementstatus: pocket 1 Amulet_SuperJump
+movementstatus: pocket 2 empty
+movementstatus: pocket 3 empty
+movementstatus: pocket 4 empty
+movementstatus: owner NativeControl; helper True; grounded False; groundedFor 0,000; sinceGrounded 1,016; charging False; jumping False; sinceJump 56,360; velocity (0.014, -0.926, 0.281)
+movementstatus: extra available 0; passive total 0; ordinary jumps 1; petrify 14; stamina 0,975; item Amulet_SuperJump(Clone)
+movementstatus: native jumpImpulse 400,000; gravity 15,000; maxGravity -500,000; balloonJumpMultiplier 3,250; balloonFloatMultiplier 0,100
+movementstatus: applied Peak.Afflictions.Affliction_LowGravity; lowGravAmount 3; totalTime 3
+dev: state NativeControl; PEAK feet (16.122, 3.659, -373.234) = mc (16,122, -508,341, 373,234); Minecraft feet (16,107, -510,006, 373,358) yaw 180,0 pitch 0,0 flags 0x201; look yaw 180,0 pitch 0,0; camera (16.118, 5.427, -373.251); kinematic False; stamina 0,98
+jump: native landing settled; returning to Minecraft
+ownership: NativeControl -> Handoff (teleport 175752)
+ownership: Handoff -> MinecraftOwns
+vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 0,00; ack 1/1; epoch 2; alive True
+hazardcontacts: owner MinecraftOwns; feet (16.151, 2.006, -373.282); native body colliders 14; kinematic True; dynamic bodies 18; frozen bodies 18; radius 3,00
+hazardcontacts: native filters airport False; statuses locked False; invincible False; skeleton False; zombie False; scoutmaster False; local True; mine True
+hazardcontacts: status Weight 0,0250
+vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 0,00; ack 1/1; epoch 2; alive True
+ownership: MinecraftOwns -> PeakMenu
+vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 0,00; ack 1/1; epoch 2; alive True
+ownership: PeakMenu -> MinecraftOwns
+movementstatus: pocket 1 Amulet_SuperJump
+movementstatus: pocket 2 empty
+movementstatus: pocket 3 empty
+movementstatus: pocket 4 Backpack
+movementstatus: owner MinecraftOwns; helper False; grounded True; groundedFor 50,113; sinceGrounded 0,000; charging False; jumping False; sinceJump 107,995; velocity (0.031, 0.284, 0.196)
+movementstatus: extra available 0; passive total 0; ordinary jumps 1; petrify 14; stamina 0,975; item none
+movementstatus: native jumpImpulse 400,000; gravity 15,000; maxGravity -500,000; balloonJumpMultiplier 1,000; balloonFloatMultiplier 1,000
+movementstatus: applied Peak.Afflictions.Affliction_NoHunger; totalTime 3
+vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 0,00; ack 1/1; epoch 2; alive True
+hazardcontacts: owner MinecraftOwns; feet (-4.494, 50.027, -48.223); native body colliders 14; kinematic True; dynamic bodies 18; frozen bodies 18; radius 8,00
+hazardcontacts: native filters airport False; statuses locked False; invincible False; skeleton False; zombie False; scoutmaster False; local True; mine True
+hazardcontacts: status Weight 0,0250
+vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 0,00; ack 1/1; epoch 2; alive True
+ownership: MinecraftOwns -> NativeControl
+jump: retaining original native impulse through landing
+dev: state NativeControl; PEAK feet (-4.417, 48.368, -43.118) = mc (-4,417, -463,632, 43,118); Minecraft feet (-4,494, -463,448, 43,308) yaw 180,0 pitch 15,0 flags 0x201; look yaw 180,0 pitch 15,0; camera (-4.415, 50.067, -43.378); kinematic False; stamina 0,88
+jump: native landing settled; returning to Minecraft
+ownership: NativeControl -> Handoff (teleport 175753)
+ownership: Handoff -> MinecraftOwns
+movementstatus: pocket 1 Amulet_SuperJump
+movementstatus: pocket 2 empty
+movementstatus: pocket 3 empty
+movementstatus: pocket 4 Backpack
+movementstatus: owner MinecraftOwns; helper False; grounded True; groundedFor 0,450; sinceGrounded 0,000; charging False; jumping False; sinceJump 139,654; velocity (0.041, -0.404, 0.262)
+movementstatus: extra available 0; passive total 0; ordinary jumps 1; petrify 14; stamina 0,875; item none
+movementstatus: native jumpImpulse 400,000; gravity 15,000; maxGravity -500,000; balloonJumpMultiplier 1,000; balloonFloatMultiplier 1,000
+hazardcontacts: owner MinecraftOwns; feet (-4.415, 48.397, -43.085); native body colliders 14; kinematic True; dynamic bodies 18; frozen bodies 18; radius 5,00
+hazardcontacts: native filters airport False; statuses locked False; invincible False; skeleton False; zombie False; scoutmaster False; local True; mine True
+hazardcontacts: status Poison 0,1000
+hazardcontacts: status Weight 0,0250
+vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 0,00; ack 1/1; epoch 2; alive True
+ownership: MinecraftOwns -> NativeControl
+jump: retaining original native impulse through landing
+jump: native landing settled; returning to Minecraft
+ownership: NativeControl -> Handoff (teleport 175754)
+ownership: Handoff -> MinecraftOwns
+ownership: MinecraftOwns -> NativeControl
+jump: retaining original native impulse through landing
+dev: state NativeControl; PEAK feet (-4.365, 48.877, -43.555) = mc (-4,365, -463,123, 43,555); Minecraft feet (-4,342, -463,235, 43,578) yaw 180,0 pitch 15,0 flags 0x201; look yaw 180,0 pitch 15,0; camera (-4.343, 50.453, -43.682); kinematic False; stamina 0,68
+hazardcontacts: owner NativeControl; feet (-4.369, 49.182, -43.580); native body colliders 14; kinematic False; dynamic bodies 18; frozen bodies 0; radius 4,00
+hazardcontacts: native filters airport False; statuses locked False; invincible False; skeleton False; zombie False; scoutmaster False; local True; mine True
+hazardcontacts: status Poison 0,3000
+hazardcontacts: status Weight 0,0250
+vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 0,00; ack 1/1; epoch 2; alive True
+jump: retaining original native impulse through landing
+vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 0,00; ack 1/1; epoch 2; alive True
+jump: retaining original native impulse through landing
+jump: native landing settled; returning to Minecraft
+ownership: NativeControl -> Handoff (teleport 175755)
+ownership: Handoff -> MinecraftOwns
+ownership: MinecraftOwns -> Cutscene (passed out)
+vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 0,00; ack 1/1; epoch 2; alive True
+dev: state Cutscene; PEAK feet (16.001, 1.814, -372.995) = mc (16,001, -510,186, 372,995); Minecraft feet (-4,075, -463,186, 43,654) yaw 180,0 pitch 15,0 flags 0x201; look yaw 180,0 pitch 15,0; camera (16.000, 4.062, -375.281); kinematic False; stamina 0,00
+hazardcontacts: owner Cutscene; feet (16.053, 1.224, -373.167); native body colliders 14; kinematic False; dynamic bodies 18; frozen bodies 0; radius 1,00
+hazardcontacts: native filters airport False; statuses locked True; invincible False; skeleton False; zombie False; scoutmaster False; local True; mine True
+hazardcontacts: status Poison 1,2000
+vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 0,00; ack 1/1; epoch 2; alive True
+dev: state Cutscene; PEAK feet (16.048, 1.114, -373.206) = mc (16,048, -510,886, 373,206); Minecraft feet (-4,075, -463,186, 43,654) yaw 180,0 pitch 15,0 flags 0x201; look yaw 180,0 pitch 15,0; camera (16.048, 3.333, -375.491); kinematic False; stamina 0,00
+hazardcontacts: owner Cutscene; feet (16.048, 1.115, -373.206); native body colliders 14; kinematic False; dynamic bodies 18; frozen bodies 0; radius 1,00
+hazardcontacts: native filters airport False; statuses locked False; invincible False; skeleton False; zombie False; scoutmaster False; local True; mine True
+hazardcontacts: status Poison 1,2000
+vitals: linked True, ready True; PEAK health 20,00 food 20,00; MC health 20,00 food 20,00 saturation 0,00; ack 1/1; epoch 2; alive True
+ownership: Cutscene -> PeakOwns

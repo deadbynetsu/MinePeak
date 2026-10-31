@@ -68,7 +68,9 @@ internal static class Proto
 		Sprinting = 0x10u,
 		Dead = 0x20u,
 		Swimming = 0x40u,
-		Flying = 0x80u
+		Flying = 0x80u,
+		Creative = 0x100u,
+		MovementReady = 0x200u
 	}
 
 	public struct GuestState

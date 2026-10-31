@@ -1,7 +1,7 @@
 {
-  "version": "0.4.0",
-  "tag": "v0.4.0",
-  "title": "MinePeak 0.4.0 — interface renovada e revisão de bugs (experimental)",
-  "notes": "docs/releases/0.4.0.md",
+  "version": "0.4.1",
+  "tag": "v0.4.1",
+  "title": "MinePeak 0.4.1 — colisão, escalada e interação revisadas (experimental)",
+  "notes": "docs/releases/0.4.1.md",
   "prerelease": true
 }

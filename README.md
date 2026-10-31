@@ -8,7 +8,7 @@
 
 [![Testes automatizados](https://github.com/deadbynetsu/MinePeak/actions/workflows/tests.yml/badge.svg)](https://github.com/deadbynetsu/MinePeak/actions/workflows/tests.yml)
 
-[Baixar Release 0.4.0](https://github.com/deadbynetsu/MinePeak/releases/tag/v0.4.0) · [Como jogar](COMO-JOGAR.md) · [Instalação](README-PT.md) · [Multiplayer](MULTIPLAYER.md) · [Testes desta versão](VALIDACAO-0.4.0.md) · [Créditos](referencia-coop/PROVENIENCIA.md)
+[Baixar Release 0.4.1](https://github.com/deadbynetsu/MinePeak/releases/tag/v0.4.1) · [Como jogar](COMO-JOGAR.md) · [Instalação](README-PT.md) · [Multiplayer](MULTIPLAYER.md) · [Testes desta versão](VALIDACAO-0.4.1.md) · [Créditos](referencia-coop/PROVENIENCIA.md)
 
 </div>
 
@@ -24,19 +24,31 @@ Esta é uma adaptação comunitária gratuita e experimental do **PeakCraft Co-o
 
 - **Blocos no PEAK:** coloque e quebre blocos Minecraft no cenário original. A montanha do PEAK permanece intacta.
 - **Modo opcional:** escolha PEAK ou Minecraft no painel do menu Esc ou alterne por **L**. A escolha fica salva.
-- **Interface discreta:** um pequeno indicador mostra o modo, a vida e a comida. A lista de controles fica no menu Esc; dicas extras aparecem ao usar equipamentos, escalar ou interagir.
+- **Interface discreta:** um pequeno indicador mostra o modo, a vida, a comida e os efeitos nativos ativos, como veneno. Os controles ficam no menu Esc; dicas extras aparecem ao usar equipamentos, escalar ou interagir.
 - **Construções por mapa:** aeroporto e ilhas mantêm suas próprias construções e contêineres locais. O inventário do jogador acompanha a viagem.
 - **Sua identidade:** nome e skin 64×64 do perfil local do SKLauncher, quando disponíveis, com opção de imagem própria.
 - **Fome e vida compartilhadas:** alimentação, dano e cura atravessam a ponte entre os jogos. A stamina de escalada continua sendo do PEAK.
-- **Equipamento nativo:** segure B para usar os itens do PEAK; escolha com 1–4, use com o mouse e segure/solte Q para arremessar. Comida, bandagens e lançamento de cerca de 23 metros foram conferidos no jogo. Solte B para retornar ao Minecraft.
-- **Escalada nativa:** segure V perto de uma parede e use WASD. A escalada e o consumo de stamina são executados pelo PEAK; solte V para voltar aos blocos.
+- **Equipamento nativo:** segure B para usar os itens do PEAK; escolha com 1–4, use com o mouse e segure/solte Q para arremessar. Comida, bandagens e lançamento de cerca de 23 metros foram conferidos no jogo. Solte B para retornar ao Minecraft; se houver um impulso nativo em andamento, a física PEAK continua até o pouso.
+- **Escalada nativa:** segure V perto de uma parede e use WASD. A escalada e o consumo de stamina são executados pelo PEAK. Ao atingir a borda, a ponte aguarda o personagem firmar os pés antes de devolver o controle ao Minecraft.
 - **Base cooperativa:** compartilhamento de blocos, skins e poses pelo lobby do próprio PEAK. Cada PC executa sua própria ponte local.
 
 Durante B ou V, o corpo e os controles usados são temporariamente os nativos do PEAK. A aparência Minecraft retorna ao terminar. Consumo de marshmallow, carga de arremesso e escalada com gasto de stamina foram exercitados no jogo real. A colisão recebeu exportação dos colliders do cenário, incluindo malhas disponíveis somente na GPU. O [relatório 0.3.0](VALIDACAO-0.3.0.md) identifica os cenários e seus limites.
 
+## Correções da 0.4.1
+
+Esta revisão parte de bugs reproduzidos em vídeos e no jogo real:
+
+- **Pedras inclinadas:** corrigida a resolução que empurrava o jogador para dentro de certas faces do terreno. O trecho da ilha usado na reprodução foi repetido em sobrevivência.
+- **Fim da escalada:** o PEAK conclui a subida e o apoio na borda antes do retorno automático ao Minecraft.
+- **Mão em primeira pessoa:** a rotação contínua elimina o salto de ângulo ao atravessar a direção de 180°, mantendo o balanço normal.
+- **Mochilas e espinhos:** a interação por G permanece ativa no menu radial; os contatos físicos nativos continuam alcançando os perigos durante o modo Minecraft. Veneno e outros efeitos aparecem no indicador.
+- **Saltos e amuleto:** um impulso nativo continua até o pouso mesmo ao soltar B no ar. O salto comum e o amuleto real foram conferidos na partida.
+
+O [relatório 0.4.1](VALIDACAO-0.4.1.md) registra os testes concluídos e os limites. A Release continua experimental.
+
 ## Uma interface mais leve
 
-A versão **0.4.0** substitui a sobreposição de controles por um painel compacto com transparência discreta, bordas suaves e texto mais legível. Durante a partida, o canto superior direito mostra apenas o modo e, quando disponíveis, vida e comida. As dicas de **B** e **V** aparecem enquanto essas ações estão em uso; chat, inventário e telas de carregamento ocultam o indicador.
+O painel compacto introduzido na **0.4.0** usa transparência discreta, bordas suaves e texto legível. Durante a partida, o canto superior direito mostra o modo e, quando disponíveis, vida e comida. A **0.4.1** acrescenta a indicação dos efeitos nativos ativos. As dicas de **B** e **V** aparecem durante essas ações; chat, inventário e telas de carregamento ocultam o indicador.
 
 Abra **Esc** para ver os controles em um único cartão **MinePeak**, selecionar **PEAK / Minecraft** e acessar **Opções do Minecraft** quando a ponte estiver conectada. Esse visual é inspirado em vidro; não usa desfoque da imagem do jogo.
 
@@ -46,9 +58,9 @@ Esta revisão separa as construções por mapa e preserva o inventário nas viag
 
 ## Comece a jogar
 
-Requisitos desta versão: **Windows 11 de 64 bits**, PEAK instalado pela Steam e acesso aos arquivos necessários do Minecraft Java. A combinação exercitada localmente foi **PEAK 3.0.1 + Minecraft Java 26.3**. A preparação instala Java 25 e BepInEx em pastas locais do projeto.
+Requisitos desta versão: **Windows 11 de 64 bits**, PEAK instalado pela Steam e acesso aos arquivos necessários do Minecraft Java. A rodada final usa o **PEAK da instalação Steam local**, cuja tela inicial mostra **v2.0.1**, com **Minecraft Java 26.3**. A preparação instala Java 25 e BepInEx em pastas locais do projeto.
 
-1. Baixe **MinePeak-0.4.0.zip** na [Release experimental](https://github.com/deadbynetsu/MinePeak/releases/tag/v0.4.0) e extraia para uma pasta própria. O ZIP inclui fontes e mods compilados; o arquivo `.sha256` ao lado permite conferir a integridade.
+1. Baixe **MinePeak-0.4.1.zip** na [Release experimental](https://github.com/deadbynetsu/MinePeak/releases/tag/v0.4.1) e extraia para uma pasta própria. O ZIP inclui fontes e mods compilados; o arquivo `.sha256` ao lado permite conferir a integridade.
 2. Leia a [EULA do Minecraft](https://www.minecraft.net/eula). Se concordar, abra PowerShell nessa pasta e prepare a instalação:
 
    ```powershell
@@ -92,16 +104,17 @@ Use os lobbies, convites Steam ou códigos de sala do próprio PEAK. Todos os pa
 | Área | Evidência disponível |
 | --- | --- |
 | PEAK e Minecraft reais conectados | Aeroporto, embarque, praia, alternância de modos e construção locais |
+| Bugs dos vídeos na 0.4.1 | Pedra da ilha, apoio após V, rotação da mão, menu radial e veneno nativo; resultados no [relatório](VALIDACAO-0.4.1.md) |
 | Interface e viagens 0.4.0 | Painel, opções, chat após mudança de foco, reabertura de ilha com backup verificado e preservação dos dados comparados; veja [relatório](VALIDACAO-0.4.0.md) |
 | Fome e vida | 12 testes puros e cenários reais nos dois jogos em [VALIDACAO-FOME-VIDA.md](VALIDACAO-FOME-VIDA.md) |
 | Equipamentos e escalada | Marshmallow PEAK consumido com comida sincronizada, carga de arremesso e subida real com gasto de stamina |
 | Colisão | 18 testes de regiões/mensagens; a 0.4.0 repetiu escalada real dos blocos nos dois modos, quebra, colocação e limpeza dos colisores; a prova histórica de laje permanece na 0.3.2 |
 | Compartilhamento Co-op | 21 testes de protocolo/histórico de blocos, incluindo fila cheia e repetição de entrega, implementação Photon e loopback local; dois PCs ainda pendentes |
-| Campanha completa e cume | Não percorridos integralmente nesta entrega |
+| Campanha completa e cume | O roteiro inteiro ainda não foi percorrido em teste; o conteúdo original é executado pelo próprio PEAK |
 
-As capturas e registros em **[PROVAS/](PROVAS/)** documentam o que foi executado. **[VALIDACAO-0.4.0.md](VALIDACAO-0.4.0.md)** registra a revisão de interface e bugs; **[VALIDACAO-0.3.2.md](VALIDACAO-0.3.2.md)** registra a colisão das construções; **[VALIDACAO-0.3.1.md](VALIDACAO-0.3.1.md)** registra a tecla L; **[VALIDACAO-0.3.0.md](VALIDACAO-0.3.0.md)** preserva a verificação de equipamentos, escalada, colisão e rede, e **[VALIDACAO.md](VALIDACAO.md)** distingue o Co-op dos testes históricos da base clássica. Não se declara compatibilidade perfeita com todas as colisões, alimentos, mods ou versões futuras dos jogos.
+As capturas e registros em **[PROVAS/](PROVAS/)** documentam o que foi executado. **[VALIDACAO-0.4.1.md](VALIDACAO-0.4.1.md)** registra a revisão atual. Os relatórios históricos permanecem disponíveis: **[0.4.0](VALIDACAO-0.4.0.md)** para interface e viagens; **[0.3.2](VALIDACAO-0.3.2.md)** para colisão das construções; **[0.3.1](VALIDACAO-0.3.1.md)** para L; **[0.3.0](VALIDACAO-0.3.0.md)** para equipamentos, escalada, colisão e rede. **[VALIDACAO.md](VALIDACAO.md)** distingue o Co-op dos testes históricos da base clássica. Não se declara compatibilidade perfeita com todas as colisões, alimentos, mods ou versões futuras dos jogos.
 
-**119 testes passaram na execução local Windows.** Para repetir os testes sem abrir os jogos, use SDK .NET 10 e JDK 17 ou superior e execute `./Testar.ps1`. O JDK 25 preparado pelo projeto atende ao requisito; se ele não estiver em `JAVA_HOME` ou no PATH, informe `-JavaHome 'D:\caminho\jdk'`. A suíte cobre vida/comida, colisão, rede, segurança de entrada, separação de mensagens entre cenas, diário de saves e instalação; os casos específicos do inicializador Windows são executados nesse sistema. A CI pública também executa os testes portáveis em Linux. O build completo do plugin usa os assemblies da instalação local do PEAK.
+**196 testes automatizados passaram no Windows.** Os resultados e os cenários reais ficam no **[relatório 0.4.1](VALIDACAO-0.4.1.md)**; a CI pública registra o estado do commit publicado. Para repetir a suíte sem abrir os jogos, use SDK .NET 10 e JDK 17 ou superior e execute `./Testar.ps1`. O JDK 25 preparado pelo projeto atende ao requisito; se ele não estiver em `JAVA_HOME` ou no PATH, informe `-JavaHome 'D:\caminho\jdk'`. A suíte cobre vida/comida, colisão, movimento, contatos nativos, rede, entrada, cenas, saves e instalação; os casos específicos do inicializador Windows são executados nesse sistema. O build completo do plugin usa os assemblies da instalação local do PEAK.
 
 ## Fontes e contribuições
 

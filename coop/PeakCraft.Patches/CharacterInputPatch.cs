@@ -43,6 +43,11 @@ internal static class CharacterInputPatch
 			instance.Equipment.ApplyInput(__instance);
 			instance.Climb.ApplyInput(__instance);
 		}
+		// Keep G mapped while a native backpack wheel owns the menu. Otherwise
+		// the next native Sample sees only E and closes the wheel immediately.
+		if (!instance.CoopMode.IsViewer && localCharacter != null && localCharacter.input == __instance &&
+			(instance.Ownership.State == Owner.PeakMenu || instance.Ownership.State == Owner.NativeControl))
+			instance.Interact.Merge(__instance);
 		instance.Dev?.ApplyNativeInput(instance, __instance);
 	}
 }

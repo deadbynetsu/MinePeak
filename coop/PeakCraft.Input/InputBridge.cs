@@ -98,7 +98,10 @@ internal sealed class InputBridge : IDisposable
 		}
 		if (!flag)
 		{
-			interact.Update(ownership.State == Owner.NativeControl && Application.isFocused && current != null && current[interactKey.Value].isPressed);
+			bool wheel = ownership.State == Owner.PeakMenu && GUIManager.instance != null &&
+				GUIManager.instance.backpackWheel != null && GUIManager.instance.backpackWheel.gameObject.activeSelf;
+			interact.Update(InputRoutingSafety.RoutePeakInteract(ownership.State == Owner.NativeControl, wheel, ScreenOpen, Application.isFocused) &&
+				current != null && current[interactKey.Value].isPressed);
 			return;
 		}
 		if (guest.sensitivity >= 0f && guest.sensitivity <= 1f)
@@ -133,7 +136,9 @@ internal sealed class InputBridge : IDisposable
 			text.Clear();
 			float num = sensitivity * 0.6f + 0.2f;
 			float num2 = num * num * num * 8f * 0.15f;
-			camera.Yaw = Mathf.DeltaAngle(0f, camera.Yaw + vector.x * num2);
+			// Wrapping at +/-180 makes Minecraft's linear yBob inertia jump by
+			// almost 360 degrees, visibly jerking the hand at a fixed compass bearing.
+			camera.TurnYaw(vector.x * num2);
 			camera.Pitch = Mathf.Clamp(camera.Pitch - vector.y * num2, -90f, 90f);
 		}
 		PumpKeys(current);

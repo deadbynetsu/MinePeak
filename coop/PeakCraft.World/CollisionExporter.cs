@@ -78,6 +78,7 @@ internal sealed class CollisionExporter
 
 	private RaycastHit[] worldHits = new RaycastHit[32];
 	private Collider[] worldOverlaps = new Collider[32];
+	private readonly Dictionary<int, bool> worldSolids = new Dictionary<int, bool>();
 
 	private List<Proto.ColTri>[] tris = Array.Empty<List<Proto.ColTri>>();
 
@@ -234,6 +235,7 @@ internal sealed class CollisionExporter
 
 	private unsafe bool ExportColumn(int rx, int rz)
 	{
+		worldSolids.Clear();
 		int num = windowRyMin;
 		int num2 = windowRyMax;
 		int num3 = num2 - num + 1;
@@ -412,15 +414,27 @@ internal sealed class CollisionExporter
 
 	// Minecraft already owns block collisions in Java. Export only PEAK's original terrain;
 	// exporting the generated native block colliders back would leave ghost blocks after mining.
+	private bool SolidWorld(Collider collider)
+	{
+		if (collider == null) return false;
+		int id = collider.GetInstanceID();
+		if (!worldSolids.TryGetValue(id, out bool solid))
+		{
+			solid = ColliderGeometry.SolidWorldCollider(collider);
+			worldSolids[id] = solid;
+		}
+		return solid;
+	}
+
 	private bool RaycastWorld(Vector3 origin, Vector3 direction, out RaycastHit nearest, float distance)
 	{
 		int count;
 		while (true)
 		{
-			count = Physics.RaycastNonAlloc(origin, direction, worldHits, distance, mask, QueryTriggerInteraction.Ignore);
+			count = Physics.RaycastNonAlloc(origin, direction, worldHits, distance, geometry.QueryMask(mask), QueryTriggerInteraction.Ignore);
 			if (count < worldHits.Length) break;
 			if (worldHits.Length >= 65536)
-			{ worldHits = Physics.RaycastAll(origin, direction, distance, mask, QueryTriggerInteraction.Ignore); count = worldHits.Length; break; }
+			{ worldHits = Physics.RaycastAll(origin, direction, distance, geometry.QueryMask(mask), QueryTriggerInteraction.Ignore); count = worldHits.Length; break; }
 			worldHits = new RaycastHit[worldHits.Length * 2];
 		}
 		nearest = default;
@@ -428,7 +442,7 @@ internal sealed class CollisionExporter
 		for (int i = 0; i < count; i++)
 		{
 			var hit = worldHits[i];
-			if (hit.collider != null && !BlockCollisionSections.Owns(hit.collider) && hit.distance < best)
+			if (SolidWorld(hit.collider) && hit.distance < best)
 			{ best = hit.distance; nearest = hit; }
 		}
 		return best < float.PositiveInfinity;
@@ -439,15 +453,15 @@ internal sealed class CollisionExporter
 		int count;
 		while (true)
 		{
-			count = Physics.OverlapSphereNonAlloc(point, radius, worldOverlaps, mask, QueryTriggerInteraction.Ignore);
+			count = Physics.OverlapSphereNonAlloc(point, radius, worldOverlaps, geometry.QueryMask(mask), QueryTriggerInteraction.Ignore);
 			if (count < worldOverlaps.Length) break;
 			if (worldOverlaps.Length >= 65536)
-			{ worldOverlaps = Physics.OverlapSphere(point, radius, mask, QueryTriggerInteraction.Ignore); count = worldOverlaps.Length; break; }
+			{ worldOverlaps = Physics.OverlapSphere(point, radius, geometry.QueryMask(mask), QueryTriggerInteraction.Ignore); count = worldOverlaps.Length; break; }
 			worldOverlaps = new Collider[worldOverlaps.Length * 2];
 		}
 		bool found = false;
 		for (int i = 0; i < count; i++)
-			if (worldOverlaps[i] != null && !BlockCollisionSections.Owns(worldOverlaps[i])) { found = true; break; }
+			if (SolidWorld(worldOverlaps[i])) { found = true; break; }
 		Array.Clear(worldOverlaps, 0, count);
 		return found;
 	}
@@ -732,13 +746,18 @@ internal sealed class CollisionExporter
 	{
 		Camera camera = Camera.main;
 		if (camera == null) return;
-		if (Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, 12f, mask, QueryTriggerInteraction.Ignore))
+		worldSolids.Clear();
+		if (RaycastWorld(camera.transform.position, camera.transform.forward, out RaycastHit hit, 12f))
 		{
 			Collider c = hit.collider;
-			MeshCollider mesh = c as MeshCollider;
-			Plugin.Log.LogInfo($"collision probe: '{c.name}' layer {LayerMask.LayerToName(c.gameObject.layer)} type {c.GetType().Name}, hit {hit.point:F3}, distance {hit.distance:F3}, mesh readable {(mesh != null && mesh.sharedMesh != null && mesh.sharedMesh.isReadable)}; cache {geometry.ReadyMeshes} ready/{geometry.FailedMeshes} unavailable");
+			Plugin.Log.LogInfo($"collision probe: {geometry.Describe(c)}, hit {hit.point:F3}, distance {hit.distance:F3}; cache {geometry.ReadyMeshes} ready/{geometry.FailedMeshes} unavailable");
 		}
 		else Plugin.Log.LogInfo("collision probe: no world collider ahead within 12 metres");
+		geometry.ProbeNear(camera.transform.position - Vector3.up, mask);
+		if (RaycastWorld(camera.transform.position + Vector3.up * 2f, Vector3.down, out RaycastHit ground, 16f))
+			Plugin.Log.LogInfo($"collision underfoot: {geometry.Describe(ground.collider)}, hit {ground.point:F3}, normal {ground.normal:F3}");
+		else Plugin.Log.LogInfo("collision underfoot: no original PEAK collider within 16 metres below the camera");
+		geometry.DumpProbe(Character.localCharacter != null ? PeakCraft.Player.Follower.PeakFeet(Character.localCharacter) : camera.transform.position - Vector3.up * 1.62f, mask);
 	}
 
 	private void Fill(int i, int j, int ryMin, int ryMax)

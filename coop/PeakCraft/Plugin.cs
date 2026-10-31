@@ -20,7 +20,7 @@ namespace PeakCraft;
 
 [BepInAutoPlugin]
 [DefaultExecutionOrder(-1000)]
-[BepInPlugin("PeakCraftCoop", "PeakCraft Co-op", "0.4.0")]
+[BepInPlugin("PeakCraftCoop", "PeakCraft Co-op", "0.4.1")]
 public class Plugin : BaseUnityPlugin
 {
 	private ConfigEntry<string> linkName;
@@ -57,7 +57,7 @@ public class Plugin : BaseUnityPlugin
 
 	public const string Name = "PeakCraft Co-op";
 
-	public const string Version = "0.4.0";
+	public const string Version = "0.4.1";
 
 	internal static ManualLogSource Log { get; private set; }
 
@@ -74,6 +74,7 @@ public class Plugin : BaseUnityPlugin
 	internal Interact Interact { get; } = new Interact();
 	internal NativeActions Equipment { get; private set; }
 	internal NativeClimb Climb { get; private set; }
+	internal NativeJump Jump { get; } = new NativeJump();
 
 	internal InputBridge InputBridge { get; private set; }
 
@@ -208,10 +209,12 @@ public class Plugin : BaseUnityPlugin
 		//IL_0006: Unknown result type (might be due to invalid IL or missing references)
 		//IL_0010: Expected Obj, but got Unknown
 		harmony = new Harmony("PeakCraftCoop");
-		Type[] array = new Type[6]
+		Type[] array = new Type[]
 		{
 			typeof(CharacterInputPatch),
 			typeof(CharacterMovementPatch),
+			typeof(NativeFlightPatch),
+			typeof(NativeHazardImpulsePatch),
 			typeof(MainCameraMovementPatch),
 			typeof(CharacterAfflictionsPatch),
 			typeof(CharacterPatch),
@@ -311,6 +314,7 @@ public class Plugin : BaseUnityPlugin
 		Vitals?.Reset();
 		Equipment?.Reset();
 		Climb?.Reset();
+		Jump.Reset();
 	}
 
 	private void Update()
@@ -360,7 +364,8 @@ public class Plugin : BaseUnityPlugin
 		bool nativeMenu = Ownership.PeakMenuOpen() || InputBridge.ScreenOpen;
 		Equipment.UpdateRequest(linked && !CoopMode.IsViewer, nativeMenu, localCharacter);
 		Climb.UpdateRequest(linked && !CoopMode.IsViewer, nativeMenu, localCharacter);
-		Ownership.NativeOverride = Equipment.WantsNative || Climb.WantsNative;
+		Jump.UpdateRequest(linked && !CoopMode.IsViewer, nativeMenu, localCharacter, in guest, Ownership.State);
+		Ownership.NativeOverride = Equipment.WantsNative || Climb.WantsNative || Jump.WantsNative;
 		_ = Ownership.State;
 		Ownership.Update(linked && !CoopMode.IsViewer, in guest);
 		Owner state2 = Ownership.State;
@@ -371,6 +376,7 @@ public class Plugin : BaseUnityPlugin
 		Follower.Update(Ownership, in guest);
 		Equipment.TickNative(localCharacter, Climb.WantsNative);
 		Climb.TickNative(localCharacter);
+		Jump.TickNative(localCharacter);
 		Climb.ConsumeReturnTeleport(); // Ownership issues the fresh teleport on NativeControl -> Handoff.
 		UpdateCollision(localCharacter);
 		InputBridge.Update(Ownership, in guest);

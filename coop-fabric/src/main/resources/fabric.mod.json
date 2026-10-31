@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "peakcraft_profile",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "name": "PeakCraft Local Profile",
   "description": "Local SKLauncher skin, shared hunger and health, native block collision, and isolated PEAK scene saves with transactional player transfer.",
   "license": "MIT",

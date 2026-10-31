@@ -1,4 +1,7 @@
 {
+  "PROVAS/041-final-amulet-release-air.png": "b0e9f895005bdbe2451912a5445a987c50ea505b23a7bb7bc2d8ba2fd32271b5",
+  "PROVAS/041-fixed-rock-after-climb.png": "df993508d201fc1fc55784915373ec9592e2e7c672600bfbfcae11eff3d0505e",
+  "PROVAS/041-real-thorn-after.png": "34936ccc92ecdd0b474c6c296cc02ceacc16ca6752b94301b2dd176421ca5b3a",
   "PROVAS/bind-0.3.1-log.txt": "b5bb9741fe2addd60fdb2576cfb3ec138038efc41d3f2189720c9cc761528164",
   "PROVAS/bind-L-chat.png": "3ce0b9778370bbffbbf4007fe65b1054680cec5ab35ad991635570a8bd67f3dc",
   "PROVAS/bind-L-menu.png": "08b1420c2db0199292a9ece180c0862062be4d762b455b463d1ed9a830c8e813",
@@ -8,6 +11,10 @@
   "PROVAS/block-collision-0.3.2-peak.log": "1960f2a7c5c074ddef318c97d7f9c10abd52d19e3ae90d967bac61b732196b57",
   "PROVAS/block-collision-0.3.2-results.json": "859deac962328a09cc8d81a6b4cd60fbcf97f73a0417328fa18967ca6d296a9c",
   "PROVAS/block-collision-0.3.2-tests.log": "8a207f77f498a627828b1e3984be7786e8ae2ae89034db0d8360323ababe6dd5",
+  "PROVAS/bugfix-041-minecraft.log": "45975f5befafb32f07cbd646095e7b36b6ccc7c2bcadcfc2aa6881e7fd98f79c",
+  "PROVAS/bugfix-041-peak.log": "0995ac08532c2b18f6831a92f61eb17f5df0830d09167888aca370b987096f20",
+  "PROVAS/bugfix-041-results.json": "e34a7244d192f06ae0221e8f8e54dfdb3933accbdffbf64430118248fc51e382",
+  "PROVAS/bugfix-041-tests.log": "0c2388fefd1331df5546fa453a1fa4dd906e393c4e99a691565d8f4b2bd5dd51",
   "PROVAS/collision-032-minecraft-climbing.png": "49c8661b4b8294e6eee7cdfdfefc00d67589bf742d5b74a853a86719a8e57950",
   "PROVAS/collision-032-native-climbing.png": "378e3c9cf61720caba8cecc2666553ab3af46916d6d2d20101897db9098f3a60",
   "PROVAS/collision-032-platform.png": "cb4f202640fcdb0899f76858bee520e7df06308244334e1ac0f99b36e1112338",
@@ -63,10 +70,11 @@
   "PROVAS/vitals-regression-0.3.0.json": "aaf9dc37ef0b84954b5e5cb939607fe7a71f6d88c71fb03b78e9ede329b7342a",
   "PROVAS/vitals-shared-minecraft.png": "7286ab530efefd3e01a2d8bb958a983fd6b1f5b4ceb7c7621f1261ebb1a0b0c3",
   "PROVAS/vitals-shared-native.png": "4414dfaab5dae5386613127487e88eb318345c8888f52c8a8d6875274f5e98da",
-  "binarios/PeakCraftCoop.dll": "c65cac07b1bc502cfbc43843c57ce6512b724b83e8e88d925fa54ce83bb92453",
+  "binarios/PeakCraftCoop.dll": "3fd3bce6c5c69e994f0f737b50822b05aba8a539640c9cd6930257536d004e1f",
   "binarios/aeironnarmiento.PeakCraft.dll": "1dd520134fad631634a6a11d58845a771bbf2937b36063bd0e99dc467c260aa7",
   "binarios/peakcraft-profile-0.1.1.jar": "040d0f149bc93df45043208a6c7dc25eb5e6d00b0a26b344b6191cf3fa5ba2f7",
   "binarios/peakcraft-profile-0.1.2.jar": "4f705583065ea9a318c4123a55c8861c95415576072bb8b3f9e9ee96bc897d0b",
+  "binarios/peakcraft-profile-0.1.3.jar": "13a6d4e86f703ac81d6a7615f6eb7f7c120d465a83b7051e7b9d6eaf88194439",
   "binarios/peakcraftcoop-fabric.jar": "704fdcd98c2111fcaf09a81688d29c421c1a54b8db32833d1cb09853fe13a4ea",
   "binarios/skycraft-0.1.2.jar": "d0dee8d57349e3f00087eb67f9bc1c11b4a4c7e511abc2f3c9d0c638b766145a"
 }

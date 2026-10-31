@@ -38,4 +38,11 @@ internal sealed class Interact
 		input.interactIsPressed = held;
 		input.interactWasReleased = Released;
 	}
+
+	public void Merge(CharacterInput input)
+	{
+		input.interactWasPressed |= Pressed;
+		input.interactIsPressed |= held;
+		input.interactWasReleased = (input.interactWasReleased || Released) && !input.interactIsPressed;
+	}
 }

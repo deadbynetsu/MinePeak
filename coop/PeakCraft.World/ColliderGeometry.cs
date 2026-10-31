@@ -1,5 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -54,7 +57,7 @@ internal sealed class ColliderGeometry
         Revision++;
     }
 
-    private int QueryMask(int baseMask)
+    internal int QueryMask(int baseMask)
     {
         Character character = Character.localCharacter;
         if (character == null || character.refs.ragdoll == null) return baseMask;
@@ -122,7 +125,7 @@ internal sealed class ColliderGeometry
         return pending;
     }
 
-    private static bool SolidWorldCollider(Collider collider)
+    internal static bool SolidWorldCollider(Collider collider)
     {
         if (collider == null || !collider.enabled || collider.isTrigger || !collider.gameObject.activeInHierarchy) return false;
         if (BlockCollisionSections.Owns(collider)) return false;
@@ -132,6 +135,63 @@ internal sealed class ColliderGeometry
         if (body != null && !body.isKinematic) return false;
         Item item = collider.GetComponentInParent<Item>();
         return item == null || item.holderCharacter == null;
+    }
+
+    internal string Describe(Collider collider)
+    {
+        string result = $"'{collider.name}' layer {LayerMask.LayerToName(collider.gameObject.layer)} type {collider.GetType().Name}, solid {SolidWorldCollider(collider)}, bounds center {collider.bounds.center:F3} size {collider.bounds.size:F3}";
+        if (collider is MeshCollider meshCollider && meshCollider.sharedMesh != null)
+        {
+            Mesh mesh = meshCollider.sharedMesh;
+            meshes.TryGetValue(mesh.GetInstanceID(), out MeshData data);
+            result += $", mesh '{mesh.name}', convex {meshCollider.convex}, readable {mesh.isReadable}, vertices {mesh.vertexCount}, cached {(data == null ? "unseen" : data.Ready ? "ready" : data.Failed ? "failed" : "pending")}";
+        }
+        return result;
+    }
+
+    internal void ProbeNear(Vector3 center, int baseMask)
+    {
+        Collider[] nearby = Physics.OverlapSphere(center, 2f, QueryMask(baseMask), QueryTriggerInteraction.Ignore);
+        int logged = 0;
+        foreach (Collider collider in nearby)
+        {
+            if (!SolidWorldCollider(collider)) continue;
+            Plugin.Log.LogInfo("collision nearby: " + Describe(collider));
+            if (++logged >= 12) break;
+        }
+        if (logged == 0) Plugin.Log.LogInfo($"collision nearby: no solid world collider within 2 metres of {center:F3}");
+    }
+
+    // Only called by the opt-in development command. Keep raw native geometry private.
+    internal void DumpProbe(Vector3 feet, int baseMask)
+    {
+        Collider[] nearby = Physics.OverlapBox(feet + Vector3.up, new Vector3(4, 7, 4), Quaternion.identity, QueryMask(baseMask), QueryTriggerInteraction.Ignore);
+        var output = new StringBuilder();
+        output.Append("{\"feet\":[").Append(F(feet.x)).Append(',').Append(F(feet.y + (float)Coords.YOffset)).Append(',').Append(F(-feet.z)).Append("],\"triangles\":[");
+        int count = 0;
+        var query = new Bounds(feet + Vector3.up, new Vector3(8, 14, 8));
+        foreach (Collider collider in nearby)
+        {
+            if (!SolidWorldCollider(collider) || !(collider is MeshCollider mc) || mc.sharedMesh == null) continue;
+            MeshData data = GetMesh(mc.sharedMesh);
+            if (!data.Ready) continue;
+            for (int i = 0; i + 2 < data.Indices!.Length; i += 3)
+            {
+                Vector3 a = mc.transform.TransformPoint(data.Vertices![data.Indices[i]]);
+                Vector3 b = mc.transform.TransformPoint(data.Vertices[data.Indices[i + 1]]);
+                Vector3 c = mc.transform.TransformPoint(data.Vertices[data.Indices[i + 2]]);
+                var bounds = new Bounds(a, Vector3.zero); bounds.Encapsulate(b); bounds.Encapsulate(c);
+                if (!bounds.Intersects(query)) continue;
+                if (count++ != 0) output.Append(',');
+                output.Append('['); Point(a); output.Append(','); Point(b); output.Append(','); Point(c); output.Append(']');
+            }
+        }
+        output.Append("]}");
+        string path = Path.Combine(BepInEx.Paths.BepInExRootPath, "peakcraft-collision-probe.json");
+        File.WriteAllText(path, output.ToString());
+        Plugin.Log.LogInfo($"collision private probe: {count} raw nearby mesh triangles saved to local test profile");
+        void Point(Vector3 p) => output.Append(F(p.x)).Append(',').Append(F(p.y + (float)Coords.YOffset)).Append(',').Append(F(-p.z));
+        static string F(float value) => value.ToString("R", CultureInfo.InvariantCulture);
     }
 
     private static readonly int[] BoxFaces = {

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using PeakCraft.Hazards;
 using PeakCraft.Link;
 using PeakCraft.World;
 using UnityEngine;
@@ -15,6 +16,8 @@ internal sealed class Follower
 	private readonly List<Renderer> hidden = new List<Renderer>();
 
 	private readonly List<Transform> roots = new List<Transform>();
+
+	private readonly NativeContactLock contactLock = new NativeContactLock();
 
 	public Vector3 Feet { get; private set; }
 
@@ -56,6 +59,9 @@ internal sealed class Follower
 		character.refs.items.EquipSlot(Optionable<byte>.None);
 		PeakApi.HaltBodyVelocity(character.refs.ragdoll);
 		character.refs.ragdoll.ToggleKinematic(enableKinematic: true);
+		// Keep the native follow-mode marker, but let collider-bearing bodies
+		// produce genuine static-hazard callbacks while their motion is frozen.
+		contactLock.Take(character);
 		roots.Clear();
 		foreach (Bodypart part in character.refs.ragdoll.partList)
 		{
@@ -74,11 +80,12 @@ internal sealed class Follower
 				hidden.Add(renderer);
 			}
 		}
-		Plugin.Log.LogInfo((object)$"follower: took PEAK's character ({hidden.Count} renderers hidden, ragdoll kinematic, {roots.Count} root bodypart(s))");
+		Plugin.Log.LogInfo((object)$"follower: took PEAK's character ({hidden.Count} renderers hidden, {contactLock.Count} frozen contact bodies, {roots.Count} root bodypart(s))");
 	}
 
 	public void Release()
 	{
+		contactLock.Release();
 		if (held == null)
 		{
 			return;
@@ -135,7 +142,11 @@ internal sealed class Follower
 			{
 				root.position += vector;
 			}
+			// Ragdoll animation reads Rigidbody poses during FixedUpdate. Commit
+			// the follower's translated transforms before those reads and contacts.
+			Physics.SyncTransforms();
 		}
+		contactLock.Wake();
 		CharacterData data = character.data;
 		data.isGrounded = true;
 		data.sinceGrounded = 0f;
