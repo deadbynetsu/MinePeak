@@ -1,0 +1,202 @@
+{
+  "version": "0.4.2",
+  "profile_extension_version": "0.1.3",
+  "review_date": "2026-11-01",
+  "release_status": "experimental",
+  "environment": {
+    "os": "Windows 11",
+    "minecraft_java": "26.3",
+    "peak": "Local Steam installation used for the native runtime tests",
+    "final_optimized_build_executed": true
+  },
+  "artifacts_sha256": {
+    "binarios/PeakCraftCoop.dll": "0741678b824c496cb25c90c762fa2d40f1a98fada7527961d3ad1d700047716c",
+    "binarios/peakcraft-profile-0.1.3.jar": "13a6d4e86f703ac81d6a7615f6eb7f7c120d465a83b7051e7b9d6eaf88194439"
+  },
+  "automated_tests": {
+    "windows_passed": 265,
+    "windows_failed": 0,
+    "process_exit_code": 0,
+    "categories": {
+      "vitals": 12,
+      "collision_regions_and_packets": 18,
+      "network_and_block_history": 21,
+      "input_routing": 12,
+      "scene_identity": 18,
+      "continuous_camera_yaw": 11,
+      "native_movement": 33,
+      "native_contact_lock": 7,
+      "native_hazard_impulses": 8,
+      "installer": 9,
+      "windows_launcher": 9,
+      "scene_save_store": 24,
+      "sloped_wall_plane": 14,
+      "presentation_policy_visibility_and_registry": 48,
+      "native_corpse_registration_hooks": 9,
+      "overlay_resources_and_stale_frames": 12
+    },
+    "presentation_breakdown": {
+      "presentation_policy": 20,
+      "renderer_and_external_corpse_visibility_lifecycle": 18,
+      "corpse_registry_lifecycle_and_steady_state": 10
+    },
+    "linux_expected": 256,
+    "public_ci": "pending_public_commit",
+    "record": "PROVAS/death-042-tests.log"
+  },
+  "implementation": {
+    "hud_and_models": "Explicit presentation policy excludes native death, incapacitation, native controls, loading and ending screens, including live flags before ownership catches up.",
+    "placed_minecraft_blocks": "World block visibility is independent of first-person HUD/avatar presentation.",
+    "local_body_and_corpses": "Only the local character and its registered native skeleton/statue renderers are hidden during Minecraft-mode incapacitation. Exact previous forceRenderingOff values are restored.",
+    "native_hooks": "Void postfixes observe original skeleton spawn/reassignment and statue creation after the native methods complete. Registration is filtered by local ownership before hierarchy lookup.",
+    "physics": "The presentation change does not freeze, move or remove native characters/corpses, alter forces, or replace death and revival rules.",
+    "remote_scope": "Remote-character filtering is covered by isolated tests. A real session between two PCs has not been completed.",
+    "no_minecraft_corpse_animation": true
+  },
+  "optimization_verification": {
+    "native_corpse_discovery": {
+      "method": "Source review and linked production-hook/registry tests",
+      "global_queries_per_frame_before_while_incapacitated": 4,
+      "global_queries_per_frame_after": 0,
+      "capture": "Register renderer references after native creation/assignment callbacks, including inactive and detached statue pieces.",
+      "steady_state": "Renderer checks occur once in LateUpdate and set the flag only when needed.",
+      "simulated_stable_frames": 60,
+      "hierarchy_requeries_during_stable_frames": 0,
+      "redundant_force_flag_writes_during_stable_frames": 0
+    },
+    "overlay_resources": {
+      "method": "Tests link the production Overlay class to a simulated native texture/upload boundary.",
+      "simulated_native_control_round_trips": 20,
+      "screen_texture_allocations": 1,
+      "uploaded_captures": 21,
+      "texture_destructions_during_round_trips": 0,
+      "stale_frame_draws_during_invalidation": 0,
+      "fresh_upload_required_after_invalidation": true,
+      "resize_and_full_clear_lifecycle_tested": true
+    },
+    "fps_improvement_claimed": false,
+    "limitation": "Deterministic boundary counters and source changes establish the removed work; they do not establish a universal real-game FPS increase."
+  },
+  "observed_gameplay": {
+    "native_death_and_owned_corpse_visibility": {
+      "status": "observed_in_real_game",
+      "owner": "Cutscene",
+      "minecraft_mode_selected": true,
+      "native_dead": true,
+      "native_passed_out": true,
+      "minecraft_overlay_drawable": false,
+      "minecraft_models_visible": false,
+      "cached_overlay_drawable": false,
+      "native_hud_enabled": true,
+      "hidden_renderers": 332,
+      "native_character_visible_renderers": 0,
+      "owned_skeletons": 1,
+      "visible_owned_skeleton_renderers": 0,
+      "registered_corpse_renderer_count": 10,
+      "corpse_registration_count": 1,
+      "screenshot": "PROVAS/042-death-native-ui.png",
+      "visual_observation": "The native death screen was visible without the Minecraft HUD, first-person hand or local native skeleton. The placed cobblestone remained visible."
+    },
+    "native_passout_and_recovery": {
+      "status": "observed_in_real_game",
+      "owner_while_incapacitated": "Cutscene",
+      "native_hidden_renderers": 322,
+      "minecraft_overlay_drawable": false,
+      "minecraft_models_visible": false,
+      "cached_overlay_drawable": false,
+      "native_hud_enabled": true,
+      "automatic_native_recovery": true,
+      "return_sequence": [
+        "Cutscene",
+        "Handoff",
+        "MinecraftOwns"
+      ],
+      "minecraft_hud_returned": true,
+      "recovery_screenshot": "PROVAS/042-recovered-minecraft.png",
+      "screenshot_scope": "Automatic recovery after native passout, not the separate diagnostic revival after death."
+    },
+    "native_equipment_and_mode_toggle_body_restoration": {
+      "status": "observed_in_real_game",
+      "equipment_control_owner": "NativeControl",
+      "equipment_control_native_visible_renderers": 321,
+      "equipment_control_forced_off_renderers": 0,
+      "equipment_control_hide_body": false,
+      "switch_to_peak_while_dead": {
+        "native_character_visible_renderers": 321,
+        "visible_owned_skeleton_renderers": 10,
+        "forced_off_renderers": 0
+      },
+      "switch_back_to_minecraft_while_dead": {
+        "native_character_visible_renderers": 0,
+        "visible_owned_skeleton_renderers": 0,
+        "corpse_registration_count": 1,
+        "registered_corpse_renderer_count": 10,
+        "cached_registration_reused": true
+      }
+    },
+    "revival_and_minecraft_hud_return": {
+      "status": "observed_with_native_diagnostic_actions",
+      "native_revival_called": true,
+      "native_solo_end_screen_closed_for_diagnostic_continuation": true,
+      "minecraft_control_and_overlay_returned": true,
+      "limitation": "This is not a two-PC cooperative revival test. The original skeleton remains a native scene object and its visibility is restored after revival; this change does not create an animated Minecraft corpse."
+    },
+    "real_overlay_allocation_counters": {
+      "status": "observed_in_real_game",
+      "location": "Airport",
+      "temporary_native_equipment_cycles": 20,
+      "screen_texture_allocations_before": 1,
+      "screen_texture_allocations_after": 1,
+      "uploaded_frames_before": 2601,
+      "uploaded_frames_after": 2757,
+      "native_death_snapshot_screen_texture_allocations": 1,
+      "native_death_snapshot_uploaded_frames": 8272,
+      "uploads_paused_while_native_death_owns_presentation": true,
+      "fps_improvement_claimed": false
+    },
+    "placed_blocks_during_death": {
+      "status": "observed_in_real_game",
+      "render_sections": 1,
+      "exact_minecraft_collision_boxes": 4,
+      "placed_cobblestone_visible_on_death_capture": true,
+      "presentation_independent_of_world_blocks": true
+    },
+    "petrified_statue_and_fragments": {
+      "status": "compiled_and_hook_boundary_tested_only",
+      "native_petrification_runtime_test_completed": false,
+      "scope": "The installed native association fields and detached-piece API were checked locally. The production hook is compiled and covered by isolated tests; genuine petrification was not exercised in this runtime round."
+    }
+  },
+  "pending": [
+    "Public CI and downloaded Release ZIP verification",
+    "Complete route through summit and ending with the integration",
+    "Full session on two PCs with two real Steam accounts, including cooperative revival",
+    "Native petrification/statue/fragment runtime test",
+    "Identify the previously caught managed shutdown-cleanup warning and historical native shutdown failure; this presentation change does not claim to fix them"
+  ],
+  "scope_limitations": [
+    "The native PEAK game supplies its original world and campaign; pending campaign coverage is a test limitation, not missing game content.",
+    "This change hides local native death visuals; it does not implement an animated Minecraft corpse.",
+    "Native death, camera, incapacitation and revival mechanics are retained.",
+    "No guarantee for every map, state, item, third-party mod or multiplayer condition.",
+    "Not a claim of zero bugs or complete performance optimization.",
+    "Owned native corpse visibility is restored after revival; the original scene object and its native interactions are retained."
+  ],
+  "privacy": "Selected own-code test messages and measurements only. No raw game logs, account identifiers, private paths, user saves, videos, proprietary geometry or source are included.",
+  "user_save_preservation": {
+    "games_saved_and_closed_before_restore": true,
+    "backup": "Latest pre-resume user-save snapshot of 2026-11-01",
+    "minecraft_files_restored": 91,
+    "all_sha256_matched": true,
+    "normal_mode": "Viewer",
+    "mode_key": "L",
+    "development_harness_enabled": false,
+    "loopback_simulation_enabled": false
+  },
+  "shutdown_observation": {
+    "caught_managed_cleanup_warning": "Object reference not set to an instance of an object.",
+    "origin_confirmed": false,
+    "minecraft_saved_and_closed": true,
+    "distinct_from_historical_native_exit_failure": true
+  }
+}

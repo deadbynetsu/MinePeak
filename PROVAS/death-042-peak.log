@@ -1,0 +1,178 @@
+MinePeak 0.4.2 — apresentação e recursos da sobreposição
+Rodada local final: 2026-11-01; Windows 11; compilação otimizada.
+Somente mensagens próprias selecionadas, em ordem, sem registros brutos Unity ou dados de conta.
+As ações lifecycle são chamadas de diagnóstico às ações nativas, em sessão offline.
+
+Plugin PeakCraft Local 0.4.2 is loaded!
+patch ok   NativeCorpsePatch
+presentation: owner PeakOwns; minecraft True; dead False; passedOut False; overlay False; models False; blocks False; hideBody False; hidden 0; nativeVisible 321; forcedOff 0; cachedOverlay False; peakHud True
+presentation: owned skeletons 0; visible skeleton renderers 0
+presentation: corpse registrations 0; cached corpse renderers 0; overlay texture allocations 0; uploaded frames 0
+ownership: PeakOwns -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+presentation: owner MinecraftOwns; minecraft True; dead False; passedOut False; overlay True; models True; blocks True; hideBody False; hidden 0; nativeVisible 0; forcedOff 0; cachedOverlay True; peakHud False
+presentation: owned skeletons 0; visible skeleton renderers 0
+presentation: corpse registrations 0; cached corpse renderers 0; overlay texture allocations 1; uploaded frames 2601
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+presentation: owner MinecraftOwns; minecraft True; dead False; passedOut False; overlay True; models True; blocks True; hideBody False; hidden 0; nativeVisible 0; forcedOff 0; cachedOverlay True; peakHud False
+presentation: owned skeletons 0; visible skeleton renderers 0
+presentation: corpse registrations 0; cached corpse renderers 0; overlay texture allocations 1; uploaded frames 2757
+ownership: MinecraftOwns -> PeakMenu
+ownership: PeakMenu -> Cutscene (loading)
+follower: released PEAK's character
+ownership: Cutscene -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+ownership: MinecraftOwns -> NativeControl
+follower: released PEAK's character
+presentation: owner NativeControl; minecraft True; dead False; passedOut False; overlay False; models False; blocks True; hideBody False; hidden 0; nativeVisible 321; forcedOff 0; cachedOverlay False; peakHud True
+presentation: owned skeletons 0; visible skeleton renderers 0
+presentation: corpse registrations 0; cached corpse renderers 0; overlay texture allocations 1; uploaded frames 7626
+ownership: NativeControl -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+presentation: original native lifecycle requested: passout
+ownership: MinecraftOwns -> Cutscene (passed out)
+follower: released PEAK's character
+presentation: hidden local native body during incapacitation (322 renderers)
+presentation: owner Cutscene; minecraft True; dead False; passedOut True; overlay False; models False; blocks True; hideBody True; hidden 322; nativeVisible 0; forcedOff 322; cachedOverlay False; peakHud True
+presentation: owned skeletons 0; visible skeleton renderers 0
+presentation: corpse registrations 0; cached corpse renderers 0; overlay texture allocations 1; uploaded frames 7638
+presentation: restored local native body visibility
+ownership: Cutscene -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+presentation: owner MinecraftOwns; minecraft True; dead False; passedOut False; overlay True; models True; blocks True; hideBody False; hidden 0; nativeVisible 0; forcedOff 0; cachedOverlay True; peakHud False
+presentation: owned skeletons 0; visible skeleton renderers 0
+presentation: corpse registrations 0; cached corpse renderers 0; overlay texture allocations 1; uploaded frames 7688
+presentation: original native lifecycle requested: die
+ownership: MinecraftOwns -> Cutscene (dead)
+follower: released PEAK's character
+presentation: hidden local native body during incapacitation (332 renderers)
+presentation: owner Cutscene; minecraft True; dead True; passedOut True; overlay False; models False; blocks True; hideBody True; hidden 332; nativeVisible 0; forcedOff 322; cachedOverlay False; peakHud True
+presentation: owned skeletons 1; visible skeleton renderers 0
+presentation: corpse registrations 1; cached corpse renderers 10; overlay texture allocations 1; uploaded frames 8272
+block physics: 1 sections / 4 exact Minecraft boxes; independent of rendering/mode
+ownership: Cutscene -> PeakOwns
+presentation: restored local native body visibility
+presentation: owner PeakOwns; minecraft False; dead True; passedOut True; overlay False; models False; blocks True; hideBody False; hidden 0; nativeVisible 321; forcedOff 0; cachedOverlay False; peakHud True
+presentation: owned skeletons 1; visible skeleton renderers 10
+presentation: corpse registrations 1; cached corpse renderers 10; overlay texture allocations 1; uploaded frames 8272
+ownership: PeakOwns -> Cutscene (dead)
+presentation: hidden local native body during incapacitation (332 renderers)
+presentation: owner Cutscene; minecraft True; dead True; passedOut True; overlay False; models False; blocks True; hideBody True; hidden 332; nativeVisible 0; forcedOff 322; cachedOverlay False; peakHud True
+presentation: owned skeletons 1; visible skeleton renderers 0
+presentation: corpse registrations 1; cached corpse renderers 10; overlay texture allocations 1; uploaded frames 8272
+presentation: original native lifecycle requested: revive
+presentation: restored local native body visibility
+ownership: Cutscene -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))
+presentation: owner MinecraftOwns; minecraft True; dead False; passedOut False; overlay True; models True; blocks True; hideBody False; hidden 0; nativeVisible 0; forcedOff 0; cachedOverlay True; peakHud False
+presentation: owned skeletons 1; visible skeleton renderers 10
+presentation: corpse registrations 1; cached corpse renderers 10; overlay texture allocations 1; uploaded frames 9112
+follower: released PEAK's character
+ownership: MinecraftOwns -> PeakOwns
+ownership: PeakOwns -> Handoff
+ownership: Handoff -> MinecraftOwns
+follower: took PEAK's character (321 renderers hidden, 18 frozen contact bodies, 1 root bodypart(s))

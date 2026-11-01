@@ -20,7 +20,7 @@ namespace PeakCraft;
 
 [BepInAutoPlugin]
 [DefaultExecutionOrder(-1000)]
-[BepInPlugin("PeakCraftCoop", "PeakCraft Co-op", "0.4.1")]
+[BepInPlugin("PeakCraftCoop", "PeakCraft Co-op", "0.4.2")]
 public class Plugin : BaseUnityPlugin
 {
 	private ConfigEntry<string> linkName;
@@ -57,7 +57,7 @@ public class Plugin : BaseUnityPlugin
 
 	public const string Name = "PeakCraft Co-op";
 
-	public const string Version = "0.4.1";
+	public const string Version = "0.4.2";
 
 	internal static ManualLogSource Log { get; private set; }
 
@@ -68,6 +68,7 @@ public class Plugin : BaseUnityPlugin
 	internal Ownership Ownership { get; } = new Ownership();
 
 	internal Follower Follower { get; private set; }
+	internal NativeBodyVisibility BodyVisibility { get; } = new NativeBodyVisibility();
 
 	internal CameraDriver Camera { get; } = new CameraDriver();
 
@@ -215,6 +216,7 @@ public class Plugin : BaseUnityPlugin
 			typeof(CharacterMovementPatch),
 			typeof(NativeFlightPatch),
 			typeof(NativeHazardImpulsePatch),
+			typeof(NativeCorpsePatch),
 			typeof(MainCameraMovementPatch),
 			typeof(CharacterAfflictionsPatch),
 			typeof(CharacterPatch),
@@ -240,6 +242,8 @@ public class Plugin : BaseUnityPlugin
 	private void OnDestroy()
 	{
 		Dev?.ResetNativeInput();
+		Quietly(() => BodyVisibility.Reset());
+		Quietly(() => Overlay?.Clear());
 		Quietly(() => PeakCraft.UI.MinePeakUi.Dispose());
 		SceneManager.sceneLoaded -= OnSceneLoaded;
 		Quietly(() =>
@@ -307,6 +311,8 @@ public class Plugin : BaseUnityPlugin
 
 	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
+		BodyVisibility.Reset();
+		Overlay?.Invalidate();
 		Dev?.ResetNativeInput();
 		Collision?.Reset("scene " + scene.name);
 		Blocks?.Reset();
@@ -383,14 +389,16 @@ public class Plugin : BaseUnityPlugin
 		Vitals.Update(linked, Ownership);
 		Hazards.Update(Ownership);
 		Death.Update(linked, in guest);
+		var presentation = CurrentPresentation;
 		UpdateHud();
-		if (Ownership.OverlayAndBlocks)
+		if (presentation.Overlay)
 		{
 			Overlay.Update();
 		}
+		else Overlay.Invalidate();
 		if (linked)
 		{
-			Blocks.Update(Ownership.OverlayAndBlocks, Follower.Feet, Camera.Yaw, guest.cameraMode == 0, (CoopMode.IsViewer || state2 == Owner.NativeControl) && localCharacter != null);
+			Blocks.Update(presentation.MinecraftModels, Follower.Feet, Camera.Yaw, guest.cameraMode == 0, presentation.PlacedBlocks);
 		}
 		PublishHostState(localCharacter);
 		UpdateCoop();
@@ -491,7 +499,7 @@ public class Plugin : BaseUnityPlugin
 			hudHidden = false;
 			return;
 		}
-		bool flag = !Ownership.PeakHud;
+		bool flag = CurrentPresentation.Overlay && Ownership.State == Owner.MinecraftOwns;
 		if (flag != hudHidden || instance.hudCanvas.enabled == flag)
 		{
 			hudHidden = flag;
@@ -556,11 +564,40 @@ public class Plugin : BaseUnityPlugin
 	private void DrawGui()
 	{
 		CoopMode?.OnGUI();
-		if (Ownership.OverlayAndBlocks && !PeakCraft.Player.Ownership.PeakMenuOpen())
+		if (CurrentPresentation.Overlay && !PeakCraft.Player.Ownership.PeakMenuOpen())
 		{
 			Overlay.Draw(InputBridge.ScreenOpen, InputBridge.Cursor);
 			DrawInteractPrompt();
 		}
 		Equipment?.Draw();
+	}
+
+	// Re-evaluate live flags in the draw pass: native afflictions can kill or
+	// incapacitate after the ownership decision earlier in the same frame.
+	internal PresentationState CurrentPresentation
+	{
+		get
+		{
+			var c = Character.localCharacter;
+			bool incapacitated = c != null && (PeakApi.IsDead(c.data) || c.data.passedOut || c.data.fullyPassedOut);
+			incapacitated |= (guest.flags & (uint)Proto.GuestFlags.Dead) != 0;
+			var gui = GUIManager.instance;
+			bool endScreen = gui != null && gui.endScreen != null && gui.endScreen.isOpen;
+			return PresentationPolicy.Evaluate(Ownership.State, linked && Link != null && Link.GuestAlive,
+				CoopMode != null && !CoopMode.IsViewer, c != null, incapacitated, LoadingScreenHandler.loading, endScreen);
+		}
+	}
+
+	private void LateUpdate()
+	{
+		if (CoopMode == null || Link == null) return;
+		UpdateBodyPresentation();
+	}
+
+	private void UpdateBodyPresentation()
+	{
+		var current = Character.localCharacter;
+		bool hide = CurrentPresentation.HideNativeBody;
+		BodyVisibility.Update(current, hide);
 	}
 }

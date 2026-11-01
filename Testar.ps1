@@ -6,7 +6,7 @@ if (-not (Get-Command $Dotnet -ErrorAction SilentlyContinue)) {
     throw 'SDK .NET 10 nao encontrado. Instale-o ou informe -Dotnet com o caminho do dotnet.exe.'
 }
 $env:DOTNET_CLI_TELEMETRY_OPTOUT = '1'
-$projects = @('VitalsLedger.Tests', 'CollisionRegion.Tests', 'Multiplayer.Tests', 'InputSafety.Tests', 'SceneRenderFence.Tests', 'CameraYaw.Tests', 'ClimbReturn.Tests', 'ContactLock.Tests', 'HazardImpulse.Tests')
+$projects = @('VitalsLedger.Tests', 'CollisionRegion.Tests', 'Multiplayer.Tests', 'InputSafety.Tests', 'SceneRenderFence.Tests', 'CameraYaw.Tests', 'ClimbReturn.Tests', 'ContactLock.Tests', 'HazardImpulse.Tests', 'Presentation.Tests', 'CorpseHook.Tests', 'Overlay.Tests')
 foreach ($project in $projects) {
     $path = Join-Path $PSScriptRoot ('tests/' + $project + '/' + $project + '.csproj')
     Write-Host ('Executando testes: ' + $project)

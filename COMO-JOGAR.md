@@ -15,7 +15,7 @@ Na versão **0.3.1**, configurações antigas com F8 são migradas automaticamen
 
 ## A nova interface
 
-A versão **0.4.1** mantém um pequeno indicador de modo, vida e comida. Efeitos nativos ativos, como veneno, aparecem abaixo no modo Minecraft. Dicas extras acompanham **B** para itens e **V** para escalar. O indicador é ocultado quando chat, inventário, pausa ou carregamento estão abertos.
+A versão **0.4.2** mantém um pequeno indicador de modo, vida e comida. Efeitos nativos ativos, como veneno, aparecem abaixo no modo Minecraft. Dicas extras acompanham **B** para itens e **V** para escalar. O indicador é ocultado quando chat, inventário, pausa ou carregamento estão abertos, assim como na morte e no desmaio.
 
 Abra **Esc** para ver a lista dos controles no cartão **MinePeak** e escolher **PEAK / Minecraft**. Para ajustar sensibilidade ou controles Minecraft, selecione **Opções do Minecraft** nesse cartão, com o modo Minecraft ativo e conectado. **O** continua abrindo o menu Minecraft durante a partida.
 
@@ -63,6 +63,12 @@ O lançador tenta ler o nome e uma skin já armazenada no perfil SKLauncher. **F
 
 Para definir uma imagem própria, veja a seção [Skin do usuário](README-PT.md#skin-do-usuário). Nome e skin entram na próxima abertura dos jogos.
 
+## Quando o personagem morre ou desmaia
+
+A morte, a reanimação e a câmera seguem o PEAK. Durante essa sequência, os corações, a barra de itens, a mão e o avatar parado do Minecraft desaparecem. Se o modo Minecraft estava selecionado, o corpo local do PEAK e seus derivados de morte ou petrificação ficam ocultos na sua visualização enquanto o personagem estiver incapacitado. Essa ocultação não altera sua física nem a possibilidade de um companheiro reanimá-lo; também não acrescenta um cadáver Minecraft animado nem oculta os corpos dos outros jogadores.
+
+Os blocos construídos permanecem no mapa. Ao recuperar o controle, aguarde o retorno do HUD e da aparência Minecraft. Os objetos de cadáver continuam sendo do PEAK: um esqueleto deixado no cenário pode voltar a ser visível após a recuperação. No modo PEAK nativo, a apresentação original continua valendo; o mesmo acontece se a ponte Java desconectar. O corpo nativo durante as ações **B** e **V** continua normal.
+
 ## Se algo não funcionar
 
 | O que aconteceu | O que verificar |
@@ -73,8 +79,8 @@ Para definir uma imagem própria, veja a seção [Skin do usuário](README-PT.md
 | Botão/tecla não alterna o modo | Feche o inventário, chat ou menu Minecraft e tente L dentro da partida; confira `ToggleModeKey` se usa uma tecla personalizada. |
 | Mão parece escura | A cor vem da skin local; confira sua imagem antes de alterar o renderizador. |
 | Bloco some atrás de uma pedra | A ocultação pelo cenário é esperada. A montanha continua sendo o cenário PEAK. |
-| PEAK nativo atravessa o bloco construído | Confira se ambos os mods são da mesma Release 0.4.1, se o Minecraft oculto está conectado e se a seção já carregou. Reinicie pelo JOGAR.cmd após atualizar os arquivos. |
+| PEAK nativo atravessa o bloco construído | Confira se os mods vieram da mesma Release 0.4.2, se o Minecraft oculto está conectado e se a seção já carregou. A extensão Java permanece na versão 0.1.3. Reinicie pelo JOGAR.cmd após atualizar os arquivos. |
 | Item PEAK não usa no controle Minecraft | Segure B, selecione 1–4 e use o mouse. |
 | Escalada não agarra | Aproxime-se, mire numa parede válida e confira a stamina. Solte V antes de uma nova tentativa. |
 
-Os jogos e mods podem mudar. Para relatar um erro, inclua as versões, a sequência de ações e um vídeo curto quando possível. Remova nomes, códigos de sala e caminhos pessoais dos logs públicos. Consulte **[VALIDACAO-0.4.1.md](VALIDACAO-0.4.1.md)** para a revisão atual; os relatórios **[0.4.0](VALIDACAO-0.4.0.md)**, **[0.3.2](VALIDACAO-0.3.2.md)**, **[0.3.1](VALIDACAO-0.3.1.md)** e **[0.3.0](VALIDACAO-0.3.0.md)** preservam suas provas históricas. O teste de uma campanha inteira até o cume e o encerramento, assim como uma sessão completa com dois PCs/contas, ainda está pendente. O mundo e o conteúdo original continuam sendo executados pelo PEAK.
+Os jogos e mods podem mudar. Para relatar um erro, inclua as versões, a sequência de ações e um vídeo curto quando possível. Remova nomes, códigos de sala e caminhos pessoais dos logs públicos. Consulte **[VALIDACAO-0.4.2.md](VALIDACAO-0.4.2.md)** para a revisão atual; os relatórios **[0.4.1](VALIDACAO-0.4.1.md)**, **[0.4.0](VALIDACAO-0.4.0.md)**, **[0.3.2](VALIDACAO-0.3.2.md)**, **[0.3.1](VALIDACAO-0.3.1.md)** e **[0.3.0](VALIDACAO-0.3.0.md)** preservam suas provas históricas. O teste de uma campanha inteira até o cume e o encerramento, assim como uma sessão completa com dois PCs/contas, ainda está pendente. O mundo e o conteúdo original continuam sendo executados pelo PEAK.

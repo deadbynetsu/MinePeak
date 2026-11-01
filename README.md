@@ -8,7 +8,7 @@
 
 [![Testes automatizados](https://github.com/deadbynetsu/MinePeak/actions/workflows/tests.yml/badge.svg)](https://github.com/deadbynetsu/MinePeak/actions/workflows/tests.yml)
 
-[Baixar Release 0.4.1](https://github.com/deadbynetsu/MinePeak/releases/tag/v0.4.1) · [Como jogar](COMO-JOGAR.md) · [Instalação](README-PT.md) · [Multiplayer](MULTIPLAYER.md) · [Testes desta versão](VALIDACAO-0.4.1.md) · [Créditos](referencia-coop/PROVENIENCIA.md)
+[Baixar Release 0.4.2](https://github.com/deadbynetsu/MinePeak/releases/tag/v0.4.2) · [Como jogar](COMO-JOGAR.md) · [Instalação](README-PT.md) · [Multiplayer](MULTIPLAYER.md) · [Testes desta versão](VALIDACAO-0.4.2.md) · [Créditos](referencia-coop/PROVENIENCIA.md)
 
 </div>
 
@@ -34,7 +34,15 @@ Esta é uma adaptação comunitária gratuita e experimental do **PeakCraft Co-o
 
 Durante B ou V, o corpo e os controles usados são temporariamente os nativos do PEAK. A aparência Minecraft retorna ao terminar. Consumo de marshmallow, carga de arremesso e escalada com gasto de stamina foram exercitados no jogo real. A colisão recebeu exportação dos colliders do cenário, incluindo malhas disponíveis somente na GPU. O [relatório 0.3.0](VALIDACAO-0.3.0.md) identifica os cenários e seus limites.
 
-## Correções da 0.4.1
+## Morte e desempenho da apresentação na 0.4.2
+
+A morte e o desmaio passam à câmera e à interface nativas, sem os corações, a barra de itens, a mão ou o avatar Minecraft parado sobrepostos à cena. Com Minecraft selecionado, o corpo local do PEAK e seus derivados de morte ou petrificação ficam ocultos durante a incapacitação; sua física e as regras de morte e reanimação continuam nativas. As construções permanecem visíveis no mapa. Ao recuperar o controle, a ponte volta à apresentação Minecraft.
+
+Isso corrige a mistura das duas apresentações; não acrescenta um corpo Minecraft animado pela física do PEAK. O personagem nativo continua visível durante as ações normais de **B** e **V**. Morte, desmaio, recuperação, troca de modo e B foram repetidos no jogo real com a compilação otimizada. Os cenários e os limites estão no [relatório 0.4.2](VALIDACAO-0.4.2.md).
+
+A revisão também reduz trabalho repetido na apresentação: registra os corpos locais quando são criados, reaproveita suas referências e mantém a textura do HUD nas trocas temporárias de controle. Os testes confirmam menos consultas e alocações nesses caminhos; não foi medido ganho de FPS.
+
+## Correções anteriores da 0.4.1
 
 Esta revisão parte de bugs reproduzidos em vídeos e no jogo real:
 
@@ -60,7 +68,7 @@ Esta revisão separa as construções por mapa e preserva o inventário nas viag
 
 Requisitos desta versão: **Windows 11 de 64 bits**, PEAK instalado pela Steam e acesso aos arquivos necessários do Minecraft Java. A rodada final usa o **PEAK da instalação Steam local**, cuja tela inicial mostra **v2.0.1**, com **Minecraft Java 26.3**. A preparação instala Java 25 e BepInEx em pastas locais do projeto.
 
-1. Baixe **MinePeak-0.4.1.zip** na [Release experimental](https://github.com/deadbynetsu/MinePeak/releases/tag/v0.4.1) e extraia para uma pasta própria. O ZIP inclui fontes e mods compilados; o arquivo `.sha256` ao lado permite conferir a integridade.
+1. Baixe **MinePeak-0.4.2.zip** na [Release experimental](https://github.com/deadbynetsu/MinePeak/releases/tag/v0.4.2) e extraia para uma pasta própria. O ZIP inclui fontes e mods compilados; o arquivo `.sha256` ao lado permite conferir a integridade.
 2. Leia a [EULA do Minecraft](https://www.minecraft.net/eula). Se concordar, abra PowerShell nessa pasta e prepare a instalação:
 
    ```powershell
@@ -104,6 +112,7 @@ Use os lobbies, convites Steam ou códigos de sala do próprio PEAK. Todos os pa
 | Área | Evidência disponível |
 | --- | --- |
 | PEAK e Minecraft reais conectados | Aeroporto, embarque, praia, alternância de modos e construção locais |
+| Morte e apresentação 0.4.2 | Morte, desmaio, recuperação e troca de modo repetidos no jogo real; HUD e corpo local ocultos durante a incapacitação, com blocos preservados. Veja o [relatório atual](VALIDACAO-0.4.2.md). |
 | Bugs dos vídeos na 0.4.1 | Pedra da ilha, apoio após V, rotação da mão, menu radial e veneno nativo; resultados no [relatório](VALIDACAO-0.4.1.md) |
 | Interface e viagens 0.4.0 | Painel, opções, chat após mudança de foco, reabertura de ilha com backup verificado e preservação dos dados comparados; veja [relatório](VALIDACAO-0.4.0.md) |
 | Fome e vida | 12 testes puros e cenários reais nos dois jogos em [VALIDACAO-FOME-VIDA.md](VALIDACAO-FOME-VIDA.md) |
@@ -112,9 +121,9 @@ Use os lobbies, convites Steam ou códigos de sala do próprio PEAK. Todos os pa
 | Compartilhamento Co-op | 21 testes de protocolo/histórico de blocos, incluindo fila cheia e repetição de entrega, implementação Photon e loopback local; dois PCs ainda pendentes |
 | Campanha completa e cume | O roteiro inteiro ainda não foi percorrido em teste; o conteúdo original é executado pelo próprio PEAK |
 
-As capturas e registros em **[PROVAS/](PROVAS/)** documentam o que foi executado. **[VALIDACAO-0.4.1.md](VALIDACAO-0.4.1.md)** registra a revisão atual. Os relatórios históricos permanecem disponíveis: **[0.4.0](VALIDACAO-0.4.0.md)** para interface e viagens; **[0.3.2](VALIDACAO-0.3.2.md)** para colisão das construções; **[0.3.1](VALIDACAO-0.3.1.md)** para L; **[0.3.0](VALIDACAO-0.3.0.md)** para equipamentos, escalada, colisão e rede. **[VALIDACAO.md](VALIDACAO.md)** distingue o Co-op dos testes históricos da base clássica. Não se declara compatibilidade perfeita com todas as colisões, alimentos, mods ou versões futuras dos jogos.
+As capturas e registros em **[PROVAS/](PROVAS/)** documentam o que foi executado. **[VALIDACAO-0.4.2.md](VALIDACAO-0.4.2.md)** registra a revisão atual. Os relatórios históricos permanecem disponíveis: **[0.4.1](VALIDACAO-0.4.1.md)** para os bugs de colisão, escalada, mão e interação; **[0.4.0](VALIDACAO-0.4.0.md)** para interface e viagens; **[0.3.2](VALIDACAO-0.3.2.md)** para colisão das construções; **[0.3.1](VALIDACAO-0.3.1.md)** para L; **[0.3.0](VALIDACAO-0.3.0.md)** para equipamentos, escalada, colisão e rede. **[VALIDACAO.md](VALIDACAO.md)** distingue o Co-op dos testes históricos da base clássica. Não se declara compatibilidade perfeita com todas as colisões, alimentos, mods ou versões futuras dos jogos.
 
-**196 testes automatizados passaram no Windows.** Os resultados e os cenários reais ficam no **[relatório 0.4.1](VALIDACAO-0.4.1.md)**; a CI pública registra o estado do commit publicado. Para repetir a suíte sem abrir os jogos, use SDK .NET 10 e JDK 17 ou superior e execute `./Testar.ps1`. O JDK 25 preparado pelo projeto atende ao requisito; se ele não estiver em `JAVA_HOME` ou no PATH, informe `-JavaHome 'D:\caminho\jdk'`. A suíte cobre vida/comida, colisão, movimento, contatos nativos, rede, entrada, cenas, saves e instalação; os casos específicos do inicializador Windows são executados nesse sistema. O build completo do plugin usa os assemblies da instalação local do PEAK.
+**265 testes automatizados passaram no Windows**, incluindo 69 casos novos de apresentação, registro dos corpos e uso de texturas. Os cenários reais e os limites desta revisão ficam no **[relatório 0.4.2](VALIDACAO-0.4.2.md)**; a CI pública registra o estado do commit publicado. Para repetir a suíte sem abrir os jogos, use SDK .NET 10 e JDK 17 ou superior e execute `./Testar.ps1`. O JDK 25 preparado pelo projeto atende ao requisito; se ele não estiver em `JAVA_HOME` ou no PATH, informe `-JavaHome 'D:\caminho\jdk'`. A suíte cobre vida/comida, colisão, movimento, contatos nativos, rede, entrada, cenas, saves, apresentação e instalação; os casos específicos do inicializador Windows são executados nesse sistema. O build completo do plugin usa os assemblies da instalação local do PEAK.
 
 ## Fontes e contribuições
 

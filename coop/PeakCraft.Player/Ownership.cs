@@ -68,19 +68,6 @@ internal sealed class Ownership
 		}
 	}
 
-	public bool OverlayAndBlocks
-	{
-		get
-		{
-			Owner state = State;
-			if ((uint)(state - 2) <= 2u)
-			{
-				return true;
-			}
-			return false;
-		}
-	}
-
 	public bool BodyFollows
 	{
 		get

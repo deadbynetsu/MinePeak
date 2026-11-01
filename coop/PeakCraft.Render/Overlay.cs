@@ -13,12 +13,15 @@ internal sealed class Overlay
 	private Texture2D? cursor;
 
 	private bool topDown;
+	private bool validFrame;
 
 	private int frames;
 
 	private float lastLog;
 
-	public bool HasFrame => texture != null;
+	public bool HasFrame => validFrame && texture != null;
+	public int TextureAllocations { get; private set; }
+	public int UploadedFrames { get; private set; }
 
 	public Overlay(PeakLink link)
 	{
@@ -31,6 +34,8 @@ internal sealed class Overlay
 		{
 			return;
 		}
+		// A malformed or failed upload must never make an older HUD drawable.
+		validFrame = false;
 		Proto.OverlaySlotHdr* frontHeader = link.FrontHeader;
 		int width = (int)frontHeader->width;
 		int height = (int)frontHeader->height;
@@ -50,11 +55,14 @@ internal sealed class Overlay
 				wrapMode = TextureWrapMode.Clamp,
 				hideFlags = HideFlags.HideAndDontSave
 			};
+			TextureAllocations++;
 			Plugin.Log.LogInfo((object)$"overlay: {width}x{height} (PEAK is {Screen.width}x{Screen.height})");
 		}
 		topDown = (frontHeader->flags & 1) == 0;
 		texture.LoadRawTextureData((IntPtr)link.FrontPixels, width * height * 4);
 		texture.Apply(updateMipmaps: false);
+		validFrame = true;
+		UploadedFrames++;
 		frames++;
 		if (Time.unscaledTime - lastLog > 10f)
 		{
@@ -64,25 +72,36 @@ internal sealed class Overlay
 		}
 	}
 
+	// Switching to native controls hides the captured frame without reallocating
+	// a screen-sized GPU texture every time B/V is released or a player revives.
+	// Only a newly acquired and uploaded frame can make it drawable again.
+	public void Invalidate() => validFrame = false;
+
 	public void Clear()
 	{
+		Invalidate();
 		if (texture != null)
 		{
 			UnityEngine.Object.Destroy(texture);
 			texture = null;
 		}
+		if (cursor != null)
+		{
+			UnityEngine.Object.Destroy(cursor);
+			cursor = null;
+		}
 	}
 
 	public void Draw(bool showCursor, Vector2 cursorPosition)
 	{
-		if (Event.current.type != EventType.Repaint || texture == null)
+		if (Event.current.type != EventType.Repaint || !HasFrame)
 		{
 			return;
 		}
 		GUI.DrawTextureWithTexCoords(new Rect(0f, 0f, Screen.width, Screen.height), texture, topDown ? new Rect(0f, 1f, 1f, -1f) : new Rect(0f, 0f, 1f, 1f), alphaBlend: true);
 		if (showCursor)
 		{
-			if ((object)cursor == null)
+			if (cursor == null)
 			{
 				cursor = MakeCursor();
 			}

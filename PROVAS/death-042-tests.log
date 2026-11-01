@@ -1,0 +1,266 @@
+MinePeak 0.4.2 — testes locais da revisão de apresentação e otimização
+Data: 2026-11-01. Plataforma: Windows 11.
+Resultado: 265 testes aprovados, zero falhas; processo encerrado com código 0.
+Resumo: 196 regressões anteriores + 48 apresentação/registro de corpos + 9 hooks de corpos + 12 recursos da sobreposição.
+Os trechos abaixo contêm somente linhas PASS do roteiro final; caminhos e registros de conta não são publicados.
+Os casos usam fronteiras simuladas e não substituem a validação no jogo ou entre dois PCs.
+
+PASS: initial PEAK state wins over old Minecraft save
+PASS: Minecraft damage and hunger reflect without echo
+PASS: PEAK healing and meal produce additive command
+PASS: retransmission retains ID and payload
+PASS: concurrent Minecraft hit and food do not get overwritten
+PASS: PEAK changes queue while earlier command is unacknowledged
+PASS: PEAK changes survive initial acknowledgement
+PASS: PEAK rounded applied statuses cannot create feedback
+PASS: late acknowledgement snapshot cannot roll back accepted state
+PASS: bounds clamp and idle does not send commands
+PASS: remote healing combines with local healing before acknowledgement
+PASS: invalid floats never poison canonical state
+PASS: 12 vitals ledger tests
+PASS: tall vertical wall spans all regions
+PASS: negative Minecraft heights floor correctly
+PASS: flat face on boundary reaches both sides
+PASS: window clips the range
+PASS: out of window is absent, not clamped
+PASS: invalid mesh vertex is rejected
+PASS: exact little endian block box and negative section coordinates
+PASS: empty section decodes as a support-clear packet
+PASS: slab keeps half height instead of a full cube
+PASS: fence can extend above the section
+PASS: old scene packet cannot create ghost support
+PASS: old collision epoch cannot restore cleared support
+PASS: truncated box packet is rejected
+PASS: unbounded box count is rejected before allocation
+PASS: nonfinite shape is rejected
+PASS: inverted box cannot build a collider
+PASS: zero volume box is rejected
+PASS: out of section arbitrary geometry is rejected
+PASS: six collision region and twelve native block packet regression cases
+PASS: live Minecraft chat remains protected when focus stops routing
+PASS: ordinary Minecraft gameplay allows the mode shortcut
+PASS: stale chat after Java disconnect cannot lock the fallback shortcut
+PASS: hidden Minecraft screen cannot block the native PEAK preference
+PASS: startup Minecraft title screen does not block the mode shortcut
+PASS: backpack wheel retains the held G action after native menu takeover
+PASS: pause menu cannot acquire the backpack interaction action
+PASS: Minecraft chat blocks G even with a stale native wheel
+PASS: losing focus releases native backpack interaction
+PASS: safety release survives repeated full-ring failures
+PASS: multiple focus or mode changes coalesce into one delivered release
+PASS: failed release transport keeps the safety barrier armed
+PASS: 12 input safety tests
+PASS: startup discards scene geometry until the Java level is ready
+PASS: atlas resources can load while the scene is blocked
+PASS: matching ordered readiness marker releases geometry without an optional clear packet
+PASS: a stale airport marker cannot release the island scene
+PASS: a marker from the previous collision generation stays blocked
+PASS: a scene clear before readiness cannot open the gate
+PASS: scene switch rejects queued geometry until a new boundary
+PASS: duplicate marker does not ask the receiver to erase a ready scene
+PASS: new collision epoch requires one fresh receiver reset
+PASS: late invalid marker does not close an already ready scene
+PASS: zero world is never accepted as a live scene
+PASS: readiness packets are never treated as unvalidated geometry
+PASS: built-in airport retains its existing world and save identity
+PASS: built-in index zero remains a live nonzero world
+PASS: different Addressables maps never share the missing-build-index zero ID
+PASS: Addressables world IDs are stable FNV-1a UTF-8 values across runs
+PASS: non-ASCII scene names use UTF-8 rather than platform encoding
+PASS: scene identity preserves Unity's exact scene-name casing
+PASS: 18 scene render fence and identity tests
+PASS: mouse heading crosses positive 180 continuously
+PASS: mouse heading crosses negative 180 continuously
+PASS: repeated full mouse turns retain the travelled angle
+PASS: native handoff crosses positive seam on the nearest revolution
+PASS: native handoff crosses negative seam on the nearest revolution
+PASS: native rotation remains continuous through several revolutions
+PASS: large single mouse movement is not mistaken for a native shortest turn
+PASS: full-turn absolute headings preserve the local revolution
+PASS: invalid host inputs cannot poison subsequent camera frames
+PASS: vanilla hand inertia has no wrap impulse across either compass seam
+PASS: legitimate hand inertia remains and settles after a turn
+PASS: 11 continuous camera yaw tests
+PASS: grounded before any grab cannot finish a climb
+PASS: losing the wall at a ledge does not return on the next physics tick
+PASS: upward ledge motion is retained despite a ground contact
+PASS: settled native landing returns after the grace and support interval
+PASS: render frames cannot turn a transient contact into a landing
+PASS: losing support restarts the landing interval
+PASS: airborne slip remains native until an explicit release or landing
+PASS: native reattachment discards the previous landing interval
+PASS: reset prevents a previous character or session from finishing a new request
+PASS: non-finite motion is not a settled landing
+PASS: real helper keeps native ownership after ledge detach, then returns once settled
+PASS: exhausted airborne detach does not call the helper grab repeatedly
+PASS: explicit V release still stops the climb and returns after a physics tick
+PASS: Space uses the native release input and does not wait for a ledge landing
+PASS: opening a menu cancels a virtual climb
+PASS: ending Minecraft preference releases only helper-originated native grabs
+PASS: a physically held native grab survives a preference change
+PASS: death, passout and loading clear a pending ledge handoff
+PASS: an ordinary ground jump stays in Minecraft and arms only the real passive allowance
+PASS: holding Space across a Minecraft ground jump cannot trigger a bonus jump
+PASS: an airborne second press hands off, restores velocity and calls native jump once
+PASS: native extra jump retains ownership through charge and flight until settled landing
+PASS: a native refusal returns without spending or retrying the bonus allowance
+PASS: creative, flight, swimming, screens, death and old profiles never request native jump
+PASS: no passive, no remaining allowance and native cooldown each block the request
+PASS: screen, mode, death, passout, warp and loading cancel a native jump request
+PASS: physical Space held while unfocused does not become a press on focus recovery
+PASS: dev jump follows the same native allowance and validation
+PASS: invalid or discontinuous guest motion cannot inject unbounded native velocity
+PASS: an original native super-jump keeps the body through its force interval and landing
+PASS: overlapping original super-jumps extend force retention without replaying an action
+PASS: native super-jump retention obeys mode, screen, death and loading cancellation
+PASS: invalid native force durations cannot leave retained ownership stuck
+PASS: 33 native movement tests
+PASS: held native contact bodies stay dynamic and awake without moving
+PASS: handoff restores each body's original constraints gravity and sleeping
+PASS: hazard force queues cannot accumulate during Minecraft control
+PASS: repeated take cannot replace saved native settings with FreezeAll
+PASS: taking another scout first restores the previous scout
+PASS: colliderless and missing bodies remain outside the native contact lock
+PASS: duplicate body references do not freeze a saved snapshot twice
+PASS: 7 native contact lock lifecycle tests
+PASS: only collision and its generated bounce coroutine are selected
+PASS: force calls are wrapped without changing unrelated calls or overloads
+PASS: native branch targets and exception boundaries remain attached to the call
+PASS: a validated native impulse retains physics before forwarding exactly once
+PASS: zero and invalid vectors cannot acquire physics but remain native calls
+PASS: retention failure does not erase or duplicate the original force
+PASS: changed native code without a known force call is refused visibly
+PASS: both instance-call opcodes keep the same argument stack contract
+PASS: 8 native hazard impulse bridge tests
+PASS: native death does not inherit the old inclusive owner-range overlay bug
+PASS: ordinary Minecraft control presents HUD and models while keeping placed blocks
+PASS: native control never displays the Minecraft first-person image
+PASS: native PEAK ownership has no stale Minecraft models
+PASS: handoff waits before presenting a potentially stale Minecraft image
+PASS: Minecraft-owned menus retain their existing presentation eligibility
+PASS: ordinary native cutscenes keep placed blocks without the Minecraft image
+PASS: disconnected Java cannot leave any Minecraft presentation behind
+PASS: native viewer preference preserves the scout even when incapacitated
+PASS: a missing character cannot retain a HUD body override or world placement
+PASS: loading hides world meshes and restores visual body ownership
+PASS: a lethal event suppresses the HUD before the ownership update catches up
+PASS: incapacitation during native equipment control also hides the local scout
+PASS: incapacitation while a menu was open cannot retain the Minecraft screen
+PASS: the native end screen suppresses HUD and models even before a state transition
+PASS: an incapacitated Minecraft scout stays hidden under the native end screen
+PASS: revival releases the body override before the next Minecraft handoff
+PASS: switching to PEAK while dead restores the local body without hiding placed blocks
+PASS: losing and recovering the Java link during death never exposes a stale HUD
+PASS: placed structures remain visible through the entire death and revival sequence
+PASS: incapacitation hides only the local scout without enabling disabled native parts
+PASS: revival restores each renderer's original forced-off flag exactly
+PASS: repeated hidden frames preserve the initial renderer snapshot
+PASS: native animation cannot reveal a hidden scout during incapacitation
+PASS: a native renderer enabled by a follower handoff remains visually suppressed
+PASS: replacing the native character restores the old body before hiding the new one
+PASS: turning Minecraft mode off during death releases the visual body lease
+PASS: Java link loss during death restores the native body's original visibility
+PASS: destroyed Unity renderers are skipped while surviving parts are restored
+PASS: a destroyed native character cannot retain a surviving renderer after teardown
+PASS: rebinding after Unity destroys the old character releases its surviving renderers
+PASS: visual cleanup is safe before binding and after repeated release
+PASS: an external corpse cannot acquire a visibility lease without an active local body
+PASS: a separately spawned corpse is hidden immediately and restores its original render flags
+PASS: repeated corpse scans deduplicate body parts without overwriting their original snapshots
+PASS: corpse renderers created or detached in a later frame join the existing lease immediately
+PASS: character replacement clears external corpse snapshots before the next incapacitation
+PASS: corpse scans tolerate destroyed parts and reassert surviving parts changed by native animation
+PASS: registering a corpse in native mode caches ownership without changing its visibility
+PASS: mode changes reuse cached corpse renderers without replaying a creation event
+PASS: duplicate corpse registration does not grow its cache or registration counter
+PASS: a corpse created while the matching body is hidden joins its lease immediately
+PASS: another owner's cached corpse cannot be hidden through the currently bound character
+PASS: a scene reset restores active corpses and clears all ownership metadata
+PASS: registering a later corpse prunes destroyed cached renderers before reuse
+PASS: missing or destroyed owners cannot replace valid cached ownership
+PASS: steady hidden frames reuse the captured hierarchy without redundant renderer writes
+PASS: a native visibility change is repaired with one write and then becomes quiet again
+PASS: 48 presentation policy and lifecycle tests
+PASS: native corpse methods are observed only by void postfixes
+PASS: a local skeleton registers its actual renderer set once per native callback
+PASS: native reassignment can register an existing local skeleton
+PASS: remote corpses are rejected before any renderer hierarchy lookup
+PASS: unavailable plugin or local character performs no visual work
+PASS: a local statue registers inactive and detached pieces without moving them
+PASS: a statue without broken pieces still registers its original renderer
+PASS: visual collection failure cannot escape the native spawn postfix
+PASS: registry failure is reported without replaying a native corpse spawn
+PASS: 9 native corpse registration hook tests
+PASS: cold overlay has no stale HUD or texture allocation
+PASS: fresh RGBA capture uploads once and becomes drawable
+PASS: native transition invalidates drawing without freeing the GPU texture
+PASS: twenty native-control round trips reuse one screen texture and require fresh frames
+PASS: viewport resize destroys the old texture exactly once
+PASS: malformed dimensions cannot revive an old captured HUD
+PASS: failed upload is hidden until a later successful frame
+PASS: clear is idempotent and frees the screen texture
+PASS: new link frame allocates only after full clear
+PASS: cursor shares validity gating and is freed on full clear
+PASS: layout passes do not draw a valid captured frame
+PASS: fresh frame orientation is retained across allocation reuse
+PASS: 12 overlay resource and stale-frame tests
+PASS: packaged DLL wins over stale local compiler output
+PASS: local compiler output requires an explicit developer switch
+PASS: normal reinstall restores the packaged DLL
+PASS: reinstall reuses existing verified original-file backups
+PASS: legacy installation disables the Co-op DLL
+PASS: Co-op installation disables the legacy DLL
+PASS: missing packaged DLL never silently falls back to stale local output
+PASS: unrelated game loader is refused and preserved
+PASS: active Doorstop setup is refused and preserved
+PASS: 9 installer regression cases; only fixture files were changed
+PASS: missing installation refuses to start either game
+PASS: invalid configuration refuses to launch
+PASS: incomplete configuration has a useful preparation error
+PASS: missing Java cannot leave a standalone PEAK launch
+PASS: running PEAK refuses a second integration
+PASS: prior Minecraft wrapper must finish before another launch
+PASS: unrelated Java processes do not block the project
+PASS: normal launch disables diagnostics and keeps temporary files in its profile
+PASS: opted-in test mode never enables multiplayer loopback implicitly
+PASS: 9 launcher regression cases; no game or Steam executable was started
+PASS: legacy airport is the default without modifying the world
+PASS: scene names support the full unsigned world ID and reject zero
+PASS: prepared transfer resumes with the same verified immutable snapshot
+PASS: caller mutation cannot change a persisted snapshot
+PASS: commit writes the target before clearing pending and preserves its previous player data
+PASS: invalid player bytes cannot overwrite an existing target or its journal
+PASS: a newer vanilla save takes precedence over an older committed snapshot
+PASS: a verified snapshot remains recoverable if the player file is missing
+PASS: corrupt snapshot fails closed and preserves the journal
+PASS: mismatched scene IDs in a journal cannot silently select another world
+PASS: unsupported journal version is refused without creating a new inventory
+PASS: a pending transfer without a player snapshot cannot resume as an empty inventory
+PASS: world paths and transfer mappings cannot escape managed scene names
+PASS: different offline player UUIDs keep separate journals and player files
+PASS: retargeting a prepared transfer preserves the immutable player payload
+PASS: a new installation can durably initialize directly on an island
+PASS: player writes use Minecraft 26.3's canonical players/data directory
+PASS: current vanilla player data outranks stale legacy playerdata without modifying it
+PASS: a newly completed native backup with level.dat and player data is verified
+PASS: backup verification reads every file and rejects a corrupted player entry CRC
+PASS: a ZIP without level.dat cannot stand in for a completed world backup
+PASS: an existing archive cannot be mistaken for a newly completed backup
+PASS: two new archives are refused instead of guessing which world was backed up
+PASS: old backup archives stay untouched while only the new backup is verified
+PASS: 24 scene save store and backup tests
+PASS: old vertex-only side reverses when the same triangle starts at another vertex
+PASS: a body above the steep plane is outside, independent of vertex order
+PASS: a body below the same plane keeps the opposite response
+PASS: all cyclic vertex orders produce the same signed plane distance
+PASS: reversing winding preserves the oriented outward XZ response
+PASS: Minecraft negative world height does not change the wall response
+PASS: negative horizontal world regions do not change the wall response
+PASS: positive horizontal world regions do not change the wall response
+PASS: a quarter turn exchanges X/Z without changing side
+PASS: vertical walls retain their original horizontal plane anchor
+PASS: horizontal planes do not introduce division by zero
+PASS: nearly horizontal excluded wall normals keep a finite anchor
+PASS: the adjusted anchor lies on the original plane at the body height
+PASS: a vertex already at the body height remains unchanged
+PASS: 14 sloped-wall plane tests

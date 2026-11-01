@@ -22,6 +22,35 @@ internal static class DevCommands
 		dev.Register("blockphysics", _ => plugin.Blocks.DescribePhysics());
 		dev.Register("nativejump", _ => plugin.Jump.DevJump());
 		dev.Register("movementstatus", _ => NativeMovementDiagnostics.Describe(Character.localCharacter));
+		dev.Register("presentation", _ => {
+			var c = Character.localCharacter;
+			var p = plugin.CurrentPresentation;
+			int visible = 0, forcedOff = 0;
+			if (c != null) foreach (Renderer r in c.GetComponentsInChildren<Renderer>(true)) {
+				if (r.forceRenderingOff) forcedOff++;
+				if (r.enabled && !r.forceRenderingOff) visible++;
+			}
+			var gui = GUIManager.instance;
+			Plugin.Log.LogInfo($"presentation: owner {plugin.Ownership.State}; minecraft {!plugin.CoopMode.IsViewer}; dead {c != null && PeakApi.IsDead(c.data)}; passedOut {c != null && (c.data.passedOut || c.data.fullyPassedOut)}; overlay {p.Overlay}; models {p.MinecraftModels}; blocks {p.PlacedBlocks}; hideBody {p.HideNativeBody}; hidden {plugin.BodyVisibility.HiddenCount}; nativeVisible {visible}; forcedOff {forcedOff}; cachedOverlay {plugin.Overlay.HasFrame}; peakHud {gui != null && gui.hudCanvas != null && gui.hudCanvas.enabled}");
+			int corpses = 0, corpseVisible = 0;
+			foreach (var skeleton in Object.FindObjectsByType<Skelleton>(FindObjectsSortMode.None)) {
+				if (c == null || skeleton.spawnedFromCharacter != c) continue;
+				corpses++;
+				foreach (var r in skeleton.GetComponentsInChildren<Renderer>(true))
+					if (r.enabled && !r.forceRenderingOff) corpseVisible++;
+			}
+			Plugin.Log.LogInfo($"presentation: owned skeletons {corpses}; visible skeleton renderers {corpseVisible}");
+			Plugin.Log.LogInfo($"presentation: corpse registrations {plugin.BodyVisibility.CorpseRegistrations}; cached corpse renderers {plugin.BodyVisibility.CorpseRendererCount}; overlay texture allocations {plugin.Overlay.TextureAllocations}; uploaded frames {plugin.Overlay.UploadedFrames}");
+		});
+		dev.Register("lifecycle", a => {
+			if (!Photon.Pun.PhotonNetwork.OfflineMode) throw new System.InvalidOperationException("Lifecycle diagnostics require an offline test session.");
+			if (Character.localCharacter == null) throw new System.InvalidOperationException("No native character.");
+			if (a[0] == "die") Character.Die();
+			else if (a[0] == "revive") Character.Revive();
+			else if (a[0] == "passout") Character.PassOut();
+			else throw new System.ArgumentException("lifecycle: die, revive or passout");
+			Plugin.Log.LogInfo("presentation: original native lifecycle requested: " + a[0]);
+		});
 		dev.Register("hazardcontacts", a => PeakCraft.Hazards.HazardContacts.Describe(a.Length > 0 ? DevHarness.F(a[0]) : 6f));
 		dev.Register("hazardtest", a => HazardTestScene.Change(a.Length > 0 ? a[0] : "clear"));
 		dev.Register("nativeinput", a => dev.SetNativeInput(plugin, DevHarness.F(a[0]), DevHarness.F(a[1]), a[2] == "1",
