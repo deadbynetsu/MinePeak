@@ -1,6 +1,6 @@
 <div align="center">
 
-![MinePeak — construa o seu caminho até o pico](docs/images/peakcraft-local-banner.svg)
+![MinePeak — blocos do Minecraft, escalada do PEAK](docs/images/minepeak-logo.svg)
 
 **O mundo real do PEAK. Sua skin, seu inventário e seus blocos do Minecraft.**
 
@@ -16,11 +16,32 @@ MinePeak conecta **PEAK, aberto pela Steam**, a uma instância de **Minecraft Ja
 
 Esta é uma adaptação comunitária gratuita e experimental do **PeakCraft Co-op**. Os jogos continuam sendo necessários e não estão incluídos. O projeto não é afiliado a Mojang, Microsoft, Landfall ou Aggro Crab.
 
-![Captura real: skin do perfil local na praia do PEAK, segurando um bloco](PROVAS/coop-skin-island.png)
+![Captura real: Steve na praia do PEAK, segurando um bloco Minecraft](PROVAS/steve-ilha.png)
 
-*Captura real da integração, registrada na validação local. Não é uma imagem de conceito.*
+*Steve na praia do PEAK. Captura real de uma validação anterior da integração.*
 
 A **0.4.3** mantém os anúncios de região/dia e mostra os itens PEAK em uma faixa somente visual no modo Minecraft. [Detalhes](docs/releases/0.4.3.md).
+
+## Veja o MinePeak no jogo
+
+Capturas diretas das validações locais. Há imagens de revisões anteriores, por isso a aparência da interface varia. Clique nas imagens para ampliar.
+
+<table>
+<tr>
+<td width="50%"><a href="PROVAS/043-peak-hud-companion.png"><img src="PROVAS/043-peak-hud-companion.png" alt="Minecraft no aeroporto do PEAK, com região, dia e faixa de itens PEAK" width="100%"></a><br><b>HUD combinado · 0.4.3</b><br>Itens PEAK visíveis junto à barra Minecraft. O anúncio Costa foi acionado pelo diagnóstico no aeroporto.</td>
+<td width="50%"><a href="PROVAS/ui-040-block-climb.png"><img src="PROVAS/ui-040-block-climb.png" alt="Braços do PEAK escalando uma parede de blocos Minecraft" width="100%"></a><br><b>Construa e escale · 0.4.0</b><br>Escalada nativa em uma parede colocada com blocos Minecraft.</td>
+</tr>
+<tr>
+<td><a href="PROVAS/041-final-amulet-release-air.png"><img src="PROVAS/041-final-amulet-release-air.png" alt="Amuleto PEAK ativado na ilha durante o controle temporário nativo" width="100%"></a><br><b>Equipamentos originais · 0.4.1</b><br>Amuleto ativado na ilha, com impulso e custo nativos.</td>
+<td><a href="PROVAS/041-real-thorn-after.png"><img src="PROVAS/041-real-thorn-after.png" alt="Espinhos da ilha aplicando veneno no modo Minecraft" width="100%"></a><br><b>Perigos da ilha · 0.4.1</b><br>Veneno do PEAK indicado durante o modo Minecraft.</td>
+</tr>
+<tr>
+<td><a href="PROVAS/coop-skin-island.png"><img src="PROVAS/coop-skin-island.png" alt="Skin do perfil local no cenário original da ilha do PEAK" width="100%"></a><br><b>Sua própria skin</b><br>Perfil local na ilha original, segurando um bloco Minecraft.</td>
+<td><a href="PROVAS/ui-040-pause.png"><img src="PROVAS/ui-040-pause.png" alt="Menu do PEAK com o painel MinePeak para alternar modos e consultar controles" width="100%"></a><br><b>Troca de modo dentro do jogo · 0.4.0</b><br>Painel de modos, configurações e controles no menu de pausa.</td>
+</tr>
+</table>
+
+Veja também os [relatórios e capturas de validação](PROVAS/). As imagens mostram os cenários registrados; os limites dos testes continuam descritos abaixo.
 
 ## Construa, explore, alterne
 
@@ -62,15 +83,13 @@ O painel compacto introduzido na **0.4.0** usa transparência discreta, bordas s
 
 Abra **Esc** para ver os controles em um único cartão **MinePeak**, selecionar **PEAK / Minecraft** e acessar **Opções do Minecraft** quando a ponte estiver conectada. Esse visual é inspirado em vidro; não usa desfoque da imagem do jogo.
 
-![Painel MinePeak dentro do PEAK real](PROVAS/ui-040-pause.png)
-
 Esta revisão separa as construções por mapa e preserva o inventário nas viagens. Mundos experimentais gerenciados são reabertos após backup oficial verificado. Também protege atalhos com o chat ou inventário abertos, repete a liberação de teclas quando a ponte está cheia e mantém edições de blocos na fila até a entrega. O instalador usa os binários incluídos na Release, evitando que uma compilação antiga substitua o mod atualizado. As condições e os resultados da revisão ficam no [relatório 0.4.0](VALIDACAO-0.4.0.md).
 
 ## Comece a jogar
 
 Requisitos desta versão: **Windows 11 de 64 bits**, PEAK instalado pela Steam e acesso aos arquivos necessários do Minecraft Java. A rodada final usa o **PEAK da instalação Steam local**, cuja tela inicial mostra **v2.0.1**, com **Minecraft Java 26.3**. A preparação instala Java 25 e BepInEx em pastas locais do projeto.
 
-1. Baixe **MinePeak-0.4.2.zip** na [Release experimental](https://github.com/deadbynetsu/MinePeak/releases/tag/v0.4.2) e extraia para uma pasta própria. O ZIP inclui fontes e mods compilados; o arquivo `.sha256` ao lado permite conferir a integridade.
+1. Baixe **MinePeak-0.4.3.zip** na [Release experimental](https://github.com/deadbynetsu/MinePeak/releases/tag/v0.4.3) e extraia para uma pasta própria. O ZIP inclui fontes e mods compilados; o arquivo `.sha256` ao lado permite conferir a integridade.
 2. Leia a [EULA do Minecraft](https://www.minecraft.net/eula). Se concordar, abra PowerShell nessa pasta e prepare a instalação:
 
    ```powershell
