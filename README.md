@@ -8,7 +8,7 @@
 
 [![Testes automatizados](https://github.com/deadbynetsu/MinePeak/actions/workflows/tests.yml/badge.svg)](https://github.com/deadbynetsu/MinePeak/actions/workflows/tests.yml)
 
-[Baixar Release 0.4.2](https://github.com/deadbynetsu/MinePeak/releases/tag/v0.4.2) · [Como jogar](COMO-JOGAR.md) · [Instalação](README-PT.md) · [Multiplayer](MULTIPLAYER.md) · [Testes desta versão](VALIDACAO-0.4.2.md) · [Créditos](referencia-coop/PROVENIENCIA.md)
+[Baixar Release 0.4.3](https://github.com/deadbynetsu/MinePeak/releases/tag/v0.4.3) · [Como jogar](COMO-JOGAR.md) · [Instalação](README-PT.md) · [Multiplayer](MULTIPLAYER.md) · [Novidades e conferência 0.4.3](docs/releases/0.4.3.md) · [Créditos](referencia-coop/PROVENIENCIA.md)
 
 </div>
 
@@ -19,6 +19,8 @@ Esta é uma adaptação comunitária gratuita e experimental do **PeakCraft Co-o
 ![Captura real: skin do perfil local na praia do PEAK, segurando um bloco](PROVAS/coop-skin-island.png)
 
 *Captura real da integração, registrada na validação local. Não é uma imagem de conceito.*
+
+A **0.4.3** mantém os anúncios de região/dia e mostra os itens PEAK em uma faixa somente visual no modo Minecraft. [Detalhes](docs/releases/0.4.3.md).
 
 ## Construa, explore, alterne
 

@@ -1,7 +1,7 @@
 {
-  "version": "0.4.2",
-  "tag": "v0.4.2",
-  "title": "MinePeak 0.4.2 — morte corrigida e apresentação otimizada (experimental)",
-  "notes": "docs/releases/0.4.2.md",
+  "version": "0.4.3",
+  "tag": "v0.4.3",
+  "title": "MinePeak 0.4.3 — região, dia e itens PEAK no modo Minecraft (experimental)",
+  "notes": "docs/releases/0.4.3.md",
   "prerelease": true
 }

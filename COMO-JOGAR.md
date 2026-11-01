@@ -84,3 +84,7 @@ Os blocos construídos permanecem no mapa. Ao recuperar o controle, aguarde o re
 | Escalada não agarra | Aproxime-se, mire numa parede válida e confira a stamina. Solte V antes de uma nova tentativa. |
 
 Os jogos e mods podem mudar. Para relatar um erro, inclua as versões, a sequência de ações e um vídeo curto quando possível. Remova nomes, códigos de sala e caminhos pessoais dos logs públicos. Consulte **[VALIDACAO-0.4.2.md](VALIDACAO-0.4.2.md)** para a revisão atual; os relatórios **[0.4.1](VALIDACAO-0.4.1.md)**, **[0.4.0](VALIDACAO-0.4.0.md)**, **[0.3.2](VALIDACAO-0.3.2.md)**, **[0.3.1](VALIDACAO-0.3.1.md)** e **[0.3.0](VALIDACAO-0.3.0.md)** preservam suas provas históricas. O teste de uma campanha inteira até o cume e o encerramento, assim como uma sessão completa com dois PCs/contas, ainda está pendente. O mundo e o conteúdo original continuam sendo executados pelo PEAK.
+
+### Informações PEAK no modo Minecraft (0.4.3)
+
+Os anúncios de região, dia e horário aparecem sem cobrir o cenário. A faixa PEAK no canto inferior direito mostra os espaços 1, 2, 3 e 4 (mochila), apenas para consulta. Ela não recebe cliques nem altera teclas: os números continuam na barra Minecraft, e B continua habilitando o uso de itens PEAK.

@@ -22,6 +22,7 @@ internal static class DevCommands
 		dev.Register("blockphysics", _ => plugin.Blocks.DescribePhysics());
 		dev.Register("nativejump", _ => plugin.Jump.DevJump());
 		dev.Register("movementstatus", _ => NativeMovementDiagnostics.Describe(Character.localCharacter));
+		dev.Register("hudtitle", _ => GUIManager.instance.SetHeroTitle("Costa", null));
 		dev.Register("presentation", _ => {
 			var c = Character.localCharacter;
 			var p = plugin.CurrentPresentation;

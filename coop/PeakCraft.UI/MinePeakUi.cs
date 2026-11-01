@@ -26,6 +26,8 @@ internal static class MinePeakUi
     private static readonly GUIContent KeyContent = new GUIContent();
     private static float statusRefreshAt;
     private static string? nativeStatus;
+    private static GUIStyle? regionTitle, regionDay;
+    private static readonly string[] PeakSlotLabels = { "1", "2", "3", "4" };
     private static readonly string[] NativeStatusNames = { "Lesão", "Fome", "Frio", "Veneno", "Caranguejo", "Maldição", "Sono", "Peso", "Calor", "Espinhos", "Esporos", "Teia", "Flechas", "Petrificação", "Planta carnívora" };
 
     // Logical pixels keep the same layout on 720p, 1080p and ultrawide displays.
@@ -155,6 +157,69 @@ internal static class MinePeakUi
         }
     }
 
+    // Read-only companion: no buttons, input sampling, equip calls or copied assets.
+    public static void DrawPeakCompanion(Plugin plugin)
+    {
+        if (Event.current.type != EventType.Repaint || !plugin.CurrentPresentation.Overlay ||
+            plugin.Ownership.State != Owner.MinecraftOwns || plugin.InputBridge.ScreenOpen ||
+            Ownership.PeakMenuOpen()) return;
+        var gui = GUIManager.instance;
+        var character = Character.localCharacter;
+        if (gui == null || character == null || Character.observedCharacter != character) return;
+        Ensure();
+        using (new Canvas(-1000))
+        {
+            if (gui.heroCanvasObject != null && gui.heroCanvasObject.activeInHierarchy)
+            {
+                DrawRegionTitle(gui);
+            }
+            const float slot = 48f, gap = 6f, width = 230f;
+            float x = Width - width - 22f, y = Height - 142f;
+            Surface(new Rect(x, y, width, 108f), false);
+            Text(new Rect(x + 12, y + 7, 70, 17), "PEAK", small!);
+            Text(new Rect(x + 112, y + 7, 108, 17), "4 · Mochila", small!);
+            for (int i = 0; i < 4; i++)
+            {
+                float left = x + 10 + i * (slot + gap);
+                GUI.Box(new Rect(left, y + 28, slot, slot), GUIContent.none, inset!);
+                InventoryItemUI? item = i == 3 ? gui.backpack :
+                    gui.items != null && i < gui.items.Length ? gui.items[i] : null;
+                var icon = item != null ? item.icon : null;
+                if (icon != null && icon.enabled && icon.texture != null)
+                {
+                    var old = GUI.color;
+                    GUI.color = icon.color;
+                    GUI.DrawTexture(new Rect(left + 4, y + 32, slot - 8, slot - 8), icon.texture, ScaleMode.ScaleToFit, true);
+                    GUI.color = old;
+                }
+                Text(new Rect(left, y + 79, slot, 17), PeakSlotLabels[i], keycap!);
+            }
+        }
+    }
+
+    private static void DrawRegionTitle(GUIManager gui)
+    {
+        if (gui.heroImage == null || gui.heroImage.color.a <= .001f) return;
+        if (regionTitle == null)
+        {
+            regionTitle = new GUIStyle(heading!) { fontSize = 38, alignment = TextAnchor.MiddleCenter };
+            regionDay = new GUIStyle(small!) { fontSize = 18, alignment = TextAnchor.MiddleCenter };
+        }
+        var old = GUI.color;
+        float x = (Width - 500f) * .5f, y = Height * .26f;
+        string name = gui.heroText != null ? gui.heroText.text : "";
+        string day = gui.heroDayText != null ? gui.heroDayText.text : "";
+        string time = gui.heroTimeOfDayText != null ? gui.heroTimeOfDayText.text : "";
+        GUI.color = new Color(0, 0, 0, gui.heroImage.color.a * .8f);
+        Text(new Rect(x + 2, y + 2, 500, 56), name, regionTitle);
+        Text(new Rect(x + 1, y + 59, 500, 25), day, regionDay!);
+        Text(new Rect(x + 1, y + 87, 500, 25), time, regionDay!);
+        GUI.color = new Color(1, 1, 1, gui.heroImage.color.a);
+        Text(new Rect(x, y, 500, 56), name, regionTitle);
+        Text(new Rect(x, y + 58, 500, 25), day, regionDay!);
+        Text(new Rect(x, y + 86, 500, 25), time, regionDay!);
+        GUI.color = old;
+    }
     private static string? NativeStatus(Character character)
     {
         if (Time.unscaledTime < statusRefreshAt) return nativeStatus;
@@ -372,6 +437,6 @@ internal static class MinePeakUi
         if (font != null) UnityEngine.Object.Destroy(font);
         panelTexture = insetTexture = buttonTexture = hoverTexture = selectedTexture = shadowTexture = dotTexture = null;
         panel = inset = button = selected = shadow = title = heading = small = keycap = right = null;
-        font = null; lastHealth = lastFood = int.MinValue;
+        font = null; regionTitle = regionDay = null; lastHealth = lastFood = int.MinValue;
     }
 }

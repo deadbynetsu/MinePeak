@@ -20,7 +20,7 @@ namespace PeakCraft;
 
 [BepInAutoPlugin]
 [DefaultExecutionOrder(-1000)]
-[BepInPlugin("PeakCraftCoop", "PeakCraft Co-op", "0.4.2")]
+[BepInPlugin("PeakCraftCoop", "PeakCraft Co-op", "0.4.3")]
 public class Plugin : BaseUnityPlugin
 {
 	private ConfigEntry<string> linkName;
@@ -57,7 +57,7 @@ public class Plugin : BaseUnityPlugin
 
 	public const string Name = "PeakCraft Co-op";
 
-	public const string Version = "0.4.2";
+	public const string Version = "0.4.3";
 
 	internal static ManualLogSource Log { get; private set; }
 
@@ -570,6 +570,7 @@ public class Plugin : BaseUnityPlugin
 			DrawInteractPrompt();
 		}
 		Equipment?.Draw();
+		PeakCraft.UI.MinePeakUi.DrawPeakCompanion(this);
 	}
 
 	// Re-evaluate live flags in the draw pass: native afflictions can kill or
